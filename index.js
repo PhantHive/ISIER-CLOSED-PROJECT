@@ -8,7 +8,7 @@ app.get("/", (request, response) => {
     response.sendStatus(200);
 });
 const listener = server.listen(process.env.PORT, function() {
-    console.log('Your app is listening on port ' + listener.adress().port);
+    console.log('Your app is listening on port ' + listener.address().port);
 });
 setInterval(() => {
     http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
@@ -19,26 +19,23 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 
+const TOKEN = process.env.TOKEN;
 
-
-
-//const TOKEN = process.env.TOKEN;
-
-client.login('NjIwNjc4MzQ1MzY0ODY1MDUx.XXaXIg._nEozuswYnld1yto3Q4gpKtqetM');
+client.login(TOKEN);
 client.commands = new Discord.Collection();
 
 fs.readdir("./Commands/", (err, f) => {
-  if (err) console.log(err);
+    if (err) console.log(err);
 
-  let commands = f.filter(f => f.split(".").pop() === "js");
-  if (commands.length <= 0) return console.log("0 commands");
+    let commands = f.filter(f => f.split(".").pop() === "js");
+    if (commands.length <= 0) return console.log("0 commands");
 
-  commands.forEach((f) => {
-      let command = require(`./Commands/${f}`);
-      console.log(`${f} command done successfully`);
+    commands.forEach((f) => {
+        let command = require(`./Commands/${f}`);
+        console.log(`${f} command done successfully`);
 
-  client.commands.set(command.help.name, command);
-  });
+        client.commands.set(command.help.name, command);
+    });
 });
 
 fs.readdir("./Events/", (err, f) => {
@@ -48,7 +45,7 @@ fs.readdir("./Events/", (err, f) => {
     f.forEach((f) => {
         const events = require(`./Events/${f}`);
         const event = f.split(".")[0];
-    client.on(event, events.bind(null, client));
+        client.on(event, events.bind(null, client));
     });
 });
 
@@ -61,7 +58,7 @@ client.on('guildMemberAdd', member => {
         .setColor('F9841F')
         .setThumbnail('https://imgur.com/oamlctq.png')
         .setTitle('IPSA')
-    member.guild.channels.get('502931781012684820').send(embed).then(
+    member.guild.channels.get('622155677338566656').send(embed).then(
         member.createDM().then(
             channel => {
                 channel.send(
