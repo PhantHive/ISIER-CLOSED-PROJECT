@@ -18,7 +18,7 @@ module.exports.run = async(client, message, args, ) => {
             return;
         }
 
-        $cheerio.load(responsesBody);
+        $ = cheerio.load(responsesBody);
         var links = $(".image a.link");
 
         var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
