@@ -30,17 +30,23 @@ module.exports = async(client, message) => {
         message.channel.send('nop pas encore deso');
     }
 
-    //var chaine4 = String(message.content);
+    var chaine4 = String(message.content);
 
-    //if (chaine4.indexOf("?") !== -1) {
-    //  message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
-    //}
+    if (chaine4.indexOf("???") !== -1) {
+        message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
+    }
 
-    //var chaine5 = String(message.content);
+    var chaine5 = String(message.content);
 
-    //if (chaine3.indexOf("il est gentil") !== -1) {
-    //message.reply('je te promet c est vrai tavu');
-    //}
+    if (chaine5.indexOf("il est gentil") !== -1) {
+        message.reply('je te promet c est vrai tavu');
+    }
+
+    var chaine6 = String(message.content);
+
+    if (chaine6.indexOf("mdr") !== -1) {
+        message.react('😂');
+    }
     //=================
 
     if (message.channel.type === "dm") return;

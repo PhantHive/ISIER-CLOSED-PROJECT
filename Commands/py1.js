@@ -23,8 +23,15 @@ module.exports.run = async(client, message, args) => {
         'trueee()```\n\n' +
         '```yaml\n' +
         'Ici on a defini une fonction *def* on lui a attribue un nom: jeSuisUneFonction et aucun parametre *()* => parenthese vide *:* permet de clore la definition de la fonction\n'+
-        'on a importer au prealable 2 libraires ou plutot une libraire et un module d\'une autre libraire (math) enfin il vous reste plus qu\'a coder votre fonction en respectant la syntaxe python :P```'+
-        '\n\nvoir tutoriel py2 : i!py2'];
+        'on a importer au prealable 2 libraires ou plutot une libraire et un module d\'une autre libraire (math) enfin il vous reste plus qu\'a coder votre fonction en respectant la syntaxe python :P```',
+        'LES CONDITIONS :)\n' +
+        '***Si*** *j\'ai Mr.Riou alors je viens pas en cours* ***sinon*** *je viens en cours* ==> **ceci est une condition.**' +
+        '```py\n' +
+        'def teachers:\n' +
+        'if teacher == Riou:\n' +
+        '   return; #===> il s\'agit ici d\'une procedure, la fonction ne renvoi rien(aucune valeure)\n' +
+        'else:\n' +
+        '   work_hard() #===> ceci renvoi a une autre fonction```\n il semble facile de comprendre la fonction (cette fonction est un exemple debile hun ;)'];
 
     let page = 1;
 
@@ -69,5 +76,5 @@ module.exports.run = async(client, message, args) => {
 };
 
 module.exports.help = {
-    name: "tk2"
+    name: "py1"
 };
