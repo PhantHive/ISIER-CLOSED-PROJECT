@@ -9,7 +9,8 @@
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "http": "0.0.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "superagent": "^5.1.0"
   },
   "devDependencies": {},
   "scripts": {

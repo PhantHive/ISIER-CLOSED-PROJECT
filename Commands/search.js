@@ -1,39 +1,17 @@
 const Discord = require('discord.js');
-const request = require('request');
-const cheerio = require('cheerio');
+const superagent = require('superagent');
 
-module.exports.run = async(client, message, args, ) => {
-    var parts = message.content.split(" ");
+module.exports.run = async (client, message, args) => {
 
-    function image(message, parts) {
-        var search = parts.slice(1).join(" ");
+    let msg = await message.channel.send("Je cherche mon ami... ;)")
+    let {body} = await superagent
+    .get(`https://giphy.com/search/anime`);
+    console.log(body.url);
 
-        var options = {
-            url: "https://www.metacrawler.com/serp?q=" + search,
-            method: "GET",
-            headers: {
-                "Accept": "text/html",
-                "User-Agent": "Chrome"
-            }
-        };
-        request(options, function (error, response, responsesBody) {
-            if (error) {
-                return;
-            }
+    if (!{body}) return message.channel.send("je me suis perdu dans l\'Internet, refait la commande")
 
-            $ = cheerio.load(responsesBody);
-            var links = $(".image a.link");
-
-            var urls = new Array(links.length).fill(0).map((v, i) => links.eq(i).attr("href"));
-
-            if (!urls.length) {
-                return;
-            }
-
-            message.channel.send(urls[~~(Math.random()*5)]);
-        });
-    }
 };
+
 
 module.exports.help = {
     name:"image"
