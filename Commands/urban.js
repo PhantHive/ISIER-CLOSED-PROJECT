@@ -5,7 +5,8 @@ const RichEmbed = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
     if (args < 1 || !["random", "search"].includes(args[0])) return message.channel.send("i!urban search word");
-    message.channel.startTyping();
+
+
     let search = args[1] ? urban(args.slice(1).join(" ")) : urban.random();
         try {
             search.first(res => {
@@ -13,16 +14,17 @@ module.exports.run = async (client, message, args) => {
                 let {word, definition, example, author} = res;
 
                     let embed = new RichEmbed()
-                        .setColor(orange)
+                        .setColor('orange')
                         .setAuthor(`URBAN DICO : ${word}`)
                         .setDescription(stripIndents`**Definition:** ${definition || "aucune def"})
                         **Example:** (${example || "aucun exemple"}`)
-                        .setFooter(`Auteur: ${author} || "inconnu"}`)
+                        .setFooter(`Auteur: ${author} || "inconnu"}`);
+
+                        message.channel.send(embed)
             })
         } catch(e) {
-
+            console.log(e)
         }
-    message.channel.stopTyping();
 
 
 
@@ -30,6 +32,6 @@ module.exports.run = async (client, message, args) => {
 };
 
 module.exports.help = {
-    name: 'def'
+    name: 'urban'
 };
 
