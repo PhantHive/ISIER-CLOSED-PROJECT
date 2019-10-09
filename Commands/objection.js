@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
         './objectionImage/objection13.jpg'
     ];
 
-    bulkDelete(message.author);
+
     message.channel.send({
         file: rando_imgs[Math.floor(Math.random() * rando_imgs.length * 2)]
     });

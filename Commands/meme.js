@@ -7,8 +7,6 @@ module.exports.run = async(client, message, args) => {
     let reddit = [
         "meme",
         "animemes",
-        "dankmeme",
-        "dankmemes",
         "MemesOfAnime",
         "MemeEconomy"
     ]
