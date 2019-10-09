@@ -6,12 +6,12 @@ module.exports.run = async (client, message, args) => {
         message.reply("Ceci n'est pas un nombre.")
     }
     else {
-        var r = m * 3.6
+        var r = m * 0.6213712
     }
-    message.channel.send(`**${m} m/s** ==> **${r} km/h **(operation effectue: ${m} x 3,6)`)
+    message.channel.send(`**${m} bar** ==> **${r} Pa **(operation effectue: ${m} * 0,6213712)`)
 };
 
 module.exports.help = {
-    name: 'msTokh'
+    name: 'kmTomiles'
 };
 
