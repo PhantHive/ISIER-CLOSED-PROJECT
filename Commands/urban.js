@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const urban = require('urban');
+const urban = require('relevant-urban');
 
 
 module.exports.run = async (client, message, args) => {
@@ -9,7 +9,7 @@ module.exports.run = async (client, message, args) => {
 
     });
 
-    const embed = new Discord.MessageEmbed()
+    const embed = new Discord.RichEmbed()
         .setColor('ORANGE')
         .setTitle(`URBAN DICO | ${res.word}`)
         .setURL(res.urbanURL)
