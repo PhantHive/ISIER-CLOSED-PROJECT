@@ -10,8 +10,6 @@ module.exports.run = async (client, message, args) => {
     if(!args[0]) return message.channel.send(`*Definition du mot     :           . :P`);
 
 
-
-
     let res = await urban(args.join(' ')).catch(e => {
         return message.channel.send('mot introuvable dans le dico');
     });
