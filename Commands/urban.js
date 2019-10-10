@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const urban = require('relevant-urban');
-var i18n = require('node-translate');
+const translate = require('translate');
 
-i18n.setLocale('fr');
+
 
 module.exports.run = async (client, message, args) => {
     if(!args[0]) return message.channel.send(`*Definition du mot     :           . :P`);
@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('ORANGE')
         .setTitle(`URBAN DICO | ${res.word}`)
         .setURL(res.urbanURL)
-        .setDescription(i18n.t(`***DEF:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`))
+        .setDescription(translate(`***DEF:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`, {to: 'fr'}))
         .addField('Auteur:', res.author, true);
 
     if (res.tags.length > 0 && res.tags.join(', ').length < 1024) {
