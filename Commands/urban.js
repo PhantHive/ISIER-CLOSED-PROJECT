@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
 const urban = require('relevant-urban');
+var i18n = require('node-translate');
 
+i18n.setLocale('fr');
 
 module.exports.run = async (client, message, args) => {
-    if(!args[0]) return message.channel.send(`*Definition du mot     :           . :P`)
+    if(!args[0]) return message.channel.send(`*Definition du mot     :           . :P`);
     let res = await urban(args.join(' ')).catch(e => {
         return message.channel.send('mot introuvable dans le dico');
 
@@ -13,7 +15,7 @@ module.exports.run = async (client, message, args) => {
         .setColor('ORANGE')
         .setTitle(`URBAN DICO | ${res.word}`)
         .setURL(res.urbanURL)
-        .setDescription(`***DEF:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`)
+        .setDescription(i18n.t(`***DEF:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`))
         .addField('Auteur:', res.author, true);
 
     if (res.tags.length > 0 && res.tags.join(', ').length < 1024) {
