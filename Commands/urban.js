@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 const urban = require('relevant-urban');
 const translate = require('translate');
 
-
+translate.engine = 'yandex';
+translate.key = process.env.TRANSLATE_KEY;
 
 module.exports.run = async (client, message, args) => {
     if(!args[0]) return message.channel.send(`*Definition du mot     :           . :P`);
