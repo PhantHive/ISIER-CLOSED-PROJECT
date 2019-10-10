@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     else {
         var r = m / 3.6
     }
-    message.channel.send(`**${m} bar** ==> **${r} Pa **(operation effectue: ${m} * 10^5)`)
+    message.channel.send(`**${m} km/h** ==> **${r} m/s **(operation effectue: ${m} * 10^5)`)
 };
 
 module.exports.help = {

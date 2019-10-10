@@ -1,33 +1,27 @@
 const Discord = require('discord.js');
 const urban = require('urban');
-const stripIndents = require('common-tags');
-const RichEmbed = require('discord.js');
+
 
 module.exports.run = async (client, message, args) => {
-    if (args < 1 || !["random", "search"].includes(args[0])) return message.channel.send("i!urban search word");
+    if(!args[0]) return message.channel.send(`*Definition du mot     :           . :P`)
+    let res = await urban(args.join(' ')).catch(e => {
+        return message.channel.send('mot introuvable dans le dico');
 
+    });
 
-    let search = args[1] ? urban(args.slice(1).join(" ")) : urban.random();
-        try {
-            search.first(res => {
-                if (!res) return message.channel.send("je ne trouve pas la definition");
-                let {word, definition, example, author} = res;
+    const embed = new Discord.MessageEmbed()
+        .setColor('ORANGE')
+        .setTitle(`URBAN DICO | ${res.word}`)
+        .setURL(res.urbanURL)
+        .setDescription(`***DEF:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`)
+        .addField('Auteur:', res.author, true);
 
-                    let embed = new RichEmbed()
-                        .setColor('orange')
-                        .setAuthor(`URBAN DICO : ${word}`)
-                        .setDescription(stripIndents`**Definition:** ${definition || "aucune def"})
-                        **Example:** (${example || "aucun exemple"}`)
-                        .setFooter(`Auteur: ${author} || "inconnu"}`);
+    if (res.tags.length > 0 && res.tags.join(', ').length < 1024) {
+        embed.addField('Tags:', res.tags.join(', '), true)
 
-                        message.channel.send(embed)
-            })
-        } catch(e) {
-            console.log(e)
-        }
+    }
 
-
-
+    message.channel.send(embed);
 
 };
 
