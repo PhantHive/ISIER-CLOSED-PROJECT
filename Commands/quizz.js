@@ -29,7 +29,7 @@ module.exports.run = async (client, message, args) => {
                     var random = Math.floor(Math.random() * (numberOfquestion - 1 + 1) + 1);
                     switch (random) {
                         case 1:
-                            const filter = (reaction, user) => ['❤', '💝', '💖', '🖤'].includes(reaction.emoji.name) && user.id === message.author.id;
+                            const underfilter = (reaction, user) => ['❤', '💝', '💖', '🖤'].includes(reaction.emoji.name) && user.id === message.author.id;
 
                             const embed = new Discord.RichEmbed()
                                 .setColor('#DB13C2')
@@ -40,32 +40,35 @@ module.exports.run = async (client, message, args) => {
                                     "Reponse C: 1110011\n" +
                                     "Reponse D: 111011");
                             message.channel.send(embed).then(async message => {
+
                                     await message.react('❤');
                                     await message.react('💝');
                                     await message.react('💖');
                                     await message.react('🖤');
 
-                                    message.awaitReactions(filter, {
+
+
+                                    message.awaitReactions(underfilter, {
                                         max: 1,
                                         time: 60000,
                                         errors: ['time']
                                     }).then (collected => {
-                                            const reaction = collected.first();
+                                            const reaction2 = collected.first();
 
-                                            switch(reaction.emoji.name) {
-                                                case '❤':
-                                                    message.channel.send("YESSS ceci est la bonne reponse MAMENE");
 
-                                                    break;
-                                                case '💝':
+                                            if (reaction2.emoji.name === '❤') {
+                                                message.channel.send("YESSS ceci est la bonne reponse MAMENE");
+                                            }
+                                            if(reaction2.emoji.name === '💝') {
                                                     message.channel.send("Oups, tu as du zaper une retenue, la reponse etait:  110111");
-                                                    break;
-                                                case '💖':
-                                                    message.channel.send("Oups, tu as du zaper une retenue, la reponse etait:  110111");
-                                                    break;
-                                                case '🖤':
-                                                    message.channel.send("Oups, tu as du zaper une retenue, la reponse etait:  110111");
-                                                    break;
+                                            }
+                                            if(reaction2.emoji.name === '💖') {
+
+                                                message.channel.send("Oups, tu as du zaper une retenue, la reponse etait:  110111");
+                                            }
+                                            if(reaction2.emoji.name === '🖤') {
+
+                                                message.channel.send("Oups, tu as du zaper une retenue, la reponse etait:  110111");
                                             }
                                         }
 
