@@ -31,7 +31,7 @@ module.exports.run = async ( client, message, args) => {
                     await message.react('😖');
                     await message.react('😤');
 
-                    const secondFilter = (reaction, user) => (reaction.emoji.name === '🙂' || reaction.emoji.name === '😖' || reaction.emoji.name === '😤') && message.author === user.id;
+                    const secondFilter = (reaction, user) => (reaction.emoji.name === '🙂' || reaction.emoji.name === '😖' || reaction.emoji.name === '😤') && message.author.id === user.id;
                     message.awaitReactions(secondFilter, {
                         time: 10000,
                         max: 1
