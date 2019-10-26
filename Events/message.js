@@ -24,32 +24,32 @@ module.exports = async(client, message) => {
         message.channel.send('salut mon ami ;)');
     }
 
-    var chaine3 = String(message.content);
-
-    if (chaine3.indexOf("t'as fait") !== -1) {
-        message.channel.send('nop pas encore deso');
-    }
-
     var chaine4 = String(message.content);
 
-    if (chaine4.indexOf("???") !== -1) {
-        message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
+    if (chaine4.indexOf("t'as fait") !== -1) {
+        message.channel.send('nop pas encore deso');
     }
 
     var chaine5 = String(message.content);
 
-    if (chaine5.indexOf("il est gentil") !== -1) {
-        message.reply('je te promet c est vrai tavu');
+    if (chaine5.indexOf("???") !== -1) {
+        message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
     }
 
     var chaine6 = String(message.content);
 
-    if (chaine6.indexOf("mdr") !== -1) {
+    if (chaine6.indexOf("il est gentil") !== -1) {
+        message.reply('je te promet c est vrai tavu');
+    }
+
+    var chaine7 = String(message.content);
+
+    if (chaine7.indexOf("mdr") !== -1) {
         message.react('😂');
     }
     //=================
 
-    if (message.channel.type === "dm") return;
+    if (message.channel.type === "dm") {message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")}
     if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
