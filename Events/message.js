@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const prefix = "i!";
+const Manager = require("quizz").GameManager;
 
 module.exports = async(client, message) => {
 
@@ -48,6 +49,16 @@ module.exports = async(client, message) => {
         message.react('😂');
     }
     //=================
+
+    const NOTIFY_CHANNEL = client.channels.find('id', '631964829560602649');
+    var m = new Manager();
+    if (!NOTIFY_CHANNEL) {}
+    else {
+        setInterval(function() {
+            message.channel.send(m.start())
+        },1000 * 60);
+    }
+    //==============================
 
     if (message.channel.type === "dm") return;
     if (!message.content.startsWith(prefix)) return;
