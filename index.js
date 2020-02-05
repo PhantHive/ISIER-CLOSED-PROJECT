@@ -1,3 +1,8 @@
+const ytdl = require('ytdl-core');
+const GOOGLE_API_KEY = 'AIzaSyDse8N2YEPG8v53iSf1klZ95S16tLpGY3Y';
+const Youtube = require('simple-youtube-api');
+const youtube = new Youtube(GOOGLE_API_KEY);
+
 const http = require('http');
 const cheerio = require('cheerio');
 const express = require('express');

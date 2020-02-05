@@ -50,7 +50,7 @@ module.exports = async(client, message) => {
     }
     //=================
 
-<<<<<<< HEAD
+
     const NOTIFY_CHANNEL = client.channels.find('id', '631964829560602649');
     var m = new Manager();
     if (!NOTIFY_CHANNEL) {}
@@ -61,10 +61,22 @@ module.exports = async(client, message) => {
     }
     //==============================
 
-    if (message.channel.type === "dm") return;
-=======
-    if (message.channel.type === "dm") {message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")}
->>>>>>> 36100204240de8916b1877cd445e74e393fc9ad6
+
+
+    if (message.channel.type === "dm") {
+
+      if(message.content === "je t'aime") {
+
+        message.reply("***Tu es mon premier amour!***")
+
+      } else {
+
+        message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")
+
+      }
+    }
+
+
     if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -78,5 +90,3 @@ module.exports = async(client, message) => {
 
 
 };
-
-
