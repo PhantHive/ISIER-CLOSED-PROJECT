@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 var server = require('http').createServer(app);
 
-let infoLVL = require("./xp.json");
+let infoLVL = require("./jsonFile/xp.json");
 
 app.get("/", (request, response) => {
     console.log(Date.now() + " Ping received");

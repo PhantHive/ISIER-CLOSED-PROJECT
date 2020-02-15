@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-let infoLVL = require("../xp.json");
+let infoLVL = require("../jsonFile/xp.json");
 
 
 module.exports.run = async(client, message, args) => {

@@ -175,15 +175,4 @@ module.exports = async(client, message) => {
 
 
 
-  if (message.content ===  "mon rang stp") {
-
-        const lvl_embed = new Discord.RichEmbed()
-            .setColor('#DB13C2')
-            .addField(message.member.displayName + ",\n Level actuel: ", curLvl, true)
-            .addField(" avec: ", curxp + " experience \n===ApoCsXpSystem===", false)
-            .setThumbnail(message.author.avatarURL);
-        message.channel.send(lvl_embed)
-
-  }
-
 }
