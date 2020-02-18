@@ -14,8 +14,8 @@ module.exports.run = async (client, message,args) => {
   let curlvl = infoLVL[message.author.id].lvl;
 
   let rang = new Discord.RichEmbed()
-    .setAuthor(message.author.username
-    .setColor("black"))
+    .setAuthor(message.author.username)
+    .setColor("black")
     .addField("XP: ", curxp, true)
     .addField("LEVEL: ", curlvl, true)
 
