@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 var server = require('http').createServer(app);
 
-let pink = botconfig.pink;
+
 //XP PART
 let infoLVL = require("./jsonFile/level.json");
 
@@ -95,8 +95,30 @@ client.on('guildMemberAdd', member => {
 client.on("message", async message => {
 
       let gainXP = Math.floor(Math.random() * 5) + 1; //add some xp by message
-      console.log(gainXP);
 
+      //we look for infoLVL of the message author on the json file if not defined then we define it
+      if (!infoLVL[message.author.id]){
+        infoLVL[message.author.id] = {
+          xp: 0,
+          lvl: 1
+        };
+      }
+
+      //auto accumulate xp
+      infoLVL[message.author.id].xp = infoLVL[message.author.id] + gainXP;
+
+      //data
+      let curxp = infoLVL[message.author.id].xp;
+      let curlvl = infoLVL[message.author.id].lvl;
+      let newlvl = curlvl*50;
+      //data
+
+      //look for a new rank master
+      if (newlvl <= curxp && curlvl < 10) {
+        curlvl = curlvl + 1;
+        console.log(`ur level: ${curlvl}`);
+
+      }
 
 
 });
