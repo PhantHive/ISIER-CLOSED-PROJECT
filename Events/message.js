@@ -96,7 +96,7 @@ module.exports = async(client, message) => {
 
 
 
-  const infoLvl = require('./test.json');
+  const infoLvl = require('../jsonFile/xp.json');
 
   let xpAdd = Math.floor(Math.random()*7) + 1;
 
@@ -124,7 +124,7 @@ module.exports = async(client, message) => {
     let nxtLvl = infoLvl[message.author.id].lvl * 500 ; //on definit le premier level a gagner a 500xp (on passe niveau i + 1)
 
 
-    if (nxtLvl === infoLvl[message.author.id].xp && curLvl < 10) {
+    if (nxtLvl <= infoLvl[message.author.id].xp && curLvl < 10) {
 
       infoLvl[message.author.id].lvl = curLvl + 1;
 
@@ -137,7 +137,7 @@ module.exports = async(client, message) => {
         message.guild.channels.get('502932200975630336').send(lvlup);
 
 
-    } else if (nxtLvl === infoLvl[message.author.id].xp && curLvl < 25) {
+    } else if (nxtLvl <= infoLvl[message.author.id].xp && curLvl < 25) {
 
       infoLvl[message.author.id].lvl = curLvl + 1;
 
@@ -149,7 +149,7 @@ module.exports = async(client, message) => {
             .setImage("https://i.imgur.com/7LVMSKN.png");
         message.guild.channels.get('502932200975630336').send(lvlup2);//622155677338566656
 
-    } else if (nxtLvl === infoLvl[message.author.id].xp && curLvl < 50) {
+    } else if (nxtLvl <= infoLvl[message.author.id].xp && curLvl < 50) {
 
       infoLvl[message.author.id].lvl = curLvl + 1;
 
