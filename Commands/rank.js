@@ -5,27 +5,29 @@ let infoLVL = require("../xp.json");
 
 module.exports.run = async(client, message, args) => {
 
-  if(!infoLvl[message.author.id]) { //si l'utilisateur n'a pas de profil niveau, on lui etablit un
-    infoLvl[message.author.id] = {
+  if(!infoLVL[message.author.id]) { //si l'utilisateur n'a pas de profil niveau, on lui etablit un
+    infoLVL[message.author.id] = {
         xp: 0,
         lvl: 1
     };
 }
-  let curxp = infoLvl[message.author.id].xp; //servira pour afficher les xp
+  let curxp = infoLVL[message.author.id].xp; //servira pour afficher les xp
 
-  let curLvl = infoLvl[message.author.id].lvl; //servira pour afficher les levels
+  let curLvl = infoLVL[message.author.id].lvl; //servira pour afficher les levels
 
-  let nxtLvl = infoLvl[message.author.id].level * 2500;
+  let nxtLvl = infoLVL[message.author.id].level * 2500;
 
 
-};
-
-const lvl_embed = new Discord.RichEmbed()
+  const lvl_embed = new Discord.RichEmbed()
     .setColor('#DB13C2')
     .addField(message.member.displayName + ",\n Level actuel: ", curLvl, true)
     .addField(" avec: ", curxp + " experience \n===ApoCsXpSystem===", false)
     .setThumbnail(message.author.avatarURL);
 message.channel.send(lvl_embed)
+
+};
+
+
 
 module.exports.help = {
     name: "rang"

@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs")
-const Manager = require("quizz").GameManager;
+
 
 module.exports = async(client, message) => {
 

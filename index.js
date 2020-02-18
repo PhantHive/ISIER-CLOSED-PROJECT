@@ -88,7 +88,7 @@ client.on('guildMemberAdd', member => {
   //xp system
 
 
-  client.on("message", async message => {
+client.on("message", async message => {
 
       let xpAdd = Math.floor(Math.random() * 7) + 1;
       if (!infoLVL[message.author.id]) {
@@ -97,6 +97,7 @@ client.on('guildMemberAdd', member => {
               level: 1
           };
       }
+
       let curxp = infoLVL[message.author.id].xp;
       let curlvl = infoLVL[message.author.id].level;
       let nxtLvl = infoLVL[message.author.id].level * 2500;
@@ -105,7 +106,7 @@ client.on('guildMemberAdd', member => {
       if (message.author.id === '620678345364865051') {
           infoLVL[message.author.id].level = 0;
           infoLVL[message.author.id].xp = 0;
-      } else if (nxtLvl <= xp[message.author.id].xp && curlvl < 10) {
+      } else if (nxtLvl <= infoLVL[message.author.id].xp && curlvl < 10) {
           infoLVL[message.author.id].level = curlvl + 1;
           let lvlup = new Discord.RichEmbed()
               .setTitle("LVL +")
@@ -114,7 +115,7 @@ client.on('guildMemberAdd', member => {
               .addField("XP: ", curxp)
               .setImage("https://i.imgur.com/FFYT8Ll.png");
           message.guild.channels.get('263772703520063498').send(lvlup);
-      } else if (nxtLvl <= xp[message.author.id].xp && curlvl < 25) {
+      } else if (nxtLvl <= infoLVL[message.author.id].xp && curlvl < 25) {
           infoLVL[message.author.id].level = curlvl + 1;
           let lvlup2 = new Discord.RichEmbed()
               .setTitle("LVL ++")
@@ -124,7 +125,7 @@ client.on('guildMemberAdd', member => {
               .setImage("https://i.imgur.com/7LVMSKN.png");
           message.guild.channels.get('263772703520063498').send(lvlup2);
 
-      } else if (nxtLvl <= xp[message.author.id].xp && curlvl < 50) {
+      } else if (nxtLvl <= infoLVL[message.author.id].xp && curlvl < 50) {
           infoLVL[message.author.id].level = curlvl + 1;
           let lvlup5 = new Discord.RichEmbed()
               .setTitle("LVL +++++")
@@ -134,14 +135,8 @@ client.on('guildMemberAdd', member => {
               .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
           message.guild.channels.get('263772703520063498').send(lvlup5)
       }
-      fs.writeFile("./xp.json", JSON.stringify(xp), (err) => {
+      fs.writeFile("./xp.json", JSON.stringify(infoLVL), (err) => {
           if (err) console.log(err)
       });
 
-};
-
-
-
-
-
-};
+});
