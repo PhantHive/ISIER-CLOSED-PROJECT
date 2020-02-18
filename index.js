@@ -95,7 +95,7 @@ client.on('guildMemberAdd', member => {
 client.on("message", async message => {
 
       let gainXP = Math.floor(Math.random() * 5) + 1; //add some xp by message
-
+      console.log(gainXP)
       //we look for infoLVL of the message author on the json file if not defined then we define it
       if (!infoLVL[message.author.id]){
         infoLVL[message.author.id] = {
@@ -116,9 +116,9 @@ client.on("message", async message => {
       //look for a new rank master
       if (newlvl <= curxp && curlvl < 10) {
         curlvl = curlvl + 1;
-        console.log(`ur level: ${curlvl}`);
 
       }
+      console.log(`ur level: ${curlvl}`);
 
 
 });

@@ -52,14 +52,7 @@ module.exports = async(client, message) => {
     //=================
 
 
-    const NOTIFY_CHANNEL = client.channels.find('id', '631964829560602649');
-    var m = new Manager();
-    if (!NOTIFY_CHANNEL) {}
-    else {
-        setInterval(function() {
-            message.channel.send(m.start())
-        },1000 * 60);
-    }
+    
     //==============================
 
 
