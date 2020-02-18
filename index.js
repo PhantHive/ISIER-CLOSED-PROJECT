@@ -104,24 +104,24 @@ client.on("message", async message => {
         };
       }
 
-      //auto accumulate xp
-      infoLVL[message.author.id].xp = infoLVL[message.author.id] + gainXP;
-
       //data
       let curxp = infoLVL[message.author.id].xp;
       let curlvl = infoLVL[message.author.id].lvl;
       let newlvl = curlvl*50;
       //data
 
-      //look for a new rank master
-      if (newlvl <= curxp && curlvl < 10) {
-        curlvl = curlvl + 1;
+      //auto accumulate xp
+      infoLVL[message.author.id].xp = curxp + gainXP;
 
-      } fs.writeFile("../jsonFile/infoLVL.json", JSON.stringify(infoLVL), (err) => {
+      //look for a new rank master
+      if (newlvl <= infoLVL[message.author.id].xp && curlvl < 10) {
+        infoLVL[message.author.id].lvl = curlvl + 1;
+
+      } fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
         if (err) console.log(err);
       });
 
-      
+
       console.log(`ur level: ${curlvl}`);
 
 
