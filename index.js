@@ -117,7 +117,11 @@ client.on("message", async message => {
       if (newlvl <= curxp && curlvl < 10) {
         curlvl = curlvl + 1;
 
-      }
+      } fs.writeFile("../jsonFile/infoLVL.json", JSON.stringify(infoLVL), (err) => {
+        if (err) console.log(err);
+      });
+
+      
       console.log(`ur level: ${curlvl}`);
 
 
