@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const fs = require('fs');
-let infoLVL = require("../jsonFile/xp.json");
+let infoLvl = require("../jsonFile/xp.json");
 
 var curxp = localStorage.getItem("xp");
 var curLvl = localStorage.getItem("lvl");

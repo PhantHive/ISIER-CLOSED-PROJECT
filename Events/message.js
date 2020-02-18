@@ -95,7 +95,7 @@ module.exports = async(client, message) => {
 
 
 
-
+/*
   const infoLvl = require('../jsonFile/xp.json');
 
   let xpAdd = Math.floor(Math.random()*7) + 1;
@@ -170,7 +170,7 @@ module.exports = async(client, message) => {
         if (err) console.log(err)
     });
 
-
+*/
   // puis on multiplie par le niveau i pour augmenter le niveau d xp a avoir proportionnelement
 
 
