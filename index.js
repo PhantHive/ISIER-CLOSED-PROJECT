@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 var server = require('http').createServer(app);
 
-let infoLVL = require("./xp.json");
+let infoLVL = require("./jsonFile/xp.json");
 
 app.get("/", (request, response) => {
     console.log(Date.now() + " Ping received");
@@ -93,8 +93,10 @@ client.on("message", async message => {
       let xpAdd = Math.floor(Math.random() * 7) + 1;
       if (!infoLVL[message.author.id]) {
           infoLVL[message.author.id] = {
+
               xp: 0,
               level: 1
+
           };
       }
 
