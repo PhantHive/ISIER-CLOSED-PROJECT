@@ -121,11 +121,14 @@ client.on("message", async message => {
           let lvlup = new Discord.RichEmbed()
                 .setTitle("LVL +")
                 .setColor("GREEN")
-                .addField(message.author.username + " niveau atteint: ", curLvl + 1, true)
+                .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
                 .addField("XP: ", curxp)
                 .setImage("https://i.imgur.com/FFYT8Ll.png");
-            message.guild.channels.get('502932200975630336').send(lvlup);
+            message.guild.channels.get('502931781012684820').send(lvlup);
         }
+        fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
+          if (err) console.log(err);
+        });
       }
       else if (curlvl < 10) {
 
@@ -136,15 +139,16 @@ client.on("message", async message => {
           let lvlup2 = new Discord.RichEmbed()
                 .setTitle("LVL ++")
                 .setColor("BLUE")
-                .addField(message.author.username + " TU ES BON, niveau atteint: ", curLvl + 1, true)
+                .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
                 .addField("XP: ", curxp)
                 .setImage("https://i.imgur.com/7LVMSKN.png");
-            message.guild.channels.get('502932200975630336').send(lvlup2);
+            message.guild.channels.get('502931781012684820').send(lvlup2);
         }
+        fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
+          if (err) console.log(err);
+        });
 
-      } fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
-        if (err) console.log(err);
-      });
+      }
 
 
       console.log(`ur level: ${curlvl}`);
