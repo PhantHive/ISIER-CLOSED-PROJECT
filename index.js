@@ -9,8 +9,12 @@ const express = require('express');
 const app = express();
 var server = require('http').createServer(app);
 
-let infoLVL = require("./jsonFile/xp.json");
 
+//XP PART
+let infoLVL = require("./jsonFile/level.json");
+
+
+//=========
 app.get("/", (request, response) => {
     console.log(Date.now() + " Ping received");
     response.sendStatus(200);
@@ -90,54 +94,55 @@ client.on('guildMemberAdd', member => {
 
 client.on("message", async message => {
 
-      let xpAdd = Math.floor(Math.random() * 7) + 1;
-      if (!infoLVL[message.author.id]) {
-          infoLVL[message.author.id] = {
-
-              xp: 0,
-              level: 1
-
-          };
+      let gainXP = Math.floor(Math.random() * 5) + 1; //add some xp by message
+      console.log(gainXP)
+      //we look for infoLVL of the message author on the json file if not defined then we define it
+      if (!infoLVL[message.author.id]){
+        infoLVL[message.author.id] = {
+          xp: 0,
+          lvl: 1
+        };
       }
+
+      //data
       let curxp = infoLVL[message.author.id].xp;
-      let curlvl = infoLVL[message.author.id].level;
-      let nxtLvl = infoLVL[message.author.id].level * 2500;
-      infoLVL[message.author.id].xp = curxp + xpAdd;
+      let curlvl = infoLVL[message.author.id].lvl;
+      let newlvl = curlvl*50;
+      //data
+
+      //auto accumulate xp
+      infoLVL[message.author.id].xp = curxp + gainXP;
+
+      //look for a new rank master
 
       if (message.author.id === '620678345364865051') {
-          infoLVL[message.author.id].level = 0;
-          infoLVL[message.author.id].xp = 0;
-      } else if (nxtLvl <= infoLVL[message.author.id].xp && curlvl < 10) {
-          infoLVL[message.author.id].level = curlvl + 1;
-          let lvlup = new Discord.RichEmbed()
+        curxp = 0;
+        curlvl = 0;
+      }
+      if (newlvl <= infoLVL[message.author.id].xp && curlvl < 5) {
+        infoLVL[message.author.id].lvl = curlvl + 1;
+        let lvlup = new Discord.RichEmbed()
               .setTitle("LVL +")
               .setColor("GREEN")
-              .addField(message.author.username + " Level reached: ", curlvl + 1, true)
+              .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
               .addField("XP: ", curxp)
               .setImage("https://i.imgur.com/FFYT8Ll.png");
-          message.guild.channels.get('263772703520063498').send(lvlup);
-      } else if (nxtLvl <= infoLVL[message.author.id].xp && curlvl < 25) {
-          infoLVL[message.author.id].level = curlvl + 1;
+          message.guild.channels.get('502931781012684820').send(lvlup);
+      } else if (newlvl <= infoLVL[message.author.id].xp) {
+          infoLVL[message.author.id].lvl = curlvl + 1;
           let lvlup2 = new Discord.RichEmbed()
-              .setTitle("LVL ++")
-              .setColor("BLUE")
-              .addField(message.author.username + " YOU ARE GOOD, level reached: ", curlvl + 1, true)
-              .addField("XP: ", curxp)
-              .setImage("https://i.imgur.com/7LVMSKN.png");
-          message.guild.channels.get('263772703520063498').send(lvlup2);
+                .setTitle("LVL ++")
+                .setColor("BLUE")
+                .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
+                .addField("XP: ", curxp)
+                .setImage("https://i.imgur.com/7LVMSKN.png");
+            message.guild.channels.get('502931781012684820').send(lvlup2);
+        } fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
+          if (err) console.log(err);
+          });
 
-      } else if (nxtLvl <= infoLVL[message.author.id].xp && curlvl < 50) {
-          infoLVL[message.author.id].level = curlvl + 1;
-          let lvlup5 = new Discord.RichEmbed()
-              .setTitle("LVL +++++")
-              .setColor("ORANGE")
-              .addField(message.author.username + " is SATAN LIKE, level reached: ", curlvl + 1, true)
-              .addField("XP: ", curxp)
-              .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-          message.guild.channels.get('263772703520063498').send(lvlup5)
-      }
-      fs.writeFile("./xp.json", JSON.stringify(infoLVL), (err) => {
-          if (err) console.log(err)
-      });
+
+      console.log(`ur level: ${curlvl}`);
+
 
 });
