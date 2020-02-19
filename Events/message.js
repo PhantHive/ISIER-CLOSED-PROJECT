@@ -52,7 +52,11 @@ module.exports = async(client, message) => {
     //=================
 
 
+<<<<<<< HEAD
 
+=======
+
+>>>>>>> 034eea0ce92d623df1fac593eda2d758a22d1b6d
     //==============================
 
 

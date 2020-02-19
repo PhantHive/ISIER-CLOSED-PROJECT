@@ -114,6 +114,7 @@ client.on("message", async message => {
       infoLVL[message.author.id].xp = curxp + gainXP;
 
       //look for a new rank master
+<<<<<<< HEAD
 
       if (message.author.id === '620678345364865051') {
         curxp = 0;
@@ -129,6 +130,29 @@ client.on("message", async message => {
               .setImage("https://i.imgur.com/FFYT8Ll.png");
           message.guild.channels.get('502931781012684820').send(lvlup);
       } else if (newlvl <= infoLVL[message.author.id].xp) {
+=======
+      if (curlvl < 5) {
+
+        if (newlvl <= infoLVL[message.author.id].xp) {
+          infoLVL[message.author.id].lvl = curlvl + 1;
+          let lvlup = new Discord.RichEmbed()
+                .setTitle("LVL +")
+                .setColor("GREEN")
+                .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
+                .addField("XP: ", curxp)
+                .setImage("https://i.imgur.com/FFYT8Ll.png");
+            message.guild.channels.get('502931781012684820').send(lvlup);
+        }
+        fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
+          if (err) console.log(err);
+        });
+      }
+      else if (curlvl < 10) {
+
+        newlvl = newlvl*2;
+
+        if (newlvl <= infoLVL[message.author.id].xp) {
+>>>>>>> 034eea0ce92d623df1fac593eda2d758a22d1b6d
           infoLVL[message.author.id].lvl = curlvl + 1;
           let lvlup2 = new Discord.RichEmbed()
                 .setTitle("LVL ++")
@@ -137,9 +161,18 @@ client.on("message", async message => {
                 .addField("XP: ", curxp)
                 .setImage("https://i.imgur.com/7LVMSKN.png");
             message.guild.channels.get('502931781012684820').send(lvlup2);
+<<<<<<< HEAD
         } fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
           if (err) console.log(err);
           });
+=======
+        }
+        fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
+          if (err) console.log(err);
+        });
+
+      }
+>>>>>>> 034eea0ce92d623df1fac593eda2d758a22d1b6d
 
 
       console.log(`ur level: ${curlvl}`);
