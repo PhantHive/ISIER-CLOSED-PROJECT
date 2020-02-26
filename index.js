@@ -12,7 +12,8 @@ var server = require('http').createServer(app);
 
 //XP PART
 let infoLVL = require("./jsonFile/level.json");
-
+//easter part
+let easterEgg = require("./jsonFile/easterEgg.json")
 
 //=========
 app.get("/", (request, response) => {
@@ -168,6 +169,39 @@ client.on("message", async message => {
 
 
       console.log(`ur level: ${curlvl}`);
+
+     //Easter egg system counter
+    
+    if (!easterEgg[message.author.id]) {
+      easterEgg[message.author.id] = {
+            counter: 0
+        }
+    }
+    
+    let curCounter = easterEgg[message.author.id].counter;
+  
+    
+    if (message.channel.type === "dm") {
+    
+        if(message.content === "je t'aime") {
+        
+            if (curCounter == 0) {
+            
+                message.reply("***Tu es mon premier amour!*** Tu as complete un easterEgg, tu ne peux plus gagner de point la dessus, tu as gagne 500xp");
+                curCounter += 1;
+                curxp = curxp + 500;
+            } fs.writeFile("./jsonFile/easterEgg.json", JSON.stringify(easterEgg), (err) => {
+              if (err) console.log(err);
+              });
+            
+            
+                
+      } else {
+
+        message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")
+
+      }
+    }
 
 
 });

@@ -1,30 +1,9 @@
 const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs");
-let easterEgg = require("./easterEgg.json");
-let infoLVL = require("../jsonFile/level.json");
+
 
 module.exports = async(client, message) => {
-    
-    if(!infoLVL[message.author.id]) {
-      infoLVL[message.author.id] = {
-        xp: 0,
-        lvl: 1
-      };
-    }
-
-    let curxp = infoLVL[message.author.id].xp;
-       
-    //Easter egg system counter
-    
-    if (!easterEgg[message.author.id]) {
-      easterEgg[message.author.id] = {
-            counter: 0
-        }
-    }
-    
-    
-
 
     //=============
     
@@ -78,32 +57,6 @@ module.exports = async(client, message) => {
 
     
     //==============================
-
-    let curCounter = easterEgg[message.author.id].counter;
-  
-    
-    if (message.channel.type === "dm") {
-    
-        if(message.content === "je t'aime") {
-        
-            if (curCounter == 0) {
-            
-                message.reply("***Tu es mon premier amour!***");
-                curCounter += 1;
-                curxp = curxp + 500;
-            } fs.writeFile("./easterEgg.json", JSON.stringify(easterEgg), (err) => {
-              if (err) console.log(err);
-              });
-            
-            
-                
-      } else {
-
-        message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")
-
-      }
-    }
-
 
     if (!message.content.startsWith(prefix)) return;
 
