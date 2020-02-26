@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs");
-let easterEgg = require("../jsonFile/easterEgg.json");
+let easterEgg = require("./easterEgg.json");
 let infoLVL = require("../jsonFile/level.json");
 
 module.exports = async(client, message) => {
@@ -91,7 +91,7 @@ module.exports = async(client, message) => {
                 message.reply("***Tu es mon premier amour!***");
                 curCounter += 1;
                 curxp = curxp + 500;
-            } fs.writeFile("../jsonFile/easterEgg.json", JSON.stringify(easterEgg), (err) => {
+            } fs.writeFile("./easterEgg.json", JSON.stringify(easterEgg), (err) => {
               if (err) console.log(err);
               });
             
