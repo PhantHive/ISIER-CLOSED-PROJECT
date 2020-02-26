@@ -6,6 +6,14 @@ module.exports.run = async (client, message,args) => {
   if(!infoLVL[message.author.id]) {
     infoLVL[message.author.id] = {
       xp: 0,
+      lvl: 1const Discord = require("discord.js");
+let infoLVL = require("../jsonFile/level.json");
+
+module.exports.run = async (client, message,args) => {
+
+  if(!infoLVL[message.author.id]) {
+    infoLVL[message.author.id] = {
+      xp: 0,
       lvl: 1
     };
   }

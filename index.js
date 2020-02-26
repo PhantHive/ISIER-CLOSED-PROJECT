@@ -128,9 +128,9 @@ client.on("message", async message => {
             .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
             .addField("XP: ", newlvl)
             .setImage("https://i.imgur.com/FFYT8Ll.png");
-        message.guild.channels.get('502931781012684820').send(lvlup);
+        message.guild.channels.get('622155677338566656').send(lvlup);
         
-        curxp = 0;
+        infoLVL[message.author.id].xp = 0;
     }
     else if (newlvl <= infoLVL[message.author.id].xp && curlvl < 10) {
           
@@ -141,9 +141,9 @@ client.on("message", async message => {
             .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
             .addField("XP: ", newlvl)
             .setImage("https://i.imgur.com/7LVMSKN.png");
-        message.guild.channels.get('502931781012684820').send(lvlup2);
+        message.guild.channels.get('622155677338566656').send(lvlup2);
         
-        curxp = 0;
+        infoLVL[message.author.id].xp = 0;
     }
     else if (newlvl <= infoLVL[message.author.id].xp && curlvl < 15) {
         
@@ -154,9 +154,9 @@ client.on("message", async message => {
             .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
             .addField("XP: ", newlvl)
             .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-        message.guild.channels.get('502931781012684820').send(lvlup3)
+        message.guild.channels.get('622155677338566656').send(lvlup3)
         
-        curxp = 0;
+        infoLVL[message.author.id].xp = 0;
 	}
     else {
         infoLVL[message.author.id].lvl;

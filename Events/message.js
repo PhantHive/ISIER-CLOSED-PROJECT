@@ -1,10 +1,33 @@
 const Discord = require('discord.js');
 const prefix = "i!";
-const fs = require("fs")
-
+const fs = require("fs");
+let easterEgg = require("../jsonFile/easterEgg");
+let infoLVL = require("../jsonFile/level.json");
 
 module.exports = async(client, message) => {
+    
+    
+    //Easter egg system counter
+    if(!infoLVL[message.author.id]) {
+        infoLVL[message.author.id] = {
+          xp: 0,
+          lvl: 1
+        };
+    }
 
+  let curxp = infoLVL[message.author.id].xp;
+    
+    if (!easterEgg[message.author.id]) {
+		easterEgg[message.author.id] = {
+            counter: 0
+        }
+	}
+    
+    
+
+    //=============
+    
+    
     if (message.author.bot) return;
 
     //fonction special 
@@ -55,14 +78,24 @@ module.exports = async(client, message) => {
     
     //==============================
 
-
-
+    let curCounter = easterEgg[message.author.id].counter;
+  
+    
     if (message.channel.type === "dm") {
-
-      if(message.content === "je t'aime") {
-
-        message.reply("***Tu es mon premier amour!***")
-
+    
+        if(message.content === "je t'aime") {
+        
+            if (curCounter == 0) {
+            
+                message.reply("***Tu es mon premier amour!***");
+                curCounter += 1;
+                curxp = curxp + 500;
+                
+			} else {
+                message.reply("TU CROYAIS POUVOIR ABUSER D'UN EASTEREGG AHAHA");
+            }
+            
+                
       } else {
 
         message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")
