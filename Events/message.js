@@ -1,21 +1,30 @@
 const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs");
-let easterEgg = require("../jsonFile/easterEgg");
-
+let easterEgg = require("../jsonFile/easterEgg.json");
+let infoLVL = require("../jsonFile/level.json");
 
 module.exports = async(client, message) => {
     
-    
+    if(!infoLVL[message.author.id]) {
+      infoLVL[message.author.id] = {
+        xp: 0,
+        lvl: 1
+      };
+    }
+
+    let curxp = infoLVL[message.author.id].xp;
+       
     //Easter egg system counter
     
     if (!easterEgg[message.author.id]) {
-		easterEgg[message.author.id] = {
+      easterEgg[message.author.id] = {
             counter: 0
         }
-	}
+    }
     
     
+
 
     //=============
     
@@ -86,9 +95,6 @@ module.exports = async(client, message) => {
               if (err) console.log(err);
               });
             
-        }  else {
-                message.reply("TU CROYAIS POUVOIR ABUSER D'UN EASTEREGG AHAHA");
-            }
             
                 
       } else {
