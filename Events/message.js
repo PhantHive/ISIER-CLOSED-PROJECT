@@ -2,20 +2,12 @@ const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs");
 let easterEgg = require("../jsonFile/easterEgg");
-let infoLVL = require("../jsonFile/level.json");
+
 
 module.exports = async(client, message) => {
     
     
     //Easter egg system counter
-    if(!infoLVL[message.author.id]) {
-        infoLVL[message.author.id] = {
-          xp: 0,
-          lvl: 1
-        };
-    }
-
-  let curxp = infoLVL[message.author.id].xp;
     
     if (!easterEgg[message.author.id]) {
 		easterEgg[message.author.id] = {
@@ -90,8 +82,11 @@ module.exports = async(client, message) => {
                 message.reply("***Tu es mon premier amour!***");
                 curCounter += 1;
                 curxp = curxp + 500;
-                
-			} else {
+            } fs.writeFile("../jsonFile/easterEgg.json", JSON.stringify(easterEgg), (err) => {
+              if (err) console.log(err);
+              });
+            
+        }  else {
                 message.reply("TU CROYAIS POUVOIR ABUSER D'UN EASTEREGG AHAHA");
             }
             
