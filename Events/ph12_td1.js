@@ -1,8 +1,6 @@
 const Discord = require('discord.js');
 const fs = require("fs");
 
-const client = new Discord.Client();
-
 module.exports = async(client, message) => {
 	
   if (message.author.bot) return;
