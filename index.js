@@ -184,15 +184,20 @@ client.on("message", async message => {
     if (message.channel.type === "dm") {
     
         if(message.content === "je t'aime") {
-        
+            console.log(infoLVL)
             if (curCounter == 0) {
             
                 message.reply("***Tu es mon premier amour!*** Tu as complete un easterEgg, tu ne peux plus gagner de point la dessus, tu as gagne 500xp");
-                curCounter += 1;
-                curxp = curxp + 500;
-            } fs.writeFile("./jsonFile/easterEgg.json", JSON.stringify(easterEgg), (err) => {
-              if (err) console.log(err);
-              });
+                easterEgg[message.author.id].counter = curCounter + 1;
+                infoLVL[message.author.id].lvl = curlvl + 2;
+                console.log(easterEgg)
+                console.log(infoLVL)
+            } else {
+              message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")
+            }
+            fs.writeFile("./jsonFile/easterEgg.json", JSON.stringify(easterEgg), (err) => {
+            if (err) console.log(err);
+            });
             
             
                 
