@@ -67,7 +67,7 @@ fs.readdir("./ph12/", (err, f) => {
     console.log(`${f.length} td loading`);
 
     f.forEach((f) => {
-        const physiques = require(`./PHYSIQUE/ph12/${f}`);
+        const physiques = require(`./ph12/${f}`);
         const physique = f.split(".")[0];
         client.on(physique, physiques.bind(null, client));
     });
