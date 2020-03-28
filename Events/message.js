@@ -7,11 +7,16 @@ module.exports = async(client, message) => {
 
     //=============
 
+    if (message.author.bot) return;
+
+    //fonction special
+    var chaine = String(message.content);
+
 
     //=================
 
 
-
+    
     //==============================
 
     if (!message.content.startsWith(prefix)) return;

@@ -62,6 +62,9 @@ fs.readdir("./Events/", (err, f) => {
     });
 });
 
+
+
+
 //join user
 client.on('guildMemberAdd', member => {
     //JOIN SERVER
@@ -95,7 +98,11 @@ client.on('guildMemberAdd', member => {
 
 client.on("message", async message => {
 
+<<<<<<< HEAD
     let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
+=======
+    let gainXP = Math.floor(Math.random() * 5) + 1; //add some xp by message
+>>>>>>> e54eadaa79f244fd98eb9614dca0435ad58cc3de
     console.log(gainXP)
       //we look for infoLVL of the message author on the json file if not defined then we define it
     if (!infoLVL[message.author.id]){
@@ -115,6 +122,7 @@ client.on("message", async message => {
     infoLVL[message.author.id].xp = curxp + gainXP;
 
       //look for a new rank master
+<<<<<<< HEAD
 
     if (message.author.bot) {
         return;
@@ -169,6 +177,97 @@ client.on("message", async message => {
 
 
       console.log(`ur level: ${curlvl}`);
+
+     //Easter egg system counter
+
+    if (!easterEgg[message.author.id]) {
+      easterEgg[message.author.id] = {
+            counter: 0
+        }
+    }
+
+    let curCounter = easterEgg[message.author.id].counter;
+=======
+
+    if (message.author.bot) {
+        return;
+    }
+
+    if (newlvl <= infoLVL[message.author.id].xp && curlvl < 5) {
+        infoLVL[message.author.id].lvl = curlvl + 1;
+
+        let lvlup = new Discord.RichEmbed()
+            .setTitle("LVL +")
+            .setColor("GREEN")
+            .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
+            .addField("XP: ", newlvl)
+            .setImage("https://i.imgur.com/FFYT8Ll.png");
+        message.guild.channels.get('502931781012684820').send(lvlup);
+
+        infoLVL[message.author.id].xp = 0;
+    }
+    else if (newlvl <= infoLVL[message.author.id].xp && curlvl < 10) {
+
+        infoLVL[message.author.id].lvl = curlvl + 1;
+        let lvlup2 = new Discord.RichEmbed()
+            .setTitle("LVL ++")
+            .setColor("BLUE")
+            .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
+            .addField("XP: ", newlvl)
+            .setImage("https://i.imgur.com/7LVMSKN.png");
+        message.guild.channels.get('502931781012684820').send(lvlup2);
+
+        infoLVL[message.author.id].xp = 0;
+    }
+    else if (newlvl <= infoLVL[message.author.id].xp && curlvl < 15) {
+
+        infoLVL[message.author.id].lvl = curlvl + 1;
+		let lvlup3 = new Discord.RichEmbed()
+            .setTitle("LVL +++++")
+            .setColor("ORANGE")
+            .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
+            .addField("XP: ", newlvl)
+            .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
+        message.guild.channels.get('502931781012684820').send(lvlup3)
+
+        infoLVL[message.author.id].xp = 0;
+	}
+    else {
+        infoLVL[message.author.id].lvl;
+        infoLVL[message.author.id].xp;
+    }
+    fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
+          if (err) console.log(err);
+          });
+>>>>>>> e54eadaa79f244fd98eb9614dca0435ad58cc3de
+
+
+    if (message.channel.type === "dm") {
+
+        if(message.content === "je t'aime") {
+            console.log(infoLVL)
+            if (curCounter == 0) {
+
+                message.reply("***Tu es mon premier amour!*** Tu as complete un easterEgg, tu ne peux plus gagner de point la dessus, tu as gagne 500xp");
+                easterEgg[message.author.id].counter = curCounter + 1;
+                infoLVL[message.author.id].lvl = curlvl + 2;
+                console.log(easterEgg)
+                console.log(infoLVL)
+            } else {
+              message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")
+            }
+            fs.writeFile("./jsonFile/easterEgg.json", JSON.stringify(easterEgg), (err) => {
+            if (err) console.log(err);
+            });
+
+
+
+      } else {
+
+        message.reply("Utilises le channel discord commandes bot pour pouvoir m'utiliser")
+
+      }
+    }
 
      //Easter egg system counter
 
