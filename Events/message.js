@@ -64,15 +64,32 @@ module.exports = async(client, message) => {
     //=================MINI-PROJET-PHYSIQUE
 
     var mph11 = String(message.content);
-    let index = ["mp ph11", "miniprojet ph11", "mini projet ph11", "mini-projet ph11"]
+    if (mph11.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111") !== -1 ) {
 
-    if (mph11 in index) {
-
-      client.startTyping()
+      message.channel.startTyping()
       message.reply("je t envoi ca de suite")
-      client.stopTyping()
+      message.channel.send("Annee 2019- realise par: ")
+      message.channel.send(file: './ph11/mph11-2019.pdf/')
+      message.channel.stopTyping()
 
     }
+
+    var mp = String(message.content);
+
+        if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
+
+          message.channel.startTyping()
+          message.reply("Merci de bien preciser quelle matiere/ module (ph111, ph121 etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
+          message.channel.stopTyping()
+
+          const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+            console.log(collector)
+            collector.on('collect', message => {
+                if (message.content == "ph11" || "ph12") {
+                    message.channel.send("c'est tout bon pour moi je t'envoi ca");
+                }
+            })
+        }
 
 
 
