@@ -107,7 +107,7 @@ client.on("message", async message => {
       //data
       let curxp = infoLVL[message.author.id].xp;
       let curlvl = infoLVL[message.author.id].lvl;
-      let newlvl = curlvl*50;
+      let newlvl = curlvl*10;
       //data
 
       //auto accumulate xp
@@ -126,13 +126,9 @@ client.on("message", async message => {
                 .setImage("https://i.imgur.com/FFYT8Ll.png");
             message.guild.channels.get('502931781012684820').send(lvlup);
         }
-        fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
-          if (err) console.log(err);
-        });
+
       }
       else if (curlvl < 10) {
-
-        newlvl = newlvl*2;
 
         if (newlvl <= infoLVL[message.author.id].xp) {
           infoLVL[message.author.id].lvl = curlvl + 1;
@@ -144,11 +140,11 @@ client.on("message", async message => {
                 .setImage("https://i.imgur.com/7LVMSKN.png");
             message.guild.channels.get('502931781012684820').send(lvlup2);
         }
-        fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
-          if (err) console.log(err);
-        });
 
       }
+      fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
+        if (err) console.log(err);
+      });
 
 
       console.log(`ur level: ${curlvl}`);
