@@ -62,19 +62,6 @@ fs.readdir("./Events/", (err, f) => {
     });
 });
 
-fs.readdir("./eventIpsa/", (err, f) => {
-  if (err) console.log(err);
-  console.log(`${f.length} data from ipsa loaded`);
-
-  f.forEach((f) => {
-      const ipsaEvents = require(`./eventIpsa/${f}`);
-      client.on(ipsaEvents, events.bind(null, client));
-  });
-});
-
-
-})
-
 //join user
 client.on('guildMemberAdd', member => {
     //JOIN SERVER

@@ -52,7 +52,20 @@ module.exports = async(client, message) => {
     if (chaine7.indexOf("mdr") !== -1) {
         message.react('😂');
     }
-    //=================
+
+
+    //=================MINI-PROJET-PHYSIQUE
+
+    var mph11 = String(message.content);
+    let index = ["mp ph11", "miniprojet ph11", "mini projet ph11", "mini-projet ph11"]
+
+    if (mph11 in index) {
+
+      client.startTyping()
+      message.reply("je t envoi ca de suite")
+      client.stopTyping()
+
+    }
 
 
 
