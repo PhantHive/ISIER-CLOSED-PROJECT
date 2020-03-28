@@ -17,6 +17,13 @@ module.exports = async(client, message) => {
         message.reply('Go ici amigo=> <#611829345446658048>' );
     }
 
+    var catia = String(message.content);
+
+    if (catia.indexOf("catia") !== -1) {
+        message.reply('Check ce channel, ca pourrai repondre a ta question padaone => <#611829345446658048>' );
+    }
+
+
     var chaine2 = String(message.content);
 
     if (chaine2.indexOf("chut") !== -1) {
