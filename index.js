@@ -62,6 +62,21 @@ fs.readdir("./Events/", (err, f) => {
     });
 });
 
+fs.readdir("./eventIpsa/", (err, f) => {
+  if (err) console.log(err);
+  console.log(`${f.length} data from ipsa loaded`);
+
+  let ipsaevents = f.filter(f => f.split(".").pop() === "js");
+  if (ipsaevents <= 0) return console.log("nothing");
+
+  ipsaevents.forEach((f), i) => {
+    let ipsaevent = require(`./eventIpsa/${f}`);
+    console.log(`${f} loaded`);
+});
+
+
+})
+
 //join user
 client.on('guildMemberAdd', member => {
     //JOIN SERVER
