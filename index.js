@@ -66,12 +66,10 @@ fs.readdir("./eventIpsa/", (err, f) => {
   if (err) console.log(err);
   console.log(`${f.length} data from ipsa loaded`);
 
-  let ipsaevents = f.filter(f => f.split(".").pop() === "js");
-  if (ipsaevents <= 0) return console.log("nothing");
-
-  ipsaevents.forEach((f), i) => {
-    let ipsaevent = require(`./eventIpsa/${f}`);
-    console.log(`${f} loaded`);
+  f.forEach((f) => {
+      const ipsaEvents = require(`./eventIpsa/${f}`);
+      client.on(ipsaEvents, events.bind(null, client));
+  });
 });
 
 
