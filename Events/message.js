@@ -96,7 +96,7 @@ module.exports = async(client, message) => {
                if (message.content == "ph121") {
                 message.channel.send("c'est tout bon pour moi je t'envoi ca");
                 message.channel.send("Annee 2019- partager par: Baptiste Gautier")
-                message.channel.send({file: './ph12/ph12Comet.pdf/'})
+                message.channel.send({file: './ph12/mpPh121.pdf/'})
                }
            })
        }
