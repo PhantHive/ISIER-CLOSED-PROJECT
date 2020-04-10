@@ -183,7 +183,7 @@ client.on("message", async message => {
 
     if (message.channel.type === "dm") {
 
-        if(message.content === "je t'aime") {
+        if(message.content === "je t'aime" || "je taime" || "jtm" || "je t aime") {
             console.log(infoLVL)
             if (curCounter == 0) {
 
