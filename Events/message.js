@@ -8,8 +8,6 @@ module.exports = async(client, message) => {
     //=============
 
 
-    if (message.author.bot) return;
-
     //fonction special
     var chaine = String(message.content);
 
@@ -51,61 +49,103 @@ module.exports = async(client, message) => {
     var chaine6 = String(message.content);
 
     if (chaine6.indexOf("il est gentil") !== -1) {
-        message.reply('je te promet c est vrai tavu');
+        var a = Math.floor((Math.random() * 15) + 1);
+        if (a == 2) {
+            message.reply('je te promet c est vrai tavu');
+        }
     }
 
     var chaine7 = String(message.content);
 
     if (chaine7.indexOf("mdr") !== -1) {
-        message.react('😂');
+        var b = Math.floor((Math.random() * 15) + 1);
+        if (b == 5) {
+            message.react('😂');
+        }
+        else if (b == 10) {
+            message.react('🇲')
+            .then(() => message.react('🇩'))
+            .then(() => message.react('🇷'))
+            .catch(() => console.error("erreur dans la reaction en chaine"));
+        }
     }
 
 
+
     //=================MINI-PROJET-PHYSIQUE
-
+  
     
-   var mph11 = String(message.content);
-   if (mph11.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111") !== -1 ) {
+    var mph11 = String(message.content);
+    if (mph11.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111") !== -1 ) {
+ 
+      message.channel.startTyping()
+      message.reply("je t envoi ca de suite")
+      message.channel.send("Annee 2019- realise par: Zakaria Chaouki")
+      message.channel.send({file: './ph11/mph11-2019.pdf/'})
+      message.channel.stopTyping()
+ 
+    }
+ 
+   
+    var mp = String(message.content);
+   
+        if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
+ 
+          message.channel.startTyping()
+          message.reply("Merci de bien preciser quelle matiere/ module (ph111, ph121 etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
+          message.channel.stopTyping()
+ 
+          const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+            console.log(collector)
+            collector.on('collect', message => {
+                if (message.content == "ph111") {
+                    message.channel.send("c'est tout bon pour moi je t'envoi ca");
+                    message.channel.send("Annee 2019- realise par: ")
+                    message.channel.send({file: './ph11/mph11-2019.pdf/'})
+                }
+ 
+                if (message.content == "ph121") {
+                 message.channel.send("c'est tout bon pour moi je t'envoi ca");
+                 message.channel.send("Annee 2019- partager par: Baptiste Gautier")
+                 message.channel.send({file: './ph12/mpPh121.pdf/'})
+                }
+            })
+        }
 
-     message.channel.startTyping()
-     message.reply("je t envoi ca de suite")
-     message.channel.send("Annee 2019- realise par: ")
-     message.channel.send({file: './ph11/mph11-2019.pdf/'})
-     message.channel.stopTyping()
+    //================TP GENIE MATHS
 
-   }
-
-
-   var mp = String(message.content);
-
-       if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
-
-         message.channel.startTyping()
-         message.reply("Merci de bien preciser quelle matiere/ module (ph111, ph121 etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
-         message.channel.stopTyping()
-
-         const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
-           console.log(collector)
-           collector.on('collect', message => {
-               if (message.content == "ph111") {
-                   message.channel.send("c'est tout bon pour moi je t'envoi ca");
-                   message.channel.send("Annee 2019- realise par: ")
-                   message.channel.send({file: './ph11/mph11-2019.pdf/'})
-               }
-
-               if (message.content == "ph121") {
-                message.channel.send("c'est tout bon pour moi je t'envoi ca");
-                message.channel.send("Annee 2019- partager par: Baptiste Gautier")
-                message.channel.send({file: './ph12/mpPh121.pdf/'})
-               }
-           })
-       }
-
-
-
+    var tp3GM = String(message.content);
+    if (tp3GM.indexOf("genie maths tp3 || genie math tp3 || tp3 newton || methode de newton || tp3 methode de newton") !== -1) {
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("Annee 2019- partager par: Baptiste Gautier ")
+        message.channel.send({file: './GenieMaths/tp3.pdf/'})
+        message.channel.stopTyping()
+    }
 
 
     //==============================
+
+    var tp = String(message.content);
+   
+        if (mp.indexOf("tp") !== -1 ) {
+ 
+          message.channel.startTyping()
+          message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
+          message.channel.stopTyping()
+ 
+          const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+            console.log(collector2)
+            collector2.on('collect', message => {
+                if (message.content == "genie maths") {
+                    message.channel.send("c'est tout bon pour moi je t'envoi ca");
+                    message.channel.send("Annee 2019- partager par par: ")
+                    message.channel.send({file: './GenieMaths/tp3.pdf/'})
+                    message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!")
+                }
+            })
+        }
+
 
     if (!message.content.startsWith(prefix)) return;
 
