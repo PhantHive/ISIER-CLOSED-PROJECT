@@ -185,10 +185,11 @@ client.on("message", async message => {
 
     if (message.channel.id === "613749495716642818") {
         mailVerif.forEach((e) => {
-            const role = message.guild.roles.find('IPSAlien', 'MyRole');
+            const role = message.guild.roles.find('role', 'IPSAlien');
             if (!(message.member.roles.has(role))) {
                 if (message.content == e) {
                     message.reply("verifier!")
+                    guildMember.addRole(role)
                 }
             }
 
