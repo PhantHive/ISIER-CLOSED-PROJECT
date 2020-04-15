@@ -14,6 +14,9 @@ var server = require('http').createServer(app);
 let infoLVL = require("./jsonFile/level.json");
 //easter part
 let easterEgg = require("./jsonFile/easterEgg.json")
+//mailVerif
+let mailVerif = require(".jsonFile/mailsVerif.json")
+
 
 //=========
 app.get("/", (request, response) => {
@@ -180,6 +183,14 @@ client.on("message", async message => {
 
     let curCounter = easterEgg[message.author.id].counter;
 
+    if (message.channel.id === "613749495716642818") {
+        mailVerif.forEach((e) => {
+            if (message.content == e) {
+                message.reply("verifier!")
+            }
+        })        
+
+    }
 
     if (message.channel.type === "dm") {
 
