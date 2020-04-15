@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs");
-let mailVerif = require("./jsonFile/mailsVerif.json")
+
 
 module.exports = async(client, message) => {
 
@@ -164,20 +164,7 @@ module.exports = async(client, message) => {
 
     cmd.run(client, message, args);
     
-    if (message.channel.id === "613749495716642818") {
-        mailVerif.forEach((e) => {
-            if (message.member.roles.some(role => role.name === 'IPSAlien')) {
-                message.reply("Ton compte a deja ete verifier!")
-            }
-            else {
-                if (message.content == e) {
-                    message.reply("verifier!")
-                    message.member.addRole(role)
-                }  
-            }
-        })        
-
-    }
+    
 
 
 }
