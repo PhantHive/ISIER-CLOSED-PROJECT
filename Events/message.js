@@ -6,7 +6,7 @@ const fs = require("fs");
 module.exports = async(client, message) => {
 
     //=============
-
+    if(message.author.bot) return;
 
     //fonction special
     var chaine = String(message.content);
@@ -74,17 +74,21 @@ module.exports = async(client, message) => {
 
     //=================MINI-PROJET-PHYSIQUE
   
-    
+    //ph111
     var mph11 = String(message.content);
-    if (mph11.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111") !== -1 ) {
+    if (mph11.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort") !== -1 ) {
  
-      message.channel.startTyping()
-      message.reply("je t envoi ca de suite")
-      message.channel.send("Annee 2019- realise par: Zakaria Chaouki")
-      message.channel.send({file: './ph11/mph11-2019.pdf/'})
-      message.channel.stopTyping()
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("Annee 2019- realise par: Zakaria Chaouki")
+        message.channel.send({file: './ph11/mph11-2019.pdf/'})
+        message.channel.send("Annee 2017-2018- partager par: Le Voileux ")
+        message.channel.send({file: './ph11/mph11-2017.pdf/'})
+        message.channel.stopTyping()
  
     }
+
+    //ph121
  
    
     var mp = String(message.content);
@@ -100,8 +104,10 @@ module.exports = async(client, message) => {
             collector.on('collect', message => {
                 if (message.content == "ph111") {
                     message.channel.send("c'est tout bon pour moi je t'envoi ca");
-                    message.channel.send("Annee 2019- realise par: ")
+                    message.channel.send("Annee 2019-2020- partager par: Zakaria, The karma")
                     message.channel.send({file: './ph11/mph11-2019.pdf/'})
+                    message.channel.send("Annee 2017-2018- partager par: Le Voileux ")
+                    message.channel.send({file: './ph11/mph11-2017.pdf/'})
                 }
  
                 if (message.content == "ph121") {
