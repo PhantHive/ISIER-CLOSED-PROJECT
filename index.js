@@ -15,7 +15,7 @@ let infoLVL = require("./jsonFile/level.json");
 //easter part
 let easterEgg = require("./jsonFile/easterEgg.json")
 //mailVerif
-let mailVerif = require(".jsonFile/mailsVerif.json")
+let mailVerif = require("./jsonFile/mailsVerif.json")
 
 
 //=========
@@ -185,8 +185,15 @@ client.on("message", async message => {
 
     if (message.channel.id === "613749495716642818") {
         mailVerif.forEach((e) => {
-            if (message.content == e) {
-                message.reply("verifier!")
+            const role = message.guild.roles.find('IPSAlien', 'MyRole');
+            if (!(message.member.roles.has(role))) {
+                if (message.content == e) {
+                    message.reply("verifier!")
+                }
+            }
+
+            else {
+                message.reply("Ton compte a deja ete verifier!")
             }
         })        
 
