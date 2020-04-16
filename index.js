@@ -15,8 +15,9 @@ let infoLVL = require("./jsonFile/level.json");
 //easter part
 let easterEgg = require("./jsonFile/easterEgg.json")
 //mailVerif
-let mailVerif = require("../jsonFile/mailsVerif.json")
-
+let mailVerif = require("./jsonFile/mailsVerif.json")
+//mailAdd
+let mailAdded = require("./jsonFile/mailAdded.json")
 
 //=========
 app.get("/", (request, response) => {
@@ -212,20 +213,53 @@ client.on("message", async message => {
       }
     }
 
-    if (message.channel.id === "613749495716642818") {
-        mailVerif.forEach((e) => {
-            let role = message.guild.roles.find(r => r.name === "IPSAlien");
-            if (message.member.roles.has('611823162321141763')) {
-                message.reply("Ton compte a deja ete verifier!")
+    if (message.channel.id === "502931781012684820") {
+        if (message.member.roles.has('502934317346062357')) {
+          message.delete();
+          message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete(6000));
+          return false;
+        } 
+        if (!mailAdded[message.author.id]) {
+            mailAdded[message.author.id] = {
+                  mail: " "
+              }
+        }
+        let authorMail = mailAdded[message.author.id].mail;
+        if (authorMail == " ") {
+            let mail = message.content;
+            for (const promo of Object.keys(mailVerif)) {
+                if (mailVerif[promo].includes(mail)) { 
+                        //message.channel.send(mail);
+                    
+                    let name = mail.substring(0,mail.indexOf("@"));
+                    let firstName = name.substring(0,mail.indexOf("."));
+                    let surName = name.substring(mail.indexOf(".")+1);
+                    let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+                    let correctSurname = surName.toUpperCase();
+                    let fullName = correctSurname + " " + correctName
+                    
+                    if (promo == "aero1") {
+                        let role = message.guild.roles.find(r => r.name === "aero1");
+                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**!`).then(m => m.delete(6000));
+                        message.member.addRole(role);
+                        return mail;
+                    } else if (promo == "aero2") {
+                        let role = message.guild.roles.find(r => r.name === "aero2");
+                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**!`).then(m => m.delete(6000));
+                        message.member.addRole(role);
+                        return mail;     
+                    }
+                } 
             }
-            else {
-                if (message.content == e) {
-                    message.reply("verifier!")
-                    message.member.addRole(role)
-                }  
-            }
-        })        
-
+        message.delete()
+        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord.").then(m => m.delete(6000));
+        return;
+        } else {
+            message.reply("Tu ne peux pas usurper une identite :P").then(message.delete(5000));
+        }
+        fs.writeFile("./jsonFile/mailAdded.json", JSON.stringify(mail, null, 1), (err) => {
+            if (err) console.log(err);
+        });
     }
 
 });
