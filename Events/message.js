@@ -1,14 +1,33 @@
 const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs");
-
+//mailVerif
+let mailVerif = require("../jsonFile/mailsVerif.json")
+//mailAdd
+let mailAdded = require("../jsonFile/mailAdded.json")
 
 module.exports = async(client, message) => {
 
     //=============
     if(message.author.bot) return;
-
+    
+    var sponso = String(message.content);
+    const rand_answer = [
+      "Oe je me presente je m'appel IPSA bot de nice, Sponso par la promo 2024, ta capter, arouf le plus beau des rebeux, bon ok j arrete la.",
+      "Rien ne pourra nous separer!",
+      "Cause all of me loves all of you *music*",
+      "Je m'adore aussi",
+      "Je me fait trop flatter en ce moment",
+      "Oh un fan de plus!",
+      "I feel so lonely without you",
+      "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!"
+    ]
+    //rando_imgs[Math.floor(Math.random() * rando_imgs.length * 2)]
+    if (sponso.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
+      message.channel.send(rand_answer[Math.floor(Math.random() * rand_answer.length )])
+    }
     //fonction special
+  
     var chaine = String(message.content);
 
     if (chaine.indexOf("dropbox") !== -1) {
@@ -80,10 +99,12 @@ module.exports = async(client, message) => {
  
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
-        message.channel.send("Annee 2019- realise par: Zakaria Chaouki")
-        message.channel.send({file: './ph11/mph11-2019.pdf/'})
-        message.channel.send("Annee 2017-2018- partager par: Le Voileux ")
-        message.channel.send({file: './ph11/mph11-2017.pdf/'})
+        message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")
+        .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
+        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))
+        .then(() => message.channel.send({file: './ph11/mph11-2017Elena.pdf/'}))
+        .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))
+        .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
         message.channel.stopTyping()
  
     }
@@ -91,29 +112,51 @@ module.exports = async(client, message) => {
     //ph121
  
    
+    //mini projet en general
     var mp = String(message.content);
    
         if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
  
           message.channel.startTyping()
-          message.reply("Merci de bien preciser quelle matiere/ module (ph111, ph121 etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
+          message.reply("Merci de bien (re)preciser quelle matiere/ module (ph111, ph121 etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
           message.channel.stopTyping()
  
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
             console.log(collector)
             collector.on('collect', message => {
                 if (message.content == "ph111") {
-                    message.channel.send("c'est tout bon pour moi je t'envoi ca");
-                    message.channel.send("Annee 2019-2020- partager par: Zakaria, The karma")
-                    message.channel.send({file: './ph11/mph11-2019.pdf/'})
-                    message.channel.send("Annee 2017-2018- partager par: Le Voileux ")
-                    message.channel.send({file: './ph11/mph11-2017.pdf/'})
+                    message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete(4000));
+                    message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")
+                    .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
+                    .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))
+                    .then(() => message.channel.send({file: './ph11/mph11-2017Elena.pdf/'}))
+                    .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))
+                    .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
+                    
+                    const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+                    eastercollector.on('collect', message => {
+                      if(message.content == "merci") {
+                        message.reply("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +500xp (Easteregg pas encore active)").then(m => m.delete(3000))
+                      }
+                    })
                 }
  
                 if (message.content == "ph121") {
-                 message.channel.send("c'est tout bon pour moi je t'envoi ca");
-                 message.channel.send("Annee 2019- partager par: Baptiste Gautier")
-                 message.channel.send({file: './ph12/mpPh121.pdf/'})
+                    message.channel.send("Il semblerait qu'il y ai beaucoup de mini projet dans le deuxieme module de physique, merci de me preciser le nom du mini projet: comete, diffraction, pendule ou calorimetrie?")
+                    const underCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
+                    console.log(underCollector)
+                    underCollector.on('collect', message => {
+                        if (message.content == ("comete" || "halley" || "comete halley") {
+                            message.channel.send("c'est tout bon pour moi je t'envoi ca");
+                            message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```")
+                            .then(() => message.channel.send({file: './ph12/comete2018-Baptiste.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena => ```"))
+                            .then(() => message.channel.send({file: './ph12/comete2018-Elena.pdf/'}))
+                        }   
+
+
+                    })
+                 
                 }
             })
         }
@@ -134,7 +177,7 @@ module.exports = async(client, message) => {
 
     var tp = String(message.content);
    
-        if (mp.indexOf("tp") !== -1 ) {
+        if (mp.indexOf("qui a fait le tp") !== -1 ) {
  
           message.channel.startTyping()
           message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
@@ -151,7 +194,68 @@ module.exports = async(client, message) => {
                 }
             })
         }
+    
 
+
+    //========================================VERIF MAIL
+    if (!mailAdded[message.author.id]) {
+        mailAdded[message.author.id] = {
+            mail: ""
+        }
+    }
+    let mailUser = mailAdded[message.author.id].mail;
+    if (message.channel.id === "613734380719964209") {
+        let mail = message.content;
+        if (mailUser == "") {
+            
+            for (const promo of Object.keys(mailVerif)) {
+              if (mailVerif[promo].includes(mail)) { 
+                      //message.channel.send(mail);
+
+                  let name = mail.substring(0,mail.indexOf("@"));
+                  let firstName = name.substring(0,mail.indexOf("."));
+                  let surName = name.substring(mail.indexOf(".")+1);
+                  let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+                  let correctSurname = surName.toUpperCase();
+                  let fullName = correctSurname + " " + correctName
+
+                  if (promo == "aero1") {
+                      let role = message.guild.roles.find(r => r.name === "");
+                      let roleDel = message.guild.roles.find(r => r.name === "Incruste");
+                      let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
+                      message.member.addRole(role);
+                      message.member.removeRole(roleDel)
+                      mailAdded[message.author.id].mail = mail
+                      return mail;
+                  } else if (promo == "aero2") {
+                      let role = message.guild.roles.find(r => r.name === "Aéro 2");
+                      let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
+                      message.member.addRole(role);
+                      mailAdded[message.author.id].mail = mail
+                      return mail;     
+                  }
+
+              } else {
+                message.delete()
+                message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord.").then(m => m.delete(6000));
+                return false;
+              }
+        
+            }
+            
+        }
+        else if (mailUser == mail) {
+            message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete(6000));
+            return false;
+        } else {
+            message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete(6000));
+            return false;
+        }
+        fs.writeFile("./jsonFile/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
+            if (err) console.log(err);
+        });
+
+    }
 
     if (!message.content.startsWith(prefix)) return;
 
