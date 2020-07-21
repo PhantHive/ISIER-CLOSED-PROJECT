@@ -23,7 +23,7 @@ module.exports.run = async ( client, message, args) => {
                 const embedChoice = new Discord.RichEmbed()
                     .setTitle("PROGRAMME BINAIRE")
                     .setColor("ORANGE")
-                    .addField("Choisissez votre niveau de difficulte:")
+                    .addField("Choisissez votre niveau de difficulte:", false)
                     .setFooter("Reagissez avec l'une des emojis ci-dessous");
                 message.channel.send(embedChoice).then(async message => {
 
