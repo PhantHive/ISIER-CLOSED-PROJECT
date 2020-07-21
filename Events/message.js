@@ -93,23 +93,35 @@ module.exports = async(client, message) => {
 
     //=================MINI-PROJET-PHYSIQUE
   
-    //ph111
+    //ph111 = PROJET RESSORT
     var mph11 = String(message.content);
     if (mph11.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort") !== -1 ) {
  
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
-        message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")
+        message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
         .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))
+        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                     //2
         .then(() => message.channel.send({file: './ph11/mph11-2017Elena.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))
+        .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))                   //3
         .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
         message.channel.stopTyping()
  
     }
 
-    //ph121
+    //ph121 = pendule
+
+    var mph12 = String(message.content);
+    if (mph12.indexOf("mp ph121" || "miniprojet ph121" || "mini projet ph121" || "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
+ 
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
+        .then(() => message.channel.send({file: './ph12/pendule/Pendule2018-Elena.pdf/'}))
+        .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                     //2
+        .then(() => message.channel.send({file: './ph12/pendule/Pendule2012-Thomas.pdf/'}))
+        message.channel.stopTyping()
+    }
  
    
     //mini projet en general
@@ -118,7 +130,7 @@ module.exports = async(client, message) => {
         if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
  
           message.channel.startTyping()
-          message.reply("Merci de bien (re)preciser quelle matiere/ module (ph111, ph121 etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
+          message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121 etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
           message.channel.stopTyping()
  
           const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
@@ -126,11 +138,11 @@ module.exports = async(client, message) => {
             collector.on('collect', message => {
                 if (message.content == "ph111") {
                     message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete(4000));
-                    message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")
+                    message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                   //1
                     .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
-                    .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))
+                    .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                       //2
                     .then(() => message.channel.send({file: './ph11/mph11-2018Elena.pdf/'}))
-                    .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))
+                    .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))                     //3
                     .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
                     
                     const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 20000 });
@@ -146,13 +158,27 @@ module.exports = async(client, message) => {
                     const underCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
                     console.log(underCollector)
                     underCollector.on('collect', message => {
+                        //COMETE PROJET
                         if (message.content == ("comete" || "halley" || "comete halley")) {
                             message.channel.send("c'est tout bon pour moi je t'envoi ca");
-                            message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```")
-                            .then(() => message.channel.send({file: './ph12/comete2018-Baptiste.pdf/'}))
-                            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena => ```"))
-                            .then(() => message.channel.send({file: './ph12/comete2018-Elena.pdf/'}))
+                            message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane => ```")                                  //1
+                            .then(() => message.channel.send({file: './ph12/comete/comete2020-Auriane_Zakaria.pdf'}))                   
+                            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```"))                    //2
+                            .then(() => message.channel.send({file: './ph12/comete/comete2018-Baptiste.pdf/'}))                         
+                            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena => ```"))                       //3
+                            .then(() => message.channel.send({file: './ph12/comete/comete2018-Elena.pdf/'}))
                         }   
+                        
+                        //PENDULE PROJET
+                        if (message.content == ("pendule")) {
+                            message.channel.startTyping()
+                            message.reply("c'est tout bon pour moi je t'envoi ca")
+                            message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
+                            .then(() => message.channel.send({file: './ph12/pendule/Pendule2018-Elena.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                   //2
+                            .then(() => message.channel.send({file: './ph12/pendule/Pendule2012-Thomas.pdf/'}))
+                            message.channel.stopTyping()
+                        }
 
 
                     })
@@ -167,8 +193,8 @@ module.exports = async(client, message) => {
     if (tp3GM.indexOf("genie maths tp3 || genie math tp3 || tp3 newton || methode de newton || tp3 methode de newton") !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
-        message.channel.send("Annee 2019- partager par: Baptiste Gautier ")
-        message.channel.send({file: './GenieMaths/tp3.pdf/'})
+        message.channel.send("Annee 2019- partager par: Baptiste Gautier => ")
+        message.channel.send({file: './GenieMaths/tp3.pdf/'})                                       //1
         message.channel.stopTyping()
     }
 
