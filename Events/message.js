@@ -175,7 +175,7 @@ module.exports = async(client, message) => {
                             message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
                             .then(() => message.channel.send({file: './ph12/pendule/Pendule2018-Elena.pdf/'}))
                             .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                   //2
-                            //.then(() => message.channel.send({file: './ph12/pendule/Pendule2012-Thomas.pdf/'}))
+                            .then(() => message.channel.send({file: './ph12/pendule/Pendule2012-Thomas.pdf/'}))
                             message.channel.stopTyping()
                         }
 
