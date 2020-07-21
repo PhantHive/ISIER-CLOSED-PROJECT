@@ -35,8 +35,8 @@ module.exports.run = async ( client, message, args) => {
                     message.awaitReactions(secondFilter, {
                         max: 1,
                         time: 15000
-                    }).then(collected2 => {
-                        const reaction2 = collected2.first();
+                    }).then(collected => {
+                        const reaction2 = collected.first();
                         //collector
                         
                         switch (reaction2.emoji.name) {
