@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 
     const filter = (reaction) => reaction.emoji.name === '👍' || reaction.emoji.name === '👎'
     const results = await sondageMessage.awaitReactions(filter, {
-        time: 10000
+        time: 86400000
     });
 
     let resultsEmbed = new Discord.RichEmbed()

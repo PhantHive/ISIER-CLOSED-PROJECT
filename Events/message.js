@@ -113,7 +113,7 @@ module.exports = async(client, message) => {
  
    
     //mini projet en general
-    var mp = String(message.content);
+        var mp = String(message.content);
    
         if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
  
@@ -129,11 +129,11 @@ module.exports = async(client, message) => {
                     message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")
                     .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
                     .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))
-                    .then(() => message.channel.send({file: './ph11/mph11-2017Elena.pdf/'}))
+                    .then(() => message.channel.send({file: './ph11/mph11-2018Elena.pdf/'}))
                     .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))
                     .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
                     
-                    const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+                    const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 20000 });
                     eastercollector.on('collect', message => {
                       if(message.content == "merci") {
                         message.reply("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +500xp (Easteregg pas encore active)").then(m => m.delete(3000))
@@ -146,7 +146,7 @@ module.exports = async(client, message) => {
                     const underCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
                     console.log(underCollector)
                     underCollector.on('collect', message => {
-                        if (message.content == ("comete" || "halley" || "comete halley") {
+                        if (message.content == ("comete" || "halley" || "comete halley")) {
                             message.channel.send("c'est tout bon pour moi je t'envoi ca");
                             message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```")
                             .then(() => message.channel.send({file: './ph12/comete2018-Baptiste.pdf/'}))
