@@ -14,7 +14,7 @@ module.exports.run = async ( client, message, args) => {
     const Filter = (reaction, user) => (reaction.emoji.name === '🅱' || reaction.emoji.name === '❎') && message.author.id === user.id; //filter
     messageEmbed.awaitReactions(Filter, {
         max: 1,
-        time: 10000
+        time: 15000
     }).then(collected => {
         const reaction = collected.first();
 
@@ -33,12 +33,12 @@ module.exports.run = async ( client, message, args) => {
 
                     const secondFilter = (reaction, user) => (reaction.emoji.name === '🙂' || reaction.emoji.name === '😖' || reaction.emoji.name === '😤') && message.author.id === user.id;
                     message.awaitReactions(secondFilter, {
-                        time: 10000,
-                        max: 1
+                        max: 1,
+                        time: 15000
                     }).then(collected2 => {
                         const reaction2 = collected2.first();
                         //collector
-
+                        
                         switch (reaction2.emoji.name) {
                             case '🙂':
                                 message.channel.send("verif");
