@@ -113,7 +113,6 @@ module.exports = async(client, message) => {
 
     var mph12 = String(message.content);
     if (mph12.indexOf("mp ph121" || "miniprojet ph121" || "mini projet ph121" || "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
- 
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -170,7 +169,7 @@ module.exports = async(client, message) => {
                         }   
                         
                         //PENDULE PROJET
-                        if (message.content == ("pendule")) {
+                        else if (message.content == ("pendule")) {
                             message.channel.startTyping()
                             message.reply("c'est tout bon pour moi je t'envoi ca")
                             message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
