@@ -2,33 +2,6 @@
 //const GOOGLE_API_KEY = 'AIzaSyDse8N2YEPG8v53iSf1klZ95S16tLpGY3Y';
 //const Youtube = require('simple-youtube-api');
 //const youtube = new Youtube(GOOGLE_API_KEY);
-
-const http = require('http');
-//const cheerio = require('cheerio');
-var express = require('express');
-var app = express();
-var server = require('http').createServer(app);
-
-
-//XP PART
-let infoLVL = require("./jsonFile/level.json");
-//easter part
-let easterEgg = require("./jsonFile/easterEgg.json")
-
-
-//=========
-app.get("/", (request, response) => {
-    console.log(Date.now() + " Ping received");
-    response.sendStatus(200);
-});
-const listener = server.listen(process.env.PORT, function() {
-    console.log('Your app is listening on port ' + listener.address().port);
-});
-setInterval(() => {
-    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
-
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
@@ -37,6 +10,12 @@ const TOKEN = process.env.token;
 
 client.login(TOKEN);
 client.commands = new Discord.Collection();
+
+//XP PART
+let infoLVL = require("./jsonFile/level.json");
+//easter part
+let easterEgg = require("./jsonFile/easterEgg.json")
+
 
 fs.readdir("./Commands/", (err, f) => {
     if (err) console.log(err);
