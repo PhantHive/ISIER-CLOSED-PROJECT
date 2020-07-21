@@ -112,13 +112,13 @@ module.exports = async(client, message) => {
     //ph121 = pendule
 
     var mph12 = String(message.content);
-    if (mph12.indexOf("mp ph121" || "miniprojet ph121" || "mini projet ph121" || "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
+    if (mph12.indexOf( "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
-        .then(() => message.channel.send({file: './ph12/pendule/Pendule2018-Elena.pdf/'}))
+        .then(() => message.channel.send({file: './ph12/pendule/pendule2018-Elena.pdf/'}))
         .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                     //2
-        .then(() => message.channel.send({file: './ph12/pendule/Pendule2012-Thomas.pdf/'}))
+        .then(() => message.channel.send({file: './ph12/pendule/pendule2012-Thomas.pdf/'}))
         message.channel.stopTyping()
     }
  
@@ -152,7 +152,7 @@ module.exports = async(client, message) => {
                     })
                 }
  
-                if (message.content == "ph121") {
+                if (message.content == ("ph121" || "mp ph121" || "miniprojet ph121" || "mini projet ph121")) {
                     message.channel.send("Il semblerait qu'il y ai beaucoup de mini projet dans le deuxieme module de physique, merci de me preciser le nom du mini projet: comete, diffraction, pendule ou calorimetrie?")
                     const underCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
                     console.log(underCollector)
@@ -173,9 +173,9 @@ module.exports = async(client, message) => {
                             message.channel.startTyping()
                             message.reply("c'est tout bon pour moi je t'envoi ca")
                             message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
-                            .then(() => message.channel.send({file: './ph12/pendule/Pendule2018-Elena.pdf/'}))
+                            .then(() => message.channel.send({file: './ph12/pendule/pendule2018-Elena.pdf/'}))
                             .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                   //2
-                            .then(() => message.channel.send({file: './ph12/pendule/Pendule2012-Thomas.pdf/'}))
+                            .then(() => message.channel.send({file: './ph12/pendule/pendule2012-Thomas.pdf/'}))
                             message.channel.stopTyping()
                         }
 
