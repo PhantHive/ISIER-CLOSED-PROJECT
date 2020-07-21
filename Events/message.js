@@ -169,7 +169,7 @@ module.exports = async(client, message) => {
                         }   
                         
                         //PENDULE PROJET
-                        else if (message.content == ("pendule")) {
+                        else if (message.content == "pendule") {
                             message.channel.startTyping()
                             message.reply("c'est tout bon pour moi je t'envoi ca")
                             message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
