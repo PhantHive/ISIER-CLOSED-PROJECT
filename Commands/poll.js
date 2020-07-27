@@ -26,9 +26,26 @@ module.exports.run = async ( client, message, args) => {
                     .setFooter("Reagissez avec l'une des emojis ci-dessous");
                 message.channel.send(embedChoice).then(msg =>
                     msg.react('🙂').then(r => {
-                        msg.react('😖');
+                        msg.react('😖')
                         msg.react('😤');
                         //FILTRES
+                        const easyFilter = (reaction, user) => reaction.emoji.name == '🙂' && user.id === message.author.id
+                        const mediumFilter = (reaction, user) => reaction.emoji.name == '😖' && user.id === message.author.id
+                        const hardFilter = (reaction, user) => reaction.emoji.name == '😤' && user.id === message.author.id
+
+                        const easy = msg.createReactionCollector(easyFilter, {time: 15000});
+                        const medium = msg.createReactionCollector(mediumFilter, {time: 15000});
+                        const hard = msg.createReactionCollector(hardFilter, {time: 15000});
+
+                        easy.on('collect', r => {
+                            message.channel.send("test01")
+                        })
+
+                        medium.on('collect', r => {
+                            message.channel.send("test02")
+
+
+                        })
                     })
 
                 )
