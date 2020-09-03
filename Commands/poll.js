@@ -54,13 +54,17 @@ module.exports.run = async ( client, message, args) => {
 
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                             .then( () => {
-                                var reponse = String(message.content)
-                                if (reponse === res && message.author.id) {
-                                    message.reply("BRAVO!")
-                                }
-                                else {
-                                    message.reply(`Dommage la reponse était: ${res}`)
-                                }
+
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                    {
+                                        if (collected.first().content == res) {
+                                            message.reply("BRAVO!")
+                                        }
+                                        else {
+                                            message.reply(`Dommage la reponse était: ${res}`)
+                                        }
+                                    });
+                               
                             
                             }, {time: 15000});
                         
