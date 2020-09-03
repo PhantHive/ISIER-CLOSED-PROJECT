@@ -122,6 +122,29 @@ module.exports = async(client, message) => {
         message.channel.stopTyping()
     }
  
+    //ph121 = optique
+
+    var mph12 = String(message.content);
+    if (mph12.indexOf( "projet optique" || "miniprojet optique" || "mp optique" || "tp optique") !== -1 ) {
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
+        .then(() => message.channel.send({file: './ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
+        .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
+        message.channel.stopTyping()
+    }
+
+    //ph121 = calorimetrie
+
+    var mph12 = String(message.content);
+    if (mph12.indexOf( "projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie") !== -1 ) {
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
+        .then(() => message.channel.send({file: './ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
+        .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
+        message.channel.stopTyping()
+    }
    
     //mini projet en general
         var mp = String(message.content);
@@ -176,6 +199,25 @@ module.exports = async(client, message) => {
                             .then(() => message.channel.send({file: './ph12/pendule/pendule2018-Elena.pdf/'}))
                             .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                   //2
                             .then(() => message.channel.send({file: './ph12/pendule/pendule2012-Thomas.pdf/'}))
+                            message.channel.stopTyping()
+                        }
+
+                        //CALORIMETRIE PROJET
+                        else if (mph12.indexOf( "projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie") !== -1 ) {
+                            message.channel.startTyping()
+                            message.reply("je t envoi ca de suite")
+                            message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
+                            .then(() => message.channel.send({file: './ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
+                            .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
+                            message.channel.stopTyping()
+                        }
+
+                        else if (mph12.indexOf( "projet optique" || "miniprojet optique" || "mp optique" || "tp optique") !== -1 ) {
+                            message.channel.startTyping()
+                            message.reply("je t envoi ca de suite")
+                            message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
+                            .then(() => message.channel.send({file: './ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
+                            .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
                             message.channel.stopTyping()
                         }
 
@@ -281,6 +323,10 @@ module.exports = async(client, message) => {
         });
 
     }
+
+    if (message.content === "?" && message.channel.id === "735127110342934568") {
+        message.reply("<@239455598343618580> peux peut-être aider !")
+    };
 
     if (!message.content.startsWith(prefix)) return;
 
