@@ -3,17 +3,20 @@ const Discord = require('discord.js')
 
 module.exports.run = async(client, message, args) => {
     
-    let pyInfo = "i!fonction                i!lib\n" +
-                "i!ifelse                i!while\n" +
-                "i!for                i!listes\n" +
-                "i!dic                i!tk"
 
     const embed = new Discord.RichEmbed()
         .setColor('#DB13C2')
-        .setDescription(pyInfo)
+        .addField("fonctions", "i!fonction", true)
+        .addField("if - else", "i!ifelse", true)
+        .addField("boucle while", "i!while", true)
+        .addField("boucle for", "i!for", true)
+        .addBlankField()
+        .addField("[listes]", "i!listes", true)
+        .addField("[dictionnaires]", "i!dic", true)
+        .addField("<tkinter>", "i!tk", true)
+
         .setFooter("Aide python, commandes.")
-        .setImage('https://imgur.com/oamlctq.png')
-        .setThumbnail('')
+        .setThumbnail('https://imgur.com/oamlctq.png')
         .setTimestamp();
     message.channel.send(embed);
 
