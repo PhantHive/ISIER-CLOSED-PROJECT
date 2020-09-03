@@ -38,7 +38,22 @@ module.exports.run = async ( client, message, args) => {
                         const hard = msg.createReactionCollector(hardFilter, {time: 15000});
 
                         easy.on('collect', r => {
-                            message.channel.send("test01")
+                            a = Math.floor((Math.random()* 1) + 0);
+                            b = Math.floor((Math.random()* 1) + 0);
+                            c = Math.floor((Math.random()* 1) + 0);
+
+                            aa = Math.floor((Math.random()* 1) + 0);
+                            bb = Math.floor((Math.random()* 1) + 0);
+                            cc = Math.floor((Math.random()* 1) + 0);
+
+                            firstNumb = a.toString() + b.toString() + c.toString()
+                            secNumb = aa.toString() + bb.toString() + cc.toString()
+                            
+                
+                            res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                        
                         })
 
                         medium.on('collect', r => {
