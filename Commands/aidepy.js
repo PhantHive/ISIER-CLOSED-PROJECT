@@ -8,7 +8,7 @@ module.exports.run = async(client, message, args) => {
                 "i!for                i!listes\n" +
                 "i!dic                i!tk"
 
-    const embed = Discord.RichEmbed()
+    const embed = new Discord.RichEmbed()
         .setColor('#DB13C2')
         .setDescription(pyInfo)
         .setFooter("Aide python, commandes.")
