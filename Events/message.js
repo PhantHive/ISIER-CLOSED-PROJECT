@@ -324,11 +324,14 @@ module.exports = async(client, message) => {
 
     }
 
+    //AIDE INFORMATIQUE PING ZAKARIA
     var aideInformatique = String(message.content);
-    if (aideInformatique.indexOf("?") != -1 && message.channel.id === "735127110342934568") {
+    if (aideInformatique.indexOf("?" || "aide") != -1 && message.channel.id === "611832091604287518") {
         message.reply("<@239455598343618580> peux peut-être aider !")
     };
 
+    //=============================
+    
     if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);

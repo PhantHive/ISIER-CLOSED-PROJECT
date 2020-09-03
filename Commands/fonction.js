@@ -10,7 +10,7 @@ module.exports.run = async(client, message, args) => {
                         "   #ecriture de la fonction\n\n" +
                         "Deux exemples: \n\n")
                         
-                        .then( () => message.channel.send({file: "./python/Hello.jpg/"}))
+                        .then( () => message.channel.send({file: "./python/pythonFonction.jpg/"}))
                         .then( () => message.channel.send("Exemple 2: \n"))
                         .then( () => message.channel.send({file: "./python/HW.jpg/"}))
 
