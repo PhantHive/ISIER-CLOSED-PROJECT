@@ -324,7 +324,8 @@ module.exports = async(client, message) => {
 
     }
 
-    if (message.content === "?" && message.channel.id === "735127110342934568") {
+    var aideInformatique = String(message.content);
+    if (aideInformatique.indexOf("?") != -1 && message.channel.id === "735127110342934568") {
         message.reply("<@239455598343618580> peux peut-être aider !")
     };
 
