@@ -8,6 +8,7 @@ module.exports.run = async(client, message, args) => {
         .setColor('#DB13C2')
         .addField("fonctions", "i!fonction", true)
         .addField("if - else", "i!ifelse", true)
+        .addBlankField()
         .addField("boucle while", "i!while", true)
         .addField("boucle for", "i!for", true)
         .addBlankField()
