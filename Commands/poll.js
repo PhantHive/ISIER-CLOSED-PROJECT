@@ -62,7 +62,7 @@ module.exports.run = async ( client, message, args) => {
                                     message.reply(`Dommage la reponse était: ${res}`)
                                 }
                             
-                            });
+                            }, {time: 15000});
                         
                         })
 
