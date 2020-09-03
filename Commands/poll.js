@@ -53,6 +53,16 @@ module.exports.run = async ( client, message, args) => {
                             res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
 
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                            .then( () => {
+                                var reponse = String(message.content)
+                                if (reponse === res && message.author.id) {
+                                    message.reply("BRAVO!")
+                                }
+                                else {
+                                    message.reply(`Dommage la reponse était: ${res}`)
+                                }
+                            
+                            });
                         
                         })
 
