@@ -58,7 +58,37 @@ module.exports.run = async ( client, message, args) => {
                                 message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
-                                            message.reply("BRAVO!")
+                                            message.reply("BRAVO!, Tu re-veux une addition?").then( () => {
+                                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                    if (collected.first().content == "oui") {
+                                                        a = Math.floor((Math.random()* 2) + 0);
+                                                        b = Math.floor((Math.random()* 2) + 0);
+                                                        c = Math.floor((Math.random()* 2) + 0);
+
+                                                        aa = Math.floor((Math.random()* 2) + 0);
+                                                        bb = Math.floor((Math.random()* 2) + 0);
+                                                        cc = Math.floor((Math.random()* 2) + 0);
+
+                                                        firstNumb = a.toString() + b.toString() + c.toString()
+                                                        secNumb = aa.toString() + bb.toString() + cc.toString()
+                                                        
+                                            
+                                                        res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                                                        message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                        .then ( () => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                                if (collected.first().content == res) {
+                                                                    message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                }
+                                                                else {
+                                                                    message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                }
+                                                            })
+                                                        })
+                                                    }
+                                                })
+                                            })
                                         }
                                         else {
                                             message.reply(`Dommage la reponse était: ${res}`)
@@ -94,7 +124,39 @@ module.exports.run = async ( client, message, args) => {
                                 message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
-                                            message.reply("BRAVO!")
+                                            message.reply("BRAVO!, Tu re-veux une addition?").then( () => {
+                                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                    if (collected.first().content == "oui") {
+                                                        a = Math.floor((Math.random()* 2) + 0);
+                                                        b = Math.floor((Math.random()* 2) + 0);
+                                                        c = Math.floor((Math.random()* 2) + 0);
+                                                        d = Math.floor((Math.random()* 2) + 0);
+
+                                                        aa = Math.floor((Math.random()* 2) + 0);
+                                                        bb = Math.floor((Math.random()* 2) + 0);
+                                                        cc = Math.floor((Math.random()* 2) + 0);
+                                                        dd = Math.floor((Math.random()* 2) + 0);
+
+                                                        firstNumb = a.toString() + b.toString() + c.toString() + d.toString()
+                                                        secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString()
+                                                        
+                                            
+                                                        res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                                                        message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                        .then ( () => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                                if (collected.first().content == res) {
+                                                                    message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                }
+                                                                else {
+                                                                    message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                }
+                                                            })
+                                                        })
+                                                    }
+                                                })
+                                            })
                                         }
                                         else {
                                             message.reply(`Dommage la reponse était: ${res}`)
@@ -124,7 +186,7 @@ module.exports.run = async ( client, message, args) => {
                             secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
                             
                 
-                            res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+                            res = (parseInt(firstNumb, 2) - parseInt(secNumb, 2)).toString(2); //solution
 
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                             .then( () => {
@@ -132,7 +194,41 @@ module.exports.run = async ( client, message, args) => {
                                 message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
-                                            message.reply("BRAVO!")
+                                            message.reply("BRAVO!, Tu re-veux une addition?").then( () => {
+                                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                    if (collected.first().content == "oui") {
+                                                        a = Math.floor((Math.random()* 2) + 0);
+                                                        b = Math.floor((Math.random()* 2) + 0);
+                                                        c = Math.floor((Math.random()* 2) + 0);
+                                                        d = Math.floor((Math.random()* 2) + 0);
+                                                        e = Math.floor((Math.random()* 2) + 0);
+
+                                                        aa = Math.floor((Math.random()* 2) + 0);
+                                                        bb = Math.floor((Math.random()* 2) + 0);
+                                                        cc = Math.floor((Math.random()* 2) + 0);
+                                                        dd = Math.floor((Math.random()* 2) + 0);
+                                                        ee = Math.floor((Math.random()* 2) + 0);
+
+                                                        firstNumb = a.toString() + b.toString() + c.toString() + d.toString() + e.toString()
+                                                        secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
+                                                        
+                                            
+                                                        res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                                                        message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                        .then ( () => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                                if (collected.first().content == res) {
+                                                                    message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                }
+                                                                else {
+                                                                    message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                }
+                                                            })
+                                                        })
+                                                    }
+                                                })
+                                            })
                                         }
                                         else {
                                             message.reply(`Dommage la reponse était: ${res}`)
