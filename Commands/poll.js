@@ -279,8 +279,8 @@ module.exports.run = async ( client, message, args) => {
                             bb = hexadecimal[Math.floor(Math.random()*hexadecimal.length)]
                             cc = hexadecimal[Math.floor(Math.random()*hexadecimal.length)]
 
-                            firstNumb = "0x" + a.toString() + b.toString() + c.toString()
-                            secNumb = "0x" + aa.toString() + bb.toString() + cc.toString()
+                            firstNumb =  a.toString() + b.toString() + c.toString()
+                            secNumb =  aa.toString() + bb.toString() + cc.toString()
                             
                 
                             res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
@@ -303,8 +303,152 @@ module.exports.run = async ( client, message, args) => {
                                                         bb = hexadecimal[Math.floor(Math.random()*hexadecimal.length)]
                                                         cc = hexadecimal[Math.floor(Math.random()*hexadecimal.length)]
                             
-                                                        firstNumb = "0x" + a.toString() + b.toString() + c.toString()
-                                                        secNumb = "0x" + aa.toString() + bb.toString() + cc.toString()
+                                                        firstNumb = a.toString() + b.toString() + c.toString()
+                                                        secNumb =  aa.toString() + bb.toString() + cc.toString()
+                                                        
+                                            
+                                                        res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                                                        message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                        .then ( () => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                                if (collected.first().content == res) {
+                                                                    message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                }
+                                                                else {
+                                                                    message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                }
+                                                            })
+                                                        })
+                                                    }
+                                                })
+                                            })
+                                        }
+                                        else {
+                                            message.reply(`Dommage la reponse était: ${res}`)
+                                        }
+                                    });
+                               
+                            
+                            });
+                        
+                        })
+
+                        medium.on('collect', r => {
+
+                            var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                            a = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            b = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            c = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            d = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+
+                            aa = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            bb = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            cc = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            dd = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+
+                            firstNumb =  a.toString() + b.toString() + c.toString() + d.toString()
+                            secNumb =  aa.toString() + bb.toString() + cc.toString() + dd.toString()
+                            
+                
+                            res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                            .then( () => {
+
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                    {
+                                        if (collected.first().content == res) {
+                                            message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then( () => {
+                                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                    if (collected.first().content == "oui") {
+                                                        var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                                                        a = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        b = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        c = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        d = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            
+                                                        aa = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        bb = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        cc = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        dd = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            
+                                                        firstNumb = a.toString() + b.toString() + c.toString() + d.toString()
+                                                        secNumb =  aa.toString() + bb.toString() + cc.toString() + dd.toString()
+                                                        
+                                            
+                                                        res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                                                        message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                        .then ( () => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                                if (collected.first().content == res) {
+                                                                    message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                }
+                                                                else {
+                                                                    message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                }
+                                                            })
+                                                        })
+                                                    }
+                                                })
+                                            })
+                                        }
+                                        else {
+                                            message.reply(`Dommage la reponse était: ${res}`)
+                                        }
+                                    });
+                               
+                            
+                            });
+                        
+                        })
+
+                        hard.on('collect', r => {
+
+                            var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                            a = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            b = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            c = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            d = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            e = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+
+                            aa = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            bb = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            cc = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            dd = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            ee = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+
+                            firstNumb =  a.toString() + b.toString() + c.toString() + d.toString() + e.toString()
+                            secNumb =  aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
+                            
+                
+                            res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                            .then( () => {
+
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                    {
+                                        if (collected.first().content == res) {
+                                            message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then( () => {
+                                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                    if (collected.first().content == "oui") {
+                                                        var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                                                        a = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        b = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        c = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        d = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        e = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            
+                                                        aa = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        bb = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        cc = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        dd = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                                                        ee = hexadecimal[Math.floor(Math.random()*hexadecimal.length)];
+                            
+                                                        firstNumb = a.toString() + b.toString() + c.toString() + d.toString() + e.toString()
+                                                        secNumb =  aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
                                                         
                                             
                                                         res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
