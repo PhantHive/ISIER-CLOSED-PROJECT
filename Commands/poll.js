@@ -38,13 +38,13 @@ module.exports.run = async ( client, message, args) => {
                         const hard = msg.createReactionCollector(hardFilter, {time: 15000});
 
                         easy.on('collect', r => {
-                            a = Math.floor((Math.random()* 10) + 0);
-                            b = Math.floor((Math.random()* 10) + 0);
-                            c = Math.floor((Math.random()* 10) + 0);
+                            a = Math.floor((Math.random()* 2) + 0);
+                            b = Math.floor((Math.random()* 2) + 0);
+                            c = Math.floor((Math.random()* 2) + 0);
 
-                            aa = Math.floor((Math.random()* 10) + 0);
-                            bb = Math.floor((Math.random()* 10) + 0);
-                            cc = Math.floor((Math.random()* 10) + 0);
+                            aa = Math.floor((Math.random()* 2) + 0);
+                            bb = Math.floor((Math.random()* 2) + 0);
+                            cc = Math.floor((Math.random()* 2) + 0);
 
                             firstNumb = a.toString() + b.toString() + c.toString()
                             secNumb = aa.toString() + bb.toString() + cc.toString()
