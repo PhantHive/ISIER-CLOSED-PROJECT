@@ -12,7 +12,7 @@ module.exports.run = async ( client, message, args) => {
             msg.react('❎');
             //FILTRES
             const binaryFilter = (reaction, user) => reaction.emoji.name === '🅱' && user.id === message.author.id;
-            const hexaFilter = (reaction, user) => reaction.emoji.name === '' && user.id === message.author.id;
+            const hexaFilter = (reaction, user) => reaction.emoji.name === '❎' && user.id === message.author.id;
             //CREATION DES COLLECTEUR
             const binary = msg.createReactionCollector(binaryFilter,{time: 15000});
             const hexa = msg.createReactionCollector(hexaFilter,{time: 15000});
