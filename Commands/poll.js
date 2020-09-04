@@ -55,7 +55,7 @@ module.exports.run = async ( client, message, args) => {
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                             .then( () => {
 
-                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
                                             message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then( () => {
@@ -77,7 +77,7 @@ module.exports.run = async ( client, message, args) => {
 
                                                         message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                                                         .then ( () => {
-                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
                                                                 if (collected.first().content == res) {
                                                                     message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
                                                                 }
@@ -121,7 +121,7 @@ module.exports.run = async ( client, message, args) => {
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                             .then( () => {
 
-                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
                                             message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then( () => {
@@ -145,7 +145,7 @@ module.exports.run = async ( client, message, args) => {
 
                                                         message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                                                         .then ( () => {
-                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
                                                                 if (collected.first().content == res) {
                                                                     message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
                                                                 }
@@ -191,7 +191,7 @@ module.exports.run = async ( client, message, args) => {
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                             .then( () => {
 
-                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
                                             message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then( () => {
@@ -217,7 +217,7 @@ module.exports.run = async ( client, message, args) => {
 
                                                         message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                                                         .then ( () => {
-                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
                                                                 if (collected.first().content == res) {
                                                                     message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
                                                                 }
@@ -288,7 +288,7 @@ module.exports.run = async ( client, message, args) => {
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                             .then( () => {
 
-                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
                                             message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then( () => {
@@ -311,7 +311,7 @@ module.exports.run = async ( client, message, args) => {
 
                                                         message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                                                         .then ( () => {
-                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
                                                                 if (collected.first().content == res) {
                                                                     message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
                                                                 }
@@ -356,7 +356,7 @@ module.exports.run = async ( client, message, args) => {
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                             .then( () => {
 
-                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
                                             message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then( () => {
@@ -381,7 +381,7 @@ module.exports.run = async ( client, message, args) => {
 
                                                         message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                                                         .then ( () => {
-                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
                                                                 if (collected.first().content == res) {
                                                                     message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
                                                                 }
@@ -428,7 +428,7 @@ module.exports.run = async ( client, message, args) => {
                             message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                             .then( () => {
 
-                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected =>
                                     {
                                         if (collected.first().content == res) {
                                             message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then( () => {
@@ -455,7 +455,7 @@ module.exports.run = async ( client, message, args) => {
 
                                                         message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
                                                         .then ( () => {
-                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000}).then(collected => {
+                                                            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 300000}).then(collected => {
                                                                 if (collected.first().content == res) {
                                                                     message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
                                                                 }
