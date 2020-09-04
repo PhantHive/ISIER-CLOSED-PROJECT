@@ -72,9 +72,78 @@ module.exports.run = async ( client, message, args) => {
 
                         medium.on('collect', r => {
                             message.channel.send("test02")
+                            a = Math.floor((Math.random()* 2) + 0);
+                            b = Math.floor((Math.random()* 2) + 0);
+                            c = Math.floor((Math.random()* 2) + 0);
+                            d = Math.floor((Math.random()* 2) + 0);
 
+                            aa = Math.floor((Math.random()* 2) + 0);
+                            bb = Math.floor((Math.random()* 2) + 0);
+                            cc = Math.floor((Math.random()* 2) + 0);
+                            dd = Math.floor((Math.random()* 2) + 0);
+
+                            firstNumb = a.toString() + b.toString() + c.toString() + d.toString()
+                            secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString()
+                            
+                
+                            res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                            .then( () => {
+
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                    {
+                                        if (collected.first().content == res) {
+                                            message.reply("BRAVO!")
+                                        }
+                                        else {
+                                            message.reply(`Dommage la reponse était: ${res}`)
+                                        }
+                                    });
+                               
+                            
+                            });
 
                         })
+
+                        hard.on('collect', r => {
+                            message.channel.send("test02")
+                            a = Math.floor((Math.random()* 2) + 0);
+                            b = Math.floor((Math.random()* 2) + 0);
+                            c = Math.floor((Math.random()* 2) + 0);
+                            d = Math.floor((Math.random()* 2) + 0);
+                            e = Math.floor((Math.random()* 2) + 0);
+
+                            aa = Math.floor((Math.random()* 2) + 0);
+                            bb = Math.floor((Math.random()* 2) + 0);
+                            cc = Math.floor((Math.random()* 2) + 0);
+                            dd = Math.floor((Math.random()* 2) + 0);
+                            ee = Math.floor((Math.random()* 2) + 0);
+
+                            firstNumb = a.toString() + b.toString() + c.toString() + d.toString() + e.toString()
+                            secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
+                            
+                
+                            res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                            .then( () => {
+
+                                message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 30000}).then(collected =>
+                                    {
+                                        if (collected.first().content == res) {
+                                            message.reply("BRAVO!")
+                                        }
+                                        else {
+                                            message.reply(`Dommage la reponse était: ${res}`)
+                                        }
+                                    });
+                               
+                            
+                            });
+
+                        })
+
                     })
 
                 )
