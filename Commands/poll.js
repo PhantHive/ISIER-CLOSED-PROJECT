@@ -251,8 +251,8 @@ module.exports.run = async ( client, message, args) => {
             //COLLECT HEXA
             hexa.on('collect', r => {
                 const embedChoice = new Discord.RichEmbed()
-                    .setTitle("PROGRAMME BINAIRE")
-                    .setColor("ORANGE")
+                    .setTitle("PROGRAMME HEXADECIMAL")
+                    .setColor("GREEN")
                     .addField("Choisissez votre niveau de difficulte:")
                     .setFooter("Reagissez avec l'une des emojis ci-dessous");
                 message.channel.send(embedChoice).then(msg =>
