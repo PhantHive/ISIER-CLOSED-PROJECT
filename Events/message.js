@@ -112,7 +112,7 @@ module.exports = async(client, message) => {
     //ph121 = pendule
 
     var mph121 = String(message.content);
-    if (mph12.indexOf( "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
+    if (mph121.indexOf( "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
