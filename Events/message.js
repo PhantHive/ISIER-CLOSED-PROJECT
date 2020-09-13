@@ -104,7 +104,7 @@ module.exports = async(client, message) => {
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
         .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
         .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                     //2
-        .then(() => message.channel.send({file: './ph11/mph11-2017Elena.pdf/'}))
+        .then(() => message.channel.send({file: './ph11/mph11-2018Elena.pdf/'}))
         .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))                   //3
         .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
         message.channel.stopTyping()
@@ -255,9 +255,9 @@ module.exports = async(client, message) => {
     }
 
     //================ELEC
-    /*
+    
     var elecUn = String(message.content);
-    if (elecUn.indexOf("miniprojet elec" || "mini projet elec" || "mp elec")) {
+    if (elecUn.indexOf("miniprojet elec" || "mini projet elec" || "mp elec") != -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -269,7 +269,7 @@ module.exports = async(client, message) => {
     }
 
     var elecDeux = String(message.content);
-    if (elecDeux.indexOf("tp pspice 2")) {
+    if (elecDeux.indexOf("tp pspice 2") != -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
@@ -277,7 +277,7 @@ module.exports = async(client, message) => {
         .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'elec une fois fini, tape: i!share"))                     //2
         message.channel.stopTyping()
     }
-    */
+    
     //==============================
 
     var tp = String(message.content);
