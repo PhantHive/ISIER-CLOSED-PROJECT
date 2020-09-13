@@ -282,7 +282,7 @@ module.exports = async(client, message) => {
 
     var tp = String(message.content);
    
-    if (tp.indexOf("qui a fait le tp") !== -1 ) {
+    if (tp.indexOf("qui a fait le tp" || "quelqu'un aurai le tp" || "quelqu un aurai le tp") !== -1 ) {
 
         message.channel.startTyping()
         message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
