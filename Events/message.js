@@ -255,7 +255,7 @@ module.exports = async(client, message) => {
     }
 
     //================ELEC
-
+    /*
     var elecUn = String(message.content);
     if (elecUn.indexOf("miniprojet elec" || "mini projet elec" || "mp elec")) {
         message.channel.startTyping()
@@ -277,7 +277,7 @@ module.exports = async(client, message) => {
         .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'elec une fois fini, tape: i!share"))                     //2
         message.channel.stopTyping()
     }
-
+    */
     //==============================
 
     var tp = String(message.content);
