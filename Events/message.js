@@ -28,12 +28,14 @@ module.exports = async(client, message) => {
     }
     //fonction special
   
+    //dropbox
     var chaine = String(message.content);
 
     if (chaine.indexOf("dropbox") !== -1) {
         message.reply('Go ici amigo=> <#611829345446658048>' );
     }
 
+    //catia
     var catia = String(message.content);
 
     if (catia.indexOf("catia") !== -1) {
@@ -280,23 +282,23 @@ module.exports = async(client, message) => {
 
     var tp = String(message.content);
    
-        if (mp.indexOf("qui a fait le tp") !== -1 ) {
- 
-          message.channel.startTyping()
-          message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
-          message.channel.stopTyping()
- 
-          const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
-            console.log(collector2)
-            collector2.on('collect', message => {
-                if (message.content == "genie maths") {
-                    message.channel.send("c'est tout bon pour moi je t'envoi ca");
-                    message.channel.send("Annee 2019- partager par par: ")
-                    message.channel.send({file: './GenieMaths/tp3.pdf/'})
-                    message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!")
-                }
-            })
-        }
+    if (tp.indexOf("qui a fait le tp") !== -1 ) {
+
+        message.channel.startTyping()
+        message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
+        message.channel.stopTyping()
+
+        const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+        console.log(collector2)
+        collector2.on('collect', message => {
+            if (message.content == "genie maths") {
+                message.channel.send("c'est tout bon pour moi je t'envoi ca");
+                message.channel.send("Annee 2019- partager par par: ")
+                message.channel.send({file: './GenieMaths/tp3.pdf/'})
+                message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!")
+            }
+        })
+    }
     
 
 
