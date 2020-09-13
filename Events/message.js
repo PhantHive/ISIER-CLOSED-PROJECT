@@ -94,8 +94,8 @@ module.exports = async(client, message) => {
     //=================MINI-PROJET-PHYSIQUE
   
     //ph111 = PROJET RESSORT
-    var mph111 = String(message.content);
-    if (mph111.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet ressort") !== -1 ) {
+    var mph111ressort = String(message.content);
+    if (mph111ressort.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet ressort") !== -1 ) {
  
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
@@ -245,7 +245,7 @@ module.exports = async(client, message) => {
     //================TP GENIE MATHS
 
     var tp3GM = String(message.content);
-    if (tp3GM.indexOf("genie maths tp3 || genie math tp3 || tp3 newton || methode de newton || tp3 methode de newton") !== -1) {
+    if (tp3GM.indexOf("genie maths tp3" || "genie math tp3" || "tp3 newton" || "methode de newton" || "tp3 methode de newton") !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("Annee 2019- partager par: Baptiste Gautier => ")
