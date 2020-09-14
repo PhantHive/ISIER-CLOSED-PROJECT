@@ -364,9 +364,9 @@ module.exports = async(client, message) => {
     }
 
     //AIDE INFORMATIQUE PING ZAKARIA
-    const infoChannel = message.guild.channels.find(channel => channel.name === "⌨▶informatique◀⌨");
+    
     var aideInformatique = String(message.content);
-    if (aideInformatique.indexOf("?" || "aide") != -1 && message.channel.author === infoChannel) { //⌨▶informatique◀⌨
+    if (aideInformatique.indexOf("?" || "aide") != -1 && (message.channel.id === "755181845779578921" || message.channel.id === "755084205330792547" || message.channel.id("611832091604287518")) { //⌨▶informatique◀⌨
         message.reply("<@239455598343618580> peux peut-être aider !")
     };
 
