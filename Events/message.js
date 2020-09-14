@@ -32,7 +32,7 @@ module.exports = async(client, message) => {
     var chaine = String(message.content);
 
     if (chaine.indexOf("dropbox") !== -1) {
-        const dropboxChannel = guild.channels.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
+        const dropboxChannel = client.guilds.channels.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
         message.reply(`Go ici amigo=> ${dropboxChannel}` );
     }
 
@@ -364,7 +364,7 @@ module.exports = async(client, message) => {
     }
 
     //AIDE INFORMATIQUE PING ZAKARIA
-    const infoChannel = guild.channels.find(channel => channel.name === "⌨▶informatique◀⌨");
+    const infoChannel = client.guilds.channels.find(channel => channel.name === "⌨▶informatique◀⌨");
     var aideInformatique = String(message.content);
     if (aideInformatique.indexOf("?" || "aide") != -1 && message.channel.name === infoChannel) { //⌨▶informatique◀⌨
         message.reply("<@239455598343618580> peux peut-être aider !")
