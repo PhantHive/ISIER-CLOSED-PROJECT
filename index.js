@@ -42,30 +42,6 @@ fs.readdir("./Events/", (err, f) => {
     });
 });
 
-//join user
-client.on('guildMemberAdd', member => {
-    //JOIN SERVER
-    let embed = new Discord.RichEmbed()
-        .setDescription('\nHELLO! bienvenue Ipsalien' + member.user + '\n check tes messages prives')
-        .setFooter('Now we are ' + member.guild.memberCount + ' users')
-        .setColor('F9841F')
-        .setThumbnail('https://imgur.com/oamlctq.png')
-        .setTitle('IPSA')
-    member.guild.channels.get('622155677338566656').send(embed).then(
-        member.createDM().then(
-            channel => {
-                channel.send(
-                    `Salutation Ipsalien et bienvenue sur le discord  ***${member.guild.name}*** 😉\n` +
-                    '\n' +
-                    'Premiere chose a faire vas sur ce channel---> <#611829909332951055> \n' +
-                    '                               Puis choisis ta classe et tes assos ici---> <#611653257806217244>  \n' +
-                    '\n' +
-                    '                                                 ●¸.•*¨Ƹ̵̡Ӝ̵̨̄Ʒ¨*•.¸●\n');
-
-
-            }).catch(console.error)
-    )
-});
 
 
 
