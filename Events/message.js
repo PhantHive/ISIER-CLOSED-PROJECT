@@ -32,7 +32,8 @@ module.exports = async(client, message) => {
     var chaine = String(message.content);
 
     if (chaine.indexOf("dropbox") !== -1) {
-        message.reply('Go ici amigo=> <#611829345446658048>' );
+        const dropboxChannel = guild.channels.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
+        message.reply(`Go ici amigo=> ${dropboxChannel}` );
     }
 
     //catia
@@ -363,8 +364,9 @@ module.exports = async(client, message) => {
     }
 
     //AIDE INFORMATIQUE PING ZAKARIA
+    const infoChannel = guild.channels.find(channel => channel.name === "⌨▶informatique◀⌨");
     var aideInformatique = String(message.content);
-    if (aideInformatique.indexOf("?" || "aide") != -1 && message.channel.id === "611832091604287518") {
+    if (aideInformatique.indexOf("?" || "aide") != -1 && message.channel.name === infoChannel) { //⌨▶informatique◀⌨
         message.reply("<@239455598343618580> peux peut-être aider !")
     };
 
