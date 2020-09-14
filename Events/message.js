@@ -6,7 +6,7 @@ let mailVerif = require("../jsonFile/mailsVerif.json")
 //mailAdd
 let mailAdded = require("../jsonFile/mailAdded.json")
 
-module.exports = async(client, member, message) => {
+module.exports = async(client, message) => {
 
     //=============
     if(message.author.bot) return;
@@ -32,7 +32,7 @@ module.exports = async(client, member, message) => {
     var chaine = String(message.content);
 
     if (chaine.indexOf("dropbox") !== -1) {
-        const dropboxChannel = member.guild.channels.cache.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
+        const dropboxChannel = message.member.guild.channels.cache.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
         message.reply(`Go ici amigo=> ${dropboxChannel}` );
     }
 
