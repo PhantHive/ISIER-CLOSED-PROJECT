@@ -366,7 +366,7 @@ module.exports = async(client, message) => {
     //AIDE INFORMATIQUE PING ZAKARIA
     const infoChannel = message.guild.channels.find(channel => channel.name === "⌨▶informatique◀⌨");
     var aideInformatique = String(message.content);
-    if (aideInformatique.indexOf("?" || "aide") != -1 && message.channel.name === infoChannel) { //⌨▶informatique◀⌨
+    if (aideInformatique.indexOf("?" || "aide") != -1 && message.channel.author === infoChannel) { //⌨▶informatique◀⌨
         message.reply("<@239455598343618580> peux peut-être aider !")
     };
 
