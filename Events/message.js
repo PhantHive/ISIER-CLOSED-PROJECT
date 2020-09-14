@@ -32,7 +32,7 @@ module.exports = async(client, message) => {
     var chaine = String(message.content);
 
     if (chaine.indexOf("dropbox") !== -1) {
-        const dropboxChannel = client.guild.channels.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
+        const dropboxChannel = message.guild.channels.cache.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
         message.reply(`Go ici amigo=> ${dropboxChannel}` );
     }
 
