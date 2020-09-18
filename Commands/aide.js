@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports.run = async(client, message, args) => {
     let pages = ['```yaml\ni!aide```=>Voir ce que je te propose \n ```yaml\ni!aidemodo ```=>reservez aux modo \n ```yaml\ni!image nameOfImage```=>a venir\n ```yaml\ni!py1``` => aide a python',
         '```yaml\ni!rang``` => Permet de connaitre votre rang (level + xp + progression) \n',
-        '```yaml\ni!tk```=>Aide a l\'utilisation de tkinter :P \n ```yaml\ni!DL``` => affiche les DL usuel en 0 (physique)\n ```yaml\ni!meme```=>Tout est dans le nom \n',
+        '```yaml\ni!tk```=>Aide a l\'utilisation de tkinter \n ```yaml\ni!DL``` => affiche les DL usuel en 0 (physique)\n ```yaml\ni!meme```=>Tout est dans le nom \n',
         '```yaml\ni!chut```=> vous en avez marre?\n ```yaml\ni!objection``` => vous n\'etes pas d\'accord? \n ```yaml\ni!frToen <\mot\>``` => Vous traduit un mot francais vers l\'anglais',
         '```yaml\ni!msTokh nombre\n``` => vous permet de convertir des m/s en km/h (i!khToms fais l inverse) \n ```yaml\n i!khTond nombre```\n => convertit des km/h en noeud (i!ndTokh fais l\'inverse)\n ```yaml\n i!paTobar nombre```\n => convertit des pascal en bar (i!barTopa fais l\'inverse)',
         '```yaml\ni!kmTomiles nombre```\n => convertit des kilometre en miles (i!milesTokm fais l\'inverse) \n']; //array of pages
