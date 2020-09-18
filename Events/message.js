@@ -48,7 +48,11 @@ module.exports = async(client, message) => {
     var chaine2 = String(message.content);
 
     if (chaine2.indexOf("chut") !== -1) {
-        message.channel.send('ce manque de respect popopopo j\'aurai pas aimer');
+        var b = Math.floor((Math.random() * 15) + 1);
+        if (b == 5) {
+            message.channel.send('ce manque de respect popopopo j\'aurai pas aimer');
+        }
+        
     }
 
     var chaine3 = String(message.content);
@@ -60,7 +64,10 @@ module.exports = async(client, message) => {
     var chaine4 = String(message.content);
 
     if (chaine4.indexOf("t'as fait") !== -1) {
-        message.channel.send('nop pas encore deso');
+        var b = Math.floor((Math.random() * 15) + 1);
+        if (b == 5) {
+            message.channel.send('nop pas encore deso');
+        }
     }
 
     var chaine5 = String(message.content);
