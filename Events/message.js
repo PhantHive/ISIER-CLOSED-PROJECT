@@ -65,7 +65,11 @@ module.exports = async(client, message) => {
     var chaine5 = String(message.content);
 
     if (chaine5.indexOf("???") !== -1) {
-        message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
+        var b = Math.floor((Math.random() * 15) + 1);
+        if (b == 5) {
+            message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
+        }
+        
     }
 
     var chaine6 = String(message.content);
