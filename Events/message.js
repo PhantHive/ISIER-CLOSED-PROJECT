@@ -341,8 +341,8 @@ module.exports = async(client, message) => {
                   }
 
               } else {
-                message.delete()
-                message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord.").then(m => m.delete(6000));
+                //message.delete()
+                //message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord.").then(m => m.delete(6000));
                 return false;
               }
         
