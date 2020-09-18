@@ -40,7 +40,8 @@ module.exports = async(client, message) => {
     var catia = String(message.content);
 
     if (catia.indexOf("catia") !== -1) {
-        message.reply('Check ce channel, ca pourrai repondre a ta question padaone => <#611829345446658048>' );
+        const dropboxChannel = message.guild.channels.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
+        message.reply(`Check ce channel, ca pourrai repondre a ta question padaone =>  => ${dropboxChannel}` );
     }
 
 
