@@ -310,7 +310,7 @@ module.exports = async(client, message) => {
         }
     }
     let mailUser = mailAdded[message.author.id].mail;
-    if (message.channel.id === "613734380719964209") {
+    if (message.channel.id === "755084204567560228") {
         let mail = message.content;
         if (mailUser == "") {
             
@@ -326,8 +326,7 @@ module.exports = async(client, message) => {
                   let fullName = correctSurname + " " + correctName
 
                   if (promo == "aero1") {
-                      let role = message.guild.roles.find(r => r.name === "");
-                      let roleDel = message.guild.roles.find(r => r.name === "Incruste");
+            
                       let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
                       message.member.addRole(role);
                       message.member.removeRole(roleDel)
