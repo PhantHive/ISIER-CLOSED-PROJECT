@@ -19,7 +19,7 @@ module.exports.run = async (client, message, args) => {
 
 
     message.channel.send({
-        file: rando_imgs[Math.floor(Math.random() * rando_imgs.length * 2)]
+        file: rando_imgs[Math.floor(Math.random() * rando_imgs.length)]
     });
 };
 
