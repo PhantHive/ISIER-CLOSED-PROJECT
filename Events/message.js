@@ -344,6 +344,7 @@ module.exports = async(client, message) => {
                       message.member.removeRole(roleDel)
                       mailAdded[message.author.id].mail = mail
                       return mail;
+
                   } else if (promo == "aero2") {
                       let role = message.guild.roles.find(r => r.name === "Aéro 2");
                       let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
@@ -353,8 +354,8 @@ module.exports = async(client, message) => {
                   }
 
               } else {
-                //message.delete()
-                //message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord.").then(m => m.delete(6000));
+                
+                message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete(6000));
                 return false;
               }
         
