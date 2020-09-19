@@ -2,9 +2,10 @@ const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
 
-    message.author.delete();
     if(args.length < 1) {return}
 
+    msgMember = message.guild.member(message.author);
+    msgMember.delete();
     let sondageEmbed = new Discord.RichEmbed()
         .setTitle("SONDAGE")
         .setDescription(args.join(" "));
