@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
 
+    message.author.delete();
     if(args.length < 1) {return}
 
     let sondageEmbed = new Discord.RichEmbed()
@@ -23,7 +24,6 @@ module.exports.run = async (client, message, args) => {
         .addField("👍: ", ` ${results.get('👍').count-1}`)
         .addField("👍: ", ` ${results.get('👎').count - 1}`)
     client.channels.get('754827231783682059').send(resultsEmbed);
-    message.delete();
 };
 
 
