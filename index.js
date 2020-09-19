@@ -5,11 +5,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
+client.mongoose = require('./utils/mongose');
 
 const TOKEN = process.env.token;
 
 client.login(TOKEN);
 client.commands = new Discord.Collection();
+
+client.mongoose.init();
 
 //XP PART
 let infoLVL = require("./jsonFile/level.json");
