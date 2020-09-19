@@ -5,7 +5,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
-client.mongoose = require('./utils/mongose');
+client.mongoose = require('./utils/mongose.js');
 
 const TOKEN = process.env.token;
 
