@@ -4,8 +4,6 @@ module.exports.run = async (client, message, args) => {
 
     if(args.length < 1) {return}
 
-    msgMember = message.guild.member(message.author);
-    msgMember.delete();
     let sondageEmbed = new Discord.RichEmbed()
         .setTitle("SONDAGE")
         .setDescription(args.join(" "));
