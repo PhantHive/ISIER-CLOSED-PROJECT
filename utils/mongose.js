@@ -1,4 +1,4 @@
-const mongose = require('mongose');
+const mongoose = require('mongose');
 
 module.exports = {
     init: () => {
@@ -13,9 +13,21 @@ module.exports = {
             family: 4
         };
 
-        mongose.connect('mongodb+srv://PhantHive:oywyits5omlasjafilfo@cluster0.vrloe.mongodb.net/<dbname>?retryWrites=true&w=majority', dbOptions);
-        mongose.set('useFindAndModify', false);
-        mongose.Promise = global.Promise;
+        mongoose.connect('mongodb+srv://PhantHive:oywyits5omlasjafilfo@cluster0.vrloe.mongodb.net/<dbname>?retryWrites=true&w=majority', dbOptions);
+        mongoose.set('useFindAndModify', false);
+        mongoose.Promise = global.Promise;
+
+        mongoose.connection.on('connected', () => {
+            console.log('Mongoose connected!');
+        });
+
+        mongoose.connection.on('err', err => {
+            console.error(`Mongoose error connection \n ${err.stack}`);
+        });
+
+        mongoose.connection.on('disconnected', () => {
+            console.warn('Mongoose connection lost');
+        });
     }
 
 }
