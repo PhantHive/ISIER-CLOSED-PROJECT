@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
         .setDescription(`Resultats: ${args.join(" ")}`)
         .addField("👍: ", ` ${results.get('👍').count-1}`)
         .addField("👍: ", ` ${results.get('👎').count - 1}`)
-    client.channels.get('754827231783682059').send(resultsEmbed);
+    client.channels.get('613749495716642818').send(resultsEmbed);
 };
 
 
