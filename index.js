@@ -133,7 +133,7 @@ client.on("message", message => {
     })
 
    
-
+    /*
       console.log(`ur level: ${curlvl}`);
 
      //Easter egg system counter
@@ -174,7 +174,7 @@ client.on("message", message => {
 
       }
     }
-
+    */
     
 
 });
