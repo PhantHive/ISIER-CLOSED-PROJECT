@@ -72,7 +72,7 @@ client.on("message", async message => {
     if(!data) {
         await new XLD({
             ID: message.author.id + "-" + message.guild.id,
-            XP: 0,
+            XP: gainXP,
             LEVEL: 1
         }).save()
     } 
