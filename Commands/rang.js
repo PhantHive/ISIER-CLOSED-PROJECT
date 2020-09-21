@@ -24,7 +24,7 @@ module.exports.run = async (client, message,args) => {
   //mongoDB
   XLD.findOne({
 
-    ID: member.author.id + "-" + member.guild.id
+    ID: member.id + "-" + message.guild.id
 
   }, 
   (err, data) => {
@@ -33,7 +33,7 @@ module.exports.run = async (client, message,args) => {
 
           message.reply("pas de rang!")
           const newD = new XLD({
-              ID: member.author.id + "-" + member.guild.id,
+              ID: member.id + "-" + message.guild.id,
               XP: 0,
               LEVEL: 1
           });
