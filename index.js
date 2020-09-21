@@ -80,6 +80,7 @@ client.on("message", message => {
 
             //auto accumulate xp
             data.XP += gainXP;
+            data.save();
             console.log(curxp)
 
               //look for a new rank master
