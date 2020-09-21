@@ -55,9 +55,6 @@ fs.readdir("./Events/", (err, f) => {
 
 client.on("message", message => {
 
-    
-
-
     //mongoDB
     XLD.findOne({
 
@@ -181,9 +178,7 @@ client.on("message", message => {
     
 
 });
-```
-
-  
+/*
 console.log(gainXP)
   //we look for infoLVL of the message author on the json file if not defined then we define it
 if (!infoLVL[message.author.id]){
@@ -255,4 +250,4 @@ else {
 fs.writeFile("./jsonFile/level.json", JSON.stringify(infoLVL), (err) => {
       if (err) console.log(err);
       });
-```
+*/
