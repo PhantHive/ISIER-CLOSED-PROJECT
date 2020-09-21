@@ -71,30 +71,18 @@ client.on("message", message => {
             });
             newD.save();
         } 
+        else if (message.author.bot) {
+            console.log('false')
+            return;
+        }
+        
+        
         else {
 
-            let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
-            //data
-            let curxp = data.XP;
-            let curlvl = data.LVL;
-            let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 249;
-
-            //auto accumulate xp
-            console.log("gainxp:" + gainXP);
-            console.log(curxp);
-            data.XP = curxp + gainXP;
-            console.log(data.XP);
-
-                //look for a new rank master
-
-            if (message.author.bot) {
-                console.log('false')
-                return;
-            }
-
+            
             if (newlvl <= data.XP && curlvl < 5) {
                 data.LEVEL = curlvl + 1;
-                console.log("true")
+                console.log("true FACT")
         
                 let lvlup = new Discord.RichEmbed()
                     .setTitle("LVL +")
@@ -140,6 +128,21 @@ client.on("message", message => {
                 data.XP;
                 
             }   
+
+            let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
+            //data
+            let curxp = data.XP;
+            let curlvl = data.LVL;
+            let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 249;
+
+            //auto accumulate xp
+            console.log("gainxp:" + gainXP);
+            console.log(curxp);
+            data.XP = curxp + gainXP;
+            console.log(data.XP);
+
+                //look for a new rank master
+
             data.save();
         };
     })
