@@ -86,7 +86,7 @@ module.exports.run = async (client, message,args) => {
         ctx.stroke();
         ctx.closePath();
         ctx.clip();
-        const avatar = await loadImage(member.user.displayAvatarURL({format: "jpg"}));
+        const avatar = loadImage(member.user.displayAvatarURL({format: "jpg"}));
         ctx.draw(avatar, 40, 40, 250, 250);
 
         const attachment = new MessageAttachment(canvas.toBuffer(), "rank.png");
