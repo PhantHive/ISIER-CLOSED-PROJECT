@@ -55,7 +55,6 @@ fs.readdir("./Events/", (err, f) => {
 
 client.on("message", message => {
 
-    let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
     //mongoDB
     XLD.findOne({
 
@@ -72,14 +71,14 @@ client.on("message", message => {
             });
             newD.save();
         } else {
-            
+            let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
             //data
             let curxp = data.XP;
             let curlvl = data.LVL;
             let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 249;
 
             //auto accumulate xp
-            data.XP += gainXP;
+            data.XP = curxp + gainXP;
             data.save();
             console.log(curxp)
 
@@ -89,7 +88,7 @@ client.on("message", message => {
                 return;
             }
             if (newlvl <= data.XP && curlvl < 5) {
-                curlvl += 1;
+                data.LEVEL = curlvl + 1;
         
                 let lvlup = new Discord.RichEmbed()
                     .setTitle("LVL +")
@@ -103,7 +102,7 @@ client.on("message", message => {
             }
             else if (newlvl <= data.XP && curlvl < 10) {
         
-                curlvl += 1;
+                data.LEVEL = curlvl + 1;
                 let lvlup2 = new Discord.RichEmbed()
                     .setTitle("LVL ++")
                     .setColor("BLUE")
@@ -116,7 +115,7 @@ client.on("message", message => {
             }
             else if (newlvl <= data.XP && curlvl < 15) {
         
-                curlvl += 1;
+                data.LEVEL = curlvl + 1;
                 let lvlup3 = new Discord.RichEmbed()
                     .setTitle("LVL +++++")
                     .setColor("ORANGE")

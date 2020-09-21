@@ -1,19 +1,36 @@
 const Discord = require("discord.js");
-let infoLVL = require("../jsonFile/level.json");
+//let infoLVL = require("../jsonFile/level.json");
+client.mongoose = require('./utils/mongose.js');
+const XLD = require('./models/RankSystem.js');
 
 module.exports.run = async (client, message,args) => {
 
+  /*
   if(!infoLVL[message.author.id]) {
     infoLVL[message.author.id] = {
       xp: 0,
       lvl: 1
     };
-  }
+  } */
 
+  if(!data) {
+    const newD = new XLD({
+        ID: message.author.id + "-" + message.guild.id,
+        XP: 0,
+        LEVEL: 1
+    });
+    newD.save();
+  } 
+
+  let curxp = data.XP;
+  let curlvl = data.LEVEL;
+  let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 249;
+
+  /*
   let curxp = infoLVL[message.author.id].xp;
   let curlvl = infoLVL[message.author.id].lvl;
   let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 249;
-
+  */
   let rang = new Discord.RichEmbed()
     .setAuthor(message.author.username)
     .setColor("black")
