@@ -91,7 +91,7 @@ client.on("message", async message => {
             console.log(data.XP);
 
 
-            if (newlvl <= data.XP && curlvl < 5) {
+            if (newlvl <= curxp && curlvl < 5) {
                 data.LEVEL = curlvl + 1;
                 console.log("true FACT")
         
@@ -106,7 +106,7 @@ client.on("message", async message => {
                 data.XP = 0;
                 
             }
-            else if (newlvl <= data.XP && curlvl < 10) {
+            else if (newlvl <= curxp && curlvl < 10) {
         
                 data.LEVEL = curlvl + 1;
                 let lvlup2 = new Discord.RichEmbed()
@@ -119,7 +119,7 @@ client.on("message", async message => {
         
                 data.XP = 0;
             }
-            else if (newlvl <= data.XP && curlvl < 15) {
+            else if (newlvl <= curxp && curlvl < 15) {
         
                 data.LEVEL = curlvl + 1;
                 let lvlup3 = new Discord.RichEmbed()
