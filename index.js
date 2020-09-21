@@ -16,7 +16,7 @@ client.commands = new Discord.Collection();
 client.mongoose.init();
 
 //XP PART
-let infoLVL = require("./jsonFile/level.json");
+//let infoLVL = require("./jsonFile/level.json");
 //easter part
 let easterEgg = require("./jsonFile/easterEgg.json")
 
@@ -71,79 +71,78 @@ client.on("message", message => {
             });
             newD.save();
         } 
-        else if (message.author.bot) {
+        
+
+        if (message.author.bot) {
             console.log('false')
             return;
-        }
-        
-        
-        else {
-
-            let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
-            //data
-            let curxp = data.XP;
-            let curlvl = data.LVL;
-            let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 249;
-
-            //auto accumulate xp
-            console.log("gainxp:" + gainXP);
-            console.log(curxp);
-            data.XP = curxp + gainXP;
-            console.log(data.XP);
-            
-            if (newlvl <= data.XP && curlvl < 5) {
-                data.LEVEL = curlvl + 1;
-                console.log("true FACT")
-        
-                let lvlup = new Discord.RichEmbed()
-                    .setTitle("LVL +")
-                    .setColor("GREEN")
-                    .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
-                    .addField("XP: ", newlvl)
-                    .setImage("https://i.imgur.com/FFYT8Ll.png");
-                message.guild.channels.get('735127110342934568').send(lvlup);
-        
-                data.XP = 0;
-              
-            }
-            else if (newlvl <= data.XP && curlvl < 10) {
-        
-                data.LEVEL = curlvl + 1;
-                let lvlup2 = new Discord.RichEmbed()
-                    .setTitle("LVL ++")
-                    .setColor("BLUE")
-                    .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
-                    .addField("XP: ", newlvl)
-                    .setImage("https://i.imgur.com/7LVMSKN.png");
-                message.guild.channels.get('735127110342934568').send(lvlup2);
-        
-                data.XP = 0;
-               
-            }
-            else if (newlvl <= data.XP && curlvl < 15) {
-        
-                data.LEVEL = curlvl + 1;
-                let lvlup3 = new Discord.RichEmbed()
-                    .setTitle("LVL +++++")
-                    .setColor("ORANGE")
-                    .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
-                    .addField("XP: ", newlvl)
-                    .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-                message.guild.channels.get('735127110342934568').send(lvlup3)
-        
-                data.XP = 0;
-            
-            }
-            else {
-                data.LEVEL;
-                data.XP;
-                
-            }   
-
-                //look for a new rank master
-
-            data.save();
         };
+
+        let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
+        //data
+        let curxp = XLD.XP;
+        let curlvl = XLD.LVL;
+        let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 249;
+
+        //auto accumulate xp
+        console.log("gainxp:" + gainXP);
+        console.log(curxp);
+        XLD.XP = curxp + gainXP;
+        console.log(XLD.XP);
+
+        if (newlvl <= XLD.XP && curlvl < 5) {
+            XLD.LEVEL = curlvl + 1;
+            console.log("true FACT")
+    
+            let lvlup = new Discord.RichEmbed()
+                .setTitle("LVL +")
+                .setColor("GREEN")
+                .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
+                .addField("XP: ", newlvl)
+                .setImage("https://i.imgur.com/FFYT8Ll.png");
+            message.guild.channels.get('735127110342934568').send(lvlup);
+    
+            XLD.XP = 0;
+            
+        }
+        else if (newlvl <= XLD.XP && curlvl < 10) {
+    
+            XLD.LEVEL = curlvl + 1;
+            let lvlup2 = new Discord.RichEmbed()
+                .setTitle("LVL ++")
+                .setColor("BLUE")
+                .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
+                .addField("XP: ", newlvl)
+                .setImage("https://i.imgur.com/7LVMSKN.png");
+            message.guild.channels.get('735127110342934568').send(lvlup2);
+    
+            XLD.XP = 0;
+            
+        }
+        else if (newlvl <= XLD.XP && curlvl < 15) {
+    
+            XLD.LEVEL = curlvl + 1;
+            let lvlup3 = new Discord.RichEmbed()
+                .setTitle("LVL +++++")
+                .setColor("ORANGE")
+                .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
+                .addField("XP: ", newlvl)
+                .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
+            message.guild.channels.get('735127110342934568').send(lvlup3)
+    
+            XLD.XP = 0;
+        
+        }
+        else {
+            XLD.LEVEL;
+            XLD.XP;
+            
+        }   
+
+            //look for a new rank master
+
+        XLD.save();
+ 
     })
 
    
