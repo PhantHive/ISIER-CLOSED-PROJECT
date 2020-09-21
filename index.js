@@ -78,9 +78,11 @@ client.on("message", message => {
             let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 249;
 
             //auto accumulate xp
+            console.log("gainxp:" + gainXP);
+            console.log(curxp);
             data.XP = curxp + gainXP;
             data.save();
-            console.log(curxp)
+            console.log(data.XP);
 
               //look for a new rank master
 
