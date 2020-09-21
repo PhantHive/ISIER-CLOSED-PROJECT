@@ -53,7 +53,7 @@ fs.readdir("./Events/", (err, f) => {
   //xp system
 
 
-client.on("message", async message => {
+client.on("message", message => {
 
     
 
