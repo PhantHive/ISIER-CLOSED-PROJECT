@@ -80,18 +80,18 @@ client.on("message", message => {
 
         let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
         //data
-        let curxp = XLD.XP;
-        let curlvl = XLD.LVL;
+        let curxp = data.XP;
+        let curlvl = data.LVL;
         let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 249;
 
         //auto accumulate xp
         console.log("gainxp:" + gainXP);
         console.log(curxp);
-        XLD.XP = curxp + gainXP;
-        console.log(XLD.XP);
+        data.XP = curxp + gainXP;
+        console.log(data.XP);
 
-        if (newlvl <= XLD.XP && curlvl < 5) {
-            XLD.LEVEL = curlvl + 1;
+        if (newlvl <= data.XP && curlvl < 5) {
+            data.LEVEL = curlvl + 1;
             console.log("true FACT")
     
             let lvlup = new Discord.RichEmbed()
@@ -102,12 +102,12 @@ client.on("message", message => {
                 .setImage("https://i.imgur.com/FFYT8Ll.png");
             message.guild.channels.get('735127110342934568').send(lvlup);
     
-            XLD.XP = 0;
+            data.XP = 0;
             
         }
-        else if (newlvl <= XLD.XP && curlvl < 10) {
+        else if (newlvl <= data.XP && curlvl < 10) {
     
-            XLD.LEVEL = curlvl + 1;
+            data.LEVEL = curlvl + 1;
             let lvlup2 = new Discord.RichEmbed()
                 .setTitle("LVL ++")
                 .setColor("BLUE")
@@ -116,12 +116,12 @@ client.on("message", message => {
                 .setImage("https://i.imgur.com/7LVMSKN.png");
             message.guild.channels.get('735127110342934568').send(lvlup2);
     
-            XLD.XP = 0;
+            data.XP = 0;
             
         }
-        else if (newlvl <= XLD.XP && curlvl < 15) {
+        else if (newlvl <= data.XP && curlvl < 15) {
     
-            XLD.LEVEL = curlvl + 1;
+            data.LEVEL = curlvl + 1;
             let lvlup3 = new Discord.RichEmbed()
                 .setTitle("LVL +++++")
                 .setColor("ORANGE")
@@ -130,18 +130,18 @@ client.on("message", message => {
                 .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
             message.guild.channels.get('735127110342934568').send(lvlup3)
     
-            XLD.XP = 0;
+            data.XP = 0;
         
         }
         else {
-            XLD.LEVEL;
-            XLD.XP;
+            data.LEVEL;
+            data.XP;
             
         }   
 
             //look for a new rank master
 
-        XLD.save();
+        data.save();
  
     })
 
