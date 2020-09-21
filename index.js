@@ -143,7 +143,7 @@ client.on("message", async message => {
         data.save();
     }
  
-    });
+});
 
    
     /*
@@ -190,7 +190,7 @@ client.on("message", async message => {
     */
     
 
-});
+
 /*
 console.log(gainXP)
   //we look for infoLVL of the message author on the json file if not defined then we define it
