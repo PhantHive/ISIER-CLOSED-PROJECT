@@ -55,6 +55,7 @@ fs.readdir("./Events/", (err, f) => {
 
 client.on("message", message => {
 
+    let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
     //mongoDB
     XLD.findOne({
 
@@ -71,7 +72,7 @@ client.on("message", message => {
             });
             newD.save();
         } else {
-            let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
+            
             //data
             let curxp = data.XP;
             let curlvl = data.LVL;
@@ -79,13 +80,14 @@ client.on("message", message => {
 
             //auto accumulate xp
             data.XP += gainXP;
+            console.log(curxp)
 
               //look for a new rank master
 
             if (message.author.bot) {
                 return;
             }
-            if (newlvl <= curxp && curlvl < 5) {
+            if (newlvl <= data.XP && curlvl < 5) {
                 curlvl += 1;
         
                 let lvlup = new Discord.RichEmbed()
@@ -98,7 +100,7 @@ client.on("message", message => {
         
                 curxp = 0;
             }
-            else if (newlvl <= curxp && curlvl < 10) {
+            else if (newlvl <= data.XP && curlvl < 10) {
         
                 curlvl += 1;
                 let lvlup2 = new Discord.RichEmbed()
@@ -111,7 +113,7 @@ client.on("message", message => {
         
                 curxp = 0;
             }
-            else if (newlvl <= curxp && curlvl < 15) {
+            else if (newlvl <= data.XP && curlvl < 15) {
         
                 curlvl += 1;
                 let lvlup3 = new Discord.RichEmbed()
