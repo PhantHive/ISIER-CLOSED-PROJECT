@@ -63,7 +63,7 @@ client.on("message", async message => {
     },
     (err, data) => {
         if (err) console.log(err);
-        
+
         let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
 
         if (message.author.bot) {
@@ -71,7 +71,7 @@ client.on("message", async message => {
         }
     
         if(!data) {
-            await new XLD({
+            new XLD({
                 ID: message.author.id + "-" + message.guild.id,
                 XP: 0,
                 LEVEL: 1
@@ -137,7 +137,7 @@ client.on("message", async message => {
                 data.XP;
                 
             }   
-            (await data).save()
+            data.save()
                 //look for a new rank master
         }
     });
