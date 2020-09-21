@@ -61,7 +61,9 @@ client.on("message", async message => {
         ID: message.author.id + "-" + message.guild.id
 
     })
-    
+
+    let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
+
     if (message.author.bot) {
         console.log('false')
         return;
@@ -75,7 +77,7 @@ client.on("message", async message => {
         }).save()
     } 
     else {
-        let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
+        
         //data
         let curxp = data.XP;
         let curlvl = data.LVL;
