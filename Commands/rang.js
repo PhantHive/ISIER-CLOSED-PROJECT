@@ -27,7 +27,7 @@ module.exports.run = async (client, message,args) => {
     ID: member.id + "-" + message.guild.id
 
   }, 
-  (err, data) => {
+  async (err, data) =>  {
       if (err) console.log(err);
       if(!data) {
 
@@ -49,7 +49,7 @@ module.exports.run = async (client, message,args) => {
 
         const canvas = createCanvas(1000, 333);
         const ctx = canvas.getContext("2D");
-        const background = loadImage(join(__dirname, "..", "image", "mariobackground.jpg"));
+        const background = await loadImage(join(__dirname, "..", "image", "mariobackground.jpg"));
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
         ctx.beginPath();
