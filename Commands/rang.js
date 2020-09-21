@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 //let infoLVL = require("../jsonFile/level.json");
 const client = new Discord.Client();
 client.mongoose = require('../utils/mongose.js');
-const XLD = require('./models/RankSystem.js');
+const XLD = require('../models/RankSystem.js');
 
 module.exports.run = async (client, message,args) => {
 
