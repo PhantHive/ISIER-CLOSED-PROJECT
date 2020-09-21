@@ -91,6 +91,7 @@ client.on("message", message => {
             }
             if (newlvl <= data.XP && curlvl < 5) {
                 data.LEVEL = curlvl + 1;
+                console.log("true")
         
                 let lvlup = new Discord.RichEmbed()
                     .setTitle("LVL +")
@@ -100,7 +101,7 @@ client.on("message", message => {
                     .setImage("https://i.imgur.com/FFYT8Ll.png");
                 message.guild.channels.get('735127110342934568').send(lvlup);
         
-                curxp = 0;
+                data.XP = 0;
             }
             else if (newlvl <= data.XP && curlvl < 10) {
         
@@ -111,9 +112,9 @@ client.on("message", message => {
                     .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
                     .addField("XP: ", newlvl)
                     .setImage("https://i.imgur.com/7LVMSKN.png");
-                message.guild.channels.get('502931781012684820').send(lvlup2);
+                message.guild.channels.get('735127110342934568').send(lvlup2);
         
-                curxp = 0;
+                data.XP = 0;
             }
             else if (newlvl <= data.XP && curlvl < 15) {
         
@@ -124,9 +125,9 @@ client.on("message", message => {
                     .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
                     .addField("XP: ", newlvl)
                     .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-                message.guild.channels.get('502931781012684820').send(lvlup3)
+                message.guild.channels.get('735127110342934568').send(lvlup3)
         
-                curxp = 0;
+                data.XP = 0;
             }
             else {
                 curlvl;
