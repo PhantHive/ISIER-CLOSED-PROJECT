@@ -88,10 +88,11 @@ client.on("message", message => {
                 //look for a new rank master
 
             if (message.author.bot) {
+                console.log('false')
                 return;
             }
 
-            else if (newlvl <= data.XP && curlvl < 5) {
+            if (newlvl <= data.XP && curlvl < 5) {
                 data.LEVEL = curlvl + 1;
                 console.log("true")
         
@@ -156,7 +157,7 @@ client.on("message", message => {
     }
 
     let curCounter = easterEgg[message.author.id].counter;
-
+ 
     
 
     if (message.channel.type === "dm") {
