@@ -65,7 +65,7 @@ module.exports.run = async (client, message,args) => {
 
         ctx.fillStyle = "#e67e22";
         ctx.globalAlpha = 0.6;
-        ctx.fillRect(180, 216, (100/newlvl, 65);
+        ctx.fillRect(180, 216, (100/newlvl, 65));
         ctx.fill();
         ctx.globalAlpha = 1;
 
