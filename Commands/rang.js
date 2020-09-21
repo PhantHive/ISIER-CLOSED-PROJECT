@@ -29,27 +29,28 @@ module.exports.run = async (client, message,args) => {
               LEVEL: 1
           });
           newD.save();
-    } 
-    
-    let curxp = data.XP;
-    let curlvl = data.LEVEL;
-    let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 249;
+    } else {
 
-    /*
-    let curxp = infoLVL[message.author.id].xp;
-    let curlvl = infoLVL[message.author.id].lvl;
-    let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 249;
-    */
-    let rang = new Discord.RichEmbed() 
-      .setAuthor(message.author.username)
-      .setColor("black")
-      .addField("XP: ", curxp, true)
-      .addField("LEVEL: ", curlvl, true)
-      .addField("PROGRESSION: ", `${curxp}  /  ${newlvl}`, true )
-      .addField("======================", "<systemXP>")
-      .setFooter(", base sur la formule:  5 * (votreniveau ^ 2) + 69 * votreniveau + 249")
+        let curxp = data.XP;
+        let curlvl = data.LEVEL;
+        let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 249;
 
-    message.channel.send(rang);
+        /*
+        let curxp = infoLVL[message.author.id].xp;
+        let curlvl = infoLVL[message.author.id].lvl;
+        let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 249;
+        */
+        let rang = new Discord.RichEmbed() 
+          .setAuthor(message.author.username)
+          .setColor("black")
+          .addField("XP: ", curxp, true)
+          .addField("LEVEL: ", curlvl, true)
+          .addField("PROGRESSION: ", `${curxp}  /  ${newlvl}`, true )
+          .addField("======================", "<systemXP>")
+          .setFooter(", base sur la formule:  5 * (votreniveau ^ 2) + 69 * votreniveau + 249")
+
+        message.channel.send(rang);
+    };
   
   });
 
