@@ -19,17 +19,18 @@ module.exports.run = async (client, message,args) => {
 
     ID: message.author.id + "-" + message.guild.id
 
-}, 
-(err, data) => {
-    if (err) console.log(err);
-    if(!data) {
-        const newD = new XLD({
-            ID: message.author.id + "-" + message.guild.id,
-            XP: 0,
-            LEVEL: 1
-        });
-        newD.save();
-  } 
+  }, 
+  (err, data) => {
+      if (err) console.log(err);
+      if(!data) {
+          const newD = new XLD({
+              ID: message.author.id + "-" + message.guild.id,
+              XP: 0,
+              LEVEL: 1
+          });
+          newD.save();
+    } 
+  });
 
   let curxp = data.XP;
   let curlvl = data.LEVEL;
