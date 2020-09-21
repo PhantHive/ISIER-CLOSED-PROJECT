@@ -83,7 +83,6 @@ client.on("message", message => {
             console.log("gainxp:" + gainXP);
             console.log(curxp);
             data.XP = curxp + gainXP;
-            data.save();
             console.log(data.XP);
 
                 //look for a new rank master
@@ -105,7 +104,7 @@ client.on("message", message => {
                 message.guild.channels.get('735127110342934568').send(lvlup);
         
                 data.XP = 0;
-                data.save();
+              
             }
             else if (newlvl <= data.XP && curlvl < 10) {
         
@@ -119,7 +118,7 @@ client.on("message", message => {
                 message.guild.channels.get('735127110342934568').send(lvlup2);
         
                 data.XP = 0;
-                data.save();
+               
             }
             else if (newlvl <= data.XP && curlvl < 15) {
         
@@ -133,13 +132,14 @@ client.on("message", message => {
                 message.guild.channels.get('735127110342934568').send(lvlup3)
         
                 data.XP = 0;
-                data.save();
+            
             }
             else {
                 data.LEVEL;
                 data.XP;
-                data.save();
+                
             }   
+            data.save();
         };
     })
 
