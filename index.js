@@ -61,12 +61,12 @@ client.on("message", async message => {
         ID: message.author.id + "-" + message.guild.id
 
     })
-  
+    
     if (message.author.bot) {
         console.log('false')
         return;
     }
-        
+  
     if(!data) {
         await new XLD({
             ID: message.author.id + "-" + message.guild.id,
@@ -75,7 +75,6 @@ client.on("message", async message => {
         }).save()
     } 
     else {
-
         let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
         //data
         let curxp = data.XP;
@@ -116,7 +115,6 @@ client.on("message", async message => {
             message.guild.channels.get('735127110342934568').send(lvlup2);
     
             data.XP = 0;
-            
         }
         else if (newlvl <= data.XP && curlvl < 15) {
     
@@ -130,17 +128,14 @@ client.on("message", async message => {
             message.guild.channels.get('735127110342934568').send(lvlup3)
     
             data.XP = 0;
-        
         }
         else {
             data.LEVEL;
             data.XP;
             
         }   
-
+        (await data).save()
             //look for a new rank master
-
-        data.save();
     }
  
 });
