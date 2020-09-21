@@ -6,6 +6,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
 client.mongoose = require('./utils/mongose.js');
+const XLD = require('./models/RankSystem.js');
 
 const TOKEN = process.env.token;
 
@@ -50,13 +51,12 @@ fs.readdir("./Events/", (err, f) => {
 
 
   //xp system
-const mongoose = require('mongoose');
 
-const XLD = require('./models/RankSystem.js');
 
 client.on("message", async message => {
 
-    let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
+    
+
     ```
     console.log(gainXP)
       //we look for infoLVL of the message author on the json file if not defined then we define it
@@ -84,6 +84,7 @@ client.on("message", async message => {
             });
             newD.save();
         } else {
+            let gainXP = Math.floor(Math.random() * 5) + 10; //add some xp by message
             //data
             let curxp = data.XP;
             let curlvl = data.LVL;
