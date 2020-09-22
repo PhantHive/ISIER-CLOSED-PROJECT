@@ -27,7 +27,7 @@ module.exports.run = async (client, message,args) => {
     ID: member.id + "-" + message.guild.id
 
   }, 
-  async (err, data) =>  {
+  (err, data) =>  {
       if (err) console.log(err);
       if(!data) {
 
@@ -38,10 +38,10 @@ module.exports.run = async (client, message,args) => {
               LEVEL: 1
           });
           newD.save();
-    } else {
+    }
+    else {
 
-        
-
+      async () => {  
 
         let curxp = data.XP;
         let curlvl = data.LEVEL;
@@ -86,12 +86,13 @@ module.exports.run = async (client, message,args) => {
         ctx.stroke();
         ctx.closePath();
         ctx.clip();
-        const avatar = loadImage(member.user.displayAvatarURL({format: "jpg"}));
+        const avatar = await loadImage(member.user.displayAvatarURL({format: "jpg"}));
         ctx.draw(avatar, 40, 40, 250, 250);
 
         const attachment = new MessageAttachment(canvas.toBuffer(), "rank.png");
 
         message.channel.send(attachment);
+      }
 
         /*
         let curxp = infoLVL[message.author.id].xp;
