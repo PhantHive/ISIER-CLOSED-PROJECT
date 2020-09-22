@@ -104,7 +104,7 @@ client.on("message", async message => {
                     .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
                     .addField("XP: ", newlvl)
                     .setImage("https://i.imgur.com/FFYT8Ll.png");
-                message.guild.channels.get('735127110342934568').send(lvlup);
+                message.guild.channels.get('755084204567560232').send(lvlup);
         
                 data.XP = 0;
                 
@@ -118,7 +118,7 @@ client.on("message", async message => {
                     .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
                     .addField("XP: ", newlvl)
                     .setImage("https://i.imgur.com/7LVMSKN.png");
-                message.guild.channels.get('735127110342934568').send(lvlup2);
+                message.guild.channels.get('755084204567560232').send(lvlup2);
         
                 data.XP = 0;
             }
@@ -131,7 +131,7 @@ client.on("message", async message => {
                     .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
                     .addField("XP: ", newlvl)
                     .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-                message.guild.channels.get('735127110342934568').send(lvlup3)
+                message.guild.channels.get('755084204567560232').send(lvlup3)
         
                 data.XP = 0;
             }
