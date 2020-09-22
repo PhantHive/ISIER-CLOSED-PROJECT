@@ -35,13 +35,13 @@ module.exports.run = async (client, message,args) => {
           const newD = new XLD({
               ID: member.id + "-" + message.guild.id,
               XP: 0,
-              LEVEL: 1,
-              POSITION: 0
+              LEVEL: 1
           });
           newD.save();
     }
     else { 
        
+        /*
         var leaderboard = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1});
         var count = leaderboard.count();
         var i = 1;
@@ -56,7 +56,7 @@ module.exports.run = async (client, message,args) => {
         }
 
          
-
+        */
        
 
         let curxp = data.XP;

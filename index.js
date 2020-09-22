@@ -80,6 +80,7 @@ client.on("message", async message => {
             }).save()
         } 
         else {
+            /*
 
             var leaderboard = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1});
             var count = leaderboard.count();
@@ -94,6 +95,7 @@ client.on("message", async message => {
             i ++;
             }
             console.log(position);
+            */
 
             //data
             let curxp = data.XP;
