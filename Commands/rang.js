@@ -43,7 +43,7 @@ module.exports.run = async (client, message,args) => {
        
         let curxp = data.XP;
         let curlvl = data.LEVEL;
-        let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 549;
+        let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
 
         const canvas = createCanvas(1000, 333);
         const ctx = canvas.getContext('2d');
