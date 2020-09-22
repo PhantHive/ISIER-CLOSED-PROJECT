@@ -91,7 +91,7 @@ module.exports.run = async (client, message,args) => {
 
         const attachment = new MessageAttachment(canvas.toBuffer(), "rank.png");
 
-        message.channel.send(attachment);
+        message.channel.send(`rang de ${member.user.tag}`, attachment);
       }
 
         /*
