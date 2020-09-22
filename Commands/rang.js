@@ -27,7 +27,7 @@ module.exports.run = async (client, message,args) => {
     ID: member.id + "-" + message.guild.id
 
   }, 
-  async (err, data) =>  {
+  (err, data) =>  {
       if (err) console.log(err);
       if(!data) {
 
