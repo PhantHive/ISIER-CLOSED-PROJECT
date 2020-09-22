@@ -27,7 +27,7 @@ module.exports.run = async (client, message,args) => {
     ID: member.id + "-" + message.guild.id
 
   }, 
-  (err, data) =>  {
+  async (err, data) =>  {
       if (err) console.log(err);
       if(!data) {
 
@@ -39,9 +39,7 @@ module.exports.run = async (client, message,args) => {
           });
           newD.save();
     }
-    else {
-
-      async () => {  
+    else { 
 
         let curxp = data.XP;
         let curlvl = data.LEVEL;
@@ -113,7 +111,6 @@ module.exports.run = async (client, message,args) => {
 
         message.channel.send(rang);
          */
-    };
   
   });
 
