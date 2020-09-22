@@ -67,7 +67,7 @@ module.exports.run = async (client, message,args) => {
         ctx.fill();
         ctx.globalAlpha = 1;
 
-        ctx.font("30px Arial");
+        ctx.font = "30px Arial";
         ctx.textAlign = "center";
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
