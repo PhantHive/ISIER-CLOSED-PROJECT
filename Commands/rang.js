@@ -43,7 +43,7 @@ module.exports.run = async (client, message,args) => {
        
         let curxp = data.XP;
         let curlvl = data.LEVEL;
-        let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 249;
+        let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 549;
 
         const canvas = createCanvas(1000, 333);
         const ctx = canvas.getContext('2d');
@@ -81,6 +81,9 @@ module.exports.run = async (client, message,args) => {
         ctx.font = "40px Comic Sans MS";
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
+
+        ctx.font = "italic 20px Arial";
+        ctx.fillText("Formule: 5 * (curlvl ** 2) + 69 * curlvl + 549", 50, 250)
 
         ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
         ctx.lineWidth = 6;

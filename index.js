@@ -82,7 +82,7 @@ client.on("message", async message => {
             //data
             let curxp = data.XP;
             let curlvl = data.LEVEL;
-            let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 249;
+            let newlvl = 5 * (curlvl ** 2) + 69 * curlvl + 549;
 
             //auto accumulate xp
             console.log("gainxp:" + gainXP);
