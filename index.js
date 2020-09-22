@@ -64,7 +64,8 @@ client.on("message", async message => {
     (err, data) => {
         if (err) console.log(err);
 
-        let gainXP = Math.floor(Math.random() * 10) ; //add some xp by message
+        var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let gainXP = Math.floor(Math.random() * xpRand.length) ; //add some xp by message
 
         if (message.author.bot) {
             return;
