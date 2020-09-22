@@ -89,7 +89,7 @@ module.exports.run = async (client, message,args) => {
 
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
-        ctx.fillText("Formule: 5 * (curlvl ** 2) + 69 * curlvl + 549", 50, 320)
+        ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
 
         ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
         ctx.lineWidth = 6;
