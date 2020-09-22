@@ -40,13 +40,13 @@ module.exports.run = async (client, message,args) => {
           newD.save();
     }
     else { 
-        console.log("test")
+       
         let curxp = data.XP;
         let curlvl = data.LEVEL;
         let newlvl = 5 * (curlvl** 2) + 69 * curlvl + 249;
 
         const canvas = createCanvas(1000, 333);
-        const ctx = canvas.getContext("2D");
+        const ctx = canvas.getContext('2d');
         const background = await loadImage(join(__dirname, "..", "image", "mariobackground.jpg"));
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
