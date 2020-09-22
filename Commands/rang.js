@@ -35,12 +35,30 @@ module.exports.run = async (client, message,args) => {
           const newD = new XLD({
               ID: member.id + "-" + message.guild.id,
               XP: 0,
-              LEVEL: 1
+              LEVEL: 1,
+              POSITION: 0
           });
           newD.save();
     }
     else { 
        
+        var leaderboard = data.ID.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1});
+        var count = leaderboard.count();
+        var i = 1;
+        while(leaderboard.hasNext()) {
+          var position = i;
+          var user = leaderboard.next();
+          user.update(
+            {"ID": member.id + "-" + message.guild.id},
+            {"$set": {"POSITION": position}}
+          );
+          i ++;
+        }
+
+         
+
+       
+
         let curxp = data.XP;
         let curlvl = data.LEVEL;
         let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;

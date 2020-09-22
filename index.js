@@ -80,7 +80,21 @@ client.on("message", async message => {
             }).save()
         } 
         else {
-            
+
+            var leaderboard = data.ID.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1});
+            var count = leaderboard.count();
+            var i = 1;
+            while(leaderboard.hasNext()) {
+            var position = i;
+            var user = leaderboard.next();
+            user.update(
+                {"ID": member.id + "-" + message.guild.id},
+                {"$set": {"POSITION": position}}
+            );
+            i ++;
+            }
+            console.log(position);
+
             //data
             let curxp = data.XP;
             let curlvl = data.LEVEL;
