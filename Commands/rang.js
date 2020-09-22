@@ -71,10 +71,10 @@ module.exports.run = async (client, message,args) => {
         ctx.fillStyle = gradient;
         ctx.fillRect(180, 218, percentage, 63)
 
-        ctx.fillStyle = "#e67e22";
+        ctx.strokeStyle = "#e67e22";
         ctx.globalAlpha = 0.6;
-        ctx.fillRect(180, 216, (100/newlvl, 65));
-        ctx.fill();
+        ctx.strokeRect(180, 218, percentage, 63);
+        ctx.stroke();
         ctx.globalAlpha = 1;
 
         ctx.font = "35px bold Arial";
