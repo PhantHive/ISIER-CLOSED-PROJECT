@@ -89,7 +89,12 @@ module.exports.run = async (client, message,args) => {
         const avatar = await loadImage(member.user.displayAvatarURL({format: "jpg"}));
         ctx.draw(avatar, 40, 40, 250, 250);
 
-        message.channel.send(new Attachment(canvas, "rank.png"));
+        message.channel.send({
+          files: [{
+            attachment: canvas.toBuffer(),
+            name: "rang.png"
+          }]
+        });
       }
 
         /*
