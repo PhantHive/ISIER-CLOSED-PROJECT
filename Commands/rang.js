@@ -71,11 +71,15 @@ module.exports.run = async (client, message,args) => {
         ctx.fillRect(180, 218, percentage, 61);
         ctx.globalAlpha = 1; 
 
-        ctx.font = "bold 45px Comic Sans MS";
+        ctx.font = "bold 35px Arial";
         ctx.textAlign = "center";
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
         ctx.textAlign = "left";
+        ctx.font = "bold 45px Comic Sans MS";
+        ctx.fillText(member.user.tag, 300, 120);
+        ctx.font = "bold 50px Comic Sans MS";
+        ctx.fillStyle = "#1B00FF";
         ctx.fillText(member.user.tag, 300, 120);
 
         ctx.font = "40px Comic Sans MS";
@@ -83,7 +87,8 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText(curlvl, 470, 180);
 
         ctx.font = "italic 20px Arial";
-        ctx.fillText("Formule: 5 * (curlvl ** 2) + 69 * curlvl + 549", 50, 250)
+        ctx.fillStyle = "#000000";
+        ctx.fillText("Formule: 5 * (curlvl ** 2) + 69 * curlvl + 549", 50, 320)
 
         ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
         ctx.lineWidth = 6;
