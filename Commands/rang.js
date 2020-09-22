@@ -85,7 +85,7 @@ module.exports.run = async (client, message,args) => {
         ctx.closePath();
         ctx.clip();
         const avatar = await loadImage(member.user.displayAvatarURL);
-        ctx.draw(avatar, 40, 40, 250, 250);
+        ctx.drawImage(avatar, 40, 40, 250, 250);
 
         message.channel.send({
           files: [{
