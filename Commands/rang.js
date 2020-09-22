@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.mongoose = require('../utils/mongose.js');
 const XLD = require('../models/RankSystem.js');
 const { createCanvas, loadImage } = require("canvas");
-const { MessageAttachment } = require("discord.js");
+const { Attachment } = require("discord.js");
 const { join } = require("path");
 
 module.exports.run = async (client, message,args) => {
@@ -89,7 +89,7 @@ module.exports.run = async (client, message,args) => {
         const avatar = await loadImage(member.user.displayAvatarURL({format: "jpg"}));
         ctx.draw(avatar, 40, 40, 250, 250);
 
-        const attachment = new MessageAttachment(canvas.toBuffer(), "rank.png");
+        const attachment = new Attachment(canvas.toBuffer(), "rank.png");
 
         message.channel.send(`rang de ${member.user.tag}`, attachment);
       }
