@@ -64,7 +64,7 @@ module.exports.run = async (client, message,args) => {
         var percentage = curxp * 7.7
         var gradient = ctx.createLinearGradient(0, 0, 200, 0);
         gradient.addColorStart(0, "#ffffff");
-        gradient.addColorStop(1, "007AFF")
+        gradient.addColorStop(1, "#007AFF")
 
         ctx.fillStyle = gradient;
         ctx.fillRect(180, 216, percentage, 63)
