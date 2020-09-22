@@ -69,12 +69,8 @@ module.exports.run = async (client, message,args) => {
         gradient.addColorStop(1, "#007AFF")
 
         ctx.fillStyle = gradient;
-        ctx.fillRect(180, 218, percentage, 63)
-
-        ctx.strokeStyle = "#e67e22";
         ctx.globalAlpha = 0.6;
-        ctx.strokeRect(180, 218, percentage, 63);
-        ctx.stroke();
+        ctx.fillRect(180, 218, percentage, 63);
         ctx.globalAlpha = 1;
 
         ctx.font = "35px bold Arial";
