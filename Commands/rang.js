@@ -5,6 +5,7 @@ client.mongoose = require('../utils/mongose.js');
 const XLD = require('../models/RankSystem.js');
 const { createCanvas, loadImage } = require("canvas");
 const { MessageAttachment } = require("discord.js");
+const { join } = require("path");
 
 module.exports.run = async (client, message,args) => {
 
@@ -48,7 +49,7 @@ module.exports.run = async (client, message,args) => {
 
         const canvas = createCanvas(1000, 333);
         const ctx = canvas.getContext("2D");
-        const background = await loadImage('../image/mariobackground.jpg');
+        const background = await loadImage('.././image/mariobackground.jpg');
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
         ctx.beginPath();
