@@ -65,7 +65,8 @@ client.on("message", async message => {
         if (err) console.log(err);
 
         var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        let gainXP = Math.floor(Math.random() * xpRand.length) ; //add some xp by message
+        let gainXP = xpRand[Math.floor(Math.random() * xpRand.length)] ; //add some xp by message
+        console.log("gainxp:" + gainXP);
 
         if (message.author.bot) {
             return;
@@ -86,7 +87,7 @@ client.on("message", async message => {
             let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
 
             //auto accumulate xp
-            console.log("gainxp:" + gainXP);
+           
             console.log(curxp);
             data.XP = curxp + gainXP;
             console.log(data.XP);
