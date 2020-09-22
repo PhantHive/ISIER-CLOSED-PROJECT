@@ -77,10 +77,11 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
         ctx.textAlign = "left";
         ctx.font = "bold 45px Comic Sans MS";
+        ctx.shadowOffsetX = h_distance;
+        ctx.shadowColor = "blue";
+        ctx.shadowBlur = 3;
         ctx.fillText(member.user.tag, 300, 120);
-        ctx.font = "bold 50px Comic Sans MS";
-        ctx.fillStyle = "#1B00FF";
-        ctx.fillText(member.user.tag, 300, 120);
+  
 
         ctx.font = "40px Comic Sans MS";
         ctx.fillText("Level:", 300, 180);
