@@ -62,7 +62,7 @@ module.exports.run = async (client, message,args) => {
         ctx.stroke();
 
         var percent = percent * 7.7
-        var gradient = ctx.createLinearGradiant(0, 0, 200, 0);
+        var gradient = ctx.createLinearGradient(0, 0, 200, 0);
         gradient.addColorStop(0, "#ffffff");
         gradient.addColorStop(1, "007AFF")
 
