@@ -27,7 +27,7 @@ module.exports.run = async (client, message,args) => {
     ID: member.id + "-" + message.guild.id
 
   }, 
-  (err, data) =>  {
+  async (err, data) =>  {
       if (err) console.log(err);
       if(!data) {
 
@@ -40,7 +40,6 @@ module.exports.run = async (client, message,args) => {
           newD.save();
     }
     else { 
-      async () => {
         console.log("test")
         let curxp = data.XP;
         let curlvl = data.LEVEL;
@@ -94,7 +93,6 @@ module.exports.run = async (client, message,args) => {
             name: "rang.png"
           }]
         });
-      }
     }
 
         /*
