@@ -49,7 +49,7 @@ module.exports.run = async (client, message,args) => {
 
         const canvas = createCanvas(1000, 333);
         const ctx = canvas.getContext("2D");
-        const background = await loadImage('.././image/mariobackground.jpg');
+        const background = await loadImage('./image/mariobackground.jpg');
         ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
         ctx.beginPath();
