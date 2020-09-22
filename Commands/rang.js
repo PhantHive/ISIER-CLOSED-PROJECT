@@ -61,13 +61,13 @@ module.exports.run = async (client, message,args) => {
         ctx.strokeRect(180, 216, 770, 65);
         ctx.stroke();
 
-        var percent = percent * 7.7
+        var percentage = curxp * 7.7
         var gradient = ctx.createLinearGradient(0, 0, 200, 0);
         gradient.addColorStop(0, "#ffffff");
         gradient.addColorStop(1, "007AFF")
 
         ctx.fillStyle = gradient;
-        ctx.fillRect(180, 216, percent, 63)
+        ctx.fillRect(180, 216, percentage, 63)
 
         ctx.fillStyle = "#e67e22";
         ctx.globalAlpha = 0.6;
