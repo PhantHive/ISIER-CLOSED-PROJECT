@@ -69,7 +69,7 @@ module.exports.run = async (client, message,args) => {
         gradient.addColorStop(1, "#007AFF")
 
         ctx.fillStyle = gradient;
-        ctx.fillRect(180, 214, percentage, 63)
+        ctx.fillRect(180, 218, percentage, 63)
 
         ctx.fillStyle = "#e67e22";
         ctx.globalAlpha = 0.6;
