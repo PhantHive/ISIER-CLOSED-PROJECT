@@ -62,8 +62,6 @@ module.exports.run = async (client, message,args) => {
         ctx.stroke();
 
         var percentage = (curxp / newlvl) * 766;
-
-        var percentage = newlvl / curlvl;
         var gradient = ctx.createLinearGradient(0, 0, 200, 0);
         gradient.addColorStop(0, "#ffffff");
         gradient.addColorStop(1, "#007AFF")
@@ -73,7 +71,7 @@ module.exports.run = async (client, message,args) => {
         ctx.fillRect(180, 218, percentage, 61);
         ctx.globalAlpha = 1; 
 
-        ctx.font = "35px bold Arial";
+        ctx.font = "35px Arial bold";
         ctx.textAlign = "center";
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
