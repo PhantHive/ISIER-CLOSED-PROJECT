@@ -45,9 +45,9 @@ module.exports.run = async (client, message,args) => {
         var leaderboard = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1});
         var count = leaderboard.count();
         var i = 1;
-        while(leaderboard.hasNext()) {
+        while(count.hasNext()) {
           var position = i;
-          var user = leaderboard.next();
+          var user = leaderboard.count();
           user.update(
             {"ID": member.id + "-" + message.guild.id},
             {"$set": {"POSITION": position}}

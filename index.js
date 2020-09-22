@@ -84,7 +84,7 @@ client.on("message", async message => {
             var leaderboard = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1});
             var count = leaderboard.count();
             var i = 1;
-            while(leaderboard.hasNext()) {
+            while(count.hasNext()) {
             var position = i;
             var user = leaderboard.next();
             user.update(
