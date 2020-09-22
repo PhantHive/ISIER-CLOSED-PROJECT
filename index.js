@@ -81,7 +81,7 @@ client.on("message", async message => {
         } 
         else {
 
-            var leaderboard = data.ID.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1});
+            var leaderboard = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1});
             var count = leaderboard.count();
             var i = 1;
             while(leaderboard.hasNext()) {
