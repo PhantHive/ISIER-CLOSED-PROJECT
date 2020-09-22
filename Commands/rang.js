@@ -61,7 +61,7 @@ module.exports.run = async (client, message,args) => {
         ctx.strokeRect(180, 216, 770, 65);
         ctx.stroke();
 
-        var percentage = (curxp / newlvl) * 766;
+        var percentage = (curxp / newlvl) * 767;
         var gradient = ctx.createLinearGradient(0, 0, 200, 0);
         gradient.addColorStop(0, "#ffffff");
         gradient.addColorStop(1, "#007AFF")
@@ -71,14 +71,14 @@ module.exports.run = async (client, message,args) => {
         ctx.fillRect(180, 218, percentage, 61);
         ctx.globalAlpha = 1; 
 
-        ctx.font = "35px Arial bold";
+        ctx.font = "bold 45px Comic Sans MS";
         ctx.textAlign = "center";
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
         ctx.textAlign = "left";
         ctx.fillText(member.user.tag, 300, 120);
 
-        ctx.font = "45px Arial";
+        ctx.font = "40px Comic Sans MS";
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
 
