@@ -75,6 +75,7 @@ client.on("message", async message => {
         if(!data) {
             new XLD({
                 ID: message.author.id + "-" + message.guild.id,
+                serverID: message.guild.id,
                 XP: 0,
                 LEVEL: 1,
                 RANK: 0
@@ -98,17 +99,7 @@ client.on("message", async message => {
             console.log(position);
             */
      
-           var mySort = {LEVEL: -1, XP: -1};
-           var cursor = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, collect) {
-               var i = 1;
-               for(var doc in collect) {
-                   var rank = i;
-                   doc.RANK = rank;   
-                   i++;
-               };
-               XLD.save()
-           })
-            
+         
 
                 
             //data
