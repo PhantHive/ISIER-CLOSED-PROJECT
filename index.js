@@ -71,6 +71,7 @@ client.on("message", async message => {
             }
             rank++;
             doc.RANK = rank;
+            console.log(doc)
          
         })
       
