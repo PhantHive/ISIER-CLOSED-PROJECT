@@ -77,7 +77,7 @@ client.on("message", async message => {
                 ID: message.author.id + "-" + message.guild.id,
                 XP: 0,
                 LEVEL: 1,
-                RANK: 000
+                RANK: 0
             }).save()
         } 
         else {
@@ -96,20 +96,7 @@ client.on("message", async message => {
             i ++;
             }
             console.log(position);
-            */
 
-            //RANK
-
-            var mySort = {LEVEL: -1, XP: -1};
-            var cursor = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, collect) {
-                var i = 1;
-                for(var doc in collect) {
-                    var rank = i;
-                    doc.RANK = rank;   
-                    i++;
-                };
-                
-            }).save()
      
             
             
@@ -225,7 +212,18 @@ client.on("message", async message => {
     }
     */
     
-
+   var mySort = {LEVEL: -1, XP: -1};
+   var cursor = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, collect) {
+       var i = 1;
+       for(var doc in collect) {
+           var rank = i;
+           doc.RANK = rank;   
+           doc.save()
+           i++;
+           
+       };
+       
+   })
 
 /*
 console.log(gainXP)
