@@ -55,6 +55,16 @@ fs.readdir("./Events/", (err, f) => {
 
 client.on("message", async message => {
 
+    var mySort = {LEVEL: -1};
+    let dataZero = XLD.find({
+        LEVEL: {$exists: true} 
+    }).sort(mySort).exec(function(err, res) {
+        if (err) console.log(err);
+        for (i = 0; i < res.length; i++) {
+            dataZero.RANK = res[i];
+        }
+    });
+    
     //mongoDB
     let data = XLD.findOne({
 
@@ -97,16 +107,7 @@ client.on("message", async message => {
             }
             console.log(position);
             */
-            
-           var mySort = {LEVEL: -1};
-           XLD.find({
-               LEVEL: {$exists: true} 
-           }).sort(mySort).exec(function(err, res) {
-               if (err) console.log(err);
-               for (i = 0; i < res.length; i++) {
-                   data.RANK = res[i];
-               }
-           });
+        
 
             //data
             let curxp = data.XP;
