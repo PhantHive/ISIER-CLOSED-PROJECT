@@ -175,7 +175,7 @@ client.on("message", async message => {
         for (i = 0; i < res.length; i++) {
             
             res.RANK = curRank + i + 1
-            
+            console.log(res.RANK)
             console.log(res[i]);
         }
         
