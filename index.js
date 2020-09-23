@@ -101,8 +101,8 @@ client.on("message", async message => {
             //RANK
 
             var mySort = {LEVEL: -1, XP: -1};
-            var lb = data.sort(mySort).toArray(function(err, result) {
-                if (err) throw err;
+            var lb = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, result) {
+                if (err) return handleError(err);
                 console.log(result);
                 dbo.close();
             });
