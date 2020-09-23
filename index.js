@@ -68,8 +68,8 @@ client.on("message", async message => {
             doc.RANK = rank;
             console.log(doc.RANK);
             console.log(doc);
-        })
     })
+   
 
     //mongoDB
     let data = XLD.findOne({
