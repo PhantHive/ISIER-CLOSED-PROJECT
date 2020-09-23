@@ -165,13 +165,13 @@ client.on("message", async message => {
         }
     });
  
-    var mySort = {LEVEL: -1};
+    var mySort = {LEVEL: -1, XP: -1};
     XLD.find({
         LEVEL: {$exists: true} 
     }).sort(mySort).exec(function(err, res) {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
-  
+            console.log(i);
             res.RANK = i + 1
             console.log(res[i]);
         }
