@@ -58,6 +58,8 @@ client.on("message", async message => {
     var current = null,
     rank = 0;
 
+    //using promises :P
+
     var lb = XLD.find().sort({ "LEVEL": -1, "XP": -1 });
     lb.then((doc) => {
         doc.forEach((doc) => {
@@ -70,7 +72,7 @@ client.on("message", async message => {
             console.log(doc.RANK);
             console.log(doc);
         })
-    }
+    });
    
 
     //mongoDB
