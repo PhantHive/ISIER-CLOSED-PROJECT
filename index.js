@@ -101,27 +101,20 @@ client.on("message", async message => {
             //RANK
 
             var mySort = {LEVEL: -1, XP: -1};
-            var cursor = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort);
-            var i = 1;
-            for(var doc in cursor) {
-                var rank = i;
-                doc.RANK = rank;   
-                i++;
+            var cursor = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, collect) {
+                var i = 1;
+                for(var doc in collect) {
+                    var rank = i;
+                    doc.RANK = rank;   
+                    i++;
+                };
                 doc.save();
-            };
+            });
+     
+            
             
 
                 
-
-
-       
-            
-            
-                
-           
-               
-            
-
             //data
             let curxp = data.XP;
             let curlvl = data.LEVEL;
