@@ -65,7 +65,7 @@ client.on("message", async message => {
                 current = doc.name;
             }
             rank++;
-            doc.rank = rank;
+            doc.RANK = rank;
             printjson(doc);
         })
     })
