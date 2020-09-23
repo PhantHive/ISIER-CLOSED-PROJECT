@@ -99,7 +99,11 @@ client.on("message", async message => {
             */
 
             //RANK
-            var lb =  XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1}).fetch();
+            var lb =  XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1}).toArray(function(err, result) {
+                if (err) throw err;
+                console.log(result);
+                XLD.close();
+            });
             
             console.log(lb);
             //data
