@@ -66,9 +66,11 @@ client.on("message", async message => {
         var i = 0;
         while (i < doc.length) {
             doc.RANK = i+1;
+            console.log(doc.RANK);
             console.log(doc);
+            i++
         }
-        i++
+        
     });
    
 
