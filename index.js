@@ -99,7 +99,8 @@ client.on("message", async message => {
             */
 
             //RANK
-            var lb =  XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1}).toArray();
+            var lb =  XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1}).fetch();
+            
             console.log(lb);
             //data
             let curxp = data.XP;
