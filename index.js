@@ -171,7 +171,10 @@ client.on("message", async message => {
     }).sort(mySort).exec(function(err, res) {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
-            res.RANK.set(i+1)
+            XLD.update(
+                {$set: {"RANK": i+1}},
+                {multi: true}
+            )
             
             console.log(res[i]);
         }
