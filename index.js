@@ -108,7 +108,7 @@ client.on("message", async message => {
                     doc.RANK = rank;   
                     i++;
                 };
-                doc.save();
+                collect.save();
             });
      
             
