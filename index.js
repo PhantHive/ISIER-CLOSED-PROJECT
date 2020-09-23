@@ -66,7 +66,6 @@ client.on("message", async message => {
             }
             rank++;
             doc.RANK = rank;
-            printjson(doc);
         })
     })
 
