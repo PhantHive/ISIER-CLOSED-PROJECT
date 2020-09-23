@@ -56,14 +56,14 @@ fs.readdir("./Events/", (err, f) => {
 client.on("message", async message => {
 
     var mySort = {LEVEL: -1};
-    let dataZero = XLD.find({
+    XLD.find({
         LEVEL: {$exists: true} 
     }).sort(mySort).exec(function(err, res) {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
             XLD.update(
                 {"$set": {"RANK": res[i]}}
-            )
+            ).save()
         }
     });
 
