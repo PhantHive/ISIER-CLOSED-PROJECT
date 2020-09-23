@@ -171,8 +171,8 @@ client.on("message", async message => {
     }).sort(mySort).exec(function(err, res) {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
-            console.log(i);
-            res.RANK = 2
+            res.RANK.set(i+1)
+            
             console.log(res[i]);
         }
         
