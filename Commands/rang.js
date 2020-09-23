@@ -35,7 +35,8 @@ module.exports.run = async (client, message,args) => {
           const newD = new XLD({
               ID: member.id + "-" + message.guild.id,
               XP: 0,
-              LEVEL: 1
+              LEVEL: 1,
+              RANK: 000
           });
           newD.save();
     }

@@ -4,7 +4,8 @@ const guildSchema = mongoose.Schema({
     
     ID: String,
     XP: Number,
-    LEVEL: Number
+    LEVEL: Number,
+    RANK: Number
 
 
 });

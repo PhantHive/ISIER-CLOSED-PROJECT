@@ -76,7 +76,8 @@ client.on("message", async message => {
             new XLD({
                 ID: message.author.id + "-" + message.guild.id,
                 XP: 0,
-                LEVEL: 1
+                LEVEL: 1,
+                RANK: 000
             }).save()
         } 
         else {
@@ -97,6 +98,9 @@ client.on("message", async message => {
             console.log(position);
             */
 
+            //RANK
+            var lb =  XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1}).toArray();
+            console.log(lb);
             //data
             let curxp = data.XP;
             let curlvl = data.LEVEL;
