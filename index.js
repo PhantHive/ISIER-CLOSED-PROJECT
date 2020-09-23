@@ -77,6 +77,7 @@ client.on("message", async message => {
         if(!data) {
             new XLD({
                 ID: message.author.id + "-" + message.guild.id,
+                serverID: message.guild.id,
                 XP: 0,
                 LEVEL: 1,
                 RANK: 0
@@ -165,39 +166,6 @@ client.on("message", async message => {
         }
     });
  
-    var mySort = {LEVEL: -1, XP: -1};
-    XLD.find({
-        LEVEL: {$exists: true} 
-    }).sort(mySort).exec(function(err, res) {
-        curRank = res.RANK;
-
-        if (err) console.log(err);
-        for (i = 0; i < res.length; i++) {
-            
-            (err, data) => {
-                if (err) console.log(err);
-                if (message.author.bot) {
-                    return;
-                }
-            
-                if(!data) {
-                    new XLD({
-                        ID: message.author.id + "-" + message.guild.id,
-                        XP: 0,
-                        LEVEL: 1,
-                        RANK: 0
-                    }).save()
-                } 
-                else {
-
-                    data.RANK = i+1;
-                }
-            }
-            
-            console.log(res[i]);
-        }
-        
-    });
 
 });
 
