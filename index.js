@@ -104,7 +104,7 @@ client.on("message", async message => {
             var lb = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort);
             var count = lb.count();
             var i = 1;
-            whilte(lb.nextObject()) {
+            while(lb.nextObject()) {
                 var rank = i;
                 lb.next();
                 XLD.update(
