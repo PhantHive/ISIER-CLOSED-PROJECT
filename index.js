@@ -64,11 +64,13 @@ client.on("message", async message => {
     lb.then((doc) => {
         
         var i = 0;
-        while (i < doc.length) {
-            doc.RANK = i+1;
-            console.log(doc.RANK);
-            console.log(doc);
-            i++
+        for (var eachDoc in doc) {
+            while (i < doc.length) {
+                eachDoc.RANK = i+1;
+                console.log(eachDoc);
+                console.log(eachDoc);
+                i++
+            }
         }
         
     });
