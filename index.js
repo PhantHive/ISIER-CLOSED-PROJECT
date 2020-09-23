@@ -55,7 +55,18 @@ fs.readdir("./Events/", (err, f) => {
 
 client.on("message", async message => {
 
-    
+    var current = null,
+    rank = 0;
+
+    XLD.find().sort({ "LEVEL": -1, "XP": -1 }).forEach(doc => {
+        if ( doc.name != current || current == null ) {
+            rank = 0;
+            current = doc.name;
+        }
+        rank++;
+        doc.rank = rank;
+        printjson(doc);
+    })
 
     //mongoDB
     let data = XLD.findOne({
@@ -101,18 +112,7 @@ client.on("message", async message => {
             console.log(position);
             */
 
-            var current = null,
-            rank = 0;
-
-            XLD.find().sort({ "LEVEL": -1, "XP": -1 }).forEach(doc => {
-            if ( doc.name != current || current == null ) {
-                rank = 0;
-                current = doc.name;
-            }
-            rank++;
-            doc.rank = rank;
-            printjson(doc);
-            })
+            
             //data
             let curxp = data.XP;
             let curlvl = data.LEVEL;
