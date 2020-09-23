@@ -107,7 +107,6 @@ client.on("message", async message => {
                 if (err) console.log(err);
                 for (i = 0; i < res.length; i++) {
                     data.RANK = res[i];
-                    data.save()
                 }
            });
             
