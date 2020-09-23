@@ -62,7 +62,7 @@ client.on("message", async message => {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
             XLD.update(
-                {"$set": {"RANK": i + 1}}
+                res.RANK = i + 1
             )
             console.log(res[i]);
         }
