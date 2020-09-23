@@ -59,7 +59,7 @@ client.on("message", async message => {
     rank = 0;
 
     XLD.find().sort({ "LEVEL": -1, "XP": -1 }).exec(function(err, doc) {
-        forEach(doc => {
+        doc.forEach(doc => {
             if ( doc.name != current || current == null ) {
                 rank = 0;
                 current = doc.name;
