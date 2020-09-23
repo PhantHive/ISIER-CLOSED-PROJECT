@@ -107,6 +107,7 @@ client.on("message", async message => {
                 var rank = i;
                 doc.RANK = rank;   
                 i++;
+                doc.save();
             };
             
 
