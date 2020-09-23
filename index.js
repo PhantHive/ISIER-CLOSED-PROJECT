@@ -108,8 +108,8 @@ client.on("message", async message => {
                     doc.RANK = rank;   
                     i++;
                 };
-                collect.save();
-            });
+                
+            }).save()
      
             
             
