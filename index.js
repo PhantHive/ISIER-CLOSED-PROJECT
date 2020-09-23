@@ -96,9 +96,20 @@ client.on("message", async message => {
             i ++;
             }
             console.log(position);
-
+            */
      
-            
+           var mySort = {LEVEL: -1, XP: -1};
+           var cursor = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, collect) {
+               var i = 1;
+               for(var doc in collect) {
+                   var rank = i;
+                   doc.RANK = rank;   
+                   doc.save()
+                   i++;
+                   
+               };
+               
+           })
             
 
                 
@@ -212,18 +223,7 @@ client.on("message", async message => {
     }
     */
     
-   var mySort = {LEVEL: -1, XP: -1};
-   var cursor = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, collect) {
-       var i = 1;
-       for(var doc in collect) {
-           var rank = i;
-           doc.RANK = rank;   
-           doc.save()
-           i++;
-           
-       };
-       
-   })
+   
 
 /*
 console.log(gainXP)
