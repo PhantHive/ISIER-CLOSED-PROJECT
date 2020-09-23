@@ -62,16 +62,11 @@ client.on("message", async message => {
 
     var lb = XLD.find().sort({ "LEVEL": -1, "XP": -1 });
     lb.then((doc) => {
-        doc.forEach((doc) => {
-            if ( doc.ID != current || current == null ) {
-                rank = 0;
-                current = doc.ID;
-            }
-            rank++;
-            doc.RANK = rank;
-            console.log(doc.RANK);
-            console.log(doc);
-        })
+        for(i=0; i < doc.reverse; i++ ) {
+            doc.RANK = i + 1;
+            console.log(i+1);
+            console.log(doc)
+        }
     });
    
 
