@@ -174,8 +174,12 @@ client.on("message", async message => {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
             
-            res.RANK = curRank + i + 1
-            console.log(res.RANK)
+            XLD.findOne({ RANK: {$exists: true} }, function (err, doc){
+                if (err) console.log(err);
+                doc.RANK = i + 1
+                doc.save();
+              });
+            
             console.log(res[i]);
         }
         
