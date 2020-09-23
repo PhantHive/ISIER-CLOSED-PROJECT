@@ -104,11 +104,9 @@ client.on("message", async message => {
                for(var doc in collect) {
                    var rank = i;
                    doc.RANK = rank;   
-                   doc.save()
                    i++;
-                   
                };
-               
+               XLD.save()
            })
             
 
