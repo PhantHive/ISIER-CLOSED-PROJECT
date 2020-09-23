@@ -101,11 +101,19 @@ client.on("message", async message => {
             //RANK
 
             var mySort = {LEVEL: -1, XP: -1};
-            var lb = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, result) {
-                if (err) return handleError(err);
-                console.log(result);
-                lb.close();
-            });
+            var lb = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort);
+            var count = lb.count();
+            var i = 1;
+            whilte(lb.nextObject()) {
+                var rank = i;
+                lb.next();
+                XLD.update(
+                    {"ID": message.author.id + "-" + message.guild.id},
+                    {"$set": {"RANK": rank}}
+                );
+                i++;
+            }
+               
             
             console.log(lb);
             //data
