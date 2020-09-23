@@ -66,7 +66,10 @@ client.on("message", async message => {
         if (err) console.log(err);
 
         for (const underDoc of doc){
-            console.log(underDoc);
+            for(i=0; underDoc < doc.length; i++) {
+                underDoc.RANK = i+1;
+                console.log(underDoc);
+            }
         }
         
       
