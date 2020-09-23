@@ -67,11 +67,13 @@ client.on("message", async message => {
 
         for (const underDoc of doc){
 
-            for (let i=0; underDoc < doc.length; i++) {
+            var i = 0
+            while ( i < doc.lengt) {
                 underDoc.RANK = i+1;
-                console.log(underDoc.RANK)
+                console.log(underDoc);
+                i++;
             }
-            underDoc.save()
+
         }
         
       
