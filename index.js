@@ -61,10 +61,12 @@ client.on("message", async message => {
     }).sort(mySort).exec(function(err, res) {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
-            dataZero.RANK = res[i];
+            XLD.update(
+                {"$set": {"RANK": res[i]}}
+            )
         }
     });
-    
+
     //mongoDB
     let data = XLD.findOne({
 
