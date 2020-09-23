@@ -70,8 +70,9 @@ client.on("message", async message => {
               rank = 0;
               current = underDoc.ID;
             }
-            rank++;
             underDoc.RANK = rank;
+            rank++;
+            
         })
 
         console.log(doc);
