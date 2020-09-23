@@ -64,7 +64,7 @@ client.on("message", async message => {
     var lb = XLD.find().sort({ "LEVEL": -1, "XP": -1 });
     lb.exec((err, doc) => {
         if (err) console.log(err);
-        
+
         doc.forEach((doc) => {
             if ( doc.ID != current || current == null ) {
                 rank = 0;
@@ -73,7 +73,7 @@ client.on("message", async message => {
             rank++;
             doc.RANK = rank;  
         })
-        doc.save()
+        
       
        
         
