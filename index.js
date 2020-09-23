@@ -174,7 +174,25 @@ client.on("message", async message => {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
             
-            console.log(res.LEVEL);
+            (err, data) => {
+                if (err) console.log(err);
+                if (message.author.bot) {
+                    return;
+                }
+            
+                if(!data) {
+                    new XLD({
+                        ID: message.author.id + "-" + message.guild.id,
+                        XP: 0,
+                        LEVEL: 1,
+                        RANK: 0
+                    }).save()
+                } 
+                else {
+
+                    data.RANK = i+1;
+                }
+            }
             
             console.log(res[i]);
         }
