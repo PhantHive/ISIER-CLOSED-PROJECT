@@ -173,7 +173,7 @@ client.on("message", async message => {
         for (i = 0; i < res.length; i++) {
             XLD.update(
                 {$set: {"RANK": i+1}},
-                {multi: true}
+                {multi: false}
             )
             
             console.log(res[i]);
