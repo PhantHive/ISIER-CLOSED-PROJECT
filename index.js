@@ -63,8 +63,9 @@ client.on("message", async message => {
         for (i = 0; i < res.length; i++) {
             XLD.update(
                 {"$set": {"RANK": res[i]}}
-            ).save()
+            )
         }
+        console.log(res);
     });
 
     //mongoDB
