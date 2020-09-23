@@ -172,7 +172,7 @@ client.on("message", async message => {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
             console.log(i);
-            res.RANK = i + 1
+            res.RANK = 2
             console.log(res[i]);
         }
         
