@@ -71,6 +71,7 @@ client.on("message", async message => {
                 
             }
             console.log(underDoc);
+            underDoc.save()
         }
         
       
