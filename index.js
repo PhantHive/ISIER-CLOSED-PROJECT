@@ -65,17 +65,7 @@ client.on("message", async message => {
     lb.exec((err, doc) => {
         if (err) console.log(err);
 
-        for (const underDoc of doc){
-
-            var i = 0
-            while ( i < doc.lengt) {
-                underDoc.RANK = i+1;
-                console.log(underDoc);
-                i++;
-            }
-
-        }
-        
+        console.log(doc);
       
        
         
