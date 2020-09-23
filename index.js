@@ -169,12 +169,12 @@ client.on("message", async message => {
     XLD.find({
         LEVEL: {$exists: true} 
     }).sort(mySort).exec(function(err, res) {
+        curRank = res.RANK;
+
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
-            XLD.update(
-                {$set: {"RANK": i+1}},
-                {multi: false}
-            )
+            
+            res.RANK = curRank + i + 1
             
             console.log(res[i]);
         }
