@@ -65,16 +65,9 @@ client.on("message", async message => {
     lb.exec((err, doc) => {
         if (err) console.log(err);
 
-        doc.forEach((doc) => {
-            if ( doc.ID != current || current == null ) {
-                rank = 0;
-                current = doc.ID;
-            }
-            rank++;
-            doc.RANK = rank;  
-            
-            console.log(doc);
-        })
+        for (const underDoc of doc){
+            console.log(underDoc);
+        }
         
       
        
