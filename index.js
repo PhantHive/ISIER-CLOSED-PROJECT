@@ -174,7 +174,7 @@ client.on("message", async message => {
         if (err) console.log(err);
         for (i = 0; i < res.length; i++) {
             
-            XLD.updateOne({}, {$set: {"RANK": i+1}})
+            console.log(res.LEVEL);
             
             console.log(res[i]);
         }
