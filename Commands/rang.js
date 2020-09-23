@@ -37,7 +37,7 @@ module.exports.run = async (client, message,args) => {
               serverID: message.guild.id,
               XP: 0,
               LEVEL: 1,
-              RANL: 0
+              RANK: 0
           });
           newD.save();
     }
@@ -59,20 +59,7 @@ module.exports.run = async (client, message,args) => {
 
          
         */
-       var mySort = {LEVEL: -1, XP: -1};
-       XLD.find({
-           LEVEL: {$exists: true} 
-       }).sort(mySort).exec(function(err, res) {
-   
-           if (err) console.log(err);
-           for (i = 0; i < res.length; i++) {
-               
-               XLD.findOneAndUpdate()
-               
-               console.log(res[i]);
-           }
-           
-       });
+       
 
         let curxp = data.XP;
         let curlvl = data.LEVEL;
@@ -132,6 +119,7 @@ module.exports.run = async (client, message,args) => {
         ctx.clip();
         const avatar = await loadImage(member.user.displayAvatarURL);
         ctx.drawImage(avatar, 40, 40, 250, 250);
+
 
         message.channel.send({
           files: [{

@@ -100,8 +100,18 @@ client.on("message", async message => {
             }
             console.log(position);
             */
-        
 
+           XLD.aggregate([
+            { "$sort": { "LEVEL" : -1,"XP" : -1} },
+            { "$group": {
+              "_id": "$name",
+              "items": { "$push": "$$ROOT" }
+            }},
+            { "$unwind": { "path": "$items", "includeArrayIndex": "items.rank" } },
+            { "$replaceRoot": { "newRoot": "$items" } },
+            { "$sort": { "LEVEL" : -1,"XP" : -1} }
+          ])
+        
             //data
             let curxp = data.XP;
             let curlvl = data.LEVEL;
