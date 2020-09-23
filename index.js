@@ -101,17 +101,18 @@ client.on("message", async message => {
             console.log(position);
             */
 
-           XLD.aggregate([
-            { "$sort": { "LEVEL" : -1,"XP" : -1} },
-            { "$group": {
-              "_id": "$name",
-              "items": { "$push": "$$ROOT" }
-            }},
-            { "$unwind": { "path": "$items", "includeArrayIndex": "items.rank" } },
-            { "$replaceRoot": { "newRoot": "$items" } },
-            { "$sort": { "LEVEL" : -1,"XP" : -1} }
-          ])
-        
+            var current = null,
+            rank = 0;
+
+            XLD.find().sort({ "LEVE": -1, "XP": -1 }).forEach(doc => {
+            if ( doc.name != current || current == null ) {
+                rank = 0;
+                current = doc.name;
+            }
+            rank++;
+            doc.rank = rank;
+            printjson(doc);
+            })
             //data
             let curxp = data.XP;
             let curlvl = data.LEVEL;
