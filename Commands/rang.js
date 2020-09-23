@@ -37,7 +37,7 @@ module.exports.run = async (client, message,args) => {
               serverID: message.guild.id,
               XP: 0,
               LEVEL: 1,
-              RANK: 000
+              RANK: 0
           });
           newD.save();
     }
