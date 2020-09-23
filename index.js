@@ -61,7 +61,7 @@ client.on("message", async message => {
     var current = null,
         rank = 0;
 
-    var lb = XLD.find().sort({ "LEVEL": -1, "XP": -1 });
+    var lb = XLD.find({serverID: message.guild.id}).sort({"ID": 1, "LEVEL": -1, "XP": -1 });
     lb.exec((err, doc) => {
         if (err) console.log(err);
 
@@ -72,6 +72,7 @@ client.on("message", async message => {
             }
             rank++;
             doc.RANK = rank;  
+            
             console.log(doc);
         })
         
