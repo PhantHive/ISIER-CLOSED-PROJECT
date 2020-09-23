@@ -34,6 +34,7 @@ module.exports.run = async (client, message,args) => {
           message.reply("pas de rang!")
           const newD = new XLD({
               ID: member.id + "-" + message.guild.id,
+              serverID: message.guild.id,
               XP: 0,
               LEVEL: 1,
               RANK: 000

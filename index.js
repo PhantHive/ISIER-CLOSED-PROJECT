@@ -99,6 +99,18 @@ client.on("message", async message => {
             console.log(position);
             */
      
+           var mySort = {LEVEL: -1};
+
+           XLD.find({
+               serverID: message.guild.id
+           }).sort(mySort).exec(function(err, res) {
+                if (err) console.log(err);
+                for (i = 0; i < res.length; i++) {
+                    data.RANK = res[i];
+                    data.save()
+                }
+           });
+            
          
 
                 
