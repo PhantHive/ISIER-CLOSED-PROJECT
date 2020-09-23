@@ -55,23 +55,26 @@ fs.readdir("./Events/", (err, f) => {
 
 client.on("message", async message => {
 
-    var current = null,
-    rank = 0;
+   
 
     //using promises :P
+    var current = null,
+        rank = 0;
 
     var lb = XLD.find().sort({ "LEVEL": -1, "XP": -1 });
     lb.then((doc) => {
         
-        var i = 0;
-        for (var eachDoc in doc) {
-            while (i < doc.length) {
-                eachDoc.RANK = i+1;
-                console.log(eachDoc);
-                console.log(eachDoc);
-                i++
+        doc.forEach((doc) => {
+            if ( doc.ID != current || current == null ) {
+                rank = 0;
+                current = doc.ID;
             }
-        }
+            rank++;
+            doc.RANK = rank;
+         
+        })
+      
+       
         
     });
    
