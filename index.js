@@ -104,7 +104,7 @@ client.on("message", async message => {
             var lb = XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort(mySort).exec(function(err, result) {
                 if (err) return handleError(err);
                 console.log(result);
-                dbo.close();
+                lb.close();
             });
             
             console.log(lb);
