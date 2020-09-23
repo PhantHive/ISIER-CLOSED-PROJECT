@@ -99,10 +99,13 @@ client.on("message", async message => {
             */
 
             //RANK
-            var lb =  XLD.find({LEVEL: {$exists: true}, XP: {$exists: true}}).sort({LEVEL: -1, XP: -1}).fetch(function(err, result) {
+
+            var mySort = {LEVEL: -1, XP: -1}
+            var dbo = db.db("<dbname>");
+            var lb = dbo.collection("ranksystems").find().sort(mySort).toArray(function(err, result) {
                 if (err) throw err;
                 console.log(result);
-                XLD.close();
+                dbo.close();
             });
             
             console.log(lb);
