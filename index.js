@@ -64,7 +64,7 @@ client.on("message", async message => {
     lb.then((doc) => {
         doc.forEach((doc) => {
             if ( doc.name != current || current == null ) {
-                rank = 1;
+                rank = 0;
                 current = doc.name;
             }
             rank++;
