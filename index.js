@@ -104,7 +104,7 @@ client.on("message", async message => {
             var current = null,
             rank = 0;
 
-            XLD.find().sort({ "LEVE": -1, "XP": -1 }).forEach(doc => {
+            XLD.find().sort({ "LEVEL": -1, "XP": -1 }).forEach(doc => {
             if ( doc.name != current || current == null ) {
                 rank = 0;
                 current = doc.name;
