@@ -113,7 +113,7 @@ module.exports.run = async (client, message,args) => {
         ctx.shadowColor = "white";
         ctx.shadowBlur = 2;
         ctx.fillText("✪RANK:", 700, 60);
-        ctx.fillText(curRank, 820, 60);
+        ctx.fillText(curRank, 20, 60);
 
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
@@ -131,8 +131,6 @@ module.exports.run = async (client, message,args) => {
         ctx.clip();
         const avatar = await loadImage(member.user.displayAvatarURL);
         ctx.drawImage(avatar, 40, 40, 250, 250);
-
-        ctx.
 
         message.channel.send({
           files: [{
