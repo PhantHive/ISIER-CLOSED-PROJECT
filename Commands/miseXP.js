@@ -33,14 +33,14 @@ module.exports.run = async (client, message, args) => {
             }
             else {
                 message.channel.send(`<@${challenger}> **challenge** ${adversaire} et mise ${xpMiser}, veux tu *suivre*?`).then(
-                    msg.react('👍').then(r => {
-                        msg.react('👎');
+                    message.react('👍').then(r => {
+                        message.react('👎');
                         //FILTRES
                         const ouiFilter = (reaction, user) => reaction.emoji.name === '👍' && user.id === adversaire.id;
                         const nonFilter = (reaction, user) => reaction.emoji.name === '👎' && user.id === adversaire.id;
                         //CREATION DES COLLECTEUR
-                        const oui = msg.createReactionCollector(ouiFilter,{time: 15000});
-                        const non = msg.createReactionCollector(nonFilter,{time: 15000});
+                        const oui = message.createReactionCollector(ouiFilter,{time: 15000});
+                        const non = message.createReactionCollector(nonFilter,{time: 15000});
 
                         oui.on('collect', r => {
                             const randomChooseFirst = Math.floor(Math.random() * 3 + 1);
