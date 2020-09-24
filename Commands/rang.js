@@ -17,7 +17,7 @@ module.exports.run = async (client, message,args) => {
     };
   } */
 
-
+  const allR = await XLD.countDocuments({}).exec();
   const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
 
 
@@ -60,7 +60,7 @@ module.exports.run = async (client, message,args) => {
          
         */
 
-        let allR = XLD.countDocuments({});
+        
        
         let curRank = data.RANK;
         let curxp = data.XP;
