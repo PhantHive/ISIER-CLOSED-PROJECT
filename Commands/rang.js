@@ -108,15 +108,7 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText(curlvl, 470, 180);
 
 
-        //profil circle
-        ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
-        ctx.lineWidth = 6;
-        ctx.strokeStyle = "#ffffff";
-        ctx.stroke();
-        ctx.closePath();
-        ctx.clip();
-        const avatar = await loadImage(member.user.displayAvatarURL);
-        ctx.drawImage(avatar, 40, 40, 250, 250);
+        
 
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
@@ -150,8 +142,18 @@ module.exports.run = async (client, message,args) => {
 
 
         
-
-
+        ctx.shadowOffsetX = 5;
+        ctx.shadowColor = "blue";
+        ctx.shadowBlur = 3;
+        //profil circle
+        ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
+        ctx.lineWidth = 6;
+        ctx.strokeStyle = "#ffffff";
+        ctx.stroke();
+        ctx.closePath();
+        ctx.clip();
+        const avatar = await loadImage(member.user.displayAvatarURL);
+        ctx.drawImage(avatar, 40, 40, 250, 250);
 
         
         
