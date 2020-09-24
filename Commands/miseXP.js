@@ -4,12 +4,15 @@ client.mongoose = require('../utils/mongose.js');
 const XLD = require('../models/RankSystem.js');
 const { join } = require("path");
 
-module.exports = async (client, message, args) => {
+module.exports.run = async (client, message, args) => {
 
     const challenger = message.author.id;
     const adversaire = message.mentions.members.first() || message.guild.members.get(args[0]);
     const xpMiser = message.guild.members.get(args[1]);
 
+    if (adversaire.id == challenger) {
+        message.reply("Tu peux pas te challenge toi meme aha.");
+    }
         //mongoDB
     XLD.find({
 
