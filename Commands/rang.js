@@ -90,15 +90,15 @@ module.exports.run = async (client, message,args) => {
         ctx.globalAlpha = 0.8;
         ctx.fillRect(180, 218, percentage, 61);
         ctx.globalAlpha = 1; 
-        ctx.shadowOffsetX = 5;
-        ctx.shadowColor = "blue";
-        ctx.shadowBlur = 3;
         ctx.font = "35px Arial";
         ctx.textAlign = "center";
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
         ctx.textAlign = "left";
         ctx.font = "bold 45px Comic Sans MS";
+        ctx.shadowOffsetX = 5;
+        ctx.shadowColor = "blue";
+        ctx.shadowBlur = 3;
         ctx.fillText(member.user.tag, 300, 120);
   
         ctx.font = "40px Comic Sans MS";
@@ -119,9 +119,6 @@ module.exports.run = async (client, message,args) => {
         ctx.shadowBlur = 2;
         ctx.font = "40px bold Comic Sans MS";
         ctx.fillStyle = "#FEE700";
-
-
-        
         ctx.fillText("✪RANK:", 740, 60);
         ctx.fillText(curRank, 900, 60);
 
@@ -140,11 +137,9 @@ module.exports.run = async (client, message,args) => {
         ctx.clip();
 
 
-        
-        ctx.shadowOffsetX = 5;
-        ctx.shadowColor = "blue";
-        ctx.shadowBlur = 3;
+  
         //profil circle
+        /*
         ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
         ctx.lineWidth = 6;
         ctx.strokeStyle = "#ffffff";
@@ -152,7 +147,7 @@ module.exports.run = async (client, message,args) => {
         ctx.closePath();
         ctx.clip();
         const avatar = await loadImage(member.user.displayAvatarURL);
-        ctx.drawImage(avatar, 40, 40, 250, 250);
+        ctx.drawImage(avatar, 40, 40, 250, 250);*/
 
         
         
