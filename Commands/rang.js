@@ -107,30 +107,6 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
 
-        ctx.shadowOffsetX = 2;
-        ctx.shadowColor = "black";
-        ctx.shadowBlur = 2;
-        ctx.font = "40px bold Comic Sans MS";
-        ctx.fillStyle = "#FEE700";
-        
-        ctx.fillText("✪RANK:", 740, 60);
-        ctx.fillText(curRank, 900, 60);
-
-
-        ctx.font = "bold italic 25px Arial";
-        ctx.fillStyle = "#ffffff";
-        ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
-
-
-        //small circle rank
-        ctx.arc(250, 80, 15, 0, Math.PI * 2, true);
-        ctx.fillStyle = '#000000'
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1;
-        ctx.stroke();
-        ctx.fill();
-        ctx.closePath();
-        ctx.clip();
 
         //profil circle
         ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
@@ -141,6 +117,39 @@ module.exports.run = async (client, message,args) => {
         ctx.clip();
         const avatar = await loadImage(member.user.displayAvatarURL);
         ctx.drawImage(avatar, 40, 40, 250, 250);
+
+        ctx.font = "bold italic 25px Arial";
+        ctx.fillStyle = "#ffffff";
+        ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
+        
+
+        ctx.shadowOffsetX = 3;
+        ctx.shadowColor = "black";
+        ctx.shadowBlur = 2;
+        ctx.font = "40px bold Comic Sans MS";
+        ctx.fillStyle = "#FEE700";
+
+
+        
+        ctx.fillText("✪RANK:", 740, 60);
+        ctx.fillText(curRank, 900, 60);
+
+
+    
+        ctx.shadowOffsetX = 0;
+        ctx.shadowBlur = 0;
+        //small circle rank
+        ctx.arc(250, 80, 15, 0, Math.PI * 2, true);
+        ctx.fillStyle = '#000000';
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+        ctx.clip();
+
+
+        
 
 
 
