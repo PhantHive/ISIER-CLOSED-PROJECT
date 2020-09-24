@@ -109,11 +109,11 @@ module.exports.run = async (client, message,args) => {
 
         ctx.font = "40px Comic Sans MS";
         ctx.fillStyle = "#FEE700";
-        ctx.shadowOffsetX = 5;
-        ctx.shadowColor = "white";
-        ctx.shadowBlur = 2;
-        ctx.fillText("✪RANK:", 700, 60);
-        ctx.fillText(curRank, 820, 60);
+        ctx.shadowOffsetX = 1;
+        ctx.shadowColor = "black";
+        ctx.shadowBlur = 0;
+        ctx.fillText("✪RANK:", 740, 60);
+        ctx.fillText(curRank, 860, 60);
 
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
