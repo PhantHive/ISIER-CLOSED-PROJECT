@@ -94,12 +94,13 @@ module.exports.run = async (client, message,args) => {
         ctx.font = "35px Arial";
         ctx.textAlign = "center";
         ctx.fillStyle = "#ffffff";
-        ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
-        ctx.textAlign = "left";
-        ctx.font = "bold 45px Comic Sans MS";
         ctx.shadowOffsetX = 5;
         ctx.shadowColor = "blue";
         ctx.shadowBlur = 3;
+        ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
+        ctx.textAlign = "left";
+        ctx.font = "bold 45px Comic Sans MS";
+        
         ctx.fillText(member.user.tag, 300, 120);
   
 
@@ -107,27 +108,21 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
 
-        ctx.shadowOffsetX = 0;
-        ctx.shadowColor = null;
-        ctx.shadowBlur = 0;
-        ctx.font = "40px bold Comic Sans MS";
-        ctx.fillStyle = "#FEE700";
         ctx.shadowOffsetX = 2;
         ctx.shadowColor = "black";
         ctx.shadowBlur = 2;
+        ctx.font = "40px bold Comic Sans MS";
+        ctx.fillStyle = "#FEE700";
+        
         ctx.fillText("✪RANK:", 740, 60);
         ctx.fillText(curRank, 900, 60);
 
-        ctx.shadowOffsetX = 0;
-        ctx.shadowColor = null;
-        ctx.shadowBlur = 0;
+
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
         ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
 
-        ctx.shadowOffsetX = 5;
-        ctx.shadowColor = "blue";
-        ctx.shadowBlur = 3;
+
         //profil circle
         ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
         ctx.lineWidth = 6;
@@ -139,13 +134,11 @@ module.exports.run = async (client, message,args) => {
         ctx.drawImage(avatar, 40, 40, 250, 250);
 
 
-        ctx.shadowOffsetX = 0;
-        ctx.shadowColor = null;
-        ctx.shadowBlur = 0;
-        ctx.arc(230, 40, 20, 0, Math.PI * 2, true);
-        ctx.lineWidth = 1;
+
         ctx.fillStyle = '#000000'
         ctx.strokeStyle = "#ffffff";
+        ctx.arc(230, 40, 20, 0, Math.PI * 2, true);
+        ctx.lineWidth = 1;
         ctx.stroke();
         ctx.fill();
         ctx.closePath();
