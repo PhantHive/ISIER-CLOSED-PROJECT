@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
+const client = new Discord.Client();
 client.mongoose = require('../utils/mongose.js');
 const XLD = require('../models/RankSystem.js');
 const { join } = require("path");
 
-module.exports = async (message, args) => {
+module.exports = async (client, message, args) => {
 
     const challenger = message.author.id;
     const adversaire = message.mentions.members.first() || message.guild.members.get(args[0]);
