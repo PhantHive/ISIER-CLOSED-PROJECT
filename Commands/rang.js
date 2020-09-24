@@ -132,6 +132,16 @@ module.exports.run = async (client, message,args) => {
         const avatar = await loadImage(member.user.displayAvatarURL);
         ctx.drawImage(avatar, 40, 40, 250, 250);
 
+
+        ctx.arc(230, 40, 10, 0, Math.PI * 2, true);
+        ctx.lineWidth = 6;
+        ctx.fillStyle = '#000000'
+        ctx.strokeStyle = "#ffffff";
+        ctx.stroke();
+        ctx.closePath();
+        ctx.clip();
+        
+
         message.channel.send({
           files: [{
             attachment: canvas.toBuffer(),
