@@ -64,7 +64,7 @@ module.exports.run = async (client, message, args) => {
                                 const non = msg.createReactionCollector(nonFilter,{time: 50000});
         
                                 oui.on('collect', r => {
-                                    const randomChooseFirst = Math.floor(Math.random() * 3) + 1;
+                                    const randomChooseFirst = Math.floor(Math.random() * 2) + 1;
                                     console.log(randomChooseFirst);
                                     if (randomChooseFirst == 1) {
                                         message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
@@ -73,7 +73,7 @@ module.exports.run = async (client, message, args) => {
                                             message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 50000})
                                             .then(collected => {
         
-                                                const randomPileFace = Math.floor(Math.random() * 3) + 1;
+                                                const randomPileFace = Math.floor(Math.random() * 2) + 1;
                                                 if(collected.first().content == randomPileFace) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(11000))
                                                     .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
@@ -119,6 +119,63 @@ module.exports.run = async (client, message, args) => {
                                             });
         
                                         });
+                                    }
+                                    else {
+
+                                        message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
+                                        .then( () => {
+        
+                                            message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 50000})
+                                            .then(collected => {
+        
+                                                const randomPileFace = Math.floor(Math.random() * 2) + 1;
+                                                if(collected.first().content == randomPileFace) {
+                                                    message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(11000))
+                                                    .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
+                                                    .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(11000)))
+                                                    .then(() => message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`));
+                                                        
+                                                        const docChallenger = XLD.findOne({
+                                                            ID: challenger + "-" + message.guild.id
+                                                        });
+            
+                                                        docChallenger.XP += xpMiser;
+            
+                                                        const docAdversaire = XLD.findOne({
+                                                            ID: adversaire.id + "-" + message.guild.id
+                                                        });
+            
+                                                        docAdversaire.XP -= xpMiser;
+                                                    
+                                                    
+                                                   
+        
+                                                } else {
+        
+                                                    message.channel.send({file: './image/pieceTournant.jpg'}).then(m => m.delete(11000))
+                                                    .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
+                                                    .then(() => message.channel.send({file: './image/piecePile.jpg'}).then(m => m.delete(11000)))
+                                                    .then(() => message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso <@${challenger}> *better luck next time :P*`));
+                                                    
+                                                        const docChallenger = XLD.findOne({
+                                                            ID: challenger + "-" + message.guild.id
+                                                        });
+            
+                                                        docChallenger.XP -= xpMiser;
+            
+                                                        const docAdversaire = XLD.findOne({
+                                                            ID: adversaire.id + "-" + message.guild.id
+                                                        });
+            
+                                                        docAdversaire.XP += xpMiser;
+                                                }
+        
+                                           
+                                            });
+        
+                                        });
+
+
                                     }
                                 });
         
