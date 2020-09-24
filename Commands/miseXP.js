@@ -146,7 +146,7 @@ module.exports.run = async (client, message, args) => {
                                         message.channel.send(`Decision: ${adversaire} vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
                                         .then( () => {
         
-                                            message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 50000})
+                                            message.channel.awaitMessages(msg => msg.author.id == adversaire.id, {max: 1, time: 50000})
                                             .then(collected => {
         
                                                 const randomPileFace = Math.floor(Math.random() * 2) + 1;
