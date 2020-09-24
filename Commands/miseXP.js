@@ -20,6 +20,10 @@ module.exports.run = async (client, message, args) => {
         return;
     };
 
+    if (!adversaire) {
+        message.reply("Je pense que tu voulais faire ca: i!miseXp TagDeTonAdversaire QuantiteXP");
+        return;
+    }
         //mongoDB
    
         var adversaireInf = XLD.findOne({
@@ -73,7 +77,8 @@ module.exports.run = async (client, message, args) => {
                                             message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 50000})
                                             .then(collected => {
         
-                                                const randomPileFace = Math.floor(Math.random() * 2) + 1;
+                                                const array = ["Pile", "Face"];
+                                                const randomPileFace = array[Math.floor(Math.random() * array.length)];
                                                 if(collected.first().content == randomPileFace) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
@@ -105,7 +110,7 @@ module.exports.run = async (client, message, args) => {
                                                     
                                                    
         
-                                                } else if (randomChooseFirst == 2) {
+                                                } else {
         
                                                     message.channel.send({file: './image/pieceTournant.jpg'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
