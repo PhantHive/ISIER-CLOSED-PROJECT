@@ -94,16 +94,15 @@ module.exports.run = async (client, message,args) => {
         ctx.font = "35px Arial";
         ctx.textAlign = "center";
         ctx.fillStyle = "#ffffff";
-        ctx.shadowOffsetX = 5;
-        ctx.shadowColor = "blue";
-        ctx.shadowBlur = 3;
         ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
         ctx.textAlign = "left";
         ctx.font = "bold 45px Comic Sans MS";
-        
         ctx.fillText(member.user.tag, 300, 120);
   
 
+        ctx.shadowOffsetX = 5;
+        ctx.shadowColor = "blue";
+        ctx.shadowBlur = 3;
         ctx.font = "40px Comic Sans MS";
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
@@ -123,6 +122,16 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
 
 
+        //small circle rank
+        ctx.arc(250, 80, 15, 0, Math.PI * 2, true);
+        ctx.fillStyle = '#000000'
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.fill();
+        ctx.closePath();
+        ctx.clip();
+
         //profil circle
         ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
         ctx.lineWidth = 6;
@@ -135,14 +144,8 @@ module.exports.run = async (client, message,args) => {
 
 
 
-        ctx.fillStyle = '#000000'
-        ctx.strokeStyle = "#ffffff";
-        ctx.arc(230, 40, 20, 0, Math.PI * 2, true);
-        ctx.lineWidth = 1;
-        ctx.stroke();
-        ctx.fill();
-        ctx.closePath();
-        ctx.clip();
+        
+        
         
 
         message.channel.send({
