@@ -1,12 +1,9 @@
 const Discord = require("discord.js");
-//let infoLVL = require("../jsonFile/level.json");
-const client = new Discord.Client();
 client.mongoose = require('../utils/mongose.js');
 const XLD = require('../models/RankSystem.js');
-const Discord = require("discord.js");
 const { join } = require("path");
 
-module.exports = async (client, message, args) => {
+module.exports = async (message, args) => {
 
     const challenger = message.author.id;
     const adversaire = message.mentions.members.first() || message.guild.members.get(args[0]);
