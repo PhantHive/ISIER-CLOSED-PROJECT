@@ -105,10 +105,6 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
 
-
-        
-        ctx.shadowOffsetX = 0;
-        ctx.shadowBlur = 0;
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
         ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
@@ -123,6 +119,19 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText(curRank, 900, 60);
 
 
+        
+        //profil circle
+      
+        ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
+        ctx.lineWidth = 6;
+        ctx.strokeStyle = "#ffffff";
+        ctx.stroke();
+        ctx.closePath();
+        ctx.clip();
+        const avatar = await loadImage(member.user.displayAvatarURL);
+        ctx.drawImage(avatar, 40, 40, 250, 250);
+
+        /*
     
         ctx.shadowOffsetX = 0;
         ctx.shadowBlur = 0;
@@ -135,19 +144,9 @@ module.exports.run = async (client, message,args) => {
         ctx.fill();
         ctx.closePath();
         ctx.clip();
-
+        */
 
   
-        //profil circle
-        /*
-        ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
-        ctx.lineWidth = 6;
-        ctx.strokeStyle = "#ffffff";
-        ctx.stroke();
-        ctx.closePath();
-        ctx.clip();
-        const avatar = await loadImage(member.user.displayAvatarURL);
-        ctx.drawImage(avatar, 40, 40, 250, 250);*/
 
         
         
