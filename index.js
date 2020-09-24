@@ -74,6 +74,7 @@ client.on("message", async message => {
             underDoc.RANK = rank;
             console.log(underDoc);
         })
+        doc.save()
 
         
       
