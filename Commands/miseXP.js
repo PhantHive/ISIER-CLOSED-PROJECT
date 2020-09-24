@@ -17,7 +17,6 @@ module.exports.run = async (client, message, args) => {
         //mongoDB
     XLD.find({
 
-        ID: challenger + "-" + message.guild.id,
         ID: adversaire.id + "-" + message.guild.id
 
     }, 
