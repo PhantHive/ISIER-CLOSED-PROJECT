@@ -75,22 +75,24 @@ module.exports.run = async (client, message, args) => {
         
                                                 const randomPileFace = Math.floor(Math.random() * 2) + 1;
                                                 if(collected.first().content == randomPileFace) {
-                                                    message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(11000))
-                                                    .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
-                                                    .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(11000)))
+                                                    message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(4000))
+                                                    .then(() => message.channel.send("suspense...").then(m => m.delete(4000)))
+                                                    .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(4000)))
                                                     .then(() => message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`));
                                                         
                                                         const docChallenger = XLD.findOne({
                                                             ID: challenger + "-" + message.guild.id
                                                         });
-            
-                                                        docChallenger.XP += xpMiser;
+                                                        
+                                                        curXp = docChallenger.XP;
+                                                        docChallenger.XP = curXp + xpMiser;
             
                                                         const docAdversaire = XLD.findOne({
                                                             ID: adversaire.id + "-" + message.guild.id
                                                         });
             
-                                                        docAdversaire.XP -= xpMiser;
+                                                        curXp = docAdversaire.XP;
+                                                        docAdversaire.XP = curXp - xpMiser;
                                                     
                                                     
                                                    
@@ -105,14 +107,16 @@ module.exports.run = async (client, message, args) => {
                                                         const docChallenger = XLD.findOne({
                                                             ID: challenger + "-" + message.guild.id
                                                         });
-            
-                                                        docChallenger.XP -= xpMiser;
+                                                        
+                                                        curXp = docChallenger.XP;
+                                                        docChallenger.XP = curXp - xpMiser;
             
                                                         const docAdversaire = XLD.findOne({
                                                             ID: adversaire.id + "-" + message.guild.id
                                                         });
             
-                                                        docAdversaire.XP += xpMiser;
+                                                        curXp = docAdversaire.XP;
+                                                        docAdversaire.XP = curXp + xpMiser;
                                                 }
         
                                            
