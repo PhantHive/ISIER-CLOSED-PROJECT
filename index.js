@@ -89,7 +89,6 @@ client.on("message", async message => {
 
         var xpRand = [0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
         let gainXP = xpRand[Math.floor(Math.random() * xpRand.length)] ; //add some xp by message
-        console.log("gainxp:" + gainXP);
 
         if (message.author.bot) {
             return;
@@ -134,7 +133,6 @@ client.on("message", async message => {
 
             if (newlvl <= data.XP && curlvl < 5) {
                 data.LEVEL = curlvl + 1;
-                console.log("true FACT")
         
                 let lvlup = new Discord.RichEmbed()
                     .setTitle("LVL +")
