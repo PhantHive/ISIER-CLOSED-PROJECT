@@ -133,11 +133,12 @@ module.exports.run = async (client, message,args) => {
         ctx.drawImage(avatar, 40, 40, 250, 250);
 
 
-        ctx.arc(230, 240, 10, 0, Math.PI * 2, true);
-        ctx.lineWidth = 6;
+        ctx.arc(230, 40, 20, 0, Math.PI * 2, true);
+        ctx.lineWidth = 1;
         ctx.fillStyle = '#000000'
         ctx.strokeStyle = "#ffffff";
         ctx.stroke();
+        ctx.fill();
         ctx.closePath();
         ctx.clip();
         
