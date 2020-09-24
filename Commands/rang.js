@@ -60,7 +60,7 @@ module.exports.run = async (client, message,args) => {
          
         */
 
-        let allR = XLD.countDocuments();
+        let allR = XLD.count({});
        
         let curRank = data.RANK;
         let curxp = data.XP;
