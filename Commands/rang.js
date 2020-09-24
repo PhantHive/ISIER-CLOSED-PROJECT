@@ -113,7 +113,7 @@ module.exports.run = async (client, message,args) => {
         ctx.shadowColor = "white";
         ctx.shadowBlur = 2;
         ctx.fillText("✪RANK:", 700, 60);
-        ctx.fillText(curRank, 20, 60);
+        ctx.fillText(curRank, 820, 60);
 
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
