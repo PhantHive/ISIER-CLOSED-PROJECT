@@ -59,6 +59,8 @@ module.exports.run = async (client, message,args) => {
 
          
         */
+
+        let allR = XLD.count();
        
         let curRank = data.RANK;
         let curxp = data.XP;
@@ -116,8 +118,8 @@ module.exports.run = async (client, message,args) => {
         ctx.shadowBlur = 6;
         ctx.font = "bold 45px Comic Sans MS";
         ctx.fillStyle = "#FEE700";
-        ctx.fillText("✪RANG:", 720, 60);
-        ctx.fillText(curRank, 930, 60);
+        ctx.fillText("✪RANG:", 640, 60);
+        ctx.fillText(curRank + "/" + allR, 880, 60);
 
 
         

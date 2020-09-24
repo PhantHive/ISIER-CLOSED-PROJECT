@@ -340,15 +340,12 @@ module.exports = async(client, message) => {
                   if (promo == "aero1") {
             
                       let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
-                      message.member.addRole(role);
-                      message.member.removeRole(roleDel)
                       mailAdded[message.author.id].mail = mail
                       return mail;
 
                   } else if (promo == "aero2") {
                       let role = message.guild.roles.find(r => r.name === "Aéro 2");
                       let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
-                      message.member.addRole(role);
                       mailAdded[message.author.id].mail = mail
                       return mail;     
                   }
