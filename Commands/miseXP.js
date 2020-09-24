@@ -59,16 +59,16 @@ module.exports.run = async (client, message, args) => {
                                 const non = msg.createReactionCollector(nonFilter,{time: 30000});
         
                                 oui.on('collect', r => {
-                                    const randomChooseFirst = Math.floor(Math.random() * 3 + 1);
+                                    const randomChooseFirst = Math.floor(Math.random() * 3) + 1;
                                     console.log(randomChooseFirst);
                                     if (randomChooseFirst == 1) {
                                         message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
                                         .then( () => {
         
-                                            message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 15000})
-                                            .then( collected => {
+                                            message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 30000})
+                                            .then(collected => {
         
-                                                const randomPileFace = Math.floor(Math.random() * 3 + 1);
+                                                const randomPileFace = Math.floor(Math.random() * 3) + 1;
                                                 if(collected.first().content == randomPileFace) {
                                                     message.channel.send({file:'../image/pieceTournant.jpg/'}).then(m => m.delete(11000))
                                                     .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
