@@ -95,6 +95,7 @@ module.exports.run = async (client, message,args) => {
         ctx.fillStyle = "#ffffff";
         ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
         ctx.textAlign = "left";
+
         ctx.font = "bold 45px Comic Sans MS";
         ctx.shadowOffsetX = 5;
         ctx.shadowColor = "blue";
@@ -112,11 +113,11 @@ module.exports.run = async (client, message,args) => {
 
         ctx.shadowOffsetX = 3;
         ctx.shadowColor = "black";
-        ctx.shadowBlur = 2;
-        ctx.font = "40px bold Comic Sans MS";
+        ctx.shadowBlur = 3;
+        ctx.font = "bold 45px Comic Sans MS";
         ctx.fillStyle = "#FEE700";
-        ctx.fillText("✪RANK:", 740, 60);
-        ctx.fillText(curRank, 900, 60);
+        ctx.fillText("✪RANK:", 770, 60);
+        ctx.fillText(curRank, 930, 60);
 
 
         
