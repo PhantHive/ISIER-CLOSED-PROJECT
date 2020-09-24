@@ -8,10 +8,11 @@ module.exports.run = async (client, message, args) => {
 
     const challenger = message.author.id;
     const adversaire = message.mentions.members.first() || message.guild.members.get(args[0]);
-    const xpMiser = message.guild.members.get(args[1]);
+    const xpMiser = message.author.id.get(args[1]);
 
     if (adversaire.id == challenger) {
         message.reply("Tu peux pas te challenge toi meme aha.");
+        return;
     }
         //mongoDB
     XLD.find({
@@ -31,7 +32,7 @@ module.exports.run = async (client, message, args) => {
                 message.channel.send("tu ne peux pas mise une somme dont ne dispose pas ton adversaire ou toi meme!");
             }
             else {
-                message.channel.send(`${challenger} **challenge** ${adversaire} et mise ${xpMiser}, veux tu *suivre*?`).then(
+                message.channel.send(`<@${challenger}> **challenge** ${adversaire} et mise ${xpMiser}, veux tu *suivre*?`).then(
                     msg.react('👍').then(r => {
                         msg.react('👎');
                         //FILTRES
@@ -45,7 +46,7 @@ module.exports.run = async (client, message, args) => {
                             const randomChooseFirst = Math.floor(Math.random() * 3 + 1);
                             console.log(randomChooseFirst);
                             if (randomChooseFirst == 1) {
-                                message.channel.send(`Decision: ${challenger} vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
+                                message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
                                 .then( () => {
 
                                     message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 15000})
@@ -57,7 +58,7 @@ module.exports.run = async (client, message, args) => {
                                             .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
                                             .then(() => message.channel.send(join(__dirname, "..", "image", "pieceFace.jpg")).then(m => m.delete(11000)))
                                           
-                                            message.channel.send(`Bravo ${challenger} vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`);
+                                            message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`);
                                             
                                             const docChallenger = XLD.find({
                                                 ID: challenger + "-" + message.guild.id
@@ -79,7 +80,7 @@ module.exports.run = async (client, message, args) => {
                                             .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
                                             .then(() => message.channel.send(join(__dirname, "..", "image", "piecePile.jpg")).then(m => m.delete(11000)))
 
-                                            message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso ${challenger} *better luck next time :P*`);
+                                            message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso <@${challenger}> *better luck next time :P*`);
                                             
                                             const docChallenger = XLD.find({
                                                 ID: challenger + "-" + message.guild.id
