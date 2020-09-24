@@ -66,12 +66,12 @@ client.on("message", async message => {
         if (err) console.log(err);
 
         doc.forEach(underDoc => {
-            if ( underDoc.ID != current || current == null ) {
+            if ( underDoc._id != current || current == null ) {
               rank = 0;
-              current = underDoc.ID;
+              current = underDoc._id;
             }
-            underDoc.RANK = rank;
             rank++;
+            underDoc.RANK = rank;
             
         })
 
@@ -133,12 +133,8 @@ client.on("message", async message => {
             let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
 
             //auto accumulate xp
-           
-            console.log(curxp);
+      
             data.XP = curxp + gainXP;
-            console.log(data.XP);
-            console.log("new lvl dans:" + newlvl);
-            console.log("lvl actuel:" + curlvl);
 
             if (newlvl <= data.XP && curlvl < 5) {
                 data.LEVEL = curlvl + 1;
