@@ -15,6 +15,11 @@ module.exports.run = async (client, message, args) => {
         return;
     }
 
+    if (!xpMiser) {
+        message.reply("tu dois mise quelque chose!");
+        return;
+    };
+
         //mongoDB
    
         var adversaireInf = XLD.findOne({
@@ -48,15 +53,15 @@ module.exports.run = async (client, message, args) => {
 
                     else {
 
-                        message.channel.send(`<@${challenger}> **challenge** ${adversaire} et mise ${xpMiser}, veux tu *suivre*?`).then(msg =>
+                        message.channel.send(`<@${challenger}> **challenge** ${adversaire} et mise **${xpMiser} XP!**, veux tu *suivre*?`).then(msg =>
                             msg.react('👍').then(r => {
                                 msg.react('👎');
                                 //FILTRES
                                 const ouiFilter = (reaction, user) => reaction.emoji.name === '👍' && user.id === adversaire.id;
                                 const nonFilter = (reaction, user) => reaction.emoji.name === '👎' && user.id === adversaire.id;
                                 //CREATION DES COLLECTEUR
-                                const oui = msg.createReactionCollector(ouiFilter,{time: 30000});
-                                const non = msg.createReactionCollector(nonFilter,{time: 30000});
+                                const oui = msg.createReactionCollector(ouiFilter,{time: 50000});
+                                const non = msg.createReactionCollector(nonFilter,{time: 50000});
         
                                 oui.on('collect', r => {
                                     const randomChooseFirst = Math.floor(Math.random() * 3) + 1;
@@ -65,50 +70,49 @@ module.exports.run = async (client, message, args) => {
                                         message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
                                         .then( () => {
         
-                                            message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 30000})
+                                            message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 50000})
                                             .then(collected => {
         
                                                 const randomPileFace = Math.floor(Math.random() * 3) + 1;
                                                 if(collected.first().content == randomPileFace) {
-                                                    message.channel.send({file:'../image/pieceTournant.jpg/'}).then(m => m.delete(11000))
+                                                    message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(11000))
                                                     .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
-                                                    .then(() => message.channel.send({file: '../image/pieceFace.jpg'}).then(m => m.delete(11000)))
-                                                  
-                                                    message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`);
+                                                    .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(11000)))
+                                                    .then(() => message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`));
+                                                        
+                                                        const docChallenger = XLD.findOne({
+                                                            ID: challenger + "-" + message.guild.id
+                                                        });
+            
+                                                        docChallenger.XP += xpMiser;
+            
+                                                        const docAdversaire = XLD.findOne({
+                                                            ID: adversaire.id + "-" + message.guild.id
+                                                        });
+            
+                                                        docAdversaire.XP -= xpMiser;
                                                     
-                                                    const docChallenger = XLD.findOne({
-                                                        ID: challenger + "-" + message.guild.id
-                                                    });
-        
-                                                    docChallenger.XP += xpMiser;
-        
-                                                    const docAdversaire = XLD.findOne({
-                                                        ID: adversaire.id + "-" + message.guild.id
-                                                    });
-        
-                                                    docAdversaire.XP -= xpMiser;
                                                     
                                                    
         
                                                 } else {
         
-                                                    message.channel.send({file: '../image/pieceTournant.jpg'}).then(m => m.delete(11000))
+                                                    message.channel.send({file: './image/pieceTournant.jpg'}).then(m => m.delete(11000))
                                                     .then(() => message.channel.send("suspense").then(m => m.delete(5000)))
-                                                    .then(() => message.channel.send({file: '../image/piecePile.jpg'}).then(m => m.delete(11000)))
-        
-                                                    message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso <@${challenger}> *better luck next time :P*`);
+                                                    .then(() => message.channel.send({file: './image/piecePile.jpg'}).then(m => m.delete(11000)))
+                                                    .then(() => message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso <@${challenger}> *better luck next time :P*`));
                                                     
-                                                    const docChallenger = XLD.findOne({
-                                                        ID: challenger + "-" + message.guild.id
-                                                    });
-        
-                                                    docChallenger.XP -= xpMiser;
-        
-                                                    const docAdversaire = XLD.findOne({
-                                                        ID: adversaire.id + "-" + message.guild.id
-                                                    });
-        
-                                                    docAdversaire.XP += xpMiser;
+                                                        const docChallenger = XLD.findOne({
+                                                            ID: challenger + "-" + message.guild.id
+                                                        });
+            
+                                                        docChallenger.XP -= xpMiser;
+            
+                                                        const docAdversaire = XLD.findOne({
+                                                            ID: adversaire.id + "-" + message.guild.id
+                                                        });
+            
+                                                        docAdversaire.XP += xpMiser;
                                                 }
         
                                            
