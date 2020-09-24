@@ -90,7 +90,9 @@ module.exports.run = async (client, message,args) => {
         ctx.globalAlpha = 0.8;
         ctx.fillRect(180, 218, percentage, 61);
         ctx.globalAlpha = 1; 
-
+        ctx.shadowOffsetX = 5;
+        ctx.shadowColor = "blue";
+        ctx.shadowBlur = 3;
         ctx.font = "35px Arial";
         ctx.textAlign = "center";
         ctx.fillStyle = "#ffffff";
@@ -99,17 +101,14 @@ module.exports.run = async (client, message,args) => {
         ctx.font = "bold 45px Comic Sans MS";
         ctx.fillText(member.user.tag, 300, 120);
   
-
-        ctx.shadowOffsetX = 5;
-        ctx.shadowColor = "blue";
-        ctx.shadowBlur = 3;
         ctx.font = "40px Comic Sans MS";
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
 
 
         
-
+        ctx.shadowOffsetX = 0;
+        ctx.shadowBlur = 0;
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
         ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
