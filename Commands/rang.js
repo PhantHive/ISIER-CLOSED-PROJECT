@@ -107,15 +107,22 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
 
-        ctx.font = "30px Comic Sans MS";
+        ctx.font = "40px Comic Sans MS";
         ctx.fillStyle = "#FEE700";
-        ctx.fillText("RANK:", 600, 60);
-        ctx.fillText(curRank, 720, 60);
+        ctx.shadowOffsetX = 5;
+        ctx.shadowColor = "white";
+        ctx.shadowBlur = 2;
+        ctx.fillText("✪RANK:", 700, 60);
+        ctx.fillText(curRank, 820, 60);
 
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
         ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
 
+        ctx.shadowOffsetX = 5;
+        ctx.shadowColor = "blue";
+        ctx.shadowBlur = 3;
+        //profil circle
         ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
         ctx.lineWidth = 6;
         ctx.strokeStyle = "#ffffff";
@@ -125,6 +132,7 @@ module.exports.run = async (client, message,args) => {
         const avatar = await loadImage(member.user.displayAvatarURL);
         ctx.drawImage(avatar, 40, 40, 250, 250);
 
+        ctx.
 
         message.channel.send({
           files: [{
