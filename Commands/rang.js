@@ -107,13 +107,13 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
 
-        ctx.font = "40px Comic Sans MS";
+        ctx.font = "40px bold Comic Sans MS";
         ctx.fillStyle = "#FEE700";
-        ctx.shadowOffsetX = 1;
+        ctx.shadowOffsetX = 2;
         ctx.shadowColor = "black";
-        ctx.shadowBlur = 0;
+        ctx.shadowBlur = 2;
         ctx.fillText("✪RANK:", 740, 60);
-        ctx.fillText(curRank, 860, 60);
+        ctx.fillText(curRank, 900, 60);
 
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
