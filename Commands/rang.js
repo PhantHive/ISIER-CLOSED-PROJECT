@@ -111,12 +111,12 @@ module.exports.run = async (client, message,args) => {
         ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
         
 
-        ctx.shadowOffsetX = 3;
+        ctx.shadowOffsetY = 3;
         ctx.shadowColor = "black";
-        ctx.shadowBlur = 3;
+        ctx.shadowBlur = 4;
         ctx.font = "bold 45px Comic Sans MS";
         ctx.fillStyle = "#FEE700";
-        ctx.fillText("✪RANG:", 740, 60);
+        ctx.fillText("✪RANG:", 720, 60);
         ctx.fillText(curRank, 930, 60);
 
 
