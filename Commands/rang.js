@@ -60,7 +60,7 @@ module.exports.run = async (client, message,args) => {
          
         */
        
-
+        let curRank = data.RANK;
         let curxp = data.XP;
         let curlvl = data.LEVEL;
         let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
@@ -106,6 +106,11 @@ module.exports.run = async (client, message,args) => {
         ctx.font = "40px Comic Sans MS";
         ctx.fillText("Level:", 300, 180);
         ctx.fillText(curlvl, 470, 180);
+
+        ctx.font = "30px Comic Sans MS";
+        ctx.fillStyle = "#FEE700";
+        ctx.fillText("RANK:", 600, 60);
+        ctx.fillText(curRank, 720, 60);
 
         ctx.font = "bold italic 25px Arial";
         ctx.fillStyle = "#ffffff";
