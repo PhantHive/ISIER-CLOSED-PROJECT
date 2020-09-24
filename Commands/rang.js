@@ -113,7 +113,7 @@ module.exports.run = async (client, message,args) => {
 
         ctx.shadowOffsetY = 3;
         ctx.shadowColor = "black";
-        ctx.shadowBlur = 4;
+        ctx.shadowBlur = 6;
         ctx.font = "bold 45px Comic Sans MS";
         ctx.fillStyle = "#FEE700";
         ctx.fillText("✪RANG:", 720, 60);
