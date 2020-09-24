@@ -72,14 +72,9 @@ client.on("message", async message => {
             }
             rank++;
             underDoc.RANK = rank;
-            console.log(underDoc);
             underDoc.save()
         })
-
-        
-      
-       
-        
+ 
     });
    
 
