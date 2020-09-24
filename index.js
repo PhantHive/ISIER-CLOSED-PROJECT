@@ -67,12 +67,12 @@ client.on("message", async message => {
 
         doc.forEach(underDoc => {
             if ( underDoc._id != current || current == null ) {
-              rank = 0;
+              curRank = rank;
               current = underDoc._id;
             }
             rank++;
             underDoc.RANK = rank;
-            
+            console.log(underDoc);
         })
 
         
