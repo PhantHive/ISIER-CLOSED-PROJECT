@@ -20,7 +20,7 @@ module.exports.run = async (client, message, args) => {
         return;
     };
 
-    if (!args[0]) {
+    if (!adversaire == undefined) {
         message.reply("Je pense que tu voulais faire ca: i!miseXp TagDeTonAdversaire QuantiteXP");
         return;
     }

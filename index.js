@@ -87,7 +87,7 @@ client.on("message", async message => {
     (err, data) => {
         if (err) console.log(err);
 
-        var xpRand = [0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
         let gainXP = xpRand[Math.floor(Math.random() * xpRand.length)] ; //add some xp by message
 
         if (message.author.bot) {
@@ -140,7 +140,8 @@ client.on("message", async message => {
                     .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
                     .addField("XP: ", newlvl)
                     .setImage("https://i.imgur.com/FFYT8Ll.png");
-                message.guild.channels.get('755084204567560232').send(lvlup);
+                const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
+                channel.send(lvlup);
         
                 data.XP = 0;
                 
@@ -154,7 +155,8 @@ client.on("message", async message => {
                     .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
                     .addField("XP: ", newlvl)
                     .setImage("https://i.imgur.com/7LVMSKN.png");
-                message.guild.channels.get('755084204567560232').send(lvlup2);
+                const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
+                channel.send(lvlup2);
         
                 data.XP = 0;
             }
@@ -167,7 +169,8 @@ client.on("message", async message => {
                     .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
                     .addField("XP: ", newlvl)
                     .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-                message.guild.channels.get('755084204567560232').send(lvlup3)
+                const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
+                channel.send(lvlup3);
         
                 data.XP = 0;
             }
