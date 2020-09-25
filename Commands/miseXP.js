@@ -227,7 +227,7 @@ module.exports.run = async (client, message, args) => {
                                         message.channel.send(`Decision: ${adversaire} vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
                                         .then( () => {
         
-                                            message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 50000})
+                                            message.channel.awaitMessages(msg => msg.author.id == adversaire, {max: 1, time: 50000})
                                             .then(collected => {
         
                                                 const array = ["Pile", "Face"];
