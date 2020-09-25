@@ -68,7 +68,7 @@ module.exports.run = async (client, message, args) => {
                                 const non = msg.createReactionCollector(nonFilter,{time: 50000});
         
                                 oui.on('collect', r => {
-                                    const randomChooseFirst = Math.floor(Math.random() * 2) + 1;
+                                    const randomChooseFirst = 1;//Math.floor(Math.random() * 2) + 1;
                                     console.log(randomChooseFirst);
                                     if (randomChooseFirst == 1) {
                                         message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
@@ -90,8 +90,12 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                
+                                                        
+                                                        console.log("Xp totale avant> " + doc.XP);
                                                         doc.XP += xpMiser;
+                                                        console.log("Xp miseR > " + xpMiser)
+                                                        console.log(doc.XP)
+                                                        console.log("Xp totale apres> " + doc.XP);
                                                         doc.save()
 
                                                     })    
