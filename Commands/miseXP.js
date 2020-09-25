@@ -90,8 +90,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp + xpMiser;
+                                
+                                                        doc.XP += xpMiser;
                                                         doc.save()
 
                                                     })    
@@ -103,8 +103,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp - xpMiser;
+                                        
+                                                        doc.XP -= xpMiser;
                                                         doc.save()
 
                                                     })   
@@ -125,8 +125,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp + xpMiser;
+                            
+                                                        doc.XP += xpMiser;
                                                         doc.save()
 
                                                     })    
@@ -138,8 +138,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp - xpMiser;
+                                
+                                                        doc.XP -=  xpMiser;
                                                         doc.save()
 
                                                     })   
@@ -160,8 +160,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp - xpMiser;
+                        
+                                                        doc.XP -= xpMiser;
                                                         doc.save()
 
                                                     })    
@@ -173,8 +173,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp + xpMiser;
+                     
+                                                        doc.XP += xpMiser;
                                                         doc.save()
 
                                                     })   
@@ -196,8 +196,8 @@ module.exports.run = async (client, message, args) => {
                                                         });
                                                         docChallenger.exec((err, doc) => {
                                                             if (err) console.log(err);
-                                                            curXp = doc.XP;
-                                                            doc.XP = curXp - xpMiser;
+                            
+                                                            doc.XP -= xpMiser;
                                                             doc.save()
 
                                                         })    
@@ -209,8 +209,8 @@ module.exports.run = async (client, message, args) => {
                                                         });
                                                         docAdversaire.exec((err, doc) => {
                                                             if (err) console.log(err);
-                                                            curXp = doc.XP;
-                                                            doc.XP = curXp + xpMiser;
+                                              
+                                                            doc.XP += xpMiser;
                                                             doc.save()
 
                                                         })   
@@ -243,8 +243,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp - xpMiser;
+                                           
+                                                        doc.XP -= xpMiser;
                                                         doc.save()
 
                                                     })    
@@ -256,8 +256,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp + xpMiser;
+                           
+                                                        doc.XP += xpMiser;
                                                         doc.save()
 
                                                     })   
@@ -278,8 +278,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp - xpMiser;
+                                     
+                                                        doc.XP -= xpMiser;
                                                         doc.save()
 
                                                     })    
@@ -291,8 +291,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp + xpMiser;
+                                    
+                                                        doc.XP += xpMiser;
                                                         doc.save()
 
                                                     })   
@@ -313,8 +313,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp + xpMiser;
+                                         
+                                                        doc.XP += xpMiser;
                                                         doc.save()
 
                                                     })    
@@ -326,8 +326,8 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        curXp = doc.XP;
-                                                        doc.XP = curXp - xpMiser;
+                           
+                                                        doc.XP -= xpMiser;
                                                         doc.save()
 
                                                     })   
@@ -349,8 +349,8 @@ module.exports.run = async (client, message, args) => {
                                                         });
                                                         docChallenger.exec((err, doc) => {
                                                             if (err) console.log(err);
-                                                            curXp = doc.XP;
-                                                            doc.XP = curXp + xpMiser;
+                                    
+                                                            doc.XP += xpMiser;
                                                             doc.save()
 
                                                         })    
@@ -362,8 +362,8 @@ module.exports.run = async (client, message, args) => {
                                                         });
                                                         docAdversaire.exec((err, doc) => {
                                                             if (err) console.log(err);
-                                                            curXp = doc.XP;
-                                                            doc.XP = curXp - xpMiser;
+                                   
+                                                            doc.XP -= xpMiser;
                                                             doc.save()
 
                                                         })   
