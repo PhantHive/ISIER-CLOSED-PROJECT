@@ -6,6 +6,13 @@ let mailVerif = require("../jsonFile/mailsVerif.json")
 //mailAdd
 let mailAdded = require("../jsonFile/mailAdded.json")
 
+client.mongoose = require('./utils/mongose.js');
+const XLD = require('./models/RankSystem.js');
+const EGD = require('./models/EasterSystem.js');
+
+
+client.mongoose.init();
+
 module.exports = async(client, message) => {
 
     //=============
@@ -186,7 +193,8 @@ module.exports = async(client, message) => {
                 const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 20000 });
                 eastercollector.on('collect', message => {
                     if(message.content == "merci") {
-                    message.reply("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +500xp (Easteregg pas encore active)").then(m => m.delete(3000))
+                        
+                        message.reply("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +500xp (Easteregg pas encore active)").then(m => m.delete(3000))
                     }
                 })
             }

@@ -148,7 +148,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content !== randomPileFace) && (randomPileFace == "Face")) {
+                                                else if((collected.first().content == "Pile") && (randomPileFace == "Face")) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
                                                     .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(2000)))
@@ -183,7 +183,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content !== randomPileFace) && (randomPileFace == "Pile")) {
+                                                else if((collected.first().content == "Face") && (randomPileFace == "Pile")) {
         
                                                     message.channel.send({file: './image/pieceTournant.jpg'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
@@ -214,6 +214,10 @@ module.exports.run = async (client, message, args) => {
 
                                                         })   
             
+                                                }
+
+                                                else {
+                                                    message.channel.send("Mise annuler! vous n'avez pas choisis Pile ou Face!")
                                                 }
         
                                            
@@ -301,7 +305,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content !== randomPileFace) && (randomPileFace == "Face")) {
+                                                else if((collected.first().content == "Pile") && (randomPileFace == "Face")) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
                                                     .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(2000)))
@@ -336,7 +340,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content !== randomPileFace) && (randomPileFace == "Pile")) {
+                                                else if((collected.first().content == "Face") && (randomPileFace == "Pile")) {
         
                                                     message.channel.send({file: './image/pieceTournant.jpg'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
@@ -367,6 +371,10 @@ module.exports.run = async (client, message, args) => {
 
                                                         })   
             
+                                                }
+
+                                                else {
+                                                    message.channel.send("Mise annuler! vous n'avez pas choisis Pile ou Face!")
                                                 }
         
                                            

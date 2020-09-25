@@ -7,6 +7,7 @@ const client = new Discord.Client();
 const fs = require('fs');
 client.mongoose = require('./utils/mongose.js');
 const XLD = require('./models/RankSystem.js');
+const EGD = require('./models/EasterSystem.js');
 
 const TOKEN = process.env.token;
 
@@ -18,7 +19,7 @@ client.mongoose.init();
 //XP PART
 //let infoLVL = require("./jsonFile/level.json");
 //easter part
-let easterEgg = require("./jsonFile/easterEgg.json")
+//let easterEgg = require("./jsonFile/easterEgg.json")
 
 
 fs.readdir("./Commands/", (err, f) => {
