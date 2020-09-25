@@ -6,10 +6,6 @@ let mailVerif = require("../jsonFile/mailsVerif.json")
 //mailAdd
 let mailAdded = require("../jsonFile/mailAdded.json")
 
-client.mongoose = require('./utils/mongose.js');
-const XLD = require('./models/RankSystem.js');
-const EGD = require('./models/EasterSystem.js');
-
 
 client.mongoose.init();
 
