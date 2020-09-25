@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
 
     const challenger = message.author.id;
     const adversaire = message.mentions.members.first() || message.guild.members.get(args[0]);
-    const xpMiser = args[1];
+    const xpMiser = parseInt(args[1]);
 
     if (adversaire.id == challenger) {
         message.reply("Tu peux pas te challenge toi meme aha.");
@@ -130,7 +130,7 @@ module.exports.run = async (client, message, args) => {
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
                             
-                                                        doc.XP = doc.XP + xpMiser;
+                                                        doc.XP += xpMiser;
                                                         doc.save()
 
                                                     })    
