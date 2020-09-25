@@ -7,8 +7,6 @@ let mailVerif = require("../jsonFile/mailsVerif.json")
 let mailAdded = require("../jsonFile/mailAdded.json")
 
 
-client.mongoose.init();
-
 module.exports = async(client, message) => {
 
     //=============
