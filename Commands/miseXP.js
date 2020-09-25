@@ -130,7 +130,7 @@ module.exports.run = async (client, message, args) => {
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
                             
-                                                        doc.XP += xpMiser;
+                                                        doc.XP = doc.XP + xpMiser;
                                                         doc.save()
 
                                                     })    
