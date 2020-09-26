@@ -88,8 +88,6 @@ client.on("message", async message => {
     (err, data) => {
         if (err) console.log(err);
 
-        var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        let gainXP = xpRand[Math.floor(Math.random() * xpRand.length)] ; //add some xp by message
 
         if (message.author.bot) {
             return;
@@ -122,66 +120,96 @@ client.on("message", async message => {
             console.log(position);
             */
 
-            
-            //data
-            let curxp = data.XP;
-            let curlvl = data.LEVEL;
-            let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
+            if (data.LEVEL < 5) {
 
-            //auto accumulate xp
-      
-            data.XP = curxp + gainXP;
+                var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                let gainXP = xpRand[Math.floor(Math.random() * xpRand.length)] ; //add some xp by message
+                //data
+                let curxp = data.XP;
+                let curlvl = data.LEVEL;
+                let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
 
-            if (newlvl <= data.XP && curlvl < 5) {
-                data.LEVEL = curlvl + 1;
+                //auto accumulate xp
+
+                data.XP = curxp + gainXP;
+
+                if (newlvl <= data.XP && curlvl < 5) {
+                    data.LEVEL = curlvl + 1;
+
+                    let lvlup = new Discord.RichEmbed()
+                        .setTitle("LVL +")
+                        .setColor("GREEN")
+                        .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
+                        .addField("XP: ", newlvl)
+                        .setImage("https://i.imgur.com/FFYT8Ll.png");
+                    const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
+                    channel.send(lvlup);
+
+                    data.XP = 0;
         
-                let lvlup = new Discord.RichEmbed()
-                    .setTitle("LVL +")
-                    .setColor("GREEN")
-                    .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
-                    .addField("XP: ", newlvl)
-                    .setImage("https://i.imgur.com/FFYT8Ll.png");
-                const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
-                channel.send(lvlup);
-        
-                data.XP = 0;
-                
-            }
-            else if (newlvl <= data.XP && curlvl < 10) {
-        
-                data.LEVEL = curlvl + 1;
-                let lvlup2 = new Discord.RichEmbed()
-                    .setTitle("LVL ++")
-                    .setColor("BLUE")
-                    .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
-                    .addField("XP: ", newlvl)
-                    .setImage("https://i.imgur.com/7LVMSKN.png");
-                const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
-                channel.send(lvlup2);
-        
-                data.XP = 0;
-            }
-            else if (newlvl <= data.XP && curlvl < 15) {
-        
-                data.LEVEL = curlvl + 1;
-                let lvlup3 = new Discord.RichEmbed()
-                    .setTitle("LVL +++++")
-                    .setColor("ORANGE")
-                    .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
-                    .addField("XP: ", newlvl)
-                    .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-                const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
-                channel.send(lvlup3);
-        
-                data.XP = 0;
+                }
+
+                else {
+                    data.LEVEL;
+                    data.XP;
+                    
+                }   
+                data.save()
+
             }
             else {
-                data.LEVEL;
-                data.XP;
-                
-            }   
-            data.save()
-                //look for a new rank master
+
+                var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                let gainXP = xpRand[Math.floor(Math.random() * xpRand.length)] ; //add some xp by message
+
+                //data
+                let curxp = data.XP;
+                let curlvl = data.LEVEL;
+                let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
+
+                //auto accumulate xp
+
+                data.XP = curxp + gainXP;
+
+                if (newlvl <= data.XP && curlvl < 10) {
+
+                    data.LEVEL = curlvl + 1;
+                    let lvlup2 = new Discord.RichEmbed()
+                        .setTitle("LVL ++")
+                        .setColor("BLUE")
+                        .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
+                        .addField("XP: ", newlvl)
+                        .setImage("https://i.imgur.com/7LVMSKN.png");
+                    const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
+                    channel.send(lvlup2);
+
+                    data.XP = 0;
+                }
+                else if (newlvl <= data.XP && curlvl < 15) {
+
+                    data.LEVEL = curlvl + 1;
+                    let lvlup3 = new Discord.RichEmbed()
+                        .setTitle("LVL +++++")
+                        .setColor("ORANGE")
+                        .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
+                        .addField("XP: ", newlvl)
+                        .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
+                    const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
+                    channel.send(lvlup3);
+
+                    data.XP = 0;
+                }
+                else {
+                    data.LEVEL;
+                    data.XP;
+                    
+                }   
+                data.save()
+
+
+            }
+            
+            
         }
     });
  

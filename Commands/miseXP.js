@@ -73,7 +73,7 @@ module.exports.run = async (client, message, args) => {
                                     if (randomChooseFirst == 1) {
                                         message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
                                         .then( () => {
-        
+                                            
                                             message.channel.awaitMessages(msg => msg.author.id == challenger, {max: 1, time: 50000})
                                             .then(collected => {
         
@@ -416,5 +416,5 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "miseXp"
+    name: "impossibleXP"
 };
