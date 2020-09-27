@@ -90,9 +90,7 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err); 
-                                                        console.log("Avant gain/perte:" + doc.XP);
                                                         doc.XP += xpMiser;
-                                                        console.log("apres:  " + doc.XP);
                                                         doc.save()
 
                                                     })    
@@ -103,9 +101,7 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        console.log("Avant gain/perte:" + doc.XP);
                                                         doc.XP -= xpMiser;
-                                                        console.log("apres:  " + doc.XP);
                                                         doc.save()
 
                                                     })   
@@ -126,9 +122,7 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        console.log("Avant gain/perte:" + doc.XP);
                                                         doc.XP += xpMiser;
-                                                        console.log("apres:  " + doc.XP);
                                                         doc.save()
 
                                                     })    
@@ -140,9 +134,7 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        console.log("Avant gain/perte:" + doc.XP);
                                                         doc.XP -=  xpMiser;
-                                                        console.log("apres:  " + doc.XP);
                                                         doc.save()
 
                                                     })   
@@ -163,9 +155,7 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docChallenger.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        console.log("Avant gain/perte:" + doc.XP);
                                                         doc.XP -= xpMiser;
-                                                        console.log("apres:  " + doc.XP);
                                                         doc.save()
 
                                                     })    
@@ -177,9 +167,7 @@ module.exports.run = async (client, message, args) => {
                                                     });
                                                     docAdversaire.exec((err, doc) => {
                                                         if (err) console.log(err);
-                                                        console.log("Avant gain/perte:" + doc.XP);
                                                         doc.XP += xpMiser;
-                                                        console.log("apres:  " + doc.XP);
                                                         doc.save()
 
                                                     })   
@@ -201,9 +189,7 @@ module.exports.run = async (client, message, args) => {
                                                         });
                                                         docChallenger.exec((err, doc) => {
                                                             if (err) console.log(err);
-                                                            console.log("Avant gain/perte:" + doc.XP);
                                                             doc.XP -= xpMiser;
-                                                            console.log("apres:  " + doc.XP);
                                                             doc.save()
 
                                                         })    
@@ -215,10 +201,8 @@ module.exports.run = async (client, message, args) => {
                                                         });
 
                                                         docAdversaire.exec((err, doc) => {
-                                                            if (err) console.log(err);
-                                                            console.log("Avant gain/perte:" + doc.XP);                                   
+                                                            if (err) console.log(err);                               
                                                             doc.XP += xpMiser;
-                                                            console.log("apres:  " + doc.XP);
                                                             doc.save()
 
                                                         })   
@@ -425,5 +409,5 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.help = {
-    name: "impossibleXP"
+    name: "miseXP"
 };
