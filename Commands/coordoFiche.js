@@ -10,9 +10,9 @@ module.exports.run = async(client, message) => {
     message.channel.stopTyping();
 
 
-}
+};
 
 
-module.help = {
+module.exports.help = {
     name: "coordo"
-}
+};
