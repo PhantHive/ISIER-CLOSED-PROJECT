@@ -2,17 +2,17 @@ const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
 
-    const args = message.content.match(/".+?"/g).map(str => str.replace(/"/g, ''));
+    infoPoll = message.content.match(/".+?"/g).map(str => str.replace(/"/g, ''));
 
 
-    if(args.length > 1) {
+    if(infoPoll.length > 1) {
 
-        if (args.length == 3) {
+        if (infoPoll.length == 3) {
             let sondageEmbed = new Discord.RichEmbed()
                 .setTitle("SONDAGE- CHOIX MULTIPLES")
-                .setDescription(args[0])
-                .addField('choix A' , args[1])
-                .addField('choix B' , args[2])
+                .setDescription(infoPoll[0])
+                .addField('choix A' , infoPoll[1])
+                .addField('choix B' , infoPoll[2])
             
 
             let sondageMessage = await message.channel.send(sondageEmbed);
@@ -21,13 +21,13 @@ module.exports.run = async (client, message, args) => {
 
         }
 
-        else if (args.length == 4) {
+        else if (infoPoll.length == 4) {
             let sondageEmbed = new Discord.RichEmbed()
                 .setTitle("SONDAGE- CHOIX MULTIPLES")
-                .setDescription(args[0])
-                .addField('choix A' , args[1])
-                .addField('choix B' , args[2])
-                .addField('choix C' , args[3])
+                .setDescription(infoPoll[0])
+                .addField('choix A' , infoPoll[1])
+                .addField('choix B' , infoPoll[2])
+                .addField('choix C' , infoPoll[3])
             
 
             let sondageMessage = await message.channel.send(sondageEmbed);
@@ -37,15 +37,15 @@ module.exports.run = async (client, message, args) => {
                 
         }
 
-        else if (args.length == 5) {
+        else if (infoPoll.length == 5) {
 
             let sondageEmbed = new Discord.RichEmbed()
                 .setTitle("SONDAGE- CHOIX MULTIPLES")
-                .setDescription(args[0])
-                .addField('choix A' , args[1])
-                .addField('choix B' , args[2])
-                .addField('choix C' , args[3])
-                .addField('choix D' , args[4])
+                .setDescription(infoPoll[0])
+                .addField('choix A' , infoPoll[1])
+                .addField('choix B' , infoPoll[2])
+                .addField('choix C' , infoPoll[3])
+                .addField('choix D' , infoPoll[4])
             
 
             let sondageMessage = await message.channel.send(sondageEmbed);
@@ -66,7 +66,7 @@ module.exports.run = async (client, message, args) => {
         
         let sondageEmbed = new Discord.RichEmbed()
             .setTitle("SONDAGE")
-            .setDescription(args[0]);
+            .setDescription(infoPoll[0]);
 
         let sondageMessage = await message.channel.send(sondageEmbed);
         await sondageMessage.react('👍');
@@ -79,7 +79,7 @@ module.exports.run = async (client, message, args) => {
 
         let resultsEmbed = new Discord.RichEmbed()
             .setTitle("Resultat du sondage:")
-            .setDescription(`Resultats: ${args.join(" ")}`)
+            .setDescription(`Resultats: ${infoPoll.join(" ")}`)
             .addField("👍: ", ` ${results.get('👍').count-1}`)
             .addField("👍: ", ` ${results.get('👎').count - 1}`)
         client.channels.get('613749495716642818').send(resultsEmbed);
