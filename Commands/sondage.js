@@ -2,140 +2,71 @@ const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
 
-    if(args.length < 1) {
+    const args = message.content.match(/".+?"/g).map(str => str.replace(/"/g, ''));
 
-        message.channel.send("Tu souhaites faire un sondage a choix multiple, quel est la question du sondage?")
-        .then(m => m.delete(5000))
-        .then(() => {
-            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 2000})
-            .then(collected => {
-                const questionSondage = collected.content;
-                collected.delete(1000);
-                message.channel.send("Premiere choix: ")
-                .then(m => m.delete(15000))
-                .then(() => {
-                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 2000})
-                    .then(collected => {
-                        const choixA = collected.content;
-                        collected.delete(1000);
-                        message.channel.send("Deuxieme choix: ")
-                        .then(m => m.delete(15000))
-                        .then(() => {
-                            message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 2000})
-                            .then(collected => {
-                                const choixB = collected.content;
-                                collected.delete(1000);
-                                message.channel.send("+ de choix? ")
-                                .then(msg => msg.react('➕')
-                                    .then(r => {
-                                        msg.react('✖️');
-                                        
-                                        const plusChoixFilter = (reaction, user) => reaction.emoji.name == '➕' && user.id == message.author.id;
-                                        const noChoixFilter = (reaction, user) => reaction.emoji.name == '✖️' && user.id == message.author.id;
 
-                                        const plus = msg.createReactionCollector(plusChoixFilter, {time: 2000});
-                                        const no = msg.createReactionCollector(noChoixFilter, {time: 2000});
+    if(args.length > 1) {
 
-                                        plus.on('collect', r => {
-                                            message.channel.send("Troisieme choix: ")
-                                                .then(m => m.delete(2000))
-                                                .then(() => {
-                                                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 2000})
-                                                    .then(collected => {
-                                                        const choixC = collected.content;
-                                                        collected.delete(1000);
-                                                        message.channel.send("+ de choix? ")
-                                                        .then(msg => msg.react('➕')
-                                                            .then(r => { 
-                                                                msg.react('✖️');
-                                        
-                                                                const plusChoixFilter = (reaction, user) => reaction.emoji.name == '➕' && user.id == message.author.id;
-                                                                const noChoixFilter = (reaction, user) => reaction.emoji.name == '✖️' && user.id == message.author.id;
+        if (args.length == 3) {
+            let sondageEmbed = new Discord.RichEmbed()
+                .setTitle("SONDAGE- CHOIX MULTIPLES")
+                .setDescription(args[0])
+                .addField('choix A' , args[1])
+                .addField('choix B' , args[2])
+            
 
-                                                                const plus = msg.createReactionCollector(plusChoixFilter, {time: 2000});
-                                                                const no = msg.createReactionCollector(noChoixFilter, {time: 2000});
-                                                                
-                                                                plus.on('collect', r => {
-                                                                    message.channel.send("Troisieme choix: ")
-                                                                    .then(m => m.delete(2000))
-                                                                    .then(() => {
-                                                                        message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 2000})
-                                                                        .then(collected => {
-                                                                            const choixD = collected.content;
-                                                                            collected.delete(1000);
-                                                                            message.channel.send("4 choix c'est assez non? aha")
-                                                                            .then(async() => {
-                                                                                let sondageEmbed = new Discord.RichEmbed()
-                                                                                    .setTitle("SONDAGE- CHOIX MULTIPLES")
-                                                                                    .setDescription(questionSondage)
-                                                                                    .addField('choix A' , choixA)
-                                                                                    .addField('choix B' , choixB)
-                                                                                    .addField('choix C' , choixC)
-                                                                                    .addField('choix D' , choixD)
-                        
-                                                                                let sondageMessage = await message.channel.send(sondageEmbed);
-                                                                                await sondageMessage.react('🇦');
-                                                                                await sondageMessage.react('🇧');
-                                                                                await sondageMessage.react('🇨');
-                                                                                await sondageMessage.react('🇩');
-                                                                            })
+            let sondageMessage = await message.channel.send(sondageEmbed);
+                await sondageMessage.react('🇦');
+                await sondageMessage.react('🇧');
 
-                                                                        })
-                                                                    })
+        }
 
-                                                                })
+        else if (args.length == 4) {
+            let sondageEmbed = new Discord.RichEmbed()
+                .setTitle("SONDAGE- CHOIX MULTIPLES")
+                .setDescription(args[0])
+                .addField('choix A' , args[1])
+                .addField('choix B' , args[2])
+                .addField('choix C' , args[3])
+            
 
-                                                                no.on('collect', async(r) => {
-                                                                    let sondageEmbed = new Discord.RichEmbed()
-                                                                        .setTitle("SONDAGE- CHOIX MULTIPLES")
-                                                                        .setDescription(questionSondage)
-                                                                        .addField('choix A' , choixA)
-                                                                        .addField('choix B' , choixB)
-                                                                        .addField('choix C' , choixC)
-                        
-                                                                    let sondageMessage = await message.channel.send(sondageEmbed);
-                                                                    await sondageMessage.react('🇦');
-                                                                    await sondageMessage.react('🇧');
-                                                                    await sondageMessage.react('🇨');
-                                                                });
+            let sondageMessage = await message.channel.send(sondageEmbed);
+                await sondageMessage.react('🇦');
+                await sondageMessage.react('🇧');
+                await sondageMessage.react('🇨');
+                
+        }
 
-                                                            })
+        else if (args.length == 5) {
 
-                                                        )
-                                                    })
-                                                })
-                                        });
+            let sondageEmbed = new Discord.RichEmbed()
+                .setTitle("SONDAGE- CHOIX MULTIPLES")
+                .setDescription(args[0])
+                .addField('choix A' , args[1])
+                .addField('choix B' , args[2])
+                .addField('choix C' , args[3])
+                .addField('choix D' , args[4])
+            
 
-                                        no.on('collect', async(r) => {
-                                            let sondageEmbed = new Discord.RichEmbed()
-                                                .setTitle("SONDAGE- CHOIX MULTIPLES")
-                                                .setDescription(questionSondage)
-                                                .addField('choix A' , choixA)
-                                                .addField('choix B' , choixB)
+            let sondageMessage = await message.channel.send(sondageEmbed);
+                await sondageMessage.react('🇦');
+                await sondageMessage.react('🇧');
+                await sondageMessage.react('🇨');
+                await sondageMessage.react('🇩');
+        }
 
-                                            let sondageMessage = await message.channel.send(sondageEmbed);
-                                            await sondageMessage.react('🇦');
-                                            await sondageMessage.react('🇧');
-                                        });
-
-                                    })
-                                )
-                            })
-                        })
-
-                    })
-                })
-
-            })
-        })
+        else {
+            message.reply("tu ne peux pas faire un sondage avec une seul option LoL XD ptdrr.").then(m => m.delete(1000));
+        }                                                                  
 
     }
 
     else {
 
+        
         let sondageEmbed = new Discord.RichEmbed()
             .setTitle("SONDAGE")
-            .setDescription(args.join(" "));
+            .setDescription(args[0]);
 
         let sondageMessage = await message.channel.send(sondageEmbed);
         await sondageMessage.react('👍');
