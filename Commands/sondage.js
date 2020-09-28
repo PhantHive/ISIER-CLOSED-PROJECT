@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
 
         message.channel.send("Tu souhaites faire un sondage a choix multiple, quel est la question du songdage?")
         .then(m => m.delete(20000))
-        .then( () => {
+        .then(() => {
             message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 20000})
             .then(m => m.delete(2000))
             .then(collected => {
@@ -64,25 +64,27 @@ module.exports.run = async (client, message, args) => {
                                                                         .then(collected => {
                                                                             choixD = collected.first().content;
                                                                             message.channel.send("4 choix c'est assez non? aha")
-                                                                            let sondageEmbed = new Discord.RichEmbed()
-                                                                                .setTitle("SONDAGE- CHOIX MULTIPLES")
-                                                                                .setDescription(questionSondage)
-                                                                                .addField('choix A' + choixA)
-                                                                                .addField('choix B' + choixB)
-                                                                                .addField('choix C' + choixC)
-                    
-                                                                            let sondageMessage = await message.channel.send(sondageEmbed);
-                                                                            await sondageMessage.react('🇦');
-                                                                            await sondageMessage.react('🇧');
-                                                                            await sondageMessage.react('🇨');
-                                                                            await sondageMessage.react('🇩');
+                                                                            .then(async() => {
+                                                                                let sondageEmbed = new Discord.RichEmbed()
+                                                                                    .setTitle("SONDAGE- CHOIX MULTIPLES")
+                                                                                    .setDescription(questionSondage)
+                                                                                    .addField('choix A' + choixA)
+                                                                                    .addField('choix B' + choixB)
+                                                                                    .addField('choix C' + choixC)
+                        
+                                                                                let sondageMessage = await message.channel.send(sondageEmbed);
+                                                                                await sondageMessage.react('🇦');
+                                                                                await sondageMessage.react('🇧');
+                                                                                await sondageMessage.react('🇨');
+                                                                                await sondageMessage.react('🇩');
+                                                                            })
 
                                                                         })
                                                                     })
 
                                                                 })
 
-                                                                no.on('collect', r => {
+                                                                no.on('collect', async(r) => {
                                                                     let sondageEmbed = new Discord.RichEmbed()
                                                                         .setTitle("SONDAGE- CHOIX MULTIPLES")
                                                                         .setDescription(questionSondage)
@@ -103,7 +105,7 @@ module.exports.run = async (client, message, args) => {
                                                 })
                                         });
 
-                                        no.on('collect', r => {
+                                        no.on('collect', async(r) => {
                                             let sondageEmbed = new Discord.RichEmbed()
                                                 .setTitle("SONDAGE- CHOIX MULTIPLES")
                                                 .setDescription(questionSondage)
