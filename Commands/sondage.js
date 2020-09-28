@@ -7,7 +7,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("Tu souhaites faire un sondage a choix multiple, quel est la question du sondage?")
         .then(m => m.delete(5000))
         .then(() => {
-            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 5000}).then(msg.delete(2000))
+            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 5000}).then(msg => msg.delete(2000))
             .then(collected => {
                 questionSondage = collected.content;
                 message.channel.send("Premiere choix: ")
