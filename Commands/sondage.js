@@ -4,24 +4,23 @@ module.exports.run = async (client, message, args) => {
 
     if(args.length < 1) {
 
-        message.channel.send("Tu souhaites faire un sondage a choix multiple, quel est la question du songdage?")
-        .then(m => m.delete(20000))
+        message.channel.send("Tu souhaites faire un sondage a choix multiple, quel est la question du sondage?")
+        .then(m => m.delete(5000))
         .then(() => {
-            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 10000})
-            .then(m => m.delete(2000))
+            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 5000}).then(msg.delete(2000))
             .then(collected => {
                 questionSondage = collected.content;
                 message.channel.send("Premiere choix: ")
                 .then(m => m.delete(15000))
                 .then(() => {
-                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 10000})
+                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 5000})
                     .then(m => m.delete(2000))
                     .then(collected => {
                         choixA = collected.content;
                         message.channel.send("Deuxieme choix: ")
                         .then(m => m.delete(15000))
                         .then(() => {
-                            message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 10000})
+                            message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 5000})
                             .then(m => m.delete(2000))
                             .then(collected => {
                                 choixB = collected.content;
@@ -33,14 +32,14 @@ module.exports.run = async (client, message, args) => {
                                         const plusChoixFilter = (reaction, user) => reaction.emoji.name == '➕' && user.id == message.author.id;
                                         const noChoixFilter = (reaction, user) => reaction.emoji.name == '✖️' && user.id == message.author.id;
 
-                                        const plus = msg.createReactionCollector(plusChoixFilter, {time: 10000});
-                                        const no = msg.createReactionCollector(noChoixFilter, {time: 10000});
+                                        const plus = msg.createReactionCollector(plusChoixFilter, {time: 5000});
+                                        const no = msg.createReactionCollector(noChoixFilter, {time: 5000});
 
                                         plus.on('collect', r => {
                                             message.channel.send("Troisieme choix: ")
-                                                .then(m => m.delete(15000))
+                                                .then(m => m.delete(2000))
                                                 .then(() => {
-                                                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 10000})
+                                                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 5000})
                                                     .then(m => m.delete(2000))
                                                     .then(collected => {
                                                         choixC = collected.content;
@@ -52,14 +51,14 @@ module.exports.run = async (client, message, args) => {
                                                                 const plusChoixFilter = (reaction, user) => reaction.emoji.name == '➕' && user.id == message.author.id;
                                                                 const noChoixFilter = (reaction, user) => reaction.emoji.name == '✖️' && user.id == message.author.id;
 
-                                                                const plus = msg.createReactionCollector(plusChoixFilter, {time: 10000});
-                                                                const no = msg.createReactionCollector(noChoixFilter, {time: 10000});
+                                                                const plus = msg.createReactionCollector(plusChoixFilter, {time: 5000});
+                                                                const no = msg.createReactionCollector(noChoixFilter, {time: 5000});
                                                                 
                                                                 plus.on('collect', r => {
                                                                     message.channel.send("Troisieme choix: ")
                                                                     .then(m => m.delete(15000))
                                                                     .then(() => {
-                                                                        message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 10000})
+                                                                        message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 5000})
                                                                         .then(m => m.delete(2000))
                                                                         .then(collected => {
                                                                             choixD = collected.content;
@@ -68,9 +67,9 @@ module.exports.run = async (client, message, args) => {
                                                                                 let sondageEmbed = new Discord.RichEmbed()
                                                                                     .setTitle("SONDAGE- CHOIX MULTIPLES")
                                                                                     .setDescription(questionSondage)
-                                                                                    .addField('choix A' + choixA)
-                                                                                    .addField('choix B' + choixB)
-                                                                                    .addField('choix C' + choixC)
+                                                                                    .addField('choix A' , choixA)
+                                                                                    .addField('choix B' , choixB)
+                                                                                    .addField('choix C' , choixC)
                         
                                                                                 let sondageMessage = await message.channel.send(sondageEmbed);
                                                                                 await sondageMessage.react('🇦');
@@ -88,9 +87,9 @@ module.exports.run = async (client, message, args) => {
                                                                     let sondageEmbed = new Discord.RichEmbed()
                                                                         .setTitle("SONDAGE- CHOIX MULTIPLES")
                                                                         .setDescription(questionSondage)
-                                                                        .addField('choix A' + choixA)
-                                                                        .addField('choix B' + choixB)
-                                                                        .addField('choix C' + choixC)
+                                                                        .addField('choix A' , choixA)
+                                                                        .addField('choix B' , choixB)
+                                                                        .addField('choix C' , choixC)
                         
                                                                     let sondageMessage = await message.channel.send(sondageEmbed);
                                                                     await sondageMessage.react('🇦');
@@ -109,8 +108,8 @@ module.exports.run = async (client, message, args) => {
                                             let sondageEmbed = new Discord.RichEmbed()
                                                 .setTitle("SONDAGE- CHOIX MULTIPLES")
                                                 .setDescription(questionSondage)
-                                                .addField('choix A' + choixA)
-                                                .addField('choix B' + choixB)
+                                                .addField('choix A' , choixA)
+                                                .addField('choix B' , choixB)
 
                                             let sondageMessage = await message.channel.send(sondageEmbed);
                                             await sondageMessage.react('🇦');
