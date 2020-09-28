@@ -7,23 +7,24 @@ module.exports.run = async (client, message, args) => {
         message.channel.send("Tu souhaites faire un sondage a choix multiple, quel est la question du sondage?")
         .then(m => m.delete(5000))
         .then(() => {
-            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 5000}).then(msg => msg.delete(2000))
+            message.channel.awaitMessages(msg => msg.author.id == message.author.id, {max: 1, time: 2000})
             .then(collected => {
-                questionSondage = collected.content;
+                const questionSondage = collected.content;
+                collected.delete(1000);
                 message.channel.send("Premiere choix: ")
                 .then(m => m.delete(15000))
                 .then(() => {
-                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 5000})
-                    .then(m => m.delete(2000))
+                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 2000})
                     .then(collected => {
-                        choixA = collected.content;
+                        const choixA = collected.content;
+                        collected.delete(1000);
                         message.channel.send("Deuxieme choix: ")
                         .then(m => m.delete(15000))
                         .then(() => {
-                            message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 5000})
-                            .then(m => m.delete(2000))
+                            message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 2000})
                             .then(collected => {
-                                choixB = collected.content;
+                                const choixB = collected.content;
+                                collected.delete(1000);
                                 message.channel.send("+ de choix? ")
                                 .then(msg => msg.react('➕')
                                     .then(r => {
@@ -32,17 +33,17 @@ module.exports.run = async (client, message, args) => {
                                         const plusChoixFilter = (reaction, user) => reaction.emoji.name == '➕' && user.id == message.author.id;
                                         const noChoixFilter = (reaction, user) => reaction.emoji.name == '✖️' && user.id == message.author.id;
 
-                                        const plus = msg.createReactionCollector(plusChoixFilter, {time: 5000});
-                                        const no = msg.createReactionCollector(noChoixFilter, {time: 5000});
+                                        const plus = msg.createReactionCollector(plusChoixFilter, {time: 2000});
+                                        const no = msg.createReactionCollector(noChoixFilter, {time: 2000});
 
                                         plus.on('collect', r => {
                                             message.channel.send("Troisieme choix: ")
                                                 .then(m => m.delete(2000))
                                                 .then(() => {
-                                                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 5000})
-                                                    .then(m => m.delete(2000))
+                                                    message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 2000})
                                                     .then(collected => {
-                                                        choixC = collected.content;
+                                                        const choixC = collected.content;
+                                                        collected.delete(1000);
                                                         message.channel.send("+ de choix? ")
                                                         .then(msg => msg.react('➕')
                                                             .then(r => { 
@@ -51,17 +52,17 @@ module.exports.run = async (client, message, args) => {
                                                                 const plusChoixFilter = (reaction, user) => reaction.emoji.name == '➕' && user.id == message.author.id;
                                                                 const noChoixFilter = (reaction, user) => reaction.emoji.name == '✖️' && user.id == message.author.id;
 
-                                                                const plus = msg.createReactionCollector(plusChoixFilter, {time: 5000});
-                                                                const no = msg.createReactionCollector(noChoixFilter, {time: 5000});
+                                                                const plus = msg.createReactionCollector(plusChoixFilter, {time: 2000});
+                                                                const no = msg.createReactionCollector(noChoixFilter, {time: 2000});
                                                                 
                                                                 plus.on('collect', r => {
                                                                     message.channel.send("Troisieme choix: ")
-                                                                    .then(m => m.delete(15000))
+                                                                    .then(m => m.delete(2000))
                                                                     .then(() => {
-                                                                        message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 5000})
-                                                                        .then(m => m.delete(2000))
+                                                                        message.channel.awaitMessages(msg => msg.author.id === message.author.id, {max: 1, time: 2000})
                                                                         .then(collected => {
-                                                                            choixD = collected.content;
+                                                                            const choixD = collected.content;
+                                                                            collected.delete(1000);
                                                                             message.channel.send("4 choix c'est assez non? aha")
                                                                             .then(async() => {
                                                                                 let sondageEmbed = new Discord.RichEmbed()
@@ -70,6 +71,7 @@ module.exports.run = async (client, message, args) => {
                                                                                     .addField('choix A' , choixA)
                                                                                     .addField('choix B' , choixB)
                                                                                     .addField('choix C' , choixC)
+                                                                                    .addField('choix D' , choixD)
                         
                                                                                 let sondageMessage = await message.channel.send(sondageEmbed);
                                                                                 await sondageMessage.react('🇦');
