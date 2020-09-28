@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports.run = async (client, message, args) => {
 
-    infoPoll = message.content.match(/".+?"/g).map(str => str.replace(/"/g, ''));
+    const infoPoll = message.content.match(/".+?"/g).map(str => str.replace(/"/g, ''));
 
 
     if(infoPoll.length > 1) {
