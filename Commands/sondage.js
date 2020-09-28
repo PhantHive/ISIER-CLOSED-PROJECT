@@ -130,25 +130,30 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-    let sondageEmbed = new Discord.RichEmbed()
-        .setTitle("SONDAGE")
-        .setDescription(args.join(" "));
+    else {
 
-    let sondageMessage = await message.channel.send(sondageEmbed);
-    await sondageMessage.react('👍');
-    await sondageMessage.react('👎');
+        let sondageEmbed = new Discord.RichEmbed()
+            .setTitle("SONDAGE")
+            .setDescription(args.join(" "));
 
-    const filter = (reaction) => reaction.emoji.name === '👍' || reaction.emoji.name === '👎'
-    const results = await sondageMessage.awaitReactions(filter, {
-        time: 864000
-    });
+        let sondageMessage = await message.channel.send(sondageEmbed);
+        await sondageMessage.react('👍');
+        await sondageMessage.react('👎');
 
-    let resultsEmbed = new Discord.RichEmbed()
-        .setTitle("Resultat du sondage:")
-        .setDescription(`Resultats: ${args.join(" ")}`)
-        .addField("👍: ", ` ${results.get('👍').count-1}`)
-        .addField("👍: ", ` ${results.get('👎').count - 1}`)
-    client.channels.get('613749495716642818').send(resultsEmbed);
+        const filter = (reaction) => reaction.emoji.name === '👍' || reaction.emoji.name === '👎'
+        const results = await sondageMessage.awaitReactions(filter, {
+            time: 864000
+        });
+
+        let resultsEmbed = new Discord.RichEmbed()
+            .setTitle("Resultat du sondage:")
+            .setDescription(`Resultats: ${args.join(" ")}`)
+            .addField("👍: ", ` ${results.get('👍').count-1}`)
+            .addField("👍: ", ` ${results.get('👎').count - 1}`)
+        client.channels.get('613749495716642818').send(resultsEmbed);
+
+    }
+    
 };
 
 
