@@ -118,8 +118,8 @@ module.exports.run = async (client, message,args) => {
         ctx.shadowBlur = 6;
         ctx.font = "bold 45px Comic Sans MS";
         ctx.fillStyle = "#FEE700";
-        ctx.fillText("✪RANG:", 640, 60);
-        ctx.fillText(curRank + "/" + allR, 860, 60);
+        ctx.fillText("✪RANG:", 590, 60);
+        ctx.fillText(curRank + "/" + allR, 830, 60);
 
 
         
