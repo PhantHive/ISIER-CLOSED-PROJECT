@@ -119,7 +119,8 @@ client.on("message", async message => {
             }
             console.log(position);
             */
-
+            if (message.channel.id == '755084204567560232') return;
+            
             if (data.LEVEL < 5) {
 
                 var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
