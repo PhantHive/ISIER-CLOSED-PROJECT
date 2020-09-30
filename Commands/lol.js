@@ -5,11 +5,19 @@ const kayn = Kayn(process.env.RIOT_LOL_API_KEY)({
         isEnabled: true,
         showKey: false,
     },
-    requestOptions: {}, // Doesn't apply to DDragon requests
+    requestOptions: {
+        shouldRetry: true,
+        numberOfRetriesBeforeAbort: 3,
+        delayBeforeRetry: 1000,
+        burst: false,
+        shouldExitOn403: false,
+    },
     cacheOptions: {
-        cache: new LRUCache({ max: 5000 }),
+        cache: null,
         timeToLives: {
-            useDefault: true, // Cache DDragon by default!
+            useDefault: false,
+            byGroup: {},
+            byMethod: {},
         },
     },
 })
