@@ -5,7 +5,7 @@ const kayn = Kayn(process.env.RIOT_LOL_API_KEY);
 
 module.exports.run = async(client, message, args) => {
 
-    Kayn.DDragon.Champion.list()
+    kayn.DDragon.Champion.list()
         .callback(function(error, champions) {
             message.channel.send(champions)
         })
