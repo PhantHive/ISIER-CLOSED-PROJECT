@@ -1,6 +1,6 @@
 const { Kayn } = require("kayn");
 
-Kayn.key = process.env.RIOT_LOL_API_KEY;
+const kayn = Kayn(process.env.RIOT_LOL_API_KEY);
 
 
 module.exports.run = async(client, message, args) => {
