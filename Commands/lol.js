@@ -26,7 +26,8 @@ const kayn = Kayn(process.env.RIOT_LOL_API_KEY)({
 module.exports.run = async(client, message, args) => {
 
     const championsRotate = kayn.Champion.Rotation.list();
-    message.channel.send(championsRotate);
+    console.log(championsRotate);
+    
     
 };
 
