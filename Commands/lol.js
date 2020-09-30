@@ -1,8 +1,6 @@
 const { Kayn } = require("kayn");
 
 const kayn = Kayn(process.env.RIOT_LOL_API_KEY)({
-    region: REGIONS.NORTH_AMERICA,
-    locale: 'en_US',
     debugOptions: {
         isEnabled: true,
         showKey: false,
