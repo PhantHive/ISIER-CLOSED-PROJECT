@@ -119,6 +119,7 @@ client.on("message", async message => {
             }
             console.log(position);
             */
+            
             if (message.channel.id == '755084204567560232') return;
             
             if (data.LEVEL < 5) {

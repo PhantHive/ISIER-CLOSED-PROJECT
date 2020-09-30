@@ -13,6 +13,7 @@
     "fs": "^0.0.1-security",
     "http": "0.0.0",
     "join": "^3.0.0",
+    "kayn": "^0.10.2",
     "mongoose": "^5.10.6",
     "mongose": "0.0.2-security",
     "node-translate": "0.0.4",
