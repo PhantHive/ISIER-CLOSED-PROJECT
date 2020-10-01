@@ -25,7 +25,7 @@ const kayn = Kayn(process.env.RIOT_LOL_API_KEY)({
 
 module.exports.run = async(client, message, args) => {
 
-    const score = (await kayn.ChampionMastery.totalScore(args[0])).toString();
+    const score = (await kayn.ChampionMastery.totalScore(args[0]));
     console.log(score);
     
     
