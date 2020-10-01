@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const urban = require('relevant-urban');
 const translate = require('translate');
-const urban = require('relevant-urban');
+
 
 
 translate.engine = 'yandex';
