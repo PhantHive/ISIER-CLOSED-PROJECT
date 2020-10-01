@@ -15,6 +15,20 @@ module.exports.run = async (client, message, args) => {
         return;
     }
 
+    if (adversaire.id == 620678345364865051) {
+        message.reply("Mdrrrrrrrr, tu me fumes mec, tu veux vraiment mise avec moi, ok, wait for it...")
+        .then(() => message.channel.send(`Bravo <@${challenger}> tu viens de perdre le triple de l'xp que tu as mise :)`));
+        const docChallenger = XLD.findOne({
+            ID: challenger + "-" + message.guild.id
+        });
+        docChallenger.exec((err, doc) => {
+            if (err) console.log(err); 
+            doc.XP -= (3*xpMiser);
+            doc.save()
+
+        })    
+    }
+
     if (!xpMiser) {
         message.reply("tu dois mise quelque chose!");
         return;
