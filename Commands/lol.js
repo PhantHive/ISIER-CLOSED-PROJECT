@@ -25,8 +25,7 @@ const kayn = Kayn(process.env.RIOT_LOL_API_KEY)({
 
 module.exports.run = async(client, message, args) => {
 
-    const spectate = kayn.CurrentGame.by.summonerID(args[0])
-    FeaturedGames.list()
+    const spectate = kayn.ChampionMastery.totalScore(args[0])
     console.log(championsRotate);
     
     
