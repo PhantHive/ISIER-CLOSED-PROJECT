@@ -15,19 +15,6 @@ module.exports.run = async (client, message, args) => {
         return;
     }
 
-    if (adversaire.id == 620678345364865051) {
-        message.reply("Mdrrrrrrrr, tu me fumes mec, tu veux vraiment mise avec moi, ok, wait for it...")
-        .then(() => message.channel.send(`Bravo <@${challenger}> tu viens de perdre le triple de l'xp que tu as mise :)`));
-        const docChallenger = XLD.findOne({
-            ID: challenger + "-" + message.guild.id
-        });
-        docChallenger.exec((err, doc) => {
-            if (err) console.log(err); 
-            doc.XP -= (3*xpMiser);
-            doc.save()
-
-        })    
-    }
 
     if (!xpMiser) {
         message.reply("tu dois mise quelque chose!");
@@ -46,8 +33,23 @@ module.exports.run = async (client, message, args) => {
         adversaireInf.exec((err, doc) => {
             if (err) console.log(err);
             if (!doc) {
-                message.channel.send("Cette utilisateur n'as pas de rang tu ne peux miser avec lui.")
-                return;
+                if (adversaire.id == 620678345364865051) {
+                    message.reply("Mdrrrrrrrr, tu me fumes mec, tu veux vraiment mise avec moi, ok, wait for it...")
+                    .then(() => message.channel.send(`Bravo <@${challenger}> tu viens de perdre le triple de l'xp que tu as mise :)`));
+                    const docChallenger = XLD.findOne({
+                        ID: challenger + "-" + message.guild.id
+                    });
+                    docChallenger.exec((err, doc) => {
+                        if (err) console.log(err); 
+                        doc.XP -= (3*xpMiser);
+                        doc.save()
+            
+                    })    
+                }
+                else {
+                    message.channel.send("Cette utilisateur n'as pas de rang tu ne peux miser avec lui.")
+                    return;
+                }
             }
             else if (doc.XP < xpMiser) {
                 message.channel.send("tu ne peux pas mise une somme dont ne dispose pas ton adversaire!");
