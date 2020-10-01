@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
             max: 1,
             time: 60000,
             errors: ['time']
-        }).then(collected => {
+        }).then(async (collected) => {
             const reaction = collected.first();
 
             switch (reaction.emoji.name) {
