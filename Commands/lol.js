@@ -9,7 +9,7 @@ const kayn = Kayn(process.env.RIOT_LOL_API_KEY)({
         shouldRetry: true,
         numberOfRetriesBeforeAbort: 3,
         delayBeforeRetry: 1000,
-        burst: false,
+        burst: true,
         shouldExitOn403: false,
     },
     cacheOptions: {
@@ -25,7 +25,7 @@ const kayn = Kayn(process.env.RIOT_LOL_API_KEY)({
 
 module.exports.run = async(client, message, args) => {
 
-    const score = kayn.ChampionMastery.totalScore(args[0])
+    const score = (await kayn.ChampionMastery.totalScore(args[0])).toString();
     console.log(score);
     
     
