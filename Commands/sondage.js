@@ -4,7 +4,6 @@ module.exports.run = async (client, message, args) => {
 
     const infoPoll = message.content.match(/".+?"/g).map(str => str.replace(/"/g, ''));
 
-
     if(infoPoll.length > 1) {
 
         if (infoPoll.length == 3) {
@@ -66,7 +65,7 @@ module.exports.run = async (client, message, args) => {
         
         let sondageEmbed = new Discord.RichEmbed()
             .setTitle("SONDAGE")
-            .setDescription(infoPoll[0]);
+            .setDescription(args[0]);
 
         let sondageMessage = await message.channel.send(sondageEmbed);
         await sondageMessage.react('👍');
@@ -79,7 +78,7 @@ module.exports.run = async (client, message, args) => {
 
         let resultsEmbed = new Discord.RichEmbed()
             .setTitle("Resultat du sondage:")
-            .setDescription(`Resultats: ${infoPoll.join(" ")}`)
+            .setDescription(`Resultats: ${args[0].join(" ")}`)
             .addField("👍: ", ` ${results.get('👍').count-1}`)
             .addField("👍: ", ` ${results.get('👎').count - 1}`)
         client.channels.get('613749495716642818').send(resultsEmbed);

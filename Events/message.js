@@ -199,7 +199,7 @@ module.exports = async(client, message) => {
                 console.log(underCollector)
                 underCollector.on('collect', message => {
                     //COMETE PROJET
-                    if (message.content == ("comete" || "halley" || "comete halley")) {
+                    if (message.content == ("comete" || "halley" || "comete halley" || "mini projet comète de Halley" || "comète de Halley")) {
                         message.channel.send("c'est tout bon pour moi je t'envoi ca");
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane => ```")                                  //1
                         .then(() => message.channel.send({file: './ph12/comete/comete2020-Auriane_Zakaria.pdf'}))                   
