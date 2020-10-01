@@ -68,7 +68,7 @@ module.exports.run = async (client, message, args) => {
                                 const non = msg.createReactionCollector(nonFilter,{time: 50000});
         
                                 oui.on('collect', r => {
-                                    const randomChooseFirst = 1; //Math.floor(Math.random() * 2) + 1;
+                                    const randomChooseFirst = Math.floor(Math.random() * 2) + 1;
                                     console.log(randomChooseFirst);
                                     if (randomChooseFirst == 1) {
                                         message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
