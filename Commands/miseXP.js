@@ -46,6 +46,21 @@ module.exports.run = async (client, message, args) => {
             
                     })    
                 }
+                
+                if (adversaire.id == 620678345364865051 && doc.XP < 0) {
+                    message.reply("Big brain, isn't it? wait for it...")
+                    .then(() => message.channel.send(`Bravo <@${challenger}> tu viens de perdre le triple de l'oppose de l'xp que tu as mise :)`));
+                    const docChallenger = XLD.findOne({
+                        ID: challenger + "-" + message.guild.id
+                    });
+                    docChallenger.exec((err, doc) => {
+                        if (err) console.log(err); 
+                        doc.XP += (3*xpMiser);
+                        doc.save()
+            
+                    })    
+                }
+                
                 else {
                     message.channel.send("Cette utilisateur n'as pas de rang tu ne peux miser avec lui.")
                     return;
