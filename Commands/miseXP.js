@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
         adversaireInf.exec((err, doc) => {
             if (err) console.log(err);
             if (!doc) {
-                if (adversaire.id == 620678345364865051) {
+                if (adversaire.id == 620678345364865051 doc.XP > 0) {
                     message.reply("Mdrrrrrrrr, tu me fumes mec, tu veux vraiment mise avec moi, ok, wait for it...")
                     .then(() => message.channel.send(`Bravo <@${challenger}> tu viens de perdre le triple de l'xp que tu as mise :)`));
                     const docChallenger = XLD.findOne({
