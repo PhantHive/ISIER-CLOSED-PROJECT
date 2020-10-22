@@ -59,7 +59,11 @@ module.exports = async(client, message) => {
     var chaine3 = String(message.content);
 
     if (chaine3.indexOf("bonsoir") !== -1) {
-        message.channel.send('salut mon ami ;)');
+        var b = Math.floor((Math.random() * 15) + 1);
+        if (b == 5) {
+            message.channel.send('salut mon ami ;)');
+        }
+
     }
 
     var chaine4 = String(message.content);
