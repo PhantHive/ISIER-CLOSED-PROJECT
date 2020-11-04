@@ -114,8 +114,9 @@ module.exports = async(client, message) => {
     //=================MINI-PROJET-PHYSIQUE
   
     //ph111 = PROJET RESSORT
-    var mphressort = String(message.content);
-    if (mphressort.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet ressort") !== -1 ) {
+    var mp = String(message.content);
+
+    if (mp.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet ressort") !== -1 ) {
  
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
@@ -131,8 +132,8 @@ module.exports = async(client, message) => {
 
     //ph121 = pendule
 
-    var mphpendule = String(message.content);
-    if (mphpendule.indexOf( "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
+
+    else if (mp.indexOf( "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -144,8 +145,8 @@ module.exports = async(client, message) => {
  
     //ph121 = optique
 
-    var mphoptique = String(message.content);
-    if (mphoptique.indexOf( "projet optique" || "miniprojet optique" || "mp optique" || "tp optique") !== -1 ) {
+
+    else if (mp.indexOf( "projet optique" || "miniprojet optique" || "mp optique" || "tp optique") !== -1 ) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -156,8 +157,8 @@ module.exports = async(client, message) => {
 
     //ph121 = calorimetrie
 
-    var mphcalo = String(message.content);
-    if (mphcalo.indexOf( "projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie") !== -1 ) {
+
+    else if (mp.indexOf( "projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie") !== -1 ) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -168,9 +169,9 @@ module.exports = async(client, message) => {
 
    
     //mini projet en general
-    var mp = String(message.content);
 
-    if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
+
+    else if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
 
         message.channel.startTyping()
         message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121, elec etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
