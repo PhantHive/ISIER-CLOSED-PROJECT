@@ -119,8 +119,8 @@ module.exports = async(client, message) => {
 
     switch (mp) {
 
-         case (mp.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet ressort") !== -1)
-        {
+        case (mp.indexOf("mp ph111" || "miniprojet ph111" || "mini projet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet ressort") !== -1):
+
 
             message.channel.startTyping()
             message.reply("je t envoi ca de suite")
@@ -132,11 +132,11 @@ module.exports = async(client, message) => {
                 .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
             message.channel.stopTyping()
 
-        }
+
 
             //ph121 = pendule
 
-        case (mp.indexOf("projet pendule" || "miniprojet pendule" || "mp pendule") !== -1) {
+        case (mp.indexOf("projet pendule" || "miniprojet pendule" || "mp pendule") !== -1) :
                 message.channel.startTyping()
                 message.reply("je t envoi ca de suite")
                 message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -144,35 +144,35 @@ module.exports = async(client, message) => {
                     .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                     //2
                     .then(() => message.channel.send({file: './ph12/pendule/pendule2012-Thomas.pdf/'}))
                 message.channel.stopTyping()
-         }
+
 
             //ph121 = optique
 
 
-        case (mp.indexOf("projet optique" || "miniprojet optique" || "mp optique" || "tp optique") !== -1) {
+        case (mp.indexOf("projet optique" || "miniprojet optique" || "mp optique" || "tp optique") !== -1) :
                 message.channel.startTyping()
                 message.reply("je t envoi ca de suite")
                 message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
                     .then(() => message.channel.send({file: './ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
                     .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
                 message.channel.stopTyping()
-            }
+
 
             //ph121 = calorimetrie
 
-        case (mp.indexOf("projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie") !== -1) {
+        case (mp.indexOf("projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie") !== -1) :
                 message.channel.startTyping()
                 message.reply("je t envoi ca de suite")
                 message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
                     .then(() => message.channel.send({file: './ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
                     .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
                 message.channel.stopTyping()
-            }
+
 
 
             //mini projet en general
 
-        case (mp.indexOf("mini projet" || "mini projet ipsa") !== -1) {
+        case (mp.indexOf("mini projet" || "mini projet ipsa") !== -1) :
 
                 message.channel.startTyping()
                 message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121, elec etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
@@ -260,7 +260,7 @@ module.exports = async(client, message) => {
 
                     }
                 })
-            }
+
 
     }
     //================TP GENIE MATHS
