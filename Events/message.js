@@ -81,7 +81,7 @@ module.exports = async(client, message) => {
                     })
             }
 
-            else if (secServer.member.cache.find(message.author.id)) {
+            if (secServer.member.cache.find(message.author.id)) {
                 let data3 = XLD.findOne({
                         ID: message.author.id + "-" + "608155753748103170"
                     },
@@ -101,7 +101,7 @@ module.exports = async(client, message) => {
                         }
                     })
             }
-            
+
         }
         else {
             message.channel.send("Go sur le discord de ta promo dans le channel adapté aux commandes bots et tape i!aide pour recevoir de l'aide sur mes commandes" +
