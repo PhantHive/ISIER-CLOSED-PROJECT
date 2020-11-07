@@ -5,7 +5,7 @@ const fs = require("fs");
 let mailVerif = require("../jsonFile/mailsVerif.json")
 //mailAdd
 let mailAdded = require("../jsonFile/mailAdded.json")
-const EGD = require('./models/EasterSystem.js');
+const EGD = require('../models/EasterSystem.js');
 
 
 module.exports = async(client, message) => {
@@ -228,7 +228,7 @@ module.exports = async(client, message) => {
                                 }
                             }
                         })
-                            
+
 
                         message.reply("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +500xp").then(m => m.delete(3000));
 
