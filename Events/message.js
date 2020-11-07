@@ -117,7 +117,7 @@ module.exports = async(client, message) => {
 
     var mp = String(message.content);
 
-    if (mp.search(/mp ph111|miniprojet ph111|projet ressort|miniprojet ressort|mp ressort|mini projet resort/) !== -1) {
+    if (mp.search(/mp ph111|miniprojet ph111|projet ressort|miniprojet ressort|mp ressort|mini projet resort/i) !== -1) {
 
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
@@ -134,7 +134,7 @@ module.exports = async(client, message) => {
     //ph121 = pendule
 
 
-    if (mp.lastIndexOf( " projet pendule"  || "miniprojet pendule"  || "mp pendule") !== -1) {
+    else if (mp.search( /projet pendule|miniprojet pendule|mp pendule/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -147,7 +147,7 @@ module.exports = async(client, message) => {
     //ph121 = optique
 
 
-    if (mp.lastIndexOf( "projet optique" || "miniprojet optique" || " mp optique" || "tp optique") !== -1) {
+    else if (mp.search( /projet optique|miniprojet optique|mp optique|tp optique/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -158,7 +158,7 @@ module.exports = async(client, message) => {
 
     //ph121 = calorimetrie
 
-    if (mp.lastIndexOf( "projet calorimetrie" || "miniprojet calorimetrie"  || "mp calorimetrie"  || "tp calorimetrie" ) !== -1) {
+    else if (mp.search( /projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -170,7 +170,7 @@ module.exports = async(client, message) => {
 
     //mini projet en general
 
-    if (mp.lastIndexOf("mini projet" || "mini projet ipsa") !== -1 ) {
+    else if (mp.search(/mini projet|mini projet ipsa/i) !== -1 ) {
 
         message.channel.startTyping()
         message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121, elec etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
