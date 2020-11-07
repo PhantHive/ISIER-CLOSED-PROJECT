@@ -158,14 +158,14 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText(curRank + "/" + allR, 830, 60);
 
                             const eggImg = await loadImage(join(__dirname, "..", "image", "egg.png"));
-                            ctx.drawImage(eggImg,760 , 90, 40, 40);
+                            ctx.drawImage(eggImg,760 , 80, 40, 40);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
                             ctx.font = "bold 35px Comic Sans MS";
                             ctx.fillStyle = "#00f1fe";
-                            ctx.fillText("EGG:", 800, 120);
-                            ctx.fillText(curEgg + "/" + 2, 900, 120);
+                            ctx.fillText("EGG:", 800, 110);
+                            ctx.fillText(curEgg + "/" + 2, 900, 110);
 
 
                             //profil circle
