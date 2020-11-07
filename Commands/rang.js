@@ -100,7 +100,7 @@ module.exports.run = async (client, message,args) => {
                             var percentage = (curxp / newlvl) * 767;
                             var gradient = ctx.createLinearGradient(0, 0, 200, 0);
                             gradient.addColorStop(0, "#ffffff");
-                            gradient.addColorStop(1, "#007AFF")
+                            gradient.addColorStop(1, "#007aff")
 
                             //bar bleu rempli
                             ctx.fillStyle = gradient;
@@ -113,12 +113,32 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 280);
                             ctx.textAlign = "left";
 
-                            ctx.font = "bold 45px Comic Sans MS";
-                            ctx.shadowOffsetX = 5;
-                            ctx.shadowColor = "blue";
-                            ctx.shadowBlur = 3;
-                            ctx.fillText(member.user.tag, 300, 150);
+                            if (data.LEVEL < 5) {
+                                ctx.fillStyle = "#ffffff";
+                                ctx.font = "bold 45px Comic Sans MS";
+                                ctx.shadowOffsetX = 5;
+                                ctx.shadowColor = "blue";
+                                ctx.shadowBlur = 3;
+                                ctx.fillText(member.user.tag, 300, 150);
+                            }
+                            else if (data.LEVEL <10) {
+                                ctx.fillStyle = "#ff0000";
+                                ctx.font = "bold 45px Comic Sans MS";
+                                ctx.shadowOffsetX = 5;
+                                ctx.shadowColor = "blue";
+                                ctx.shadowBlur = 3;
+                                ctx.fillText(member.user.tag, 300, 150);
+                            }
+                            else {
+                                ctx.fillStyle = "#ccae01";
+                                ctx.font = "bold 45px Comic Sans MS";
+                                ctx.shadowOffsetX = 5;
+                                ctx.shadowColor = "blue";
+                                ctx.shadowBlur = 3;
+                                ctx.fillText(member.user.tag, 300, 150);
+                            }
 
+                            ctx.fillStyle = "#ffffff";
                             ctx.font = "40px Comic Sans MS";
                             ctx.fillText("Level:", 300, 215);
                             ctx.fillText(curlvl, 470, 215);
