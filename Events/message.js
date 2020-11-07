@@ -13,7 +13,7 @@ module.exports = async(client, message) => {
 
 
 
-    if (message.channel.type === "DM") {
+    if (message.channel.type === "dm") {
         if (message.content == "je t'aime") {
             //MONGODB
             let data = EGD.findOne({
