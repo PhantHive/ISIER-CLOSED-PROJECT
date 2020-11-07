@@ -102,9 +102,10 @@ module.exports.run = async (client, message,args) => {
                             gradient.addColorStop(0, "#ffffff");
                             gradient.addColorStop(1, "#007AFF")
 
+                            //bar bleu rempli
                             ctx.fillStyle = gradient;
                             ctx.globalAlpha = 0.8;
-                            ctx.fillRect(180, 248, percentage, 61);
+                            ctx.fillRect(180, 238, percentage, 61);
                             ctx.globalAlpha = 1;
                             ctx.font = "35px Arial";
                             ctx.textAlign = "center";
@@ -119,8 +120,8 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText(member.user.tag, 300, 150);
 
                             ctx.font = "40px Comic Sans MS";
-                            ctx.fillText("Level:", 300, 170);
-                            ctx.fillText(curlvl, 470, 170);
+                            ctx.fillText("Level:", 300, 190);
+                            ctx.fillText(curlvl, 470, 190);
 
                             ctx.font = "bold italic 30px Arial";
                             ctx.fillStyle = "#ffffff";
