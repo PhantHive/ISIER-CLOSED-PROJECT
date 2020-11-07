@@ -90,12 +90,12 @@ module.exports.run = async (client, message,args) => {
                             else if (data.LEVEL <10) {
                                 color = "#00ff88";
                                 shadowColor = "black"
-                                colorBar = color
+                                colorBar = "#009bf5"
                             }
                             else {
                                 color = "#f7d403";
                                 shadowColor = "black"
-                                colorBar = color
+                                colorBar = "#00f1f5"
                             }
 
                             const canvas = createCanvas(1000, 363);
