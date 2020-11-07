@@ -125,7 +125,7 @@ module.exports.run = async (client, message,args) => {
                                 ctx.fillStyle = "#ff0000";
                                 ctx.font = "bold 45px Comic Sans MS";
                                 ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = "blue";
+                                ctx.shadowColor = "black";
                                 ctx.shadowBlur = 3;
                                 ctx.fillText(member.user.tag, 300, 150);
                             }
@@ -133,7 +133,7 @@ module.exports.run = async (client, message,args) => {
                                 ctx.fillStyle = "#ccae01";
                                 ctx.font = "bold 45px Comic Sans MS";
                                 ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = "blue";
+                                ctx.shadowColor = "red";
                                 ctx.shadowBlur = 3;
                                 ctx.fillText(member.user.tag, 300, 150);
                             }
