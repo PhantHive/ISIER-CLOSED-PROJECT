@@ -6,6 +6,7 @@ let mailVerif = require("../jsonFile/mailsVerif.json")
 //mailAdd
 let mailAdded = require("../jsonFile/mailAdded.json")
 const EGD = require('../models/EasterSystem.js');
+const XLD = require('../models/RankSystem.js');
 
 
 module.exports = async(client, message) => {
@@ -213,7 +214,7 @@ module.exports = async(client, message) => {
                                 new EGD({
                                     ID: message.author.id + "-" + message.guild.id,
                                     serverID: message.guild.id,
-                                    thanksEaster: 0,
+                                    thanksEaster: 1,
                                     loveEaster: 0
                                 }).save()
 
@@ -230,9 +231,29 @@ module.exports = async(client, message) => {
                             }
                         })
 
+                        let data2 = XLD.findOne({
+                                ID: message.author.id + "-" + message.guild.id
+                        },
+                        (err, data2) => {
+                            if (!data2) {
+                                new XLD({
+                                    ID: message.author.id + "-" + message.guild.id,
+                                    serverID: message.guild.id,
+                                    XP: 0,
+                                    LEVEL: 1,
+                                    RANK: 0
+                                })
+                            } else {
+                                let curLvl = data2.LEVEL;
+                                data.LEVEL = curLvl + 2;
+                                data.XP = 0;
+                            }
+                        })
 
-                        message.reply("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +500xp").then(m => m.delete(3000));
-
+                        message.author.createDM().then(channel => {
+                            channel.send("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +2 levels")
+                        })
+                        
                     }
                 })
             }
