@@ -126,8 +126,8 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillStyle = "#ffffff";
                             ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
 
-                            const eggImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
-                            ctx.drawImage(eggImg,550 , 60, 25, 25);
+                            const rankImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
+                            ctx.drawImage(rankImg,550 , 60, 50, 50);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
@@ -137,7 +137,7 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText(curRank + "/" + allR, 830, 60);
 
                             const eggImg = await loadImage(join(__dirname, "..", "image", "egg.png"));
-                            ctx.drawImage(eggImg,750 , 230, 25, 25);
+                            ctx.drawImage(eggImg,750 , 230, 30, 30);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
