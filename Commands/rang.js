@@ -84,15 +84,18 @@ module.exports.run = async (client, message,args) => {
 
                             if (data.LEVEL < 5) {
                                 color = "#ffffff";
+                                colorBar = "#0076f5"
                                 shadowColor = 'blue'
                             }
                             else if (data.LEVEL <10) {
                                 color = "#00ff88";
                                 shadowColor = "black"
+                                colorBar = color
                             }
                             else {
                                 color = "#f7d403";
                                 shadowColor = "black"
+                                colorBar = color
                             }
 
                             const canvas = createCanvas(1000, 363);
@@ -114,7 +117,7 @@ module.exports.run = async (client, message,args) => {
                             var percentage = (curxp / newlvl) * 767;
                             var gradient = ctx.createLinearGradient(0, 0, 200, 0);
                             gradient.addColorStop(0, "#ffffff");
-                            gradient.addColorStop(1, color)
+                            gradient.addColorStop(1, colorBar)
 
                             //bar rempli
                             ctx.fillStyle = gradient;
@@ -129,6 +132,7 @@ module.exports.run = async (client, message,args) => {
 
 
                             ctx.font = "bold 45px Comic Sans MS";
+                            ctx.fillStyle = color;
                             ctx.shadowOffsetX = 5;
                             ctx.shadowColor = shadowColor;
                             ctx.shadowBlur = 3;
