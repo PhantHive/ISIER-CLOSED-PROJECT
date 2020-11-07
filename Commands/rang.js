@@ -95,7 +95,7 @@ module.exports.run = async (client, message,args) => {
                             else {
                                 color = "#f7d403";
                                 shadowColor = "black"
-                                colorBar = "#00f1f5"
+                                colorBar = "#00c4f5"
                             }
 
                             const canvas = createCanvas(1000, 363);
