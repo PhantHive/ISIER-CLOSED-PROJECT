@@ -119,12 +119,12 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText(member.user.tag, 300, 150);
 
                             ctx.font = "40px Comic Sans MS";
-                            ctx.fillText("Level:", 300, 150);
-                            ctx.fillText(curlvl, 470, 150);
+                            ctx.fillText("Level:", 300, 170);
+                            ctx.fillText(curlvl, 470, 170);
 
-                            ctx.font = "bold italic 25px Arial";
+                            ctx.font = "bold italic 30px Arial";
                             ctx.fillStyle = "#ffffff";
-                            ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
+                            ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 350)
 
                             const rankImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
                             ctx.drawImage(rankImg,530 , 15, 50, 50);
@@ -137,14 +137,14 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText(curRank + "/" + allR, 830, 60);
 
                             const eggImg = await loadImage(join(__dirname, "..", "image", "egg.png"));
-                            ctx.drawImage(eggImg,760 , 195, 40, 40);
+                            ctx.drawImage(eggImg,760 , 190, 40, 40);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
                             ctx.font = "bold 35px Comic Sans MS";
                             ctx.fillStyle = "#00f1fe";
                             ctx.fillText("EGG:", 800, 220);
-                            ctx.fillText(curEgg + "/" + 2, 900, 200);
+                            ctx.fillText(curEgg + "/" + 2, 900, 220);
 
 
                             //profil circle
