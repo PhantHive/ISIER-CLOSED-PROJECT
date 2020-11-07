@@ -62,7 +62,7 @@ module.exports = async(client, message) => {
                 })
 
 
-            if (server.member.cache.find(message.author.id)) {
+            if (server.member.find(message.author.id)) {
                 let data2 = XLD.findOne({
                         ID: message.author.id + "-" + "755084203779162151"
                     },
