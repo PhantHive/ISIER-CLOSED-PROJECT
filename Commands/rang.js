@@ -91,10 +91,10 @@ module.exports.run = async (client, message,args) => {
                             ctx.strokeStyle = "#ffffff";
                             ctx.globalAlpha = 0.2;
                             ctx.fillStyle = "#000000";
-                            ctx.fillRect(180, 216, 770, 65);
+                            ctx.fillRect(180, 246, 770, 65);
                             ctx.fill();
                             ctx.globalAlpha = 1;
-                            ctx.strokeRect(180, 216, 770, 65);
+                            ctx.strokeRect(180, 246, 770, 65);
                             ctx.stroke();
 
                             var percentage = (curxp / newlvl) * 767;
@@ -104,27 +104,27 @@ module.exports.run = async (client, message,args) => {
 
                             ctx.fillStyle = gradient;
                             ctx.globalAlpha = 0.8;
-                            ctx.fillRect(180, 218, percentage, 61);
+                            ctx.fillRect(180, 248, percentage, 61);
                             ctx.globalAlpha = 1;
                             ctx.font = "35px Arial";
                             ctx.textAlign = "center";
                             ctx.fillStyle = "#ffffff";
-                            ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 260);
+                            ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 290);
                             ctx.textAlign = "left";
 
                             ctx.font = "bold 45px Comic Sans MS";
                             ctx.shadowOffsetX = 5;
                             ctx.shadowColor = "blue";
                             ctx.shadowBlur = 3;
-                            ctx.fillText(member.user.tag, 300, 120);
+                            ctx.fillText(member.user.tag, 300, 150);
 
                             ctx.font = "40px Comic Sans MS";
-                            ctx.fillText("Level:", 300, 180);
-                            ctx.fillText(curlvl, 470, 180);
+                            ctx.fillText("Level:", 300, 150);
+                            ctx.fillText(curlvl, 470, 150);
 
                             ctx.font = "bold italic 25px Arial";
                             ctx.fillStyle = "#ffffff";
-                            ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
+                            ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 290)
 
                             const rankImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
                             ctx.drawImage(rankImg,530 , 10, 50, 50);
@@ -149,7 +149,7 @@ module.exports.run = async (client, message,args) => {
 
                             //profil circle
 
-                            ctx.arc(170, 160, 120, 0, Math.PI * 2, true);
+                            ctx.arc(170, 190, 120, 0, Math.PI * 2, true);
                             ctx.lineWidth = 6;
                             ctx.strokeStyle = "#ffffff";
                             ctx.stroke();
