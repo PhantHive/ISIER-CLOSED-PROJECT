@@ -117,7 +117,7 @@ module.exports = async(client, message) => {
 
     var mp = String(message.content);
 
-    if (mp.search(/mp ph111|miniprojet ph111|projet ressort|miniprojet ressort|mp ressort|mini projet resort/i) !== -1) {
+    if (mp.search(/mp ph111|miniprojet ph111|projet ressort|miniprojet ressort|mp ressort|mini projet resort|mini projet ph111/i) !== -1) {
 
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
@@ -128,14 +128,13 @@ module.exports = async(client, message) => {
         .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))                   //3
         .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
         message.channel.stopTyping()
-        stop()
 
     }
 
     //ph121 = pendule
 
 
-    if (mp.search( /projet pendule|miniprojet pendule|mp pendule/i) !== -1) {
+    else if (mp.search( /projet pendule|miniprojet pendule|mp pendule/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -143,38 +142,38 @@ module.exports = async(client, message) => {
         .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                     //2
         .then(() => message.channel.send({file: './ph12/pendule/pendule2012-Thomas.pdf/'}))
         message.channel.stopTyping()
-        stop()
+
     }
 
     //ph121 = optique
 
 
-    if (mp.search( /projet optique|miniprojet optique|mp optique|tp optique/i) !== -1) {
+    else if (mp.search( /projet optique|miniprojet optique|mp optique|tp optique/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
         .then(() => message.channel.send({file: './ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
         .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
         message.channel.stopTyping()
-        stop()
+
     }
 
     //ph121 = calorimetrie
 
-    if (mp.search( /projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie/i) !== -1) {
+    else if (mp.search( /projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
         .then(() => message.channel.send({file: './ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
         .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
         message.channel.stopTyping()
-        stop()
+
     }
 
 
     //mini projet en general
 
-    if (mp.search(/mini projet|mini projet ipsa/i) !== -1 ) {
+    else if (mp.search(/mini projet|mini projet ipsa/i) !== -1 ) {
 
         message.channel.startTyping()
         message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121, elec etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
