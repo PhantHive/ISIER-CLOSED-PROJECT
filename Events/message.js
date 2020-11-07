@@ -226,6 +226,7 @@ module.exports = async(client, message) => {
                                 else {
                                     data.thanksEaster;
                                 }
+                                data.save()
                             }
                         })
 
