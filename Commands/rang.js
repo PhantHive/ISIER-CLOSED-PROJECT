@@ -130,10 +130,10 @@ module.exports.run = async (client, message,args) => {
                                 ctx.fillText(member.user.tag, 300, 150);
                             }
                             else {
-                                ctx.fillStyle = "#ccae01";
+                                ctx.fillStyle = "#f7d403";
                                 ctx.font = "bold 45px Comic Sans MS";
                                 ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = "red";
+                                ctx.shadowColor = "black";
                                 ctx.shadowBlur = 3;
                                 ctx.fillText(member.user.tag, 300, 150);
                             }
