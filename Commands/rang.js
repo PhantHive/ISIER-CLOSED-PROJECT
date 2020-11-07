@@ -128,24 +128,24 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 350)
 
                             const rankImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
-                            ctx.drawImage(rankImg,530 , 15, 50, 50);
+                            ctx.drawImage(rankImg,540 , 15, 50, 50);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
                             ctx.font = "bold 45px Comic Sans MS";
                             ctx.fillStyle = "#FEE700";
-                            ctx.fillText("RANG:", 590, 60);
+                            ctx.fillText("RANG:", 600, 60);
                             ctx.fillText(curRank + "/" + allR, 830, 60);
 
                             const eggImg = await loadImage(join(__dirname, "..", "image", "egg.png"));
-                            ctx.drawImage(eggImg,760 , 190, 40, 40);
+                            ctx.drawImage(eggImg,760 , 90, 40, 40);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
                             ctx.font = "bold 35px Comic Sans MS";
                             ctx.fillStyle = "#00f1fe";
-                            ctx.fillText("EGG:", 800, 220);
-                            ctx.fillText(curEgg + "/" + 2, 900, 220);
+                            ctx.fillText("EGG:", 800, 120);
+                            ctx.fillText(curEgg + "/" + 2, 900, 120);
 
 
                             //profil circle
