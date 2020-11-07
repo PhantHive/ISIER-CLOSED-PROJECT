@@ -57,7 +57,9 @@ fs.readdir("./Events/", (err, f) => {
 client.on("message", async message => {
 
    
-
+    if (message.channel.type == "DM") {
+        return
+    }
     //using promises :P
     var current = null,
         rank = 0;
