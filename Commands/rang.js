@@ -122,11 +122,11 @@ module.exports.run = async (client, message,args) => {
                                 ctx.fillText(member.user.tag, 300, 150);
                             }
                             else if (data.LEVEL <10) {
-                                ctx.fillStyle = "#ff0000";
+                                ctx.fillStyle = "#00ff88";
                                 ctx.font = "bold 45px Comic Sans MS";
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = "black";
-                                ctx.shadowBlur = 3;
+                                ctx.shadowBlur = 4;
                                 ctx.fillText(member.user.tag, 300, 150);
                             }
                             else {
@@ -134,10 +134,13 @@ module.exports.run = async (client, message,args) => {
                                 ctx.font = "bold 45px Comic Sans MS";
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = "black";
-                                ctx.shadowBlur = 3;
+                                ctx.shadowBlur = 5;
                                 ctx.fillText(member.user.tag, 300, 150);
                             }
-
+                            
+                            ctx.shadowOffsetX = 5;
+                            ctx.shadowColor = "blue";
+                            ctx.shadowBlur = 3;
                             ctx.fillStyle = "#ffffff";
                             ctx.font = "40px Comic Sans MS";
                             ctx.fillText("Level:", 300, 215);
