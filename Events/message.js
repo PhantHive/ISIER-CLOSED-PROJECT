@@ -83,7 +83,7 @@ module.exports = async(client, message) => {
                     })
             }
 
-            if (secServer.member.cache.find(message.author.id)) {
+            if (secServer.member.find(message.author.id)) {
                 let data3 = XLD.findOne({
                         ID: message.author.id + "-" + "608155753748103170"
                     },
@@ -342,7 +342,7 @@ module.exports = async(client, message) => {
                                     ID: message.author.id + "-" + message.guild.id,
                                     serverID: message.guild.id,
                                     XP: 0,
-                                    LEVEL: 1,
+                                    LEVEL: 3,
                                     RANK: 0
                                 })
                             } else {
