@@ -91,10 +91,10 @@ module.exports.run = async (client, message,args) => {
                             ctx.strokeStyle = "#ffffff";
                             ctx.globalAlpha = 0.2;
                             ctx.fillStyle = "#000000";
-                            ctx.fillRect(180, 246, 770, 65);
+                            ctx.fillRect(180, 236, 770, 65);
                             ctx.fill();
                             ctx.globalAlpha = 1;
-                            ctx.strokeRect(180, 246, 770, 65);
+                            ctx.strokeRect(180, 236, 770, 65);
                             ctx.stroke();
 
                             var percentage = (curxp / newlvl) * 767;
@@ -109,7 +109,7 @@ module.exports.run = async (client, message,args) => {
                             ctx.font = "35px Arial";
                             ctx.textAlign = "center";
                             ctx.fillStyle = "#ffffff";
-                            ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 290);
+                            ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 280);
                             ctx.textAlign = "left";
 
                             ctx.font = "bold 45px Comic Sans MS";
@@ -127,7 +127,7 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
 
                             const rankImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
-                            ctx.drawImage(rankImg,530 , 10, 50, 50);
+                            ctx.drawImage(rankImg,530 , 15, 50, 50);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
@@ -137,26 +137,26 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText(curRank + "/" + allR, 830, 60);
 
                             const eggImg = await loadImage(join(__dirname, "..", "image", "egg.png"));
-                            ctx.drawImage(eggImg,760 , 200, 40, 40);
+                            ctx.drawImage(eggImg,760 , 195, 40, 40);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
                             ctx.font = "bold 35px Comic Sans MS";
                             ctx.fillStyle = "#00f1fe";
-                            ctx.fillText("EGG:", 800, 200);
+                            ctx.fillText("EGG:", 800, 220);
                             ctx.fillText(curEgg + "/" + 2, 900, 200);
 
 
                             //profil circle
 
-                            ctx.arc(170, 190, 120, 0, Math.PI * 2, true);
+                            ctx.arc(170, 180, 120, 0, Math.PI * 2, true);
                             ctx.lineWidth = 6;
                             ctx.strokeStyle = "#ffffff";
                             ctx.stroke();
                             ctx.closePath();
                             ctx.clip();
                             const avatar = await loadImage(member.user.displayAvatarURL);
-                            ctx.drawImage(avatar, 40, 70, 250, 250);
+                            ctx.drawImage(avatar, 40, 60, 250, 250);
 
                             /*
 
