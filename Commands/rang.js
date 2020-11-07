@@ -120,21 +120,21 @@ module.exports.run = async (client, message,args) => {
                             ctx.fillText(member.user.tag, 300, 150);
 
                             ctx.font = "40px Comic Sans MS";
-                            ctx.fillText("Level:", 300, 190);
-                            ctx.fillText(curlvl, 470, 190);
+                            ctx.fillText("Level:", 300, 220);
+                            ctx.fillText(curlvl, 470, 220);
 
                             ctx.font = "bold italic 30px Arial";
                             ctx.fillStyle = "#ffffff";
                             ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 350)
 
                             const rankImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
-                            ctx.drawImage(rankImg,540 , 15, 50, 50);
+                            ctx.drawImage(rankImg,560 , 15, 50, 50);
                             ctx.shadowOffsetY = 4;
                             ctx.shadowColor = "black";
                             ctx.shadowBlur = 6;
                             ctx.font = "bold 45px Comic Sans MS";
                             ctx.fillStyle = "#FEE700";
-                            ctx.fillText("RANG:", 600, 60);
+                            ctx.fillText("RANG:", 620, 60);
                             ctx.fillText(curRank + "/" + allR, 830, 60);
 
                             const eggImg = await loadImage(join(__dirname, "..", "image", "egg.png"));
