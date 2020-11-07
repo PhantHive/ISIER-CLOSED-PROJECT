@@ -32,15 +32,15 @@ module.exports = async(client, message) => {
                         new EGD({
                             ID: message.author.id + "-" + message.guild.id,
                             serverID: message.guild.id,
-                            thanksEaster: 1,
-                            loveEaster: 0
+                            thanksEaster: 0,
+                            loveEaster: 1
                         }).save()
 
                     } else {
-                        let curEaster = data.thanksEaster;
+                        let curEaster = data.loveEaster;
 
                         if (curEaster == 0) {
-                            data.thanksEaster = curEaster + 1
+                            data.loveEaster = curEaster + 1
                             message.author.createDM().then(channel => {
                                 channel.send("Je t'aime beaucoup aussi +1 easterEgg, +2 levels")
                             })
@@ -49,7 +49,7 @@ module.exports = async(client, message) => {
                             message.author.createDM().then(channel => {
                                 channel.send("Bon SANG de BONsoiR!! Tu PEUX pas AvoIR EastERegG IllimitE VOyONs!")
                             })
-                            data.thanksEaster;
+                            data.loveEaster;
                         }
                         data.save()
                     }
