@@ -117,7 +117,7 @@ module.exports = async(client, message) => {
 
     var mp = String(message.content).toLowerCase();
 
-    if (mp.indexOf(("mp" || "miniprojet" || "projet" || "miniprojet" || "mini projet") && ("ressort" || "ph111" || "ph11")) !== -1 ) {
+    if (mp.indexOf(/mp ph111/i || /miniprojet ph111/i || /projet ressort/i || /miniprojet ressort/i || /mp ressort/i || /mini projet resort/) !== -1 ) {
 
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
