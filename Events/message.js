@@ -117,7 +117,7 @@ module.exports = async(client, message) => {
 
     var mp = String(message.content).toLowerCase();
 
-    if (mp.indexOf("mp ph111" || "miniprojet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet resort") !== -1 ) {
+    if (mp.indexOf(("mp" || "miniprojet" || "projet" || "miniprojet" || "mini projet") && ("ressort" || "ph111" || "ph11")) !== -1 ) {
 
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
@@ -179,7 +179,7 @@ module.exports = async(client, message) => {
         const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
         console.log(collector)
         collector.on('collect', message => {
-            if (message.content == "ph111") {
+            if ((message.content).toLowerCase() == ("ph111" || "ressort" || "projet ressort")) {
                 message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete(4000));
                 message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                   //1
                 .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
@@ -197,7 +197,7 @@ module.exports = async(client, message) => {
                 })
             }
 
-            if (message.content == ("ph121" || "mp ph121" || "miniprojet ph121" || "mini projet ph121")) {
+            if ((message.content).toLowerCase() == ("ph121" || "mp ph121" || "miniprojet ph121" || "mini projet ph121")) {
                 message.channel.send("Il semblerait qu'il y ai beaucoup de mini projet dans le deuxieme module de physique, merci de me preciser le nom du mini projet: comete, diffraction, pendule ou calorimetrie?")
                 const underCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
                 console.log(underCollector)
@@ -214,7 +214,7 @@ module.exports = async(client, message) => {
                     }
 
                     //PENDULE PROJET
-                    else if (message.content == "pendule") {
+                    else if ((message.content).toLowerCase() == "pendule") {
                         message.channel.startTyping()
                         message.reply("c'est tout bon pour moi je t'envoi ca")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -225,7 +225,7 @@ module.exports = async(client, message) => {
                     }
 
                     //CALORIMETRIE PROJET
-                    else if (message.content ==  ("projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie" || "calorimetrie") !== -1 ) {
+                    else if ((message.content).toLowerCase() ==  ("projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie" || "calorimetrie") !== -1 ) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -234,7 +234,7 @@ module.exports = async(client, message) => {
                         message.channel.stopTyping()
                     }
 
-                    else if (message.content == ("projet optique" || "miniprojet optique" || "mp optique" || "tp optique" || "diffraction" || "optique") !== -1 ) {
+                    else if ((message.content).toLowerCase() == ("projet optique" || "miniprojet optique" || "mp optique" || "tp optique" || "diffraction" || "optique") !== -1 ) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -244,7 +244,7 @@ module.exports = async(client, message) => {
                     }
 
                     //ELEC
-                    else if (message.content == ("miniprojet elec" || "mini projet elec" || "elec")) {
+                    else if ((message.content).toLowerCase() == ("miniprojet elec" || "mini projet elec" || "elec")) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -265,7 +265,7 @@ module.exports = async(client, message) => {
 
     //================TP GENIE MATHS
 
-    var tpGMTrois = String(message.content);
+    var tpGMTrois = String(message.content).toLowerCase();
     if (tpGMTrois.indexOf("genie maths tp3" || "genie math tp3" || "tp3 newton" || "methode de newton" || "tp3 methode de newton") !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
@@ -276,7 +276,7 @@ module.exports = async(client, message) => {
 
     //================ELEC
     
-    var elecUn = String(message.content);
+    var elecUn = String(message.content).toLowerCase();
     if (elecUn.indexOf("miniprojet elec" || "mini projet elec" || "mp elec") != -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
@@ -288,7 +288,7 @@ module.exports = async(client, message) => {
         message.channel.stopTyping()
     }
 
-    var elecDeux = String(message.content);
+    var elecDeux = String(message.content).toLowerCase();
     if (elecDeux.indexOf("tp pspice 2") != -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
@@ -300,7 +300,7 @@ module.exports = async(client, message) => {
     
     //==============================
 
-    var tp = String(message.content);
+    var tp = String(message.content).toLowerCase();
    
     if (tp.indexOf("qui a fait le tp" || "quelqu'un aurai le tp" || "quelqu un aurai le tp") !== -1 ) {
 
