@@ -114,68 +114,63 @@ module.exports = async(client, message) => {
     //=================MINI-PROJET-PHYSIQUE
   
     //ph111 = PROJET RESSORT
-    var mphressort = String(message.content).toLowerCase();
-    var mphpendule = String(message.content).toLowerCase();
-    var mphoptique = String(message.content).toLowerCase();
-    var mphcalo = String(message.content).toLowerCase();
+
     var mp = String(message.content).toLowerCase();
 
+    if (mp.indexOf("mp ph111" || "miniprojet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet resort") !== -1 ) {
+
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
+        .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
+        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                     //2
+        .then(() => message.channel.send({file: './ph11/mph11-2018Elena.pdf/'}))
+        .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))                   //3
+        .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
+        message.channel.stopTyping()
+
+    }
+
+    //ph121 = pendule
+
+
+    if (mp.indexOf( "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
+        .then(() => message.channel.send({file: './ph12/pendule/pendule2018-Elena.pdf/'}))
+        .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                     //2
+        .then(() => message.channel.send({file: './ph12/pendule/pendule2012-Thomas.pdf/'}))
+        message.channel.stopTyping()
+    }
+
+    //ph121 = optique
+
+
+    if (mp.indexOf( "projet optique" || "miniprojet optique" || "mp optique" || "tp optique") !== -1 ) {
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
+        .then(() => message.channel.send({file: './ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
+        .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
+        message.channel.stopTyping()
+    }
+
+    //ph121 = calorimetrie
+
+    if (mp.indexOf( "projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie") !== -1 ) {
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite")
+        message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
+        .then(() => message.channel.send({file: './ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
+        .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
+        message.channel.stopTyping()
+    }
 
 
     //mini projet en general
 
     if (mp.indexOf("mini projet" || "mini projet ipsa") !== -1 ) {
-
-        if (mphressort.indexOf("mp ph111" || "miniprojet ph111" || "projet ressort" || "miniprojet ressort" || "mp ressort" || "mini projet resort") !== -1 ) {
-
-            message.channel.startTyping()
-            message.reply("je t envoi ca de suite")
-            message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
-                .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
-                .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                     //2
-                .then(() => message.channel.send({file: './ph11/mph11-2018Elena.pdf/'}))
-                .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))                   //3
-                .then(() => message.channel.send({file: './ph11/mph11-2017.pdf/'}))
-            message.channel.stopTyping()
-
-        }
-
-        //ph121 = pendule
-
-
-        if (mphpendule.indexOf( "projet pendule" || "miniprojet pendule" || "mp pendule") !== -1 ) {
-            message.channel.startTyping()
-            message.reply("je t envoi ca de suite")
-            message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
-                .then(() => message.channel.send({file: './ph12/pendule/pendule2018-Elena.pdf/'}))
-                .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                     //2
-                .then(() => message.channel.send({file: './ph12/pendule/pendule2012-Thomas.pdf/'}))
-            message.channel.stopTyping()
-        }
-
-        //ph121 = optique
-
-
-        if (mphoptique.indexOf( "projet optique" || "miniprojet optique" || "mp optique" || "tp optique") !== -1 ) {
-            message.channel.startTyping()
-            message.reply("je t envoi ca de suite")
-            message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-                .then(() => message.channel.send({file: './ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
-                .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
-            message.channel.stopTyping()
-        }
-
-        //ph121 = calorimetrie
-
-        if (mphcalo.indexOf( "projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie") !== -1 ) {
-            message.channel.startTyping()
-            message.reply("je t envoi ca de suite")
-            message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
-                .then(() => message.channel.send({file: './ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
-                .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
-            message.channel.stopTyping()
-        }
-
 
         message.channel.startTyping()
         message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121, elec etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
