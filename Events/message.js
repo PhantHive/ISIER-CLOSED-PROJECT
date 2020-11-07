@@ -14,6 +14,7 @@ module.exports = async(client, message) => {
 
 
     if (message.channel.type === "dm") {
+        if (message.author.client) return;
         if (message.content == "je t'aime") {
             //MONGODB
             let data = EGD.findOne({
