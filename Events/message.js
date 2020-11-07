@@ -117,7 +117,7 @@ module.exports = async(client, message) => {
 
     var mp = String(message.content);
 
-    if (mp.search(/mp ph111|miniprojet ph111|projet ressort|miniprojet ressort|mp ressort|mini projet resort/  )) {
+    if (mp.search(/mp ph111|miniprojet ph111|projet ressort|miniprojet ressort|mp ressort|mini projet resort/) !== -1) {
 
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
