@@ -36,6 +36,9 @@ module.exports = async(client, message) => {
                             thanksEaster: 0,
                             loveEaster: 1
                         }).save()
+                        message.author.createDM().then(channel => {
+                            channel.send("Je t'aime beaucoup aussi +1 easterEgg, +2 levels")
+                        })
 
                     } else {
                         let curEaster = data.loveEaster;
@@ -287,6 +290,9 @@ module.exports = async(client, message) => {
                                     thanksEaster: 1,
                                     loveEaster: 0
                                 }).save()
+                                message.author.createDM().then(channel => {
+                                    channel.send("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +2 levels")
+                                })
 
                             } else {
                                 let curEaster = data.thanksEaster;
