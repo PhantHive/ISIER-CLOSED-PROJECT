@@ -81,6 +81,20 @@ module.exports.run = async (client, message,args) => {
                             let curEgg = data2.thanksEaster + data2.loveEaster;
                             let newlvl = 25 * (curlvl ** 2) + 169 * curlvl + 845;
 
+
+                            if (data.LEVEL < 5) {
+                                color = "#ffffff";
+                                shadowColor = 'blue'
+                            }
+                            else if (data.LEVEL <10) {
+                                color = "#00ff88";
+                                shadowColor = "black"
+                            }
+                            else {
+                                color = "#f7d403";
+                                shadowColor = "black"
+                            }
+
                             const canvas = createCanvas(1000, 363);
                             const ctx = canvas.getContext('2d');
                             const background = await loadImage(join(__dirname, "..", "image", "mariobackground.jpg"));
@@ -100,17 +114,8 @@ module.exports.run = async (client, message,args) => {
                             var percentage = (curxp / newlvl) * 767;
                             var gradient = ctx.createLinearGradient(0, 0, 200, 0);
                             gradient.addColorStop(0, "#ffffff");
-                            gradient.addColorStop(1, "#007aff")
+                            gradient.addColorStop(1, color)
 
-                            if (data.LEVEL < 5) {
-                                color = "#ffffff";
-                            }
-                            else if (data.LEVEL <10) {
-                                color = "#00ff88";
-                            }
-                            else {
-                                color = "#f7d403";
-                            }
                             //bar rempli
                             ctx.fillStyle = gradient;
                             ctx.globalAlpha = 0.8;
@@ -118,14 +123,14 @@ module.exports.run = async (client, message,args) => {
                             ctx.globalAlpha = 1;
                             ctx.font = "35px Arial";
                             ctx.textAlign = "center";
-                            ctx.fillStyle = color;
+                            ctx.fillStyle = "#ffffff";
                             ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 280);
                             ctx.textAlign = "left";
 
 
                             ctx.font = "bold 45px Comic Sans MS";
                             ctx.shadowOffsetX = 5;
-                            ctx.shadowColor = color;
+                            ctx.shadowColor = shadowColor;
                             ctx.shadowBlur = 3;
                             ctx.fillText(member.user.tag, 300, 150);
 
