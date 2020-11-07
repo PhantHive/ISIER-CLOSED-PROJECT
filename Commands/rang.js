@@ -102,42 +102,33 @@ module.exports.run = async (client, message,args) => {
                             gradient.addColorStop(0, "#ffffff");
                             gradient.addColorStop(1, "#007aff")
 
-                            //bar bleu rempli
+                            if (data.LEVEL < 5) {
+                                color = "#ffffff";
+                            }
+                            else if (data.LEVEL <10) {
+                                color = "#00ff88";
+                            }
+                            else {
+                                color = "#f7d403";
+                            }
+                            //bar rempli
                             ctx.fillStyle = gradient;
                             ctx.globalAlpha = 0.8;
                             ctx.fillRect(180, 238, percentage, 61);
                             ctx.globalAlpha = 1;
                             ctx.font = "35px Arial";
                             ctx.textAlign = "center";
-                            ctx.fillStyle = "#ffffff";
+                            ctx.fillStyle = color;
                             ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 280);
                             ctx.textAlign = "left";
 
-                            if (data.LEVEL < 5) {
-                                ctx.fillStyle = "#ffffff";
-                                ctx.font = "bold 45px Comic Sans MS";
-                                ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = "blue";
-                                ctx.shadowBlur = 3;
-                                ctx.fillText(member.user.tag, 300, 150);
-                            }
-                            else if (data.LEVEL <10) {
-                                ctx.fillStyle = "#00ff88";
-                                ctx.font = "bold 45px Comic Sans MS";
-                                ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = "black";
-                                ctx.shadowBlur = 4;
-                                ctx.fillText(member.user.tag, 300, 150);
-                            }
-                            else {
-                                ctx.fillStyle = "#f7d403";
-                                ctx.font = "bold 45px Comic Sans MS";
-                                ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = "black";
-                                ctx.shadowBlur = 5;
-                                ctx.fillText(member.user.tag, 300, 150);
-                            }
-                            
+
+                            ctx.font = "bold 45px Comic Sans MS";
+                            ctx.shadowOffsetX = 5;
+                            ctx.shadowColor = color;
+                            ctx.shadowBlur = 3;
+                            ctx.fillText(member.user.tag, 300, 150);
+
                             ctx.shadowOffsetX = 5;
                             ctx.shadowColor = "blue";
                             ctx.shadowBlur = 3;
