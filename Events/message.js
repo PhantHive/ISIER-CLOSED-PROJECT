@@ -298,9 +298,7 @@ module.exports = async(client, message) => {
 
                         //MONGODB
                         let data = EGD.findOne({
-
-                                ID: message.author.id + "-" + message.guild.id
-
+                                ID: message.author.id
                         },
                         (err, data) => {
                             if (err) console.log(err);
@@ -311,8 +309,7 @@ module.exports = async(client, message) => {
 
                             if (!data) {
                                 new EGD({
-                                    ID: message.author.id + "-" + message.guild.id,
-                                    serverID: message.guild.id,
+                                    ID: message.author.id,
                                     thanksEaster: 1,
                                     loveEaster: 0
                                 }).save()
