@@ -81,7 +81,7 @@ module.exports.run = async (client, message,args) => {
                             let curEgg = data2.thanksEaster + data2.loveEaster;
                             let newlvl = 25 * (curlvl ** 2) + 169 * curlvl + 845;
 
-                            const canvas = createCanvas(1000, 333);
+                            const canvas = createCanvas(1000, 363);
                             const ctx = canvas.getContext('2d');
                             const background = await loadImage(join(__dirname, "..", "image", "mariobackground.jpg"));
                             ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
