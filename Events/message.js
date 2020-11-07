@@ -116,7 +116,7 @@ module.exports = async(client, message) => {
     //ph111 = PROJET RESSORT
 
     var mp = String(message.content);
-
+    var = "test"
     if (mp.indexOf(" mp ph111"  || " miniprojet ph111"  || "projet ressort"  || " miniprojet ressort"  || "mp ressort"  || "mini projet resort" ) !== -1) {
 
         message.channel.startTyping()
