@@ -17,9 +17,12 @@ module.exports = async(client, message) => {
         if (message.author.bot) return;
         if (message.content == "je t'aime") {
             //MONGODB
+            const server = client.guilds.cache.get("755084203779162151")
+            const secServer = client.guilds.cache.get("608155753748103170")
+
             let data = EGD.findOne({
 
-                    ID: message.author.id + "-" + message.guild.id
+                    ID: message.author.id
 
                 },
                 (err, data) => {
@@ -57,8 +60,7 @@ module.exports = async(client, message) => {
                         data.save()
                     }
                 })
-            const server = client.guilds.cache.get("755084203779162151")
-            const secServer = client.guilds.cache.get("608155753748103170")
+
 
             if (server.member.cache.find(message.author.id)) {
                 let data2 = XLD.findOne({
