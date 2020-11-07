@@ -97,8 +97,7 @@ module.exports = async(client, message) => {
                                 RANK: 0
                             })
                         } else {
-                            let curLvl = data2.LEVEL;
-                            data.LEVEL = curLvl + 2;
+                            data.LEVEL += 2;
                             data.XP = 0;
                         }
                     })
@@ -346,8 +345,7 @@ module.exports = async(client, message) => {
                                     RANK: 0
                                 })
                             } else {
-                                let curLvl = data2.LEVEL;
-                                data.LEVEL = curLvl + 2;
+                                data.LEVEL += 2;
                                 data.XP = 0;
                             }
                         })
