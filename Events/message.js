@@ -5,6 +5,7 @@ const fs = require("fs");
 let mailVerif = require("../jsonFile/mailsVerif.json")
 //mailAdd
 let mailAdded = require("../jsonFile/mailAdded.json")
+const EGD = require('./models/EasterSystem.js');
 
 
 module.exports = async(client, message) => {
@@ -195,7 +196,42 @@ module.exports = async(client, message) => {
                 eastercollector.on('collect', message => {
                     if(message.content == "merci") {
 
-                        message.reply("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +500xp (Easteregg pas encore active)").then(m => m.delete(3000))
+                        //MONGODB
+                        let data = EGD.findOne({
+
+                                ID: message.author.id + "-" + message.guild.id
+
+                        },
+                        (err, data) => {
+                            if (err) console.log(err);
+
+                            if (message.author.bot) {
+                                return;
+                            }
+
+                            if (!data) {
+                                new XLD({
+                                    ID: message.author.id + "-" + message.guild.id,
+                                    serverID: message.guild.id,
+                                    thanksEaster: 0,
+                                    loveEaster: 0
+                                }).save()
+
+                            } else {
+                                let curEaster = data.thanksEaster;
+
+                                if (curEaster == 0) {
+                                    data.thanksEaster = curEaster + 1
+                                }
+                                else {
+                                    data.thanksEaster;
+                                }
+                            }
+                        })
+                            
+
+                        message.reply("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +500xp").then(m => m.delete(3000));
+
                     }
                 })
             }
@@ -217,7 +253,7 @@ module.exports = async(client, message) => {
                     }
 
                     //PENDULE PROJET
-                    else if ((message.content).toLowerCase() == "pendule") {
+                    else if ((message.content).toLowerCase() == ("pendule" || "projet pendule" || "mini projet pendule")) {
                         message.channel.startTyping()
                         message.reply("c'est tout bon pour moi je t'envoi ca")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -228,21 +264,22 @@ module.exports = async(client, message) => {
                     }
 
                     //CALORIMETRIE PROJET
-                    else if ((message.content).toLowerCase() ==  ("projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie" || "calorimetrie") !== -1 ) {
+                    else if ((message.content).toLowerCase() ==  ("projet calorimetrie" || "miniprojet calorimetrie" || "mp calorimetrie" || "tp calorimetrie" || "calorimetrie")) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
                         .then(() => message.channel.send({file: './ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
-                        .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
+                        //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
                         message.channel.stopTyping()
                     }
 
-                    else if ((message.content).toLowerCase() == ("projet optique" || "miniprojet optique" || "mp optique" || "tp optique" || "diffraction" || "optique") !== -1 ) {
+                    //OPTIQUE PROJET
+                    else if ((message.content).toLowerCase() == ("projet optique" || "miniprojet optique" || "mp optique" || "tp optique" || "diffraction" || "optique")) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
                         .then(() => message.channel.send({file: './ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
-                        .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
+                        //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
                         message.channel.stopTyping()
                     }
 
@@ -254,7 +291,7 @@ module.exports = async(client, message) => {
                         .then(() => message.channel.send({file: './elec/MP_ELEC2020-Zakaria_Jeremie.pdf/'}))
                         .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))
                         .then(() => message.channel.send({file: './elec/Mini_projet_elec_Elena2018.pdf/'}))
-                        .then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
+                        //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
                         message.channel.stopTyping()
                     }
 

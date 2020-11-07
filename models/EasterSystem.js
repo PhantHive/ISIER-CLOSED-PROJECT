@@ -4,7 +4,8 @@ const guildSchema = mongoose.Schema({
     
     ID: String,
     serverID: String,
-    foundEaster: Number
+    thanksEaster: Number,
+    loveEaster: Number
 
 });
 
