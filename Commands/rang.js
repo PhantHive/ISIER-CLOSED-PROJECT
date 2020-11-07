@@ -124,7 +124,7 @@ module.exports.run = async (client, message,args) => {
 
                             ctx.font = "bold italic 25px Arial";
                             ctx.fillStyle = "#ffffff";
-                            ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 290)
+                            ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 320)
 
                             const rankImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
                             ctx.drawImage(rankImg,530 , 10, 50, 50);
@@ -156,7 +156,7 @@ module.exports.run = async (client, message,args) => {
                             ctx.closePath();
                             ctx.clip();
                             const avatar = await loadImage(member.user.displayAvatarURL);
-                            ctx.drawImage(avatar, 40, 40, 250, 250);
+                            ctx.drawImage(avatar, 40, 70, 250, 250);
 
                             /*
 
