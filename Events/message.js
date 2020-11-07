@@ -210,7 +210,7 @@ module.exports = async(client, message) => {
                             }
 
                             if (!data) {
-                                new XLD({
+                                new EGD({
                                     ID: message.author.id + "-" + message.guild.id,
                                     serverID: message.guild.id,
                                     thanksEaster: 0,
