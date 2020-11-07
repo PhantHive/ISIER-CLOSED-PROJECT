@@ -31,8 +31,7 @@ module.exports = async(client, message) => {
 
                     if (!data) {
                         new EGD({
-                            ID: message.author.id + "-" + message.guild.id,
-                            serverID: message.guild.id,
+                            ID: message.author.id,
                             thanksEaster: 0,
                             loveEaster: 1
                         }).save()
@@ -58,26 +57,51 @@ module.exports = async(client, message) => {
                         data.save()
                     }
                 })
+            const server = client.guilds.cache.get("755084203779162151")
+            const secServer = client.guilds.cache.get("608155753748103170")
 
-            let data2 = XLD.findOne({
-                    ID: message.author.id + "-" + message.guild.id
-                },
-                (err, data2) => {
-                    if (!data2) {
-                        new XLD({
-                            ID: message.author.id + "-" + message.guild.id,
-                            serverID: message.guild.id,
-                            XP: 0,
-                            LEVEL: 1,
-                            RANK: 0
-                        })
-                    } else {
-                        let curLvl = data2.LEVEL;
-                        data.LEVEL = curLvl + 2;
-                        data.XP = 0;
-                    }
-                })
+            if (server.member.cache.find(message.author.id)) {
+                let data2 = XLD.findOne({
+                        ID: message.author.id + "-" + "755084203779162151"
+                    },
+                    (err, data2) => {
+                        if (!data2) {
+                            new XLD({
+                                ID: message.author.id + "-" + "755084203779162151",
+                                serverID: "755084203779162151",
+                                XP: 0,
+                                LEVEL: 3,
+                                RANK: 0
+                            })
+                        } else {
+                            let curLvl = data2.LEVEL;
+                            data.LEVEL = curLvl + 2;
+                            data.XP = 0;
+                        }
+                    })
+            }
 
+            else if (secServer.member.cache.find(message.author.id)) {
+                let data3 = XLD.findOne({
+                        ID: message.author.id + "-" + "608155753748103170"
+                    },
+                    (err, data2) => {
+                        if (!data2) {
+                            new XLD({
+                                ID: message.author.id + "-" + "608155753748103170",
+                                serverID: "608155753748103170",
+                                XP: 0,
+                                LEVEL: 3,
+                                RANK: 0
+                            })
+                        } else {
+                            let curLvl = data2.LEVEL;
+                            data.LEVEL = curLvl + 2;
+                            data.XP = 0;
+                        }
+                    })
+            }
+            
         }
         else {
             message.channel.send("Go sur le discord de ta promo dans le channel adapté aux commandes bots et tape i!aide pour recevoir de l'aide sur mes commandes" +
