@@ -1,13 +1,28 @@
 const Discord = require('discord.js');
 
 module.exports.run = async(client, message, args) => {
-    let pages = ['`i!aide`=>Voir ce que je te propose \n `i!aidemodo `=>reservez aux modo \n `i!sondage [question] ou i!sondage "question1" "choixA" "choixB"... ` => crée un sondage\n',
-        '`i!rang` => Permet de connaitre votre rang (level + xp + progression) \n `i!miseXp [@unePersonne] [combien]` => Ppour miser de l\'Xp \n' ,
-        '`i!pyaide`=> Aide pour python \n  `i!tkaide` => Aide à tkinter \n `i!pyCo` => Connaissance python à avoir\n `i!DL` => affiche les DL usuel en 0 (physique)\n',
-        '`i!coordo`=> Fiche coordo ph111\n `i!algo`=> Entrainement hexa/binaire\n',
-        '`i!chut```=> vous en avez marre?\n `i!objection` => vous n\'etes pas d\'accord? \n `i!frToen <\mot\>` => Vous traduit un mot francais vers l\'anglais\n',
-        '`i!msTokh nombre\n` => vous permet de convertir des m/s en km/h (i!khToms fais l inverse) \n `\n i!khTond nombre`\n => convertit des km/h en noeud (i!ndTokh fais l\'inverse)\n `i!paTobar nombre` => convertit des pascal en bar (i!barTopa fais l\'inverse)',
-        '`i!kmTomiles nombre`\n => convertit des kilometre en miles (i!milesTokm fais l\'inverse) \n']; //array of pages
+    let pages = [
+        '\n`i!aide`=>Voir ce que je te propose \n' +
+        '\n`i!aidemodo `=>reservez aux modo \n' +
+        '\n`i!sondage [question] ou i!sondage "question1" "choixA" "choixB"... ` => crée un sondage\n' +
+        '\n`i!rang` => Permet de connaitre votre rang (level + xp + progression) \n ' +
+        '\n`i!miseXp [@unePersonne] [combien]` => Ppour miser de l\'Xp \n' +
+        '\n`i!pyaide`=> Aide pour python \n  ' +
+        '\n`i!tkaide` => Aide à tkinter \n ' +
+        '\n`i!pyCo` => Connaissance python à avoir\n ' +
+        '\n`i!DL` => affiche les DL usuel en 0 (physique)\n',
+        //========================================================================
+        '\n`i!coordo`=> Fiche coordo ph111\n ' +
+        '\n`i!algo`=> Entrainement hexa/binaire\n',
+        '\n`i!chut```=> vous en avez marre?\n ' +
+        '\n`i!objection` => vous n\'etes pas d\'accord? \n ' +
+        '\n`i!frToen <\mot\>` => Vous traduit un mot francais vers l\'anglais\n',
+        '\n`i!msTokh nombre\n` => vous permet de convertir des m/s en km/h (i!khToms fais l inverse) \n ' +
+        '\n`i!khTond nombre`\n => convertit des km/h en noeud (i!ndTokh fais l\'inverse)\n ' +
+        '\n`i!paTobar nombre` => convertit des pascal en bar (i!barTopa fais l\'inverse)\n',
+        '\n`i!kmTomiles nombre`\n => convertit des kilometre en miles (i!milesTokm fais l\'inverse) \n'
+    ]; //array of pages
+
     let page = 1;
 
     const embed = new Discord.RichEmbed()
