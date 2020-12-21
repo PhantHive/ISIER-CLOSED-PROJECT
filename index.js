@@ -56,10 +56,6 @@ fs.readdir("./Events/", (err, f) => {
 
 client.on("message", async message => {
 
-   
-    if (message.channel.type == "dm") {
-        return;
-    }
     //using promises :P
     var current = null,
         rank = 0;
@@ -122,7 +118,11 @@ client.on("message", async message => {
             console.log(position);
             */
             
-            if (message.channel.id == '755084204567560232') return;
+            if (message.channel.id === '755084204567560232') return;
+
+            if (message.channel.type === "dm") {
+                return;
+            }
             
             if (data.LEVEL < 5) {
 

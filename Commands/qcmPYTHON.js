@@ -52,7 +52,7 @@ module.exports.run = async (client, message, args) => {
          A SAVOIR: vous pouvez mettre une CONSTANTE dans une VARIABLE mais PAS L INVERSE: maVariable <- maConstante\n
          Vous pouvez egalement mettre une variable dans une variable: maVariable <- mon autre variable\n\n
          
-         Votre IPSA-BOT, merci de votre lecture. Vous pouvez contacter Zakaria en le tagant @Zakari..... si vous avez une question en rapport avec python ou l'algo (malheureusement je ne suis pas un monstre en algorithmie(par contre pour tout ce qui logique dans un code ca ne devrait pas me poser de probleme meme si je suis pas habituer a la syntaxe python)\n\n
+         Votre IPSA-BOT, merci de votre lecture. Vous pouvez contacter Zakaria en le tagant @phanthive..... si vous avez une question en rapport avec python ou l'algo (malheureusement je ne suis pas un monstre en algorithmie(par contre pour tout ce qui logique dans un code ca ne devrait pas me poser de probleme meme si je suis pas habituer a la syntaxe python)\n\n
          Bonne soiree :) `)
 
 
@@ -60,6 +60,6 @@ module.exports.run = async (client, message, args) => {
 };
 
 module.exports.help = {
-    name: "qcmHELP"
+    name: "pyCo"
 };
 
