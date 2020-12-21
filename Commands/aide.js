@@ -30,7 +30,7 @@ module.exports.run = async(client, message, args) => {
         .setDescription(pages[page - 1])
         .setImage('https://imgur.com/N8FhelH.png')
         .setThumbnail('')
-        .setFooter(`Page ${page} / ${pages.length}, demander par:`, message.author.avatarURL)
+        .setFooter(`Page ${page} / ${pages.length}`, message.author.avatarURL)
         .setTimestamp();
     message.channel.send(embed).then(msg => {
 
@@ -48,7 +48,7 @@ module.exports.run = async(client, message, args) => {
                 if (page === 1) return;
                 page--;
                 embed.setDescription(pages[page - 1]);
-                embed.setFooter(`Page ${page} / ${pages.length}`);
+                embed.setFooter(`Page ${page} / ${pages.length}`, message.author.avatarURL);
                 msg.edit(embed)
             })
 
@@ -56,7 +56,7 @@ module.exports.run = async(client, message, args) => {
                 if (page === pages.length) return;
                 page++;
                 embed.setDescription(pages[page - 1]);
-                embed.setFooter(`Page ${page} / ${pages.length}`);
+                embed.setFooter(`Page ${page} / ${pages.length}`, message.author.avatarURL);
                 msg.edit(embed)
             })
 
