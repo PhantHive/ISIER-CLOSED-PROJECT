@@ -2,24 +2,24 @@ const Discord = require('discord.js');
 
 module.exports.run = async(client, message, args) => {
     let pages = [
-        '\n`i!aide`=>Voir ce que je te propose \n' +
-        '\n`i!aidemodo `=>reservez aux modo \n' +
-        '\n`i!sondage [question] ou i!sondage "question1" "choixA" "choixB"... ` => crée un sondage\n' +
-        '\n`i!rang` => Permet de connaitre votre rang (level + xp + progression) \n ' +
-        '\n`i!miseXp [@unePersonne] [combien]` => Ppour miser de l\'Xp \n' +
-        '\n`i!pyaide`=> Aide pour python \n  ' +
-        '\n`i!tkaide` => Aide à tkinter \n ' +
-        '\n`i!pyCo` => Connaissance python à avoir\n ' +
-        '\n`i!DL` => affiche les DL usuel en 0 (physique)\n',
+        '\n`i!aide`\n=>Voir ce que je te propose \n' +
+        '\n`i!aidemodo `\n=>reservez aux modo \n' +
+        '\n`i!sondage [question] ou i!sondage "question1" "choixA" "choixB"... `\n => crée un sondage\n' +
+        '\n`i!rang`\n => Permet de connaitre votre rang (level + xp + progression) \n ' +
+        '\n`i!miseXp [@unePersonne] [combien]`\n => Ppour miser de l\'Xp \n' +
+        '\n`i!pyaide`\n=> Aide pour python \n  ' +
+        '\n`i!tkaide`\n => Aide à tkinter \n ' +
+        '\n`i!pyCo`\n => Connaissance python à avoir\n ' +
+        '\n`i!DL`\n => affiche les DL usuel en 0 (physique)\n',
         //========================================================================
-        '\n`i!coordo`=> Fiche coordo ph111\n ' +
-        '\n`i!algo`=> Entrainement hexa/binaire\n' +
-        '\n`i!chut```=> vous en avez marre?\n ' +
-        '\n`i!objection` => vous n\'etes pas d\'accord? \n ' +
-        '\n`i!frToen <\mot\>` => Vous traduit un mot francais vers l\'anglais\n' +
+        '\n`i!coordo`\n=> Fiche coordo ph111\n' +
+        '\n`i!algo`\n=> Entrainement hexa/binaire\n' +
+        '\n`i!chut`\n=> vous en avez marre?\n ' +
+        '\n`i!objection`\n => vous n\'etes pas d\'accord? \n ' +
+        '\n`i!frToen <\mot\>\n` => Vous traduit un mot francais vers l\'anglais\n' +
         '\n`i!msTokh nombre\n` => vous permet de convertir des m/s en km/h (i!khToms fais l inverse) \n ' +
-        '\n`i!khTond nombre`\n => convertit des km/h en noeud (i!ndTokh fais l\'inverse)\n ' +
-        '\n`i!paTobar nombre` => convertit des pascal en bar (i!barTopa fais l\'inverse)\n'+
+        '\n`i!khTond nombre\n` => convertit des km/h en noeud (i!ndTokh fais l\'inverse)\n ' +
+        '\n`i!paTobar nombre`\n => convertit des pascal en bar (i!barTopa fais l\'inverse)\n'+
         '\n`i!kmTomiles nombre`\n => convertit des kilometre en miles (i!milesTokm fais l\'inverse) \n'
     ]; //array of pages
 
