@@ -13,13 +13,13 @@ module.exports.run = async(client, message, args) => {
         '\n`i!DL` => affiche les DL usuel en 0 (physique)\n',
         //========================================================================
         '\n`i!coordo`=> Fiche coordo ph111\n ' +
-        '\n`i!algo`=> Entrainement hexa/binaire\n',
+        '\n`i!algo`=> Entrainement hexa/binaire\n' +
         '\n`i!chut```=> vous en avez marre?\n ' +
         '\n`i!objection` => vous n\'etes pas d\'accord? \n ' +
-        '\n`i!frToen <\mot\>` => Vous traduit un mot francais vers l\'anglais\n',
+        '\n`i!frToen <\mot\>` => Vous traduit un mot francais vers l\'anglais\n' +
         '\n`i!msTokh nombre\n` => vous permet de convertir des m/s en km/h (i!khToms fais l inverse) \n ' +
         '\n`i!khTond nombre`\n => convertit des km/h en noeud (i!ndTokh fais l\'inverse)\n ' +
-        '\n`i!paTobar nombre` => convertit des pascal en bar (i!barTopa fais l\'inverse)\n',
+        '\n`i!paTobar nombre` => convertit des pascal en bar (i!barTopa fais l\'inverse)\n'+
         '\n`i!kmTomiles nombre`\n => convertit des kilometre en miles (i!milesTokm fais l\'inverse) \n'
     ]; //array of pages
 
@@ -27,10 +27,10 @@ module.exports.run = async(client, message, args) => {
 
     const embed = new Discord.RichEmbed()
         .setColor('#DB13C2')
-        .setFooter(`Page ${page} / ${pages.length}`)
         .setDescription(pages[page - 1])
         .setImage('https://imgur.com/N8FhelH.png')
         .setThumbnail('')
+        .setFooter(`Page ${page} / ${pages.length}, demander par:`, message.author.avatarURL)
         .setTimestamp();
     message.channel.send(embed).then(msg => {
 
