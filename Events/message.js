@@ -474,7 +474,7 @@ module.exports = async(client, message) => {
 
     var tp = String(message.content).toLowerCase();
    
-    if (tp.indexOf("qui a fait le tp" || "quelqu'un aurai le tp" || "quelqu un aurai le tp" || "quelqu'un à le tp" || "quelqu un a le tp") !== -1 ) {
+    if (tp.search(/qui a fait le tp"|"quelqu'un aurai le tp"|"quelqu un aurai le tp"|"quelqu'un à le tp"|"quelqu un a le tp"/i) !== -1 ) {
 
         message.channel.startTyping()
         message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
@@ -483,21 +483,30 @@ module.exports = async(client, message) => {
         const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
         console.log(collector2)
         collector2.on('collect', message => {
-            if (message.content === "genie maths") {
-                message.channel.send("c'est tout bon pour moi je t'envoi ca");
-                message.channel.send("Annee 2019- partager par par: ")
-                message.channel.send({file: './aero1Sources/GenieMaths/tp3.pdf/'})
-                message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!")
+            if ((message.content).toLowerCase() === "genie maths") {
+                message.channel.send("c'est tout bon pour moi je t'envoi ca")
+                    .then(() => message.channel.send("Annee 2019- partager par par: "))
+                    .then(() => message.channel.send({file: './aero1Sources/tp/GenieMaths/tp3.pdf/'}))
+                    .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
             }
-            else if (message.content === ("elec" || "electronique")) {
-                message.channel.send("Recu chef");
-                message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane")
-                message.channel.send({file: './aero1Sources/elec/TP2020_PSPICE_1-Auriane/'})
-                message.channel.send("Annee 2020- (TP pspice 1) partager par par: Zakaria")
-                message.channel.send({file: './aero1Sources/elec/TP2020_PSPICE_2-Zak/'})
-                message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!")
+            else if ((message.content).toLowerCase() === ("elec" || "electronique")) {
+                message.channel.send("Recu chef")
+                    .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
+                    .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane/'}))
+                    .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Zakaria"))
+                    .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak/'}))
+                    .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
             }
         })
+    }
+
+    else if (tp.search(/qui a fait le tp d'elec"|"quelqu'un aurai le tp d elec"|"quelqu un aurai le tp d'elec"|"quelqu'un à le tp d'elec"|"quelqu un a le tp d'elec"/i)) {
+        message.channel.send("J'espère que c'est ce que tu cherchais...")
+            .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
+            .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane/'}))
+            .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Zakaria"))
+            .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak/'}))
+            .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
     }
     
 
@@ -546,7 +555,7 @@ module.exports = async(client, message) => {
             }
             
         }
-        else if (mailUser == mail) {
+        else if (mailUser === mail) {
             message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete(6000));
             return false;
         } else {
