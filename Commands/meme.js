@@ -5,11 +5,13 @@ const snekfetch = require('snekfetch');
 module.exports.run = async(client, message, args) => {
 
     let reddit = [
-        "meme",
-        "animemes",
-        "MemesOfAnime",
-        "MemeEconomy"
+        "memes",
+        "dankmemes",
+        "Animemes",
+        "MemeEconomy",
+        "PrequelMemes"
     ]
+
 
     let subreddit = reddit[Math.floor(Math.random() * reddit.length - 1)];
 
@@ -25,6 +27,8 @@ module.exports.run = async(client, message, args) => {
             }).then(() => message.channel.stopTyping());
         }).catch(err => console.error(err));
     }).catch(err => console.error(err));
+
+    message.channel.stopTyping()
 };
 
 module.exports.help = {
