@@ -19,6 +19,7 @@ module.exports = async(client, message) => {
             //MONGODB
             let server = client.guilds.get("755084203779162151")
             let secServer = client.guilds.get("608155753748103170")
+            let testServer = client.guilds.get("502931781012684818")
 
             let data = EGD.findOne({
 
@@ -84,6 +85,27 @@ module.exports = async(client, message) => {
                                 })
                         }
 
+                        if (testServer.members.find("id", message.author.id)) {
+                            let data3 = XLD.findOne({
+                                    ID: message.author.id + "-" + "608155753748103170"
+                                },
+                                (err, data2) => {
+                                    if (!data2) {
+                                        new XLD({
+                                            ID: message.author.id + "-" + "608155753748103170",
+                                            serverID: "608155753748103170",
+                                            XP: 0,
+                                            LEVEL: 3,
+                                            RANK: 0
+                                        })
+                                    } else {
+                                        data2.LEVEL += 2;
+                                        data2.XP = 0;
+                                    }
+                                    data2.save()
+                                })
+                        }
+
                     } else {
                         let curEaster = data.loveEaster;
 
@@ -115,6 +137,27 @@ module.exports = async(client, message) => {
                             }
 
                             if (secServer.members.find("id", message.author.id)) {
+                                let data3 = XLD.findOne({
+                                        ID: message.author.id + "-" + "608155753748103170"
+                                    },
+                                    (err, data2) => {
+                                        if (!data2) {
+                                            new XLD({
+                                                ID: message.author.id + "-" + "608155753748103170",
+                                                serverID: "608155753748103170",
+                                                XP: 0,
+                                                LEVEL: 3,
+                                                RANK: 0
+                                            })
+                                        } else {
+                                            data2.LEVEL += 2;
+                                            data2.XP = 0;
+                                        }
+                                        data2.save()
+                                    })
+                            }
+
+                            if (testServer.members.find("id", message.author.id)) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
