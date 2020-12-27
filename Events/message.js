@@ -246,7 +246,7 @@ module.exports = async(client, message) => {
     //ph121 = optique
 
 
-    else if (mp.search( /projet optique|miniprojet optique|mp optique|tp optique/i) !== -1) {
+    else if (mp.search( /projet optique|miniprojet optique|mp optique|tp optique|mp diffraction|tp diffraction|projet diffraction/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -492,20 +492,20 @@ module.exports = async(client, message) => {
             else if ((message.content).toLowerCase() === ("elec" || "electronique")) {
                 message.channel.send("Recu chef")
                     .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
-                    .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane/'}))
+                    .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/'}))
                     .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Zakaria"))
-                    .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak/'}))
+                    .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/'}))
                     .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
             }
         })
     }
 
     else if (tp.search(/qui a fait le tp d'elec"|"quelqu'un aurai le tp d elec"|"quelqu un aurai le tp d'elec"|"quelqu'un à le tp d'elec"|"quelqu un a le tp d'elec"/i)) {
-        message.channel.send("J'espère que c'est ce que tu cherchais...")
+        message.channel.send("J'espère que c'est ce que tu voulais...")
             .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
-            .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane/'}))
+            .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/'}))
             .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Zakaria"))
-            .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak/'}))
+            .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/'}))
             .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
     }
     
