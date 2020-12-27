@@ -321,17 +321,17 @@ module.exports = async(client, message) => {
         message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121, elec etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
         message.channel.stopTyping()
 
-        const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 10000 });
+        const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 15000 });
         console.log(collector)
         collector.on('collect', message => {
-            if ((message.content).toLowerCase() === ("ph111" || "ressort" || "projet ressort")) {
+            if ((message.content).toLowerCase() === ("ph111" || "ressort")) {
                 message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete(4000));
                 message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                   //1
                 .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2019Zak.pdf/'}))
                 .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                       //2
                 .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2018Elena.pdf/'}))
-                .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Mathieu =>``` "))                     //3
-                .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2017.pdf/'}))
+                .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Valentin =>``` "))                     //3
+                .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2017Valentin.pdf/'}))
 
                 const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 20000 });
                 eastercollector.on('collect', message => {
