@@ -2,11 +2,11 @@ const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs");
 //mailVerif
-let mailVerif = require("../jsonFile/mailsVerif.json")
+let mailVerif = require("../../jsonFile/mailsVerif.json")
 //mailAdd
-let mailAdded = require("../jsonFile/mailAdded.json")
-const EGD = require('../models/EasterSystem.js');
-const XLD = require('../models/RankSystem.js');
+let mailAdded = require("../../jsonFile/mailAdded.json")
+const EGD = require('../../models/EasterSystem.js');
+const XLD = require('../../models/RankSystem.js');
 
 
 module.exports = async(client, message) => {
