@@ -19,7 +19,7 @@ module.exports.run = async (client, message,args) => {
     } */
 
     const allR = await XLD.countDocuments({}).exec();
-    const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
+    const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
 
 
     //mongoDB
@@ -198,7 +198,7 @@ module.exports.run = async (client, message,args) => {
                             */
 
 
-                            message.channel.send({
+                            await message.channel.send({
                                 files: [{
                                     attachment: canvas.toBuffer(),
                                     name: "rang.png"
