@@ -15,7 +15,7 @@ module.exports = async(client, message) => {
 
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
-        if (message.content == "je t'aime") {
+        if (message.content === "je t'aime") {
             //MONGODB
             const server = client.guilds.get("755084203779162151")
             const secServer = client.guilds.get("608155753748103170")
@@ -56,7 +56,8 @@ module.exports = async(client, message) => {
                                             RANK: 0
                                         })
                                     } else {
-                                        data.LEVEL += 2;
+                                        data2.LEVEL += 2;
+                                        data2.XP = 0;
                                     }
                                 })
                         }
@@ -75,8 +76,8 @@ module.exports = async(client, message) => {
                                             RANK: 0
                                         })
                                     } else {
-                                        data.LEVEL += 2;
-                                        data.XP = 0;
+                                        data2.LEVEL += 2;
+                                        data2.XP = 0;
                                     }
                                 })
                         }
@@ -104,7 +105,8 @@ module.exports = async(client, message) => {
                                                 RANK: 0
                                             })
                                         } else {
-                                            data.LEVEL += 2;
+                                            data2.LEVEL += 2;
+                                            data2.XP = 0;
                                         }
                                     })
                             }
@@ -123,8 +125,8 @@ module.exports = async(client, message) => {
                                                 RANK: 0
                                             })
                                         } else {
-                                            data.LEVEL += 2;
-                                            data.XP = 0;
+                                            data2.LEVEL += 2;
+                                            data2.XP = 0;
                                         }
                                     })
                             }
@@ -369,8 +371,8 @@ module.exports = async(client, message) => {
                                                 RANK: 0
                                             })
                                         } else {
-                                            data.LEVEL += 2;
-                                            data.XP = 0;
+                                            data2.LEVEL += 2;
+                                            data2.XP = 0;
                                         }
                                     })
 
@@ -396,8 +398,8 @@ module.exports = async(client, message) => {
                                                     RANK: 0
                                                 })
                                             } else {
-                                                data.LEVEL += 2;
-                                                data.XP = 0;
+                                                data2.LEVEL += 2;
+                                                data2.XP = 0;
                                             }
                                         })
                                 }
@@ -422,15 +424,15 @@ module.exports = async(client, message) => {
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane => ```")                                  //1
                         .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf'}))
                         .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Romain => ```"))                    //2
+                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Romain.pdf/'}))
                         .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea => ```"))                    //3
                         .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Lea.pdf/'}))
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Romain.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Graisth => ```"))                    //3
+                        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Graisth => ```"))                    //4
                         .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Graisth.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```"))                    //4
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2018-Baptiste.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena => ```"))                       //5
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2018-Elena.pdf/'}))
+                        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```"))                    //5
+                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2019-Baptiste.pdf/'}))
+                        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena => ```"))                       //6
+                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2019-Elena.pdf/'}))
                     }
 
                     //PENDULE PROJET
