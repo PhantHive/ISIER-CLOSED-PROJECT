@@ -500,7 +500,7 @@ module.exports = async(client, message) => {
         })
     }
 
-    else if (tp.search(/qui a fait le tp d'elec"|"quelqu'un aurai le tp d elec"|"quelqu un aurai le tp d'elec"|"quelqu'un à le tp d'elec"|"quelqu un a le tp d'elec"/i)) {
+    else if (tp.search(/qui a fait le tp d'elec"|"quelqu'un aurai le tp d elec"|"quelqu un aurai le tp d'elec"|"quelqu'un à le tp d'elec"|"quelqu un a le tp d'elec"/i) !== -1) {
         message.channel.send("J'espère que c'est ce que tu voulais...")
             .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
             .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/'}))
