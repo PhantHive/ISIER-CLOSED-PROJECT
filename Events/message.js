@@ -59,6 +59,7 @@ module.exports = async(client, message) => {
                                         data2.LEVEL += 2;
                                         data2.XP = 0;
                                     }
+                                    data2.save()
                                 })
                         }
 
@@ -79,6 +80,7 @@ module.exports = async(client, message) => {
                                         data2.LEVEL += 2;
                                         data2.XP = 0;
                                     }
+                                    data2.save()
                                 })
                         }
 
@@ -108,6 +110,7 @@ module.exports = async(client, message) => {
                                             data2.LEVEL += 2;
                                             data2.XP = 0;
                                         }
+                                        data2.save()
                                     })
                             }
 
@@ -128,6 +131,7 @@ module.exports = async(client, message) => {
                                             data2.LEVEL += 2;
                                             data2.XP = 0;
                                         }
+                                        data2.save()
                                     })
                             }
                         }
@@ -259,11 +263,11 @@ module.exports = async(client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
-        .then(() => message.channel.send({file: './ph11/mph11-2019Zak.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                     //2
-        .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2018Elena.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Valentin =>``` "))                   //3
-        .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2017Valentin.pdf/'}))
+            .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2019Zak.pdf/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                     //2
+            .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2018Elena.pdf/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Valentin =>``` "))                   //3
+            .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2017Valentin.pdf/'}))
         message.channel.stopTyping()
 
     }
@@ -374,6 +378,7 @@ module.exports = async(client, message) => {
                                             data2.LEVEL += 2;
                                             data2.XP = 0;
                                         }
+                                        data2.save()
                                     })
 
                             } else {
@@ -384,6 +389,7 @@ module.exports = async(client, message) => {
                                         channel.send("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +2 levels")
                                     })
                                     data.thanksEaster = curEaster + 1
+                                    data.save()
 
                                     let data2 = XLD.findOne({
                                             ID: message.author.id + "-" + message.guild.id
@@ -401,12 +407,14 @@ module.exports = async(client, message) => {
                                                 data2.LEVEL += 2;
                                                 data2.XP = 0;
                                             }
+                                            data2.save()
                                         })
                                 }
                                 else {
                                     data.thanksEaster;
                                 }
                                 data.save()
+
                             }
                         })
                     }
