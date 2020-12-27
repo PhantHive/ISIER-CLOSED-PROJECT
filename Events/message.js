@@ -85,7 +85,7 @@ module.exports = async(client, message) => {
                                 })
                         }
 
-                        if (testServer.fetchMember((message.author.id)) {
+                        if (testServer.fetchMember((message.author.id))) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -136,7 +136,7 @@ module.exports = async(client, message) => {
                                     })
                             }
 
-                            if (secServer.fetchMember((message.author.id)) {
+                            if (secServer.fetchMember((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
@@ -157,7 +157,7 @@ module.exports = async(client, message) => {
                                     })
                             }
 
-                            if (testServer.fetchMember((message.author.id)) {
+                            if (testServer.fetchMember((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
