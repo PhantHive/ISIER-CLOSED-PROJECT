@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports.run = async ( client, message, args) => {
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setTitle("REVISIONS BINAIRE ET HEXA")
         .setColor("ORANGE")
         .setFooter("Reagissez avec une des 2 emojis pour acceder au programme de revision");
@@ -20,7 +20,7 @@ module.exports.run = async ( client, message, args) => {
 
         switch (reaction.emoji.name) {
             case '🅱':
-                const embedChoice = new Discord.RichEmbed()
+                const embedChoice = new Discord.MessageEmbed()
                     .setTitle("PROGRAMME BINAIRE")
                     .setColor("ORANGE")
                     .addField("Choisissez votre niveau de difficulte:", false)
@@ -49,7 +49,7 @@ module.exports.run = async ( client, message, args) => {
                                     case 1:
                                         const underfilter = (reaction, user) => ['❤', '💝', '💖', '🖤'].includes(reaction.emoji.name) && user.id === message.author.id;
 
-                                        const embed = new Discord.RichEmbed()
+                                        const embed = new Discord.MessageEmbed()
                                             .setColor("ORANGE")
                                             .setTitle('ADDITION BINAIRE- NORMAL')
                                             .addField("*ADDITION EN BASE2*: 11001+11110=\n" +
@@ -94,7 +94,7 @@ module.exports.run = async ( client, message, args) => {
 
                                     case 2:
                                         /* const filter2 = (reaction, user) =>  ['1️⃣', '2️⃣', '3️⃣', '4️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
-                                         const embed2 = new Discord.RichEmbed
+                                         const embed2 = new Discord.MessageEmbed
                                              .setColor('#DB13C2')
                                              .setTitle('ADDITION BINAIRE-NORMAL')
                                              .addField("*ADDITION EN BASE2*: 10110+10110=\n" +

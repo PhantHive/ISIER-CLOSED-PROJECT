@@ -37,7 +37,7 @@ module.exports.run = async(client, message, args) => {
 
 
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setColor('#DB13C2')
         .setFooter(`Page ${page} / ${pages.length}`)
         .setDescription(pages[page - 1])

@@ -25,7 +25,7 @@ module.exports.run = async(client, message, args) => {
 
     let page = 1;
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setColor('#DB13C2')
         .setDescription(pages[page - 1])
         .setImage('https://imgur.com/N8FhelH.png')

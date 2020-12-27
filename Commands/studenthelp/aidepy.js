@@ -4,7 +4,7 @@ const Discord = require('discord.js')
 module.exports.run = async(client, message, args) => {
     
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setColor('#DB13C2')
         .addField("fonctions", "i!fonction", true)
         .addField("if - else", "i!ifelse", true)
@@ -19,7 +19,7 @@ module.exports.run = async(client, message, args) => {
         .setFooter("Aide python, commandes.")
         .setThumbnail('https://imgur.com/oamlctq.png')
         .setTimestamp();
-    message.channel.send(embed);
+    await message.channel.send(embed);
 
 }
 

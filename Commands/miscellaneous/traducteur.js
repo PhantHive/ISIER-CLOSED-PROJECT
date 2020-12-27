@@ -42,7 +42,7 @@ module.exports.run = async (client, message, args) => {
                     const definition = `***DEF:**\n*${res.definition}*\n\n**Example:**\n*${res.example}*`
                     const deftofr = await translate(definition, 'fr')
 
-                    const embed = new Discord.RichEmbed()
+                    const embed = new Discord.MessageEmbed()
                         .setColor('ORANGE')
                         .setTitle(`URBAN DICO | ${res.word}`)
                         .setURL(res.urbanURL)

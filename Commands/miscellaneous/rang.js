@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 //let infoLVL = require("../jsonFile/level.json");
 const client = new Discord.Client();
-client.mongoose = require('../utils/mongose.js');
-const XLD = require('../models/RankSystem.js');
-const EGD = require('../models/EasterSystem.js');
+client.mongoose = require('../../utils/mongose.js');
+const XLD = require('../../models/RankSystem.js');
+const EGD = require('../../models/EasterSystem.js');
 const { createCanvas, loadImage } = require("canvas");
 const { Attachment } = require("discord.js");
 const { join } = require("path");

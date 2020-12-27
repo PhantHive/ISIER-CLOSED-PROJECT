@@ -6,8 +6,8 @@ module.exports.run = async (client, message, args) => {
 
     if(infoPoll.length > 1) {
 
-        if (infoPoll.length == 3) {
-            let sondageEmbed = new Discord.RichEmbed()
+        if (infoPoll.length === 3) {
+            let sondageEmbed = new Discord.MessageEmbed()
                 .setTitle("SONDAGE- CHOIX MULTIPLES")
                 .setDescription(infoPoll[0])
                 .addField('choix A' , infoPoll[1])
@@ -20,8 +20,8 @@ module.exports.run = async (client, message, args) => {
 
         }
 
-        else if (infoPoll.length == 4) {
-            let sondageEmbed = new Discord.RichEmbed()
+        else if (infoPoll.length === 4) {
+            let sondageEmbed = new Discord.MessageEmbed()
                 .setTitle("SONDAGE- CHOIX MULTIPLES")
                 .setDescription(infoPoll[0])
                 .addField('choix A' , infoPoll[1])
@@ -36,9 +36,9 @@ module.exports.run = async (client, message, args) => {
                 
         }
 
-        else if (infoPoll.length == 5) {
+        else if (infoPoll.length === 5) {
 
-            let sondageEmbed = new Discord.RichEmbed()
+            let sondageEmbed = new Discord.MessageEmbed()
                 .setTitle("SONDAGE- CHOIX MULTIPLES")
                 .setDescription(infoPoll[0])
                 .addField('choix A' , infoPoll[1])
@@ -63,7 +63,7 @@ module.exports.run = async (client, message, args) => {
     else {
 
         
-        let sondageEmbed = new Discord.RichEmbed()
+        let sondageEmbed = new Discord.MessageEmbed()
             .setTitle("SONDAGE")
             .setDescription(args[0]);
 
@@ -76,7 +76,7 @@ module.exports.run = async (client, message, args) => {
             time: 864000
         });
 
-        let resultsEmbed = new Discord.RichEmbed()
+        let resultsEmbed = new Discord.MessageEmbed()
             .setTitle("Resultat du sondage:")
             .setDescription(`Resultats: ${args[0].join(" ")}`)
             .addField("👍: ", ` ${results.get('👍').count-1}`)

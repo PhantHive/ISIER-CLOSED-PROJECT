@@ -15,7 +15,7 @@ module.exports.run = async(client, message, args) => {
 
     let subreddit = reddit[Math.floor(Math.random() * reddit.length - 1)];
 
-    message.channel.startTyping();
+    await message.channel.startTyping();
 
     randomPuppy(subreddit).then(url => {
         snekfetch.get(url).then(async res => {

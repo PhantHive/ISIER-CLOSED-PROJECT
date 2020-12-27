@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-client.mongoose = require('../utils/mongose.js');
-const XLD = require('../models/RankSystem.js');
+client.mongoose = require('../../utils/mongose.js');
+const XLD = require('../../models/RankSystem.js');
 const { join } = require("path");
 
 module.exports.run = async (client, message, args) => {
@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
     const adversaire = message.mentions.members.first() || message.guild.members.get(args[0]);
     const xpMiser = parseInt(args[1]);
 
-    if (adversaire.id == challenger) {
+    if (adversaire.id === challenger) {
         message.reply("Tu peux pas te challenge toi meme aha.");
         return;
     }
@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
         return;
     };
 
-    if (!adversaire == undefined) {
+    if (!adversaire === undefined) {
         message.reply("Je pense que tu voulais faire ca: i!miseXp TagDeTonAdversaire QuantiteXP");
         return;
     }
@@ -33,7 +33,7 @@ module.exports.run = async (client, message, args) => {
         adversaireInf.exec((err, doc) => {
             if (err) console.log(err);
             if (!doc) {
-                if (adversaire.id == 620678345364865051 && xpMiser > 0) {
+                if (adversaire.id === 620678345364865051 && xpMiser > 0) {
                     message.reply("Mdrrrrrrrr, tu me fumes mec, tu veux vraiment mise avec moi, ok, wait for it...")
                     .then(() => message.channel.send(`Bravo <@${challenger}> tu viens de perdre le triple de l'xp que tu as mise :)`));
                     const docChallenger = XLD.findOne({
@@ -47,7 +47,7 @@ module.exports.run = async (client, message, args) => {
                     })    
                 }
                 
-                else if ((adversaire.id == 620678345364865051) && (xpMiser < 0)) {
+                else if ((adversaire.id === 620678345364865051) && (xpMiser < 0)) {
                     message.reply("Big brain, isn't it? wait for it...")
                     .then(() => message.channel.send(`Bravo <@${challenger}> tu viens de perdre le triple de l'oppose de l'xp que tu as mise :)`));
                     const docChallenger = XLD.findOne({
@@ -62,13 +62,11 @@ module.exports.run = async (client, message, args) => {
                 }
                 
                 else {
-                    message.channel.send("Cette utilisateur n'as pas de rang tu ne peux miser avec lui.")
-                    return;
+                    message.channel.send("Cette utilisateur n'as pas de rang tu ne peux miser avec lui.");
                 }
             }
             else if (doc.XP < xpMiser) {
                 message.channel.send("tu ne peux pas mise une somme dont ne dispose pas ton adversaire!");
-                return;
             }
 
             else {
@@ -101,7 +99,7 @@ module.exports.run = async (client, message, args) => {
                                 oui.on('collect', r => {
                                     const randomChooseFirst = Math.floor(Math.random() * 2) + 1;
                                     console.log(randomChooseFirst);
-                                    if (randomChooseFirst == 1) {
+                                    if (randomChooseFirst === 1) {
                                         message.channel.send(`Decision: <@${challenger}> vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
                                         .then( () => {
                                             
@@ -110,7 +108,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 const array = ["Pile", "Face"];
                                                 const randomPileFace = array[Math.floor(Math.random() * array.length)];
-                                                if((collected.first().content == randomPileFace) && (randomPileFace == "Face")) {
+                                                if((collected.first().content === randomPileFace) && (randomPileFace === "Face")) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
                                                     .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(2000)))
@@ -142,7 +140,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content == randomPileFace) && (randomPileFace == "Pile")) {
+                                                else if((collected.first().content === randomPileFace) && (randomPileFace === "Pile")) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
                                                     .then(() => message.channel.send({file: './image/piecePile.jpg'}).then(m => m.delete(2000)))
@@ -175,7 +173,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content == "Pile") && (randomPileFace == "Face")) {
+                                                else if((collected.first().content === "Pile") && (randomPileFace === "Face")) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
                                                     .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(2000)))
@@ -208,7 +206,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content == "Face") && (randomPileFace == "Pile")) {
+                                                else if((collected.first().content === "Face") && (randomPileFace === "Pile")) {
         
                                                     message.channel.send({file: './image/pieceTournant.jpg'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
@@ -254,12 +252,12 @@ module.exports.run = async (client, message, args) => {
                                         message.channel.send(`Decision: ${adversaire} vous choisissez, Pile ou Face? (repondre dans le chat)`, {time: 15000})
                                         .then( () => {
         
-                                            message.channel.awaitMessages(msg => msg.author.id == adversaire.id, {max: 1, time: 50000})
+                                            message.channel.awaitMessages(msg => msg.author.id === adversaire.id, {max: 1, time: 50000})
                                             .then(collected => {
         
                                                 const array = ["Pile", "Face"];
                                                 const randomPileFace = array[Math.floor(Math.random() * array.length)];
-                                                if((collected.first().content == randomPileFace) && (randomPileFace == "Face")) {
+                                                if((collected.first().content === randomPileFace) && (randomPileFace === "Face")) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
                                                     .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(2000)))
@@ -294,7 +292,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content == randomPileFace) && (randomPileFace == "Pile")) {
+                                                else if((collected.first().content === randomPileFace) && (randomPileFace === "Pile")) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
                                                     .then(() => message.channel.send({file: './image/piecePile.jpg'}).then(m => m.delete(2000)))
@@ -329,7 +327,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content == "Pile") && (randomPileFace == "Face")) {
+                                                else if((collected.first().content === "Pile") && (randomPileFace === "Face")) {
                                                     message.channel.send({file:'./image/pieceTournant.jpg/'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
                                                     .then(() => message.channel.send({file: './image/pieceFace.jpg'}).then(m => m.delete(2000)))
@@ -364,7 +362,7 @@ module.exports.run = async (client, message, args) => {
         
                                                 }
                                                 
-                                                else if((collected.first().content == "Face") && (randomPileFace == "Pile")) {
+                                                else if((collected.first().content === "Face") && (randomPileFace === "Pile")) {
         
                                                     message.channel.send({file: './image/pieceTournant.jpg'}).then(m => m.delete(2000))
                                                     .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))

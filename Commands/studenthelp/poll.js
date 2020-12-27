@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports.run = async ( client, message, args) => {
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
         .setTitle("REVISIONS BINAIRE ET HEXA")
         .setColor("ORANGE")
         .setFooter("Reagissez avec une des 2 emojis pour acceder au programme de revision");
@@ -19,7 +19,7 @@ module.exports.run = async ( client, message, args) => {
 
             //COLLECT BINARY
             binary.on('collect', r => {
-                const embedChoice = new Discord.RichEmbed()
+                const embedChoice = new Discord.MessageEmbed()
                     .setTitle("PROGRAMME BINAIRE")
                     .setColor("ORANGE")
                     .addField("Choisissez votre niveau de difficulte:")
@@ -250,7 +250,7 @@ module.exports.run = async ( client, message, args) => {
 
             //COLLECT HEXA
             hexa.on('collect', r => {
-                const embedChoice = new Discord.RichEmbed()
+                const embedChoice = new Discord.MessageEmbed()
                     .setTitle("PROGRAMME HEXADECIMAL")
                     .setColor("GREEN")
                     .addField("Choisissez votre niveau de difficulte:")
