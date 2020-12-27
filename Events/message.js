@@ -42,14 +42,92 @@ module.exports = async(client, message) => {
                             channel.send("Je t'aime beaucoup aussi +1 easterEgg, +2 levels")
                         })
 
+                        if (server.member(message.author.id)) {
+                            let data2 = XLD.findOne({
+                                    ID: message.author.id + "-" + "755084203779162151"
+                                },
+                                (err, data2) => {
+                                    if (!data2) {
+                                        new XLD({
+                                            ID: message.author.id + "-" + "755084203779162151",
+                                            serverID: "755084203779162151",
+                                            XP: 0,
+                                            LEVEL: 3,
+                                            RANK: 0
+                                        })
+                                    } else {
+                                        data.LEVEL += 2;
+                                    }
+                                })
+                        }
+
+                        if (secServer.member(message.author.id)) {
+                            let data3 = XLD.findOne({
+                                    ID: message.author.id + "-" + "608155753748103170"
+                                },
+                                (err, data2) => {
+                                    if (!data2) {
+                                        new XLD({
+                                            ID: message.author.id + "-" + "608155753748103170",
+                                            serverID: "608155753748103170",
+                                            XP: 0,
+                                            LEVEL: 3,
+                                            RANK: 0
+                                        })
+                                    } else {
+                                        data.LEVEL += 2;
+                                        data.XP = 0;
+                                    }
+                                })
+                        }
+
                     } else {
                         let curEaster = data.loveEaster;
 
-                        if (curEaster == 0) {
+                        if (curEaster === 0) {
                             data.loveEaster = curEaster + 1
                             message.author.createDM().then(channel => {
                                 channel.send("Je t'aime beaucoup aussi +1 easterEgg, +2 levels")
                             })
+
+                            if (server.member(message.author.id)) {
+                                let data2 = XLD.findOne({
+                                        ID: message.author.id + "-" + "755084203779162151"
+                                    },
+                                    (err, data2) => {
+                                        if (!data2) {
+                                            new XLD({
+                                                ID: message.author.id + "-" + "755084203779162151",
+                                                serverID: "755084203779162151",
+                                                XP: 0,
+                                                LEVEL: 3,
+                                                RANK: 0
+                                            })
+                                        } else {
+                                            data.LEVEL += 2;
+                                        }
+                                    })
+                            }
+
+                            if (secServer.member(message.author.id)) {
+                                let data3 = XLD.findOne({
+                                        ID: message.author.id + "-" + "608155753748103170"
+                                    },
+                                    (err, data2) => {
+                                        if (!data2) {
+                                            new XLD({
+                                                ID: message.author.id + "-" + "608155753748103170",
+                                                serverID: "608155753748103170",
+                                                XP: 0,
+                                                LEVEL: 3,
+                                                RANK: 0
+                                            })
+                                        } else {
+                                            data.LEVEL += 2;
+                                            data.XP = 0;
+                                        }
+                                    })
+                            }
                         }
                         else {
                             message.author.createDM().then(channel => {
@@ -60,47 +138,6 @@ module.exports = async(client, message) => {
                         data.save()
                     }
                 })
-
-
-            if (server.member(message.author.id)) {
-                let data2 = XLD.findOne({
-                        ID: message.author.id + "-" + "755084203779162151"
-                    },
-                    (err, data2) => {
-                        if (!data2) {
-                            new XLD({
-                                ID: message.author.id + "-" + "755084203779162151",
-                                serverID: "755084203779162151",
-                                XP: 0,
-                                LEVEL: 3,
-                                RANK: 0
-                            })
-                        } else {
-                            data.LEVEL += 2;
-                        }
-                    })
-            }
-
-            if (secServer.member(message.author.id)) {
-                let data3 = XLD.findOne({
-                        ID: message.author.id + "-" + "608155753748103170"
-                    },
-                    (err, data2) => {
-                        if (!data2) {
-                            new XLD({
-                                ID: message.author.id + "-" + "608155753748103170",
-                                serverID: "608155753748103170",
-                                XP: 0,
-                                LEVEL: 3,
-                                RANK: 0
-                            })
-                        } else {
-                            data.LEVEL += 2;
-                            data.XP = 0;
-                        }
-                    })
-            }
-
         }
         else {
             message.channel.send("Go sur le discord de ta promo dans le channel adapté aux commandes bots et tape i!aide pour recevoir de l'aide sur mes commandes" +
@@ -296,7 +333,7 @@ module.exports = async(client, message) => {
 
                 const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 20000 });
                 eastercollector.on('collect', message => {
-                    if(message.content == "merci") {
+                    if(message.content === "merci") {
 
                         //MONGODB
                         let data = EGD.findOne({
@@ -319,36 +356,55 @@ module.exports = async(client, message) => {
                                     channel.send("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +2 levels")
                                 })
 
+                                let data2 = XLD.findOne({
+                                        ID: message.author.id + "-" + message.guild.id
+                                    },
+                                    (err, data2) => {
+                                        if (!data2) {
+                                            new XLD({
+                                                ID: message.author.id + "-" + message.guild.id,
+                                                serverID: message.guild.id,
+                                                XP: 0,
+                                                LEVEL: 3,
+                                                RANK: 0
+                                            })
+                                        } else {
+                                            data.LEVEL += 2;
+                                            data.XP = 0;
+                                        }
+                                    })
+
                             } else {
                                 let curEaster = data.thanksEaster;
 
-                                if (curEaster == 0) {
+                                if (curEaster === 0) {
                                     message.author.createDM().then(channel => {
                                         channel.send("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +2 levels")
                                     })
                                     data.thanksEaster = curEaster + 1
+
+                                    let data2 = XLD.findOne({
+                                            ID: message.author.id + "-" + message.guild.id
+                                        },
+                                        (err, data2) => {
+                                            if (!data2) {
+                                                new XLD({
+                                                    ID: message.author.id + "-" + message.guild.id,
+                                                    serverID: message.guild.id,
+                                                    XP: 0,
+                                                    LEVEL: 3,
+                                                    RANK: 0
+                                                })
+                                            } else {
+                                                data.LEVEL += 2;
+                                                data.XP = 0;
+                                            }
+                                        })
                                 }
                                 else {
                                     data.thanksEaster;
                                 }
                                 data.save()
-                            }
-                        })
-
-                        let data2 = XLD.findOne({
-                                ID: message.author.id + "-" + message.guild.id
-                        },
-                        (err, data2) => {
-                            if (!data2) {
-                                new XLD({
-                                    ID: message.author.id + "-" + message.guild.id,
-                                    serverID: message.guild.id,
-                                    XP: 0,
-                                    LEVEL: 3,
-                                    RANK: 0
-                                })
-                            } else {
-                                data.LEVEL += 2;
                             }
                         })
                     }
@@ -474,7 +530,7 @@ module.exports = async(client, message) => {
 
     var tp = String(message.content).toLowerCase();
    
-    if (tp.search(/qui a fait le tp"|"quelqu'un aurai le tp"|"quelqu un aurai le tp"|"quelqu'un à le tp"|"quelqu un a le tp"/i) !== -1 ) {
+    if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp/i) !== -1 ) {
 
         message.channel.startTyping()
         message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
@@ -500,7 +556,7 @@ module.exports = async(client, message) => {
         })
     }
 
-    else if (tp.search(/qui a fait le tp d'elec"|"quelqu'un aurai le tp d elec"|"quelqu un aurai le tp d'elec"|"quelqu'un à le tp d'elec"|"quelqu un a le tp d'elec"/i) !== -1) {
+    else if (tp.search(/qui a fait le tp d'elec|quelqu'un aurai le tp d elec|quelqu un aurai le tp d'elec|quelqu'un à le tp d'elec|quelqu un a le tp d'elec/i) !== -1) {
         message.channel.send("J'espère que c'est ce que tu voulais...")
             .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
             .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/'}))
