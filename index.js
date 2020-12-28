@@ -2,9 +2,7 @@
 //const GOOGLE_API_KEY = 'AIzaSyDse8N2YEPG8v53iSf1klZ95S16tLpGY3Y';
 //const Youtube = require('simple-youtube-api');
 //const youtube = new Youtube(GOOGLE_API_KEY);
-import {MessageEmbed} from "discord.js";
-
-const { Client, Collection } = require("discord.js");
+const { Client, Collection, MessageEmbed } = require("discord.js");
 const client = new Client();
 const fs = require('fs');
 client.mongoose = require('./utils/mongose.js');
