@@ -18,9 +18,9 @@ module.exports = async(client, message) => {
         if (message.author.bot) return;
         if (message.content === "je t'aime") {
             //MONGODB
-            let server = client.guilds.get("755084203779162151")
-            let secServer = client.guilds.get("608155753748103170")
-            let testServer = client.guilds.get("502931781012684818")
+            let server = client.guilds.cache.get("755084203779162151")
+            let secServer = client.guilds.cache.get("608155753748103170")
+            let testServer = client.guilds.cache.get("502931781012684818")
 
             let data = EGD.findOne({
 
