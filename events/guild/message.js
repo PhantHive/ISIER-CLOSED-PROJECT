@@ -7,6 +7,7 @@ let mailVerif = require("../../jsonFile/mailsVerif.json")
 let mailAdded = require("../../jsonFile/mailAdded.json")
 const EGD = require('../../models/EasterSystem.js');
 const XLD = require('../../models/RankSystem.js');
+const Timeout = require("cheerio");
 
 
 module.exports = async(client, message) => {
@@ -211,7 +212,6 @@ module.exports = async(client, message) => {
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase(); //On a creer un tableau args dans lequel le premier element (position 0) est le commandeNom et les autres elements suivant sont les arguments supplementaires
     //.shift permet de recuperer seulement le premier element donc ici le nom
-    if (cmd.length === 0)  message.channel.send("Tu as surement besoin de moi, n'est ce pas? pour savoir mes commandes, i!aide");
 
     let command = client.commands.get(cmd);
 
