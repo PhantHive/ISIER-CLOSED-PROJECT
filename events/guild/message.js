@@ -195,24 +195,24 @@ module.exports = async(client, message) => {
     }
     //=============
     if(message.author.bot) return;
-    
+
     var sponso = String(message.content);
     const rand_answer = [
-      "Oe je me presente je m'appel IPSA bot de nice, Sponso par la promo 2024, ta capter, arouf le plus beau des rebeux, bon ok j arrete la.",
-      "Rien ne pourra nous separer!",
-      "Cause all of me loves all of you *music*",
-      "Je m'adore aussi",
-      "Je me fait trop flatter en ce moment",
-      "Oh un fan de plus!",
-      "I feel so lonely without you",
-      "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!"
+        "Oe je me presente je m'appel IPSA bot de nice, Sponso par la promo 2024, ta capter, arouf le plus beau des rebeux, bon ok j arrete la.",
+        "Rien ne pourra nous separer!",
+        "Cause all of me loves all of you *music*",
+        "Je m'adore aussi",
+        "Je me fait trop flatter en ce moment",
+        "Oh un fan de plus!",
+        "I feel so lonely without you",
+        "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!"
     ]
     //rando_imgs[Math.floor(Math.random() * rando_imgs.length * 2)]
     if (sponso.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
-      message.channel.send(rand_answer[Math.floor(Math.random() * rand_answer.length )])
+        message.channel.send(rand_answer[Math.floor(Math.random() * rand_answer.length )])
     }
     //fonction special
-  
+
     //dropbox
     var chaine = String(message.content);
 
@@ -237,7 +237,7 @@ module.exports = async(client, message) => {
         if (b == 5) {
             message.channel.send('ce manque de respect popopopo j\'aurai pas aimer');
         }
-        
+
     }
 
     var chaine3 = String(message.content);
@@ -266,7 +266,7 @@ module.exports = async(client, message) => {
         if (b == 5) {
             message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
         }
-        
+
     }
 
     var chaine6 = String(message.content);
@@ -287,9 +287,9 @@ module.exports = async(client, message) => {
         }
         else if (b == 10) {
             message.react('🇲')
-            .then(() => message.react('🇩'))
-            .then(() => message.react('🇷'))
-            .catch(() => console.error("erreur dans la reaction en chaine"));
+                .then(() => message.react('🇩'))
+                .then(() => message.react('🇷'))
+                .catch(() => console.error("erreur dans la reaction en chaine"));
         }
     }
 
@@ -322,9 +322,9 @@ module.exports = async(client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
-        .then(() => message.channel.send({file: './aero1Sources/ph12/pendule/pendule2018-Elena.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                     //2
-        .then(() => message.channel.send({file: './aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/'}))
+            .then(() => message.channel.send({file: './aero1Sources/ph12/pendule/pendule2018-Elena.pdf/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                     //2
+            .then(() => message.channel.send({file: './aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/'}))
         message.channel.stopTyping()
 
     }
@@ -336,9 +336,9 @@ module.exports = async(client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-        .then(() => message.channel.send({file: './aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea =>```"))                     //2
-        .then(() => message.channel.send({file: './aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/'}))
+            .then(() => message.channel.send({file: './aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea =>```"))                     //2
+            .then(() => message.channel.send({file: './aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/'}))
         message.channel.stopTyping()
 
     }
@@ -349,11 +349,11 @@ module.exports = async(client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Zakaria et Jeremie => =>```")                             //1
-        .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea```"))                        //2
-        .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Elena```"))                     //3
-        .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
+            .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea```"))                        //2
+            .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Elena```"))                     //3
+            .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
 
         message.channel.stopTyping()
 
@@ -374,11 +374,11 @@ module.exports = async(client, message) => {
             if ((message.content).toLowerCase() === ("ph111" || "ressort")) {
                 message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete(4000));
                 message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                   //1
-                .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2019Zak.pdf/'}))
-                .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                       //2
-                .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2018Elena.pdf/'}))
-                .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Valentin =>``` "))                     //3
-                .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2017Valentin.pdf/'}))
+                    .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2019Zak.pdf/'}))
+                    .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                       //2
+                    .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2018Elena.pdf/'}))
+                    .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Valentin =>``` "))                     //3
+                    .then(() => message.channel.send({file: './aero1Sources/ph11/mph11-2017Valentin.pdf/'}))
 
                 const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 20000 });
                 eastercollector.on('collect', message => {
@@ -387,52 +387,23 @@ module.exports = async(client, message) => {
                         //MONGODB
                         let data = EGD.findOne({
                                 ID: message.author.id
-                        },
-                        (err, data) => {
-                            if (err) console.log(err);
+                            },
+                            (err, data) => {
+                                if (err) console.log(err);
 
-                            if (message.author.bot) {
-                                return;
-                            }
+                                if (message.author.bot) {
+                                    return;
+                                }
 
-                            if (!data) {
-                                new EGD({
-                                    ID: message.author.id,
-                                    thanksEaster: 1,
-                                    loveEaster: 0
-                                }).save()
-                                message.author.createDM().then(channel => {
-                                    channel.send("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +2 levels")
-                                })
-
-                                let data2 = XLD.findOne({
-                                        ID: message.author.id + "-" + message.guild.id
-                                    },
-                                    (err, data2) => {
-                                        if (!data2) {
-                                            new XLD({
-                                                ID: message.author.id + "-" + message.guild.id,
-                                                serverID: message.guild.id,
-                                                XP: 0,
-                                                LEVEL: 3,
-                                                RANK: 0
-                                            })
-                                        } else {
-                                            data2.LEVEL += 2;
-                                            data2.XP = 0;
-                                        }
-                                        data2.save()
-                                    })
-
-                            } else {
-                                let curEaster = data.thanksEaster;
-
-                                if (curEaster === 0) {
+                                if (!data) {
+                                    new EGD({
+                                        ID: message.author.id,
+                                        thanksEaster: 1,
+                                        loveEaster: 0
+                                    }).save()
                                     message.author.createDM().then(channel => {
                                         channel.send("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +2 levels")
                                     })
-                                    data.thanksEaster = curEaster + 1
-                                    data.save()
 
                                     let data2 = XLD.findOne({
                                             ID: message.author.id + "-" + message.guild.id
@@ -452,14 +423,43 @@ module.exports = async(client, message) => {
                                             }
                                             data2.save()
                                         })
-                                }
-                                else {
-                                    data.thanksEaster;
-                                }
-                                data.save()
 
-                            }
-                        })
+                                } else {
+                                    let curEaster = data.thanksEaster;
+
+                                    if (curEaster === 0) {
+                                        message.author.createDM().then(channel => {
+                                            channel.send("woah t es un bon toi tu dis merci a un bot, easter egg complete! +1 easterEgg, +2 levels")
+                                        })
+                                        data.thanksEaster = curEaster + 1
+                                        data.save()
+
+                                        let data2 = XLD.findOne({
+                                                ID: message.author.id + "-" + message.guild.id
+                                            },
+                                            (err, data2) => {
+                                                if (!data2) {
+                                                    new XLD({
+                                                        ID: message.author.id + "-" + message.guild.id,
+                                                        serverID: message.guild.id,
+                                                        XP: 0,
+                                                        LEVEL: 3,
+                                                        RANK: 0
+                                                    })
+                                                } else {
+                                                    data2.LEVEL += 2;
+                                                    data2.XP = 0;
+                                                }
+                                                data2.save()
+                                            })
+                                    }
+                                    else {
+                                        data.thanksEaster;
+                                    }
+                                    data.save()
+
+                                }
+                            })
                     }
                 })
             }
@@ -473,17 +473,17 @@ module.exports = async(client, message) => {
                     if (message.content === ("comete" || "halley" || "comete halley" || "mini projet comète de Halley" || "comète de Halley")) {
                         message.channel.send("c'est tout bon pour moi je t'envoi ca");
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane => ```")                                  //1
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Romain => ```"))                    //2
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Romain.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea => ```"))                    //3
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Lea.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Graisth => ```"))                    //4
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Graisth.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```"))                    //5
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2019-Baptiste.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena => ```"))                       //6
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2019-Elena.pdf/'}))
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Romain => ```"))                    //2
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Romain.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea => ```"))                    //3
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Lea.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Graisth => ```"))                    //4
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2020-Graisth.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```"))                    //5
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2019-Baptiste.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena => ```"))                       //6
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/comete/comete2019-Elena.pdf/'}))
                     }
 
                     //PENDULE PROJET
@@ -491,9 +491,9 @@ module.exports = async(client, message) => {
                         message.channel.startTyping()
                         message.reply("c'est tout bon pour moi je t'envoi ca")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/pendule/pendule2018-Elena.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                   //2
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/'}))
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/pendule/pendule2018-Elena.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                   //2
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/'}))
                         message.channel.stopTyping()
                     }
 
@@ -502,11 +502,11 @@ module.exports = async(client, message) => {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Zakaria et Jeremie => =>```")                             //1
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea```"))                                     //2
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Elena```"))                                   //3
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea```"))                                     //2
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Elena```"))                                   //3
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
                         message.channel.stopTyping()
                     }
 
@@ -515,9 +515,9 @@ module.exports = async(client, message) => {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea =>```"))                                  //2
-                        .then(() => message.channel.send({file: './aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/'}))
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea =>```"))                                  //2
+                            .then(() => message.channel.send({file: './aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/'}))
                         message.channel.stopTyping()
                     }
 
@@ -526,9 +526,9 @@ module.exports = async(client, message) => {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-                        .then(() => message.channel.send({file: './aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/'}))
-                        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))
-                        .then(() => message.channel.send({file: './aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/'}))
+                            .then(() => message.channel.send({file: './aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/'}))
+                            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))
+                            .then(() => message.channel.send({file: './aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/'}))
                         //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
                         message.channel.stopTyping()
                     }
@@ -553,19 +553,19 @@ module.exports = async(client, message) => {
     }
 
     //================ELEC
-    
+
     var elecUn = String(message.content).toLowerCase();
     if (elecUn.indexOf("miniprojet elec" || "mini projet elec" || "mp elec") !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-        .then(() => message.channel.send({file: './aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane =>```"))                    //2
-        .then(() => message.channel.send({file: './aero1Sources/elec/Mini_projet_elec_Auriane.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Bastien =>```"))                    //2
-        .then(() => message.channel.send({file: './aero1Sources/elec/Mini_projet_elec_Bastien.pdf/'}))
-        .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))                    //2
-        .then(() => message.channel.send({file: './aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/'}))
+            .then(() => message.channel.send({file: './aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane =>```"))                    //2
+            .then(() => message.channel.send({file: './aero1Sources/elec/Mini_projet_elec_Auriane.pdf/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Bastien =>```"))                    //2
+            .then(() => message.channel.send({file: './aero1Sources/elec/Mini_projet_elec_Bastien.pdf/'}))
+            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))                    //2
+            .then(() => message.channel.send({file: './aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/'}))
 
         message.channel.stopTyping()
     }
@@ -575,14 +575,14 @@ module.exports = async(client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
-        .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/'}))
+            .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/'}))
         message.channel.stopTyping()
     }
-    
+
     //==============================
 
     var tp = String(message.content).toLowerCase();
-   
+
     if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp/i) !== -1 ) {
 
         message.channel.startTyping()
@@ -617,7 +617,7 @@ module.exports = async(client, message) => {
             .then(() => message.channel.send({file: './aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/'}))
             .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
     }
-    
+
 
 
     //========================================VERIF MAIL
@@ -630,39 +630,39 @@ module.exports = async(client, message) => {
     if (message.channel.id === "755084204567560228") {
         let mail = message.content;
         if (mailUser == "") {
-            
+
             for (const promo of Object.keys(mailVerif)) {
-              if (mailVerif[promo].includes(mail)) { 
-                      //message.channel.send(mail);
+                if (mailVerif[promo].includes(mail)) {
+                    //message.channel.send(mail);
 
-                  let name = mail.substring(0,mail.indexOf("@"));
-                  let firstName = name.substring(0,mail.indexOf("."));
-                  let surName = name.substring(mail.indexOf(".")+1);
-                  let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
-                  let correctSurname = surName.toUpperCase();
-                  let fullName = correctSurname + " " + correctName
+                    let name = mail.substring(0,mail.indexOf("@"));
+                    let firstName = name.substring(0,mail.indexOf("."));
+                    let surName = name.substring(mail.indexOf(".")+1);
+                    let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+                    let correctSurname = surName.toUpperCase();
+                    let fullName = correctSurname + " " + correctName
 
-                  if (promo == "aero1") {
-            
-                      let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
-                      mailAdded[message.author.id].mail = mail
-                      return mail;
+                    if (promo == "aero1") {
 
-                  } else if (promo == "aero2") {
-                      let role = message.guild.roles.find(r => r.name === "Aéro 2");
-                      let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
-                      mailAdded[message.author.id].mail = mail
-                      return mail;     
-                  }
+                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
+                        mailAdded[message.author.id].mail = mail
+                        return mail;
 
-              } else {
-                
-                message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete(6000));
-                return false;
-              }
-        
+                    } else if (promo == "aero2") {
+                        let role = message.guild.roles.find(r => r.name === "Aéro 2");
+                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
+                        mailAdded[message.author.id].mail = mail
+                        return mail;
+                    }
+
+                } else {
+
+                    message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete(6000));
+                    return false;
+                }
+
             }
-            
+
         }
         else if (mailUser === mail) {
             message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete(6000));
@@ -678,16 +678,16 @@ module.exports = async(client, message) => {
     }
 
     //AIDE INFORMATIQUE PING ZAKARIA
-    
+
     //var aideInformatique = String(message.content);
     //if (aideInformatique.indexOf("?") != -1 && ((message.channel.id === "755084205330792547" ) || message.channel.id("611832091604287518"))) {
-        //  message.reply("<@239455598343618580> peux peut-être aider !")
+    //  message.reply("<@239455598343618580> peux peut-être aider !")
     //}
-    
+
 
 
     //=============================
-    
+
     if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -698,8 +698,8 @@ module.exports = async(client, message) => {
     if(!cmd) return message.reply("il semblerai que tu ai besoin de m'appeler, si tu ne connais pas les commandes je t'invite a faire i!aide");
 
     cmd.run(client, message, args);
-    
-    
+
+
 
 
 }
