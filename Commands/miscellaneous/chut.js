@@ -22,8 +22,10 @@ module.exports = {
         ];
 
 
-        message.channel.send({
-            file: rando_imgs[Math.floor(Math.random() * rando_imgs.length)]
+        await message.channel.send({
+            files: [{
+                attachment: [Math.floor(Math.random() * rando_imgs.length)]
+            }]
         });
     }
 };
