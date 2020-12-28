@@ -154,7 +154,7 @@ module.exports =  {
                                 ctx.fillStyle = "#ffffff";
                                 ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 350)
 
-                                const rankImg = await loadImage(join(__dirname, "..", "image", "rank.png"));
+                                const rankImg = await loadImage(join(__dirname, "../..", "image", "rank.png"));
                                 ctx.drawImage(rankImg, 550, 15, 50, 50);
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";
@@ -164,7 +164,7 @@ module.exports =  {
                                 ctx.fillText("RANG:", 610, 60);
                                 ctx.fillText(curRank + "/" + allR, 830, 60);
 
-                                const eggImg = await loadImage(join(__dirname, "..", "image", "egg.png"));
+                                const eggImg = await loadImage(join(__dirname, "../..", "image", "egg.png"));
                                 ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";
