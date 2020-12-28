@@ -2,20 +2,18 @@ const Discord = require('discord.js');
 
 module.exports =  {
 
-    name: "khToms",
+    name: "kmTomiles",
     category: "conversions",
-    usage: "khToms",
+    usage: "kmTomiles",
     run: async (client, message, args) => {
         var m = args[0];
-        if (isNaN(m) ) {
+        if (isNaN(m)) {
             message.reply("Ceci n'est pas un nombre.")
+        } else {
+            var r = m * 0.6213712
         }
-        else {
-            var r = m / 3.6
-        }
-        message.channel.send(`**${m} km/h** ==> **${r} m/s **(operation effectue: ${m} / 3,6)`)
+        message.channel.send(`**${m} km** ==> **${r} miles **(operation effectue: ${m} * 0,6213712)`)
     }
-
 };
 
 

@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 
 module.exports =  {
 
-
     name: "barTopa",
     category: "conversions",
     usage: "barTopa",
@@ -13,6 +12,7 @@ module.exports =  {
         } else {
             r = m * 100000
         }
+        message.channel.send(`**${m} bar** ==> **${r} pa **(operation effectue: ${m} / 10^(-5)`)
     }
 
 };
