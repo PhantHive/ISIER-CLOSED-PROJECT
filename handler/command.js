@@ -7,13 +7,13 @@ table.setHeading("Command", "Loaded commands");
 
 module.exports = (client) => {
 
-    readdirSync('./Commands/').forEach(dir => {
+    readdirSync('./commands/').forEach(dir => {
         //la constante commands correspond a chacune des commandes, donc chaque fichier .js contenu dans chaque repertoir contenu dans Commands
-        const commands = readdirSync(`./Commands/${dir}/`).filter(file => file.endsWith(".js"));
+        const commands = readdirSync(`./commands/${dir}/`).filter(file => file.endsWith(".js"));
 
         //pour chaque commande .js individuelle de l enssemble des commandes .js
         for (let file of commands) {
-            let pull = require(`../Commands/${dir}/${file}`);
+            let pull = require(`../commands/${dir}/${file}`);
 
             //on associe maintenant un nom a une information envoyee (pull); nom associe: pull.name
 
