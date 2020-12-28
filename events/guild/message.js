@@ -7,8 +7,8 @@ let mailVerif = require("../../jsonFile/mailsVerif.json")
 let mailAdded = require("../../jsonFile/mailAdded.json")
 const EGD = require('../../models/EasterSystem.js');
 const XLD = require('../../models/RankSystem.js');
-const Timeout = require("cheerio");
-
+const ms = require('ms');
+const Timeout = new Set();
 
 module.exports = async(client, message) => {
 
