@@ -16,7 +16,7 @@ module.exports = {
 
         if (!args[0]) return ("rien n\'a traduire deso")
 
-        await message.channel.startTyping();
+
 
         const mot = args.join(' ');
         translate.from = 'fr'
@@ -24,6 +24,7 @@ module.exports = {
             return message.channel.send('impossible a traduire');
         });
 
+        message.channel.startTyping();
         message.channel.send(`Voici la traduction du mot **${mot}** ==> **${motTraduit}** \n Si tu souhaites sa definition reagis en dessous '📖' (il s\'agit de definition ludique et non formel a l\'americaine!`).then(async message => {
 
             await message.react('📖');
