@@ -105,7 +105,7 @@ module.exports =  {
 
                                 const canvas = createCanvas(1000, 363);
                                 const ctx = canvas.getContext('2d');
-                                const background = await loadImage(join(__dirname, "../..", "image", "mariobackground.jpg"));
+                                const background = await loadImage(join(__dirname, "../..", "ressources/image", "mariobackground.jpg"));
                                 ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
                                 ctx.beginPath();
@@ -155,7 +155,7 @@ module.exports =  {
                                 ctx.fillStyle = "#ffffff";
                                 ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 350)
 
-                                const rankImg = await loadImage(join(__dirname, "../..", "image", "rank.png"));
+                                const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
                                 ctx.drawImage(rankImg, 550, 15, 50, 50);
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";
@@ -165,7 +165,7 @@ module.exports =  {
                                 ctx.fillText("RANG:", 610, 60);
                                 ctx.fillText(curRank + "/" + allR, 830, 60);
 
-                                const eggImg = await loadImage(join(__dirname, "../..", "image", "egg.png"));
+                                const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
                                 ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";

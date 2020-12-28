@@ -1,5 +1,5 @@
-module.exports = async(client) => {
+module.exports = (client) => {
 
-    await client.user.setActivity(`EN MAINTENANCE`, {type: "watching"});
+    client.user.setActivity('Play V12', {type: "watching"});
 
 };
