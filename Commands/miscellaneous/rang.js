@@ -183,7 +183,7 @@ module.exports =  {
                                 ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
-                                const avatar = await loadImage(member.user.displayAvatarURL());
+                                const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
                                 ctx.drawImage(avatar, 40, 60, 250, 250);
 
                                 /*
