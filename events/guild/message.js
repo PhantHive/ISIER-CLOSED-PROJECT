@@ -10,7 +10,7 @@ const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
 const Timeout = new Set();
 
-module.exports = async(client, message) => {
+module.exports.run = async(client, message) => {
 
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
@@ -63,7 +63,7 @@ module.exports = async(client, message) => {
                                 })
                         }
 
-                        if (secserver.members.cache.find(message.author.id)) {
+                        if (secServer.members.cache.find(message.author.id)) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -84,7 +84,7 @@ module.exports = async(client, message) => {
                                 })
                         }
 
-                        if (testserver.members.cache.find((message.author.id))) {
+                        if (testServer.members.cache.find((message.author.id))) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -135,7 +135,7 @@ module.exports = async(client, message) => {
                                     })
                             }
 
-                            if (secserver.members.cache.find((message.author.id))) {
+                            if (secServer.members.cache.find((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
@@ -156,7 +156,7 @@ module.exports = async(client, message) => {
                                     })
                             }
 
-                            if (testserver.members.cache.find((message.author.id))) {
+                            if (testServer.members.cache.find((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
