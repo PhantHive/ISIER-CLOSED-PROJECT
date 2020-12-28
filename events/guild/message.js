@@ -12,8 +12,6 @@ const Timeout = new Set();
 
 module.exports = async(client, message) => {
 
-
-
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
         if (message.content === "je t'aime") {

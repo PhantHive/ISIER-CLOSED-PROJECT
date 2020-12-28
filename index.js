@@ -21,7 +21,8 @@ client.mongoose.init();
 
 client.on("message", async message => {
 
-    //using promises :P
+    if (message.channel.type === "dm") return;
+        //using promises :P
     let current = null,
         rank = 0;
 
