@@ -13,6 +13,7 @@ module.exports =  {
     aliases: ["rank", "niveau", "level"],
     category:"miscellaneous",
     description:"send rank info",
+    timeout: 10000,
     usage:"rang",
     run: async(client, message, args) => {
 

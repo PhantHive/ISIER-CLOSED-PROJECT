@@ -5,6 +5,7 @@ module.exports =  {
     aliases: ["wrong", "youwrong", "non", "faux"],
     category:"miscellaneous",
     description:"send an objection pic",
+    timeout: 25000,
     usage:"objection",
     run: async(client,message) => {
         const rando_imgs = [

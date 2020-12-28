@@ -3,6 +3,7 @@ module.exports = {
     aliases: ["tg", "shut", "shutup", "ftg"],
     category:"miscellaneous",
     description:"send chut pic",
+    timeout: 25000,
     usage:"chut",
     run: async(client,message) => {
         const rando_imgs = [

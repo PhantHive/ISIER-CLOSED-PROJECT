@@ -4,7 +4,7 @@ module.exports =  {
 
     name:"sondage",
     aliases: ["poll"],
-    timeout: 15000,
+    timeout: 60000,
     category:"miscellaneous",
     description:"make a poll",
     usage:"sondage",
