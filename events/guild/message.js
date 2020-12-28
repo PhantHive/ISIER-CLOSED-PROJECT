@@ -196,6 +196,51 @@ module.exports = async(client, message) => {
     //=============
     if(message.author.bot) return;
 
+    //=============================
+
+
+
+
+    if (message.author.bot) return; //le bot ne fait pas attention a ses propres messages
+    if (!message.content.toLowerCase().startsWith(prefix)) return; //verifie que la personne utilise le prefix pour appeler le bot
+    if (!message.content.startsWith(prefix)) return;
+
+    if (!message.member) message.member = await message.guild.fetchMember(message); // on verifie bien d'ou vient le message
+
+    //dans une commande i?commandeNom on doit recuperer l'argument correspondant au nom commandeNom, pour cela on doit slice le message de la personne
+    let args = message.content.slice(prefix.length).trim().split(/ +/g);
+    let cmd = args.shift().toLowerCase(); //On a creer un tableau args dans lequel le premier element (position 0) est le commandeNom et les autres elements suivant sont les arguments supplementaires
+    //.shift permet de recuperer seulement le premier element donc ici le nom
+    if (cmd.length === 0)  message.channel.send("Tu as surement besoin de moi, n'est ce pas? pour savoir mes commandes, i!aide");
+
+    let command = client.commands.get(cmd);
+
+
+    if(!cmd) return message.reply("il semblerai que tu ai besoin de m'appeler, si tu ne connais pas les commandes je t'invite a faire i!aide");
+    //mais les commandes ont des noms mais aussi des alias, si la personne utilise pas le nom on check si ce qu il a mis est un alias du nom
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
+
+    //timeout permet d'avoir de limiter l usage de commande en mode spam
+    if (command) {
+        if(command.timeout){
+            if(Timeout.has(`${message.author.id}${command.name}`)) {
+                return message.reply(`Tu peux executer cette commande chaque ${ms(command.timeout)} uniquement!`)
+            }else{
+
+                command.run(client, message, args);
+                Timeout.add(`${message.author.id}${command.name}`)
+                setTimeout(() => {
+                    Timeout.delete(`${message.author.id}${command.name}`)
+                }, command.timeout);
+            }
+        }else{
+            command.run(client,message,args)
+        }
+    }
+
+
+
+    //=============
     var sponso = String(message.content);
     const rand_answer = [
         "Oe je me presente je m'appel IPSA bot de nice, Sponso par la promo 2024, ta capter, arouf le plus beau des rebeux, bon ok j arrete la.",
@@ -686,18 +731,7 @@ module.exports = async(client, message) => {
 
 
 
-    //=============================
 
-    if (!message.content.startsWith(prefix)) return;
-
-    const args = message.content.slice(prefix.length).trim().split(/ +/g);
-    const command = args.shift();
-
-    const cmd = client.commands.get(command);
-
-    if(!cmd) return message.reply("il semblerai que tu ai besoin de m'appeler, si tu ne connais pas les commandes je t'invite a faire i!aide");
-
-    cmd.run(client, message, args);
 
 
 
