@@ -17,15 +17,14 @@ module.exports = {
             './chut/chut9.jpg',
             './chut/chut10.jpg',
             './chut/chut11.jpg',
-            './objectionImage/objection12.gif',
             './chut/chut12.jpg'
         ];
 
 
         await message.channel.send({
-            files: [{
-                attachment: [Math.floor(Math.random() * rando_imgs.length)]
-            }]
+            files: [
+                Math.floor(Math.random() * rando_imgs.length)
+            ]
         });
     }
 };
