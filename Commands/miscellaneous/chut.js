@@ -23,7 +23,7 @@ module.exports = {
 
         await message.channel.send({
             files: [
-                Math.floor(Math.random() * rando_imgs.length)
+                rando_imgs[Math.floor(Math.random() * rando_imgs.length)]
             ]
         });
     }
