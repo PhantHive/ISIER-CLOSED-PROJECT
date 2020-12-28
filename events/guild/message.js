@@ -42,7 +42,7 @@ module.exports = async(client, message) => {
                             channel.send("Je t'aime beaucoup aussi +1 easterEgg, +2 levels")
                         })
 
-                        if (server.fetchMember(message.author.id)) {
+                        if (server.members.cache.find(message.author.id)) {
                             let data2 = XLD.findOne({
                                     ID: message.author.id + "-" + "755084203779162151"
                                 },
@@ -63,7 +63,7 @@ module.exports = async(client, message) => {
                                 })
                         }
 
-                        if (secServer.fetchMember(message.author.id)) {
+                        if (secserver.members.cache.find(message.author.id)) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -84,7 +84,7 @@ module.exports = async(client, message) => {
                                 })
                         }
 
-                        if (testServer.fetchMember((message.author.id))) {
+                        if (testserver.members.cache.find((message.author.id))) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -114,7 +114,7 @@ module.exports = async(client, message) => {
                                 channel.send("Je t'aime beaucoup aussi +1 easterEgg, +2 levels")
                             })
 
-                            if (server.fetchMember(message.author.id)) {
+                            if (server.members.cache.find(message.author.id)) {
                                 let data2 = XLD.findOne({
                                         ID: message.author.id + "-" + "755084203779162151"
                                     },
@@ -135,7 +135,7 @@ module.exports = async(client, message) => {
                                     })
                             }
 
-                            if (secServer.fetchMember((message.author.id))) {
+                            if (secserver.members.cache.find((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
@@ -156,7 +156,7 @@ module.exports = async(client, message) => {
                                     })
                             }
 
-                            if (testServer.fetchMember((message.author.id))) {
+                            if (testserver.members.cache.find((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
