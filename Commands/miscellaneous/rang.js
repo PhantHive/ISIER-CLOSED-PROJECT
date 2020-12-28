@@ -5,7 +5,7 @@ client.mongoose = require('../../utils/mongose.js');
 const XLD = require('../../models/RankSystem.js');
 const EGD = require('../../models/EasterSystem.js');
 const { createCanvas, loadImage } = require("canvas");
-const { Attachment } = require("discord.js");
+const { MessageAttachment} = require("discord.js");
 const { join } = require("path");
 
 module.exports =  {
@@ -201,13 +201,8 @@ module.exports =  {
                                 ctx.clip();
                                 */
 
-
-                                await message.channel.send({
-                                    files: [{
-                                        attachment: canvas.toBuffer(),
-                                        name: "rang.png"
-                                    }]
-                                });
+                                const attachment = new MessageAttachment(canvas.toBuffer(), "rang.png")
+                                await message.channel.send(attachment);
                             }
 
                         });
