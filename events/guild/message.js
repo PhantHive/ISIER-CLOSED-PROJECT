@@ -10,7 +10,7 @@ const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
 const Timeout = new Set();
 
-module.exports.run = async(client, message) => {
+module.exports = (client, message) => {
 
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
