@@ -703,7 +703,7 @@ module.exports = (client, message) => {
                 command.run(client, message, args);
                 Timeout.add(`${message.author.id}${command.name}`)
                 setTimeout(() => {
-                    Timeout.delete({timeout:`${message.author.id}${command.name}`)
+                    Timeout.delete(`${message.author.id}${command.name}`)
                 }, command.timeout);
             }
         }else{
