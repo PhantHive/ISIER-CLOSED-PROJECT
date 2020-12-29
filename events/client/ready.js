@@ -1,5 +1,7 @@
 module.exports = (client) => {
 
-    client.user.setActivity('Play V12', {type: "watching", name:"you"});
+    console.log(`${client.user.username} connected`)
+    const memberSize = client.guilds.cache.reduce((a, g) => a + g.memberCount, 0);
+    client.user.setActivity(`${memberSize} ipsaliens :)`, {type: 'LISTENING', name:"To you"});
 
 };

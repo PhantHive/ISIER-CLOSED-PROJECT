@@ -197,9 +197,6 @@ module.exports = (client, message) => {
 
     //=============================
 
-
-
-
     if (message.author.bot) return; //le bot ne fait pas attention a ses propres messages
     if (!message.content.toLowerCase().startsWith(prefix)) return; //verifie que la personne utilise le prefix pour appeler le bot
     if (!message.content.startsWith(prefix)) return;
@@ -212,7 +209,6 @@ module.exports = (client, message) => {
     //.shift permet de recuperer seulement le premier element donc ici le nom
 
     let command = client.commands.get(cmd);
-
 
     if(!cmd) return message.reply("il semblerai que tu ai besoin de m'appeler, si tu ne connais pas les commandes je t'invite a faire i!aide");
     //mais les commandes ont des noms mais aussi des alias, si la personne utilise pas le nom on check si ce qu il a mis est un alias du nom
