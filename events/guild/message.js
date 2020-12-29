@@ -338,7 +338,7 @@ module.exports = (client, message) => {
 
     //ph111 = PROJET RESSORT
 
-    var mp = String(message.content);
+    var mp = message.content;
 
     if (mp.search(/mp ph111|miniprojet ph111|projet ressort|miniprojet ressort|mp ressort|mini projet resort|mini projet ph111/i) !== -1) {
 
