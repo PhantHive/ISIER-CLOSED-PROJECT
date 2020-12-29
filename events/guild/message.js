@@ -12,6 +12,9 @@ const Timeout = new Set();
 
 module.exports = (client, message) => {
 
+    //=============
+    if(message.author.bot) return;
+
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
         if (message.content === "je t'aime") {
@@ -672,8 +675,7 @@ module.exports = (client, message) => {
     //}
 
 
-    //=============
-    if(message.author.bot) return;
+
 
     //=============================
 
