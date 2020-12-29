@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 const prefix = "i!";
 const fs = require("fs");
 //mailVerif
-let mailVerif = require("../../jsonfiles/mailsVerif.json")
+let mailVerif = require("../../jsonFile/mailsVerif.json")
 //mailAdd
-let mailAdded = require("../../jsonfiles/mailAdded.json")
+let mailAdded = require("../../jsonFile/mailAdded.json")
 const EGD = require('../../models/EasterSystem.js');
 const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
@@ -617,7 +617,7 @@ module.exports = (client, message) => {
     let mailUser = mailAdded[message.author.id].mail;
     if (message.channel.id === "755084204567560228") {
         let mail = message.content;
-        if (mailUser == "") {
+        if (mailUser === "") {
 
             for (const promo of Object.keys(mailVerif)) {
                 if (mailVerif[promo].includes(mail)) {
@@ -630,13 +630,13 @@ module.exports = (client, message) => {
                     let correctSurname = surName.toUpperCase();
                     let fullName = correctSurname + " " + correctName
 
-                    if (promo == "aero1") {
+                    if (promo === "aero1") {
 
                         let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
                         mailAdded[message.author.id].mail = mail
                         return mail;
 
-                    } else if (promo == "aero2") {
+                    } else if (promo === "aero2") {
                         let role = message.guild.roles.find(r => r.name === "Aéro 2");
                         let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
                         mailAdded[message.author.id].mail = mail
