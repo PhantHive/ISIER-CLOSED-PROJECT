@@ -204,7 +204,7 @@ module.exports = (client, message) => {
     if (!message.content.toLowerCase().startsWith(prefix)) return; //verifie que la personne utilise le prefix pour appeler le bot
     if (!message.content.startsWith(prefix)) return;
 
-    if (!message.member) message.member = await message.guild.fetchMember(message); // on verifie bien d'ou vient le message
+    if (!message.member) message.member = message.guild.fetchMember(message); // on verifie bien d'ou vient le message
 
     //dans une commande i?commandeNom on doit recuperer l'argument correspondant au nom commandeNom, pour cela on doit slice le message de la personne
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
