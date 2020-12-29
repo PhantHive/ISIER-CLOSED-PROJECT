@@ -368,7 +368,7 @@ module.exports = (client, message) => {
         const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
         console.log(collector)
         collector.on('collect', message => {
-            if ((message.content).toLowerCase() === ("ph111" || "ressort")) {
+            if ((String(message.content)).toLowerCase().search("ph111" || "ressort") !== -1) {
                 message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete({timeout:4000}));
                 message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                   //1
                     .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2019Zak.pdf/']}))
@@ -466,7 +466,7 @@ module.exports = (client, message) => {
                 console.log(underCollector)
                 underCollector.on('collect', message => {
                     //COMETE PROJET
-                    if (S(tring(message.content)).toLowerCase().search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
+                    if ((String(message.content)).toLowerCase().search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
                         message.channel.send("c'est tout bon pour moi je t'envoi ca");
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane => ```")                                  //1
                             .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf']}))
@@ -507,7 +507,7 @@ module.exports = (client, message) => {
                     }
 
                     //OPTIQUE PROJET
-                    else if ((message.content).toLowerCase() === ("projet optique" || "miniprojet optique" || "mp optique" || "tp optique" || "diffraction" || "optique")) {
+                    else if ((String(message.content)).toLowerCase().search(("projet optique" || "miniprojet optique" || "mp optique" || "tp optique" || "diffraction" || "optique")) !== -1) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -518,7 +518,7 @@ module.exports = (client, message) => {
                     }
 
                     //ELEC
-                    else if ((message.content).toLowerCase() === ("miniprojet elec" || "mini projet elec" || "elec")) {
+                    else if ((String(message.content)).toLowerCase().search(("miniprojet elec" || "mini projet elec" || "elec")) !== -1) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -539,7 +539,7 @@ module.exports = (client, message) => {
     //================TP GENIE MATHS
 
     var tpGMTrois = String(message.content).toLowerCase();
-    if (tpGMTrois.indexOf("genie maths tp3" || "genie math tp3" || "tp3 newton" || "methode de newton" || "tp3 methode de newton") !== -1) {
+    if (tpGMTrois.search(/genie maths tp3|genie math tp3|tp3 newton|methode de newton|tp3 methode de newton/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("Annee 2019- partager par: Baptiste Gautier => ")
@@ -550,7 +550,7 @@ module.exports = (client, message) => {
     //================ELEC
 
     var elecUn = String(message.content).toLowerCase();
-    if (elecUn.indexOf("miniprojet elec" || "mini projet elec" || "mp elec") !== -1) {
+    if (elecUn.search(/miniprojet elec|mini projet elec|mp elec/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
