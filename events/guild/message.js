@@ -366,7 +366,7 @@ module.exports = (client, message) => {
         console.log(collector)
         collector.on('collect', message => {
             if ((message.content).toLowerCase() === ("ph111" || "ressort")) {
-                message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete(4000));
+                message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete({timeout:4000}));
                 message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                   //1
                     .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2019Zak.pdf/']}))
                     .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                       //2
@@ -463,7 +463,7 @@ module.exports = (client, message) => {
                 console.log(underCollector)
                 underCollector.on('collect', message => {
                     //COMETE PROJET
-                    if ((message.content).toLowerCase() === ("comete" || "halley" || "comete halley" || "mini projet comète de Halley" || "comète de Halley")) {
+                    if ((message.content).toLowerCase() === ("comete" || "halley" || "comete halley" || "mini projet comète de Halley" || "comète de Halley" || "comète")) {
                         message.channel.send("c'est tout bon pour moi je t'envoi ca");
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane => ```")                                  //1
                             .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf']}))
@@ -632,30 +632,30 @@ module.exports = (client, message) => {
 
                     if (promo === "aero1") {
 
-                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
+                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout:11000}));
                         mailAdded[message.author.id].mail = mail
                         return mail;
 
                     } else if (promo === "aero2") {
                         let role = message.guild.roles.find(r => r.name === "Aéro 2");
-                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete(11000));
+                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout:11000}));
                         mailAdded[message.author.id].mail = mail
                         return mail;
                     }
 
                 } else {
 
-                    message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete(6000));
+                    message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete({timeout:6000}));
                     return false;
                 }
 
             }
 
         } else if (mailUser === mail) {
-            message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete(6000));
+            message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout:6000}));
             return false;
         } else {
-            message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete(6000));
+            message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout:6000}));
             return false;
         }
         fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
@@ -703,7 +703,7 @@ module.exports = (client, message) => {
                 command.run(client, message, args);
                 Timeout.add(`${message.author.id}${command.name}`)
                 setTimeout(() => {
-                    Timeout.delete(`${message.author.id}${command.name}`)
+                    Timeout.delete({timeout:`${message.author.id}${command.name}`)
                 }, command.timeout);
             }
         }else{
