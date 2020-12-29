@@ -483,7 +483,7 @@ module.exports = (client, message) => {
                     }
 
                     //PENDULE PROJET
-                    else if ((String((message.content)).toLowerCase().search((/pendule|"projet pendule|mini projet pendule/i))) {
+                    else if ((String((message.content)).toLowerCase().search((/pendule|"projet pendule|mini projet pendule/i)))) {
                         message.channel.startTyping()
                         message.reply("c'est tout bon pour moi je t'envoi ca")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -494,7 +494,7 @@ module.exports = (client, message) => {
                     }
 
                     //CALORIMETRIE PROJET
-                    else if ((String((message.content)).toLowerCase().search((/projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie|calorimetrie/i))) {
+                    else if ((String((message.content)).toLowerCase().search((/projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie|calorimetrie/i)))) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Zakaria et Jeremie => =>```")                             //1
