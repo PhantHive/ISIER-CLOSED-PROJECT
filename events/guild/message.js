@@ -218,7 +218,7 @@ module.exports = (client, message) => {
     var chaine = String(message.content);
 
     if (chaine.indexOf("dropbox") !== -1) {
-        const dropboxChannel = message.guild.channels.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
+        const dropboxChannel = message.guild.channels.cache.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
         message.reply(`Go ici amigo=> ${dropboxChannel}`);
     }
 
@@ -226,7 +226,7 @@ module.exports = (client, message) => {
     var catia = String(message.content);
 
     if (catia.indexOf("comment installer catia" || "installe catia") !== -1) {
-        const dropboxChannel = message.guild.channels.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
+        const dropboxChannel = message.guild.channels.cache.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
         message.reply(`Check ce channel, ca pourrai repondre a ta question padawan =>  => ${dropboxChannel}`);
     }
 
@@ -234,8 +234,8 @@ module.exports = (client, message) => {
     var chaine2 = String(message.content);
 
     if (chaine2.indexOf("chut") !== -1) {
-        var b = Math.floor((Math.random() * 15) + 1);
-        if (b == 5) {
+        var b = Math.floor((Math.random() * 20) + 1);
+        if (b === 5) {
             message.channel.send('ce manque de respect popopopo j\'aurai pas aimer');
         }
 
@@ -245,7 +245,7 @@ module.exports = (client, message) => {
 
     if (chaine3.indexOf("bonsoir") !== -1) {
         var b = Math.floor((Math.random() * 15) + 1);
-        if (b == 5) {
+        if (b === 5) {
             message.channel.send('salut mon ami ;)');
         }
 
@@ -264,7 +264,7 @@ module.exports = (client, message) => {
 
     if (chaine5.indexOf("???") !== -1) {
         var b = Math.floor((Math.random() * 15) + 1);
-        if (b == 5) {
+        if (b === 5) {
             message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
         }
 
@@ -274,7 +274,7 @@ module.exports = (client, message) => {
 
     if (chaine6.indexOf("il est gentil") !== -1) {
         var a = Math.floor((Math.random() * 15) + 1);
-        if (a == 2) {
+        if (a === 2) {
             message.reply('je te promet c est vrai tavu');
         }
     }
@@ -283,9 +283,9 @@ module.exports = (client, message) => {
 
     if (chaine7.indexOf("mdr") !== -1) {
         var b = Math.floor((Math.random() * 15) + 1);
-        if (b == 5) {
+        if (b === 5) {
             message.react('😂');
-        } else if (b == 10) {
+        } else if (b === 10) {
             message.react('🇲')
                 .then(() => message.react('🇩'))
                 .then(() => message.react('🇷'))
@@ -673,8 +673,6 @@ module.exports = (client, message) => {
     //if (aideInformatique.indexOf("?") != -1 && ((message.channel.id === "755084205330792547" ) || message.channel.id("611832091604287518"))) {
     //  message.reply("<@239455598343618580> peux peut-être aider !")
     //}
-
-
 
 
     //=============================
