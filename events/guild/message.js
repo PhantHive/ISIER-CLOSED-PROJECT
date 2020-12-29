@@ -233,7 +233,7 @@ module.exports = (client, message) => {
     }
 
 
-    client.on("message", (message) => {
+    client.on("message", async (message) => {
         //=============
         var sponso = String(message.content);
         const rand_answer = [
