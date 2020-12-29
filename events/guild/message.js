@@ -344,11 +344,11 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Zakaria et Jeremie => =>```")                             //1
-            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/']}))
             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea```"))                        //2
-            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/']}))
             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Elena```"))                     //3
-            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/']}))
 
         message.channel.stopTyping()
 
@@ -368,11 +368,11 @@ module.exports = (client, message) => {
             if ((message.content).toLowerCase() === ("ph111" || "ressort")) {
                 message.channel.send("c'est tout bon pour moi je t'envoi ca, cela peu prendre quelques secondes.").then(m => m.delete(4000));
                 message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                   //1
-                    .then(() => message.channel.send({files: './ressources/aero1Sources/ph11/mph11-2019Zak.pdf/'}))
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2019Zak.pdf/']}))
                     .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                       //2
-                    .then(() => message.channel.send({files: './ressources/aero1Sources/ph11/mph11-2018Elena.pdf/'}))
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2018Elena.pdf/']}))
                     .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Valentin =>``` "))                     //3
-                    .then(() => message.channel.send({files: './ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/'}))
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/']}))
 
                 const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 20000});
                 eastercollector.on('collect', message => {
@@ -463,20 +463,20 @@ module.exports = (client, message) => {
                 console.log(underCollector)
                 underCollector.on('collect', message => {
                     //COMETE PROJET
-                    if (message.content === ("comete" || "halley" || "comete halley" || "mini projet comète de Halley" || "comète de Halley")) {
+                    if ((message.content).toLowerCase() === ("comete" || "halley" || "comete halley" || "mini projet comète de Halley" || "comète de Halley")) {
                         message.channel.send("c'est tout bon pour moi je t'envoi ca");
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane => ```")                                  //1
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Romain => ```"))                    //2
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/comete/comete2020-Romain.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Romain.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea => ```"))                    //3
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/comete/comete2020-Lea.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Lea.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Graisth => ```"))                    //4
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/comete/comete2020-Graisth.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Graisth.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```"))                    //5
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/comete/comete2019-Baptiste.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2019-Baptiste.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena => ```"))                       //6
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/comete/comete2019-Elena.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2019-Elena.pdf/']}))
                     }
 
                     //PENDULE PROJET
@@ -484,9 +484,9 @@ module.exports = (client, message) => {
                         message.channel.startTyping()
                         message.reply("c'est tout bon pour moi je t'envoi ca")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2012-2013 partager par: Thomas =>``` "))                   //2
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/']}))
                         message.channel.stopTyping()
                     }
 
@@ -495,11 +495,11 @@ module.exports = (client, message) => {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Zakaria et Jeremie => =>```")                             //1
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea```"))                                     //2
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Elena```"))                                   //3
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/']}))
                         message.channel.stopTyping()
                     }
 
@@ -508,9 +508,9 @@ module.exports = (client, message) => {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea =>```"))                                  //2
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/']}))
                         message.channel.stopTyping()
                     }
 
@@ -519,9 +519,9 @@ module.exports = (client, message) => {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))
-                            .then(() => message.channel.send({files: './ressources/aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/'}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/']}))
                         //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))                     //2
                         message.channel.stopTyping()
                     }
@@ -540,7 +540,7 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("Annee 2019- partager par: Baptiste Gautier => ")
-        message.channel.send({files: './ressources/aero1Sources/GenieMaths/tp3.pdf/'})                                       //1
+        message.channel.send({files: ['./ressources/aero1Sources/GenieMaths/tp3.pdf/']})                                       //1
         message.channel.stopTyping()
     }
 
@@ -551,13 +551,13 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-            .then(() => message.channel.send({files: './ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/']}))
             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane =>```"))                    //2
-            .then(() => message.channel.send({files: './ressources/aero1Sources/elec/Mini_projet_elec_Auriane.pdf/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/Mini_projet_elec_Auriane.pdf/']}))
             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Bastien =>```"))                    //2
-            .then(() => message.channel.send({files: './ressources/aero1Sources/elec/Mini_projet_elec_Bastien.pdf/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/Mini_projet_elec_Bastien.pdf/']}))
             .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))                    //2
-            .then(() => message.channel.send({files: './ressources/aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/']}))
 
         message.channel.stopTyping()
     }
@@ -567,7 +567,7 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
-            .then(() => message.channel.send({files: './ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/']}))
         message.channel.stopTyping()
     }
 
@@ -587,23 +587,23 @@ module.exports = (client, message) => {
             if ((message.content).toLowerCase() === "genie maths") {
                 message.channel.send("c'est tout bon pour moi je t'envoi ca")
                     .then(() => message.channel.send("Annee 2019- partager par par: "))
-                    .then(() => message.channel.send({files: './ressources/aero1Sources/tp/GenieMaths/tp3.pdf/'}))
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/GenieMaths/tp3.pdf/']}))
                     .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
             } else if ((message.content).toLowerCase() === ("elec" || "electronique")) {
                 message.channel.send("Recu chef")
                     .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
-                    .then(() => message.channel.send({files: './ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/'}))
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/']}))
                     .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Zakaria"))
-                    .then(() => message.channel.send({files: './ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/'}))
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/']}))
                     .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
             }
         })
     } else if (tp.search(/qui a fait le tp d'elec|quelqu'un aurai le tp d elec|quelqu un aurai le tp d'elec|quelqu'un à le tp d'elec|quelqu un a le tp d'elec/i) !== -1) {
         message.channel.send("J'espère que c'est ce que tu voulais...")
             .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
-            .then(() => message.channel.send({files: './ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/']}))
             .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Zakaria"))
-            .then(() => message.channel.send({files: './ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/'}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/']}))
             .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
     }
 
