@@ -460,13 +460,13 @@ module.exports = (client, message) => {
                 })
             }
 
-            if ((String(message.content)).toLowerCase().search((/ph121|mp ph121|miniprojet ph121|mini projet ph121/i))) {
+            if ((String(message.content)).toLowerCase().search((/ph121|mp ph121|miniprojet ph121|mini projet ph121/i)) !== -1) {
                 message.channel.send("Il semblerait qu'il y ai beaucoup de mini projet dans le deuxieme module de physique, merci de me preciser le nom du mini projet: comete, diffraction, pendule ou calorimetrie?")
                 const underCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
                 console.log(underCollector)
                 underCollector.on('collect', message => {
                     //COMETE PROJET
-                    if (S(tring(message.content)).toLowerCase().search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i))) {
+                    if (S(tring(message.content)).toLowerCase().search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
                         message.channel.send("c'est tout bon pour moi je t'envoi ca");
                         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane => ```")                                  //1
                             .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf']}))
@@ -483,7 +483,7 @@ module.exports = (client, message) => {
                     }
 
                     //PENDULE PROJET
-                    else if ((String((message.content)).toLowerCase().search((/pendule|"projet pendule|mini projet pendule/i)))) {
+                    else if ((String((message.content)).toLowerCase().search((/pendule|"projet pendule|mini projet pendule/i))) !== -1) {
                         message.channel.startTyping()
                         message.reply("c'est tout bon pour moi je t'envoi ca")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```")                                 //1
@@ -494,7 +494,7 @@ module.exports = (client, message) => {
                     }
 
                     //CALORIMETRIE PROJET
-                    else if ((String((message.content)).toLowerCase().search((/projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie|calorimetrie/i)))) {
+                    else if ((String((message.content)).toLowerCase().search((/projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie|calorimetrie/i))) !== -1) {
                         message.channel.startTyping()
                         message.reply("je t envoi ca de suite")
                         message.channel.send("```yaml\nAnnee 2018-2019- partager par: Zakaria et Jeremie => =>```")                             //1
