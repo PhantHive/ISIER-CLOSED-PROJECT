@@ -460,7 +460,7 @@ module.exports = (client, message) => {
                 })
             }
 
-            if ((message.content).toLowerCase() === (/ph121|mp ph121|miniprojet ph121|mini projet ph121/i)) {
+            if ((message.content).toLowerCase().search((/ph121|mp ph121|miniprojet ph121|mini projet ph121/i))) {
                 message.channel.send("Il semblerait qu'il y ai beaucoup de mini projet dans le deuxieme module de physique, merci de me preciser le nom du mini projet: comete, diffraction, pendule ou calorimetrie?")
                 const underCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
                 console.log(underCollector)
