@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const prefix = "i!";
+const prefix = "!!";
 const fs = require("fs");
 //mailVerif
 let mailVerif = require("../../jsonFile/mailsVerif.json")
