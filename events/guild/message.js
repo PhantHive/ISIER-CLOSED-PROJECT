@@ -632,13 +632,13 @@ module.exports = (client, message) => {
     if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp|!!TP/i) !== -1) {
 
         message.channel.startTyping()
-        message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
+        message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom de la matière) ou le nom du tp et je t'envoi une version complete sous format pdf")
         message.channel.stopTyping()
 
         const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 10000});
         console.log(collector2)
         collector2.on('collect', message => {
-            if ((message.content).toLowerCase() === "genie maths") {
+            if ((message.content).toLowerCase() === ("genie maths" || "genie mathematique" || "génie mathématiques")) {
                 message.channel.send("c'est tout bon pour moi je t'envoi ca")
                     .then(() => message.channel.send("Annee 2019- partager par par: "))
                     .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/GenieMaths/tp3.pdf/']}))
