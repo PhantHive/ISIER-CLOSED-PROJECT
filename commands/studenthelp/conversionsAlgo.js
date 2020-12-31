@@ -1,150 +1,529 @@
 const Discord = require('discord.js');
 
-module.exports =  {
+module.exports = {
     name:"algo",
-    aliases: ["addbase", "binaire", "hexa"],
+    aliases: ["conversions", "addbase", "binaire", "hexa"],
     category:"studenthelp",
-    description:"give algo exercices",
-    usage:"pyaide",
+    description:"give exercices for binary, hexadecimal",
+    timeout: 120000,
+    usage:"algo",
     run: async(client,message) => {
-
         const embed = new Discord.MessageEmbed()
             .setTitle("REVISIONS BINAIRE ET HEXA")
             .setColor("ORANGE")
             .setFooter("Reagissez avec une des 2 emojis pour acceder au programme de revision");
-        let messageEmbed = await message.channel.send(embed);
+        message.channel.send(embed).then(msg =>
 
-        await messageEmbed.react('🅱');
-        await messageEmbed.react('❎');
+            msg.react('🅱').then(r => {
+                msg.react('❎');
+                //FILTRES
+                const binaryFilter = (reaction, user) => reaction.emoji.name === '🅱' && user.id === message.author.id;
+                const hexaFilter = (reaction, user) => reaction.emoji.name === '❎' && user.id === message.author.id;
+                //CREATION DES COLLECTEUR
+                const binary = msg.createReactionCollector(binaryFilter, {time: 15000});
+                const hexa = msg.createReactionCollector(hexaFilter, {time: 15000});
 
-        const Filter = (reaction, user) => (reaction.emoji.name === '🅱' || reaction.emoji.name === '❎') && message.author.id === user.id; //filter
-        messageEmbed.awaitReactions(Filter, {
-            max: 1,
-            time: 15000
-        }).then(collected => {
-            const reaction = collected.first();
-
-            switch (reaction.emoji.name) {
-                case '🅱':
+                //COLLECT BINARY
+                binary.on('collect', r => {
                     const embedChoice = new Discord.MessageEmbed()
                         .setTitle("PROGRAMME BINAIRE")
                         .setColor("ORANGE")
-                        .addField("Choisissez votre niveau de difficulte:", false)
+                        .addField("Choisissez votre niveau de difficulte:")
                         .setFooter("Reagissez avec l'une des emojis ci-dessous");
-                    message.channel.send(embedChoice).then(async message => {
+                    message.channel.send(embedChoice).then(msg =>
+                        msg.react('🙂').then(r => {
+                            msg.react('😖')
+                            msg.react('😤');
+                            //FILTRES
+                            const easyFilter = (reaction, user) => reaction.emoji.name == '🙂' && user.id === message.author.id
+                            const mediumFilter = (reaction, user) => reaction.emoji.name == '😖' && user.id === message.author.id
+                            const hardFilter = (reaction, user) => reaction.emoji.name == '😤' && user.id === message.author.id
 
-                        await message.react('🙂');
-                        await message.react('😖');
-                        await message.react('😤');
+                            const easy = msg.createReactionCollector(easyFilter, {time: 15000});
+                            const medium = msg.createReactionCollector(mediumFilter, {time: 15000});
+                            const hard = msg.createReactionCollector(hardFilter, {time: 15000});
 
-                        const Filter = (reaction, user) => (reaction.emoji.name === '🙂' || reaction.emoji.name === '😖' || reaction.emoji.name === '😤') && message.author.id === user.id;
-                        message.awaitReactions(Filter, {
-                            max: 1,
-                            time: 15000
-                        }).then(collected => {
-                            const reaction2 = collected.first();
-                            //collector
+                            easy.on('collect', r => {
+                                a = Math.floor((Math.random() * 2) + 0);
+                                b = Math.floor((Math.random() * 2) + 0);
+                                c = Math.floor((Math.random() * 2) + 0);
 
-                            switch (reaction2.emoji.name) {
-                                case '🙂':
-                                    message.channel.send("verif");
-                                    //const numberOfuestion = 2;
-                                    var random = 1; //Math.floor(Math.random() * (numberOfquestion - 1 ) + 1);
+                                aa = Math.floor((Math.random() * 2) + 0);
+                                bb = Math.floor((Math.random() * 2) + 0);
+                                cc = Math.floor((Math.random() * 2) + 0);
 
-                                    switch (random) {
-                                        case 1:
-                                            const underfilter = (reaction, user) => ['❤', '💝', '💖', '🖤'].includes(reaction.emoji.name) && user.id === message.author.id;
-
-                                            const embed = new Discord.MessageEmbed()
-                                                .setColor("ORANGE")
-                                                .setTitle('ADDITION BINAIRE- NORMAL')
-                                                .addField("*ADDITION EN BASE2*: 11001+11110=\n" +
-                                                    "Reponse A: 110111\n" +
-                                                    "Reponse B: 111001\n" +
-                                                    "Reponse C: 1110011\n" +
-                                                    "Reponse D: 111011");
-                                            message.channel.send(embed).then(async message => {
-
-                                                await message.react('❤');
-                                                await message.react('💝');
-                                                await message.react('💖');
-                                                await message.react('🖤');
-
-                                                message.awaitReactions(underfilter, {
-                                                    max: 1,
-                                                    time: 60000,
-                                                    errors: ['time']
-                                                }).then(collected3 => {
-                                                        const reaction3 = collected3.first();
+                                firstNumb = a.toString() + b.toString() + c.toString()
+                                secNumb = aa.toString() + bb.toString() + cc.toString()
 
 
-                                                        if (reaction3.emoji.name === '❤') {
-                                                            message.channel.send("YESSS ceci est la bonne reponse MAMENE");
+                                res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                                message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                    .then(() => {
+
+                                        message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                            max: 1,
+                                            time: 300000
+                                        }).then(collected => {
+                                            if (collected.first().content == res) {
+                                                message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then(() => {
+                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                        max: 1,
+                                                        time: 10000
+                                                    }).then(collected => {
+                                                        if (collected.first().content == "oui") {
+                                                            a = Math.floor((Math.random() * 2) + 0);
+                                                            b = Math.floor((Math.random() * 2) + 0);
+                                                            c = Math.floor((Math.random() * 2) + 0);
+
+                                                            aa = Math.floor((Math.random() * 2) + 0);
+                                                            bb = Math.floor((Math.random() * 2) + 0);
+                                                            cc = Math.floor((Math.random() * 2) + 0);
+
+                                                            firstNumb = a.toString() + b.toString() + c.toString()
+                                                            secNumb = aa.toString() + bb.toString() + cc.toString()
+
+
+                                                            res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                                                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                                .then(() => {
+                                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                                        max: 1,
+                                                                        time: 300000
+                                                                    }).then(collected => {
+                                                                        if (collected.first().content == res) {
+                                                                            message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                        } else {
+                                                                            message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                        }
+                                                                    })
+                                                                })
                                                         }
-                                                        if (reaction3.emoji.name === '💝') {
-                                                            message.channel.send("Oups, tu as du zaper une retenue, la reponse etait:  110111");
+                                                    })
+                                                })
+                                            } else {
+                                                message.reply(`Dommage la reponse était: ${res}`)
+                                            }
+                                        });
+
+
+                                    });
+
+                            })
+
+                            medium.on('collect', r => {
+                                message.channel.send("test02")
+                                a = Math.floor((Math.random() * 2) + 0);
+                                b = Math.floor((Math.random() * 2) + 0);
+                                c = Math.floor((Math.random() * 2) + 0);
+                                d = Math.floor((Math.random() * 2) + 0);
+
+                                aa = Math.floor((Math.random() * 2) + 0);
+                                bb = Math.floor((Math.random() * 2) + 0);
+                                cc = Math.floor((Math.random() * 2) + 0);
+                                dd = Math.floor((Math.random() * 2) + 0);
+
+                                firstNumb = a.toString() + b.toString() + c.toString() + d.toString()
+                                secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString()
+
+
+                                res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                                message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                    .then(() => {
+
+                                        message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                            max: 1,
+                                            time: 300000
+                                        }).then(collected => {
+                                            if (collected.first().content == res) {
+                                                message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then(() => {
+                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                        max: 1,
+                                                        time: 10000
+                                                    }).then(collected => {
+                                                        if (collected.first().content == "oui") {
+                                                            a = Math.floor((Math.random() * 2) + 0);
+                                                            b = Math.floor((Math.random() * 2) + 0);
+                                                            c = Math.floor((Math.random() * 2) + 0);
+                                                            d = Math.floor((Math.random() * 2) + 0);
+
+                                                            aa = Math.floor((Math.random() * 2) + 0);
+                                                            bb = Math.floor((Math.random() * 2) + 0);
+                                                            cc = Math.floor((Math.random() * 2) + 0);
+                                                            dd = Math.floor((Math.random() * 2) + 0);
+
+                                                            firstNumb = a.toString() + b.toString() + c.toString() + d.toString()
+                                                            secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString()
+
+
+                                                            res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                                                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                                .then(() => {
+                                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                                        max: 1,
+                                                                        time: 300000
+                                                                    }).then(collected => {
+                                                                        if (collected.first().content == res) {
+                                                                            message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                        } else {
+                                                                            message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                        }
+                                                                    })
+                                                                })
                                                         }
-                                                        if (reaction3.emoji.name === '💖') {
+                                                    })
+                                                })
+                                            } else {
+                                                message.reply(`Dommage la reponse était: ${res}`)
+                                            }
+                                        });
 
-                                                            message.channel.send("Oups, tu as du zaper une retenue, la reponse etait:  110111");
+
+                                    });
+
+                            })
+
+                            hard.on('collect', r => {
+                                message.channel.send("test02")
+                                a = Math.floor((Math.random() * 2) + 0);
+                                b = Math.floor((Math.random() * 2) + 0);
+                                c = Math.floor((Math.random() * 2) + 0);
+                                d = Math.floor((Math.random() * 2) + 0);
+                                e = Math.floor((Math.random() * 2) + 0);
+
+                                aa = Math.floor((Math.random() * 2) + 0);
+                                bb = Math.floor((Math.random() * 2) + 0);
+                                cc = Math.floor((Math.random() * 2) + 0);
+                                dd = Math.floor((Math.random() * 2) + 0);
+                                ee = Math.floor((Math.random() * 2) + 0);
+
+                                firstNumb = a.toString() + b.toString() + c.toString() + d.toString() + e.toString()
+                                secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
+
+
+                                res = (parseInt(firstNumb, 2) - parseInt(secNumb, 2)).toString(2); //solution
+
+                                message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                    .then(() => {
+
+                                        message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                            max: 1,
+                                            time: 300000
+                                        }).then(collected => {
+                                            if (collected.first().content == res) {
+                                                message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then(() => {
+                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                        max: 1,
+                                                        time: 10000
+                                                    }).then(collected => {
+                                                        if (collected.first().content == "oui") {
+                                                            a = Math.floor((Math.random() * 2) + 0);
+                                                            b = Math.floor((Math.random() * 2) + 0);
+                                                            c = Math.floor((Math.random() * 2) + 0);
+                                                            d = Math.floor((Math.random() * 2) + 0);
+                                                            e = Math.floor((Math.random() * 2) + 0);
+
+                                                            aa = Math.floor((Math.random() * 2) + 0);
+                                                            bb = Math.floor((Math.random() * 2) + 0);
+                                                            cc = Math.floor((Math.random() * 2) + 0);
+                                                            dd = Math.floor((Math.random() * 2) + 0);
+                                                            ee = Math.floor((Math.random() * 2) + 0);
+
+                                                            firstNumb = a.toString() + b.toString() + c.toString() + d.toString() + e.toString()
+                                                            secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
+
+
+                                                            res = (parseInt(firstNumb, 2) + parseInt(secNumb, 2)).toString(2); //solution
+
+                                                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                                .then(() => {
+                                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                                        max: 1,
+                                                                        time: 300000
+                                                                    }).then(collected => {
+                                                                        if (collected.first().content == res) {
+                                                                            message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                        } else {
+                                                                            message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                        }
+                                                                    })
+                                                                })
                                                         }
-                                                        if (reaction3.emoji.name === '🖤') {
+                                                    })
+                                                })
+                                            } else {
+                                                message.reply(`Dommage la reponse était: ${res}`)
+                                            }
+                                        });
 
-                                                            message.channel.send("Oups, tu as du zaper une retenue, la reponse etait:  110111");
-                                                        }
-                                                    }
-                                                )
 
-                                            });
-                                            break;
+                                    });
 
-                                        case 2:
-                                            /* const filter2 = (reaction, user) =>  ['1️⃣', '2️⃣', '3️⃣', '4️⃣'].includes(reaction.emoji.name) && user.id === message.author.id;
-                                             const embed2 = new Discord.MessageEmbed
-                                                 .setColor('#DB13C2')
-                                                 .setTitle('ADDITION BINAIRE-NORMAL')
-                                                 .addField("*ADDITION EN BASE2*: 10110+10110=\n" +
-                                                     "Reponse A: 111011\n" +
-                                                     "Reponse B: 11001\n" +
-                                                     "Reponse C: 101100\n" + //bonne reponse ici
-                                                     "Reponse D: 11111")
-                                             message.channel.send(embed2).then(async message => {
+                            })
 
-                                                 await message.react('1️⃣');
-                                                 await message.react('2️⃣');
-                                                 await message.react('3️');
-                                                 await message.react('4️');
-
-                                                 message.awaitReactions(filter2, {
-                                                     max: 1,
-                                                     time: 60000,
-                                                     errors: ['time']
-                                                 }).then(collected => {
-                                                     const reaction = collected.first();
-                                                     */
-
-                                            break;
-
-                                    }
-
-                                    break;
-
-                                case '😖':
-
-                                    break;
-
-                                case '😤':
-
-                                    break;
-                            }
                         })
-                    });
+                    )
 
-                    break;
 
-                case '❎':
-                    break;
-            }
-        })
+                }) //FIN DE LA COLLECT BINARY
+
+
+                //COLLECT HEXA
+                hexa.on('collect', r => {
+                    const embedChoice = new Discord.MessageEmbed()
+                        .setTitle("PROGRAMME HEXADECIMAL")
+                        .setColor("GREEN")
+                        .addField("Choisissez votre niveau de difficulte:")
+                        .setFooter("Reagissez avec l'une des emojis ci-dessous");
+                    message.channel.send(embedChoice).then(msg =>
+                        msg.react('🙂').then(r => {
+                            msg.react('😖')
+                            msg.react('😤');
+                            //FILTRES
+                            const easyFilter = (reaction, user) => reaction.emoji.name == '🙂' && user.id === message.author.id
+                            const mediumFilter = (reaction, user) => reaction.emoji.name == '😖' && user.id === message.author.id
+                            const hardFilter = (reaction, user) => reaction.emoji.name == '😤' && user.id === message.author.id
+
+                            const easy = msg.createReactionCollector(easyFilter, {time: 15000});
+                            const medium = msg.createReactionCollector(mediumFilter, {time: 15000});
+                            const hard = msg.createReactionCollector(hardFilter, {time: 15000});
+
+                            easy.on('collect', r => {
+
+                                var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                                a = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                b = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                c = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                aa = hexadecimal[Math.floor(Math.random() * hexadecimal.length)]
+                                bb = hexadecimal[Math.floor(Math.random() * hexadecimal.length)]
+                                cc = hexadecimal[Math.floor(Math.random() * hexadecimal.length)]
+
+                                firstNumb = a.toString() + b.toString() + c.toString()
+                                secNumb = aa.toString() + bb.toString() + cc.toString()
+
+
+                                res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                                message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                    .then(() => {
+
+                                        message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                            max: 1,
+                                            time: 300000
+                                        }).then(collected => {
+                                            if (collected.first().content == res) {
+                                                message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then(() => {
+                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                        max: 1,
+                                                        time: 10000
+                                                    }).then(collected => {
+                                                        if (collected.first().content == "oui") {
+                                                            var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                                                            a = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            b = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            c = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                                            aa = hexadecimal[Math.floor(Math.random() * hexadecimal.length)]
+                                                            bb = hexadecimal[Math.floor(Math.random() * hexadecimal.length)]
+                                                            cc = hexadecimal[Math.floor(Math.random() * hexadecimal.length)]
+
+                                                            firstNumb = a.toString() + b.toString() + c.toString()
+                                                            secNumb = aa.toString() + bb.toString() + cc.toString()
+
+
+                                                            res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                                                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                                .then(() => {
+                                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                                        max: 1,
+                                                                        time: 300000
+                                                                    }).then(collected => {
+                                                                        if (collected.first().content == res) {
+                                                                            message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                        } else {
+                                                                            message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                        }
+                                                                    })
+                                                                })
+                                                        }
+                                                    })
+                                                })
+                                            } else {
+                                                message.reply(`Dommage la reponse était: ${res}`)
+                                            }
+                                        });
+
+
+                                    });
+
+                            })
+
+                            medium.on('collect', r => {
+
+                                var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                                a = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                b = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                c = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                d = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                aa = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                bb = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                cc = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                dd = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                firstNumb = a.toString() + b.toString() + c.toString() + d.toString()
+                                secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString()
+
+
+                                res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                                message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                    .then(() => {
+
+                                        message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                            max: 1,
+                                            time: 300000
+                                        }).then(collected => {
+                                            if (collected.first().content == res) {
+                                                message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then(() => {
+                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                        max: 1,
+                                                        time: 10000
+                                                    }).then(collected => {
+                                                        if (collected.first().content == "oui") {
+                                                            var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                                                            a = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            b = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            c = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            d = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                                            aa = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            bb = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            cc = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            dd = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                                            firstNumb = a.toString() + b.toString() + c.toString() + d.toString()
+                                                            secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString()
+
+
+                                                            res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                                                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                                .then(() => {
+                                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                                        max: 1,
+                                                                        time: 300000
+                                                                    }).then(collected => {
+                                                                        if (collected.first().content == res) {
+                                                                            message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                        } else {
+                                                                            message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                        }
+                                                                    })
+                                                                })
+                                                        }
+                                                    })
+                                                })
+                                            } else {
+                                                message.reply(`Dommage la reponse était: ${res}`)
+                                            }
+                                        });
+
+
+                                    });
+
+                            })
+
+                            hard.on('collect', r => {
+
+                                var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                                a = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                b = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                c = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                d = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                e = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                aa = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                bb = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                cc = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                dd = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                ee = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                firstNumb = a.toString() + b.toString() + c.toString() + d.toString() + e.toString()
+                                secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
+
+
+                                res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                                message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                    .then(() => {
+
+                                        message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                            max: 1,
+                                            time: 300000
+                                        }).then(collected => {
+                                            if (collected.first().content == res) {
+                                                message.reply("BRAVO!, Tu re-veux une addition? (oui/non)").then(() => {
+                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                        max: 1,
+                                                        time: 10000
+                                                    }).then(collected => {
+                                                        if (collected.first().content == "oui") {
+                                                            var hexadecimal = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f")
+                                                            a = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            b = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            c = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            d = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            e = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                                            aa = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            bb = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            cc = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            dd = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+                                                            ee = hexadecimal[Math.floor(Math.random() * hexadecimal.length)];
+
+                                                            firstNumb = a.toString() + b.toString() + c.toString() + d.toString() + e.toString()
+                                                            secNumb = aa.toString() + bb.toString() + cc.toString() + dd.toString() + ee.toString()
+
+
+                                                            res = (parseInt(firstNumb, 16) + parseInt(secNumb, 16)).toString(16); //solution
+
+                                                            message.channel.send(`Faites l'operation suivante: ${firstNumb} + ${secNumb}`)
+                                                                .then(() => {
+                                                                    message.channel.awaitMessages(msg => msg.author.id == message.author.id, {
+                                                                        max: 1,
+                                                                        time: 300000
+                                                                    }).then(collected => {
+                                                                        if (collected.first().content == res) {
+                                                                            message.reply("Bravo, relance le programme de calcul avec i!addBase, i!subBase si besoin")
+                                                                        } else {
+                                                                            message.reply(`Dommage la reponse était: ${res} relance le programme de calcul avec i!addBase, i!subBase si besoin`)
+                                                                        }
+                                                                    })
+                                                                })
+                                                        }
+                                                    })
+                                                })
+                                            } else {
+                                                message.reply(`Dommage la reponse était: ${res}`)
+                                            }
+                                        });
+
+
+                                    });
+
+                            })
+                        })
+                    )
+                })
+            })
+        )
     }
 };
+
+

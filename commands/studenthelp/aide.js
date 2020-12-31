@@ -11,8 +11,6 @@ module.exports =  {
             '\n`!!sondage "question" ou i!sondage "question" "choixA" "choixB"... `\n => crée un sondage, guillemets obligatoire!\n' +
             '\n`!!rang`\n => Permet de connaitre votre rang (level + xp + progression) \n ' +
             '\n`!!miseXp [@unePersonne] [combien]`\n => Ppour miser de l\'Xp \n' +
-            '\n`!!pyaide`\n=> Aide pour python \n  ' +
-            '\n`!!tkaide`\n => Aide à tkinter \n ' +
             '\n`!!pyCo`\n => Connaissance python à avoir\n ' +
             '\n`!!DL`\n => affiche les DL usuel en 0 (physique)\n',
             //========================================================================

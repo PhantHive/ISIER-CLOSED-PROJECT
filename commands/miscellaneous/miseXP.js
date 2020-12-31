@@ -9,6 +9,7 @@ module.exports =  {
     aliases: ["miser", "misexp", "miseXP"],
     category:"miscellaneous",
     description:"challenge someone for earn xp",
+    timeout: 600000,
     usage:"miseXp",
     run: async(client, message, args) => {
         const challenger = message.author.id;
@@ -108,9 +109,9 @@ module.exports =  {
                                                         const array = ["Pile", "Face"];
                                                         const randomPileFace = array[Math.floor(Math.random() * array.length)];
                                                         if ((collected.first().content === randomPileFace) && (randomPileFace === "Face")) {
-                                                            message.channel.send({file: './ressources/image/pieceTournant.jpg/'}).then(m => m.delete(2000))
+                                                            message.channel.send({files: ['./ressources/image/pieceTournant.jpg/']}).then(m => m.delete(2000))
                                                                 .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
-                                                                .then(() => message.channel.send({file: './ressources/image/pieceFace.jpg'}).then(m => m.delete(2000)))
+                                                                .then(() => message.channel.send({files: ['./ressources/image/pieceFace.jpg']}).then(m => m.delete(2000)))
                                                                 .then(() => message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`));
 
                                                             const docChallenger = XLD.findOne({
@@ -136,9 +137,9 @@ module.exports =  {
 
 
                                                         } else if ((collected.first().content === randomPileFace) && (randomPileFace === "Pile")) {
-                                                            message.channel.send({file: './ressources/image/pieceTournant.jpg/'}).then(m => m.delete(2000))
+                                                            message.channel.send({files: ['./ressources/image/pieceTournant.jpg/']}).then(m => m.delete(2000))
                                                                 .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
-                                                                .then(() => message.channel.send({file: './ressources/image/piecePile.jpg'}).then(m => m.delete(2000)))
+                                                                .then(() => message.channel.send({files: ['./ressources/image/piecePile.jpg']}).then(m => m.delete(2000)))
                                                                 .then(() => message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`));
 
                                                             const docChallenger = XLD.findOne({
@@ -164,9 +165,9 @@ module.exports =  {
 
 
                                                         } else if ((collected.first().content === "Pile") && (randomPileFace === "Face")) {
-                                                            message.channel.send({file: './ressources/image/pieceTournant.jpg/'}).then(m => m.delete(2000))
+                                                            message.channel.send({files: ['./ressources/image/pieceTournant.jpg/']}).then(m => m.delete(2000))
                                                                 .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
-                                                                .then(() => message.channel.send({file: './ressources/image/pieceFace.jpg'}).then(m => m.delete(2000)))
+                                                                .then(() => message.channel.send({files: ['./ressources/image/pieceFace.jpg']}).then(m => m.delete(2000)))
                                                                 .then(() => message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso <@${challenger}> *better luck next time :P*`));
 
                                                             const docChallenger = XLD.findOne({
@@ -193,9 +194,9 @@ module.exports =  {
 
                                                         } else if ((collected.first().content === "Face") && (randomPileFace === "Pile")) {
 
-                                                            message.channel.send({file: './ressources/image/pieceTournant.jpg'}).then(m => m.delete(2000))
+                                                            message.channel.send({files: ['./ressources/image/pieceTournant.jpg']}).then(m => m.delete(2000))
                                                                 .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
-                                                                .then(() => message.channel.send({file: './ressources/image/piecePile.jpg'}).then(m => m.delete(2000)))
+                                                                .then(() => message.channel.send({files: ['./ressources/image/piecePile.jpg']}).then(m => m.delete(2000)))
                                                                 .then(() => message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso <@${challenger}> *better luck next time :P*`));
 
                                                             const docChallenger = XLD.findOne({
@@ -242,9 +243,9 @@ module.exports =  {
                                                         const array = ["Pile", "Face"];
                                                         const randomPileFace = array[Math.floor(Math.random() * array.length)];
                                                         if ((collected.first().content === randomPileFace) && (randomPileFace === "Face")) {
-                                                            message.channel.send({file: './ressources/image/pieceTournant.jpg/'}).then(m => m.delete(2000))
+                                                            message.channel.send({files: ['./ressources/image/pieceTournant.jpg/']}).then(m => m.delete(2000))
                                                                 .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
-                                                                .then(() => message.channel.send({file: './ressources/image/pieceFace.jpg'}).then(m => m.delete(2000)))
+                                                                .then(() => message.channel.send({files: ['./ressources/image/pieceFace.jpg']}).then(m => m.delete(2000)))
                                                                 .then(() => message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso <@${challenger}> *better luck next time :P*`));
 
                                                             const docChallenger = XLD.findOne({
@@ -272,9 +273,9 @@ module.exports =  {
 
 
                                                         } else if ((collected.first().content === randomPileFace) && (randomPileFace === "Pile")) {
-                                                            message.channel.send({file: './ressources/image/pieceTournant.jpg/'}).then(m => m.delete(2000))
+                                                            message.channel.send({files: ['./ressources/image/pieceTournant.jpg/']}).then(m => m.delete(2000))
                                                                 .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
-                                                                .then(() => message.channel.send({file: './ressources/image/piecePile.jpg'}).then(m => m.delete(2000)))
+                                                                .then(() => message.channel.send({files: ['./ressources/image/piecePile.jpg']}).then(m => m.delete(2000)))
                                                                 .then(() => message.channel.send(`Bravo ${adversaire} vous avez gagné ${xpMiser}! deso <@${challenger}> *better luck next time :P*`));
 
                                                             const docChallenger = XLD.findOne({
@@ -302,9 +303,9 @@ module.exports =  {
 
 
                                                         } else if ((collected.first().content === "Pile") && (randomPileFace === "Face")) {
-                                                            message.channel.send({file: './ressources/image/pieceTournant.jpg/'}).then(m => m.delete(2000))
+                                                            message.channel.send({files: ['./ressources/image/pieceTournant.jpg/']}).then(m => m.delete(2000))
                                                                 .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
-                                                                .then(() => message.channel.send({file: './ressources/image/pieceFace.jpg'}).then(m => m.delete(2000)))
+                                                                .then(() => message.channel.send({files: ['./ressources/image/pieceFace.jpg']}).then(m => m.delete(2000)))
                                                                 .then(() => message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`));
 
                                                             const docChallenger = XLD.findOne({
@@ -333,9 +334,9 @@ module.exports =  {
 
                                                         } else if ((collected.first().content === "Face") && (randomPileFace === "Pile")) {
 
-                                                            message.channel.send({file: './ressources/image/pieceTournant.jpg'}).then(m => m.delete(2000))
+                                                            message.channel.send({files: ['./ressources/image/pieceTournant.jpg']}).then(m => m.delete(2000))
                                                                 .then(() => message.channel.send("suspense...").then(m => m.delete(2000)))
-                                                                .then(() => message.channel.send({file: './ressources/image/piecePile.jpg'}).then(m => m.delete(2000)))
+                                                                .then(() => message.channel.send({files: ['./ressources/image/piecePile.jpg']}).then(m => m.delete(2000)))
                                                                 .then(() => message.channel.send(`Bravo <@${challenger}> vous avez gagné ${xpMiser}! deso ${adversaire} *better luck next time :P*`));
 
                                                             const docChallenger = XLD.findOne({
