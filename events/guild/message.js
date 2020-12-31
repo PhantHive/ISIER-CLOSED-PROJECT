@@ -15,6 +15,15 @@ module.exports = (client, message) => {
     //=============
     if(message.author.bot) return;
 
+    //AIDE INFORMATIQUE PING ZAKARIA
+
+    var aideInformatique = String(message.content);
+    if (aideInformatique.indexOf("?") !== -1 && ((message.channel.id === "755084205330792547" ) || message.channel.id("772176248193024000"))) {
+        message.channel.send("<@239455598343618580> peux peut-être aider!")
+    }
+
+    //=============================
+
     if (message.channel.type === "dm") {
         if (message.author.bot) return;
         if (message.content === "je t'aime") {
@@ -571,16 +580,6 @@ module.exports = (client, message) => {
     }
 
 
-    //================TP GENIE MATHS
-
-    var tpGMTrois = String(message.content).toLowerCase();
-    if (tpGMTrois.search(/genie maths tp3|genie math tp3|tp3 newton|methode de newton|tp3 methode de newton/i) !== -1) {
-        message.channel.startTyping()
-        message.reply("je t envoi ca de suite")
-        message.channel.send("Annee 2019- partager par: Baptiste Gautier => ")
-        message.channel.send({files: ['./ressources/aero1Sources/GenieMaths/tp3.pdf/']})                                       //1
-        message.channel.stopTyping()
-    }
 
     //================ELEC = MP/PSPICE
 
@@ -655,6 +654,7 @@ module.exports = (client, message) => {
         })
     }
 
+    //ELEC
     else if (tp.search(/qui a fait le tp d'elec|quelqu'un aurai le tp d elec|quelqu un aurai le tp d'elec|quelqu'un à le tp d'elec|quelqu un a le tp d'elec/i) !== -1) {
         message.channel.send("J'espère que c'est ce que tu voulais...")
             .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
@@ -664,6 +664,25 @@ module.exports = (client, message) => {
             .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
     }
 
+    //================TP GENIE MATHS
+
+    else if (tp.search(/genie maths tp3|genie math tp3|tp3 newton|methode de newton|tp3 methode de newton/i) !== -1) {
+        message.channel.startTyping()
+        message.reply("je t envoi ca de suite").then(msg => msg.delete({timeout: 5000}))
+        message.channel.send("Annee 2019- partager par: Baptiste Gautier => ")
+        message.channel.send({files: ['./ressources/aero1Sources/GenieMaths/tp3.pdf/']})                                       //1
+        message.channel.stopTyping()
+    }
+
+    //===============TP PHYSIQUE CHOC DE 2 MOBILES
+    // TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan
+    else if ((tp.search(/choc entre 2 mobiles|qui a fait le tp de physique|le tp sur les mobiles en physique| tp physique/i) !== -1)) {
+        message.channel.startTyping()
+        message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
+        message.channel.send("Annee 2017-2018 partager par: Karan => ")
+        message.channel.send({files: ['./ressources/aero1Sources/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/']})                                       //1
+        message.channel.stopTyping()
+    }
 
     //========================================VERIF MAIL
     if (!mailAdded[message.author.id]) {
@@ -720,15 +739,6 @@ module.exports = (client, message) => {
         });
 
     }
-
-    //AIDE INFORMATIQUE PING ZAKARIA
-
-    //var aideInformatique = String(message.content);
-    //if (aideInformatique.indexOf("?") != -1 && ((message.channel.id === "755084205330792547" ) || message.channel.id("611832091604287518"))) {
-    //  message.reply("<@239455598343618580> peux peut-être aider !")
-    //}
-
-    //=============================
 
     if (!message.content.toLowerCase().startsWith(prefix)) return; //verifie que la personne utilise le prefix pour appeler le bot
     if (!message.content.startsWith(prefix)) return;
