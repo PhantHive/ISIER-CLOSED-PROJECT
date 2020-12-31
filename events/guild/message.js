@@ -215,9 +215,10 @@ module.exports = (client, message) => {
         "Je me fait trop flatter en ce moment",
         "Oh un fan de plus!",
         "I feel so lonely without you",
-        "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!"
+        "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!",
+        "uWu"
     ]
-    rando_imgs[Math.floor(Math.random() * rando_imgs.length * 2)]
+    rand_answer[Math.floor(Math.random() * rando_imgs.length * 2)]
     if (sponso.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
         message.channel.send(rand_answer[Math.floor(Math.random() * rand_answer.length)])
     }
@@ -625,7 +626,7 @@ module.exports = (client, message) => {
         message.channel.stopTyping()
     }
 
-    //==============================
+    //=======TP GENERAL
 
     var tp = String(message.content).toLowerCase();
     if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp|!!TP/i) !== -1) {
