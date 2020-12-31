@@ -765,7 +765,8 @@ module.exports = (client, message) => {
     if(!cmd) return message.reply("il semblerai que tu ai besoin de m'appeler, si tu ne connais pas les commandes je t'invite a faire i!aide");
     //mais les commandes ont des noms mais aussi des alias, si la personne utilise pas le nom on check si ce qu il a mis est un alias du nom
     if (!command) command = client.commands.get(client.aliases.get(cmd));
-    else if (!command && (String(message.content) !== (("!!tp") && ("!!mp") && ("!!miniprojet") && ("!!projetipsa")))) {
+    else {
+        if (String(message.content) !== (("!!tp") && ("!!mp") && ("!!miniprojet") && ("!!projetipsa"))) return;
         message.reply("Vérifie l'orthographe de la commande: !!aide");
     }
 
