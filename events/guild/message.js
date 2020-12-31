@@ -644,7 +644,8 @@ module.exports = (client, message) => {
                     .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/GenieMaths/tp3.pdf/']}))
                     .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
 
-            } else if ((message.content).toLowerCase() === ("elec" || "electronique")) {
+            }
+            else if ((message.content).toLowerCase() === ("elec" || "electronique")) {
                 message.channel.send("Recu chef")
                     .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
                     .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/']}))
@@ -652,11 +653,12 @@ module.exports = (client, message) => {
                     .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/']}))
                     .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
 
-            } else if ((message.content).toLowerCase() === ("physique" || "choc entre 2 mobiles" || "choc entre mobiles")) {
+            }
+            else if ((message.content).toLowerCase() === ("physique" || "choc entre 2 mobiles" || "choc entre mobiles")) {
                 message.channel.startTyping()
                 message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
                 message.channel.send("Annee 2017-2018 partager par: Karan => ")
-                message.channel.send({files: ['./ressources/aero1Sources/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/']})                                       //1
+                message.channel.send({files: ['./ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/']})                                       //1
                 message.channel.stopTyping()
             }
         })
@@ -677,8 +679,8 @@ module.exports = (client, message) => {
     else if (tp.search(/genie maths tp3|genie math tp3|tp3 newton|methode de newton|tp3 methode de newton/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite").then(msg => msg.delete({timeout: 5000}))
-        message.channel.send("Annee 2019- partager par: Baptiste Gautier => ")
-        message.channel.send({files: ['./ressources/aero1Sources/GenieMaths/tp3.pdf/']})                                       //1
+        message.channel.send("Annee 2018-2019 partager par: Baptiste Gautier => ")
+        message.channel.send({files: ['./ressources/aero1Sources/tp/GenieMaths/tp3.pdf/']})                                       //1
         message.channel.stopTyping()
     }
 
@@ -688,7 +690,7 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
         message.channel.send("Annee 2017-2018 partager par: Karan => ")
-        message.channel.send({files: ['./ressources/aero1Sources/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/']})                                       //1
+        message.channel.send({files: ['./ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/']})                                       //1
         message.channel.stopTyping()
     }
 
