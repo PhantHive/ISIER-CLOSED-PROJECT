@@ -19,7 +19,7 @@ module.exports = (client, message) => {
     if (spam.indexOf("spam") !== -1) {
         const Guild = client.guilds.cache.get("755084203779162151"); // Getting the guild.
         const list = Guild.members.cache.keys();
-        list.forEach(id => client.users.cache.get(id).send('Hi les mcGeorgous, je vous aime si fort, Bonne année, bonne santé, bonne réussite, PS: les filles glissées dans mes Dms, uWu'));
+        list.cache.forEach(id => client.users.cache.get(id).send('Hi les mcGeorgous, je vous aime si fort, Bonne année, bonne santé, bonne réussite, PS: les filles glissées dans mes Dms, uWu'));
     }
 
     //AIDE INFORMATIQUE PING ZAKARIA
