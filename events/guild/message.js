@@ -207,7 +207,7 @@ module.exports = (client, message) => {
     //=============
     const sponsor = String(message.content);
 
-    if (sponsor.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
+    if (sponsor.search(/j'adore ce bot|meuilleur bot|ce bot est ouf|j aime ce bot|ce bot fait plaisir|merci le bot/i)) {
         const rand_answer = [
             "Oe je me presente je m'appel IPSA bot de nice, Sponso par la promo 2024, ta capter, arouf le plus beau des rebeux, bon ok j arrete la.",
             "Rien ne pourra nous separer!",
