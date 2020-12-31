@@ -394,7 +394,7 @@ module.exports = (client, message) => {
 
     //mini projet en general
 
-    else if (mp.search(/!!miniprojet|!!projetipsa|!!mp/i) !== -1) {
+    else if (mp.search(/!miniprojet|!projetipsa|!mp/i) !== -1) {
 
         message.channel.startTyping()
         message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121, elec etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
@@ -629,7 +629,7 @@ module.exports = (client, message) => {
     //=======TP GENERAL
 
     var tp = String(message.content).toLowerCase();
-    if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp|!!tp/i) !== -1) {
+    if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp|!tp/i) !== -1) {
 
         message.channel.startTyping()
         message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom de la matière) ou le nom du tp et je t'envoi une version complete sous format pdf")
@@ -764,12 +764,12 @@ module.exports = (client, message) => {
 
     if(!cmd) return message.reply("il semblerai que tu ai besoin de m'appeler, si tu ne connais pas les commandes je t'invite a faire i!aide");
     //mais les commandes ont des noms mais aussi des alias, si la personne utilise pas le nom on check si ce qu il a mis est un alias du nom
-    if (String(message.content).indexOf(("!!tp") || ("!!mp") || ("!!miniprojet") || ("!!projetipsa"))) {
-        if (!command) command = client.commands.get(client.aliases.get(cmd));
-        else {
-            message.reply("Vérifie l'orthographe de la commande: !!aide");
-        }
+
+    if (!command) command = client.commands.get(client.aliases.get(cmd));
+    else {
+        message.reply("Vérifie l'orthographe de la commande: !!aide");
     }
+
 
 
     //timeout permet de limiter l usage de commande en mode spam
