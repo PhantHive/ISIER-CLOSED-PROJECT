@@ -12,10 +12,10 @@ module.exports =  {
             '\n`!!rang`\n => Permet de connaitre votre rang (level + xp + progression) \n ' +
             '\n`!!miseXp [@unePersonne] [combien]`\n => Ppour miser de l\'Xp \n' +
             '\n`!!pyCo`\n => Connaissance python à avoir\n ' +
-            '\n`!!DL`\n => affiche les DL usuel en 0 (physique)\n',
-            //========================================================================
+            '\n`!!DL`\n => affiche les DL usuel en 0 (physique)\n' +
             '\n`!!coordo`\n=> Fiche coordo ph111\n' +
-            '\n`!!algo`\n=> Entrainement hexa/binaire\n' +
+            '\n`!!algo`\n=> Entrainement hexa/binaire\n',
+            //========================================================================
             '\n`!!chut`\n=> vous en avez marre?\n ' +
             '\n`!!objection`\n => vous n\'etes pas d\'accord? \n ' +
             '\n`!!frToen <\mot\>\n` => Vous traduit un mot francais vers l\'anglais\n' +
