@@ -766,11 +766,11 @@ module.exports = (client, message) => {
     //mais les commandes ont des noms mais aussi des alias, si la personne utilise pas le nom on check si ce qu il a mis est un alias du nom
     if (!command) command = client.commands.get(client.aliases.get(cmd));
     else {
-        if (String(message.content) !== (("!!tp") && ("!!mp") && ("!!miniprojet") && ("!!projetipsa"))) return;
+        if (String(message.content) === (("!!tp") && ("!!mp") && ("!!miniprojet") && ("!!projetipsa"))) return;
         message.reply("Vérifie l'orthographe de la commande: !!aide");
     }
 
-    //timeout permet d'avoir de limiter l usage de commande en mode spam
+    //timeout permet de limiter l usage de commande en mode spam
     if (command) {
         if(command.timeout){
             if(Timeout.has(`${message.author.id}${command.name}`)) {
