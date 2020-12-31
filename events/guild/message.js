@@ -550,25 +550,22 @@ module.exports = (client, message) => {
                         message.channel.stopTyping()
                     }
 
-                    //ELEC
-                    else if ((String(message.content)).toLowerCase().search(/miniprojet elec|mini projet elec|elec/i) !== -1) {
-                        message.channel.startTyping()
-                        message.reply("je t envoi ca de suite")
-                        message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
-                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/']}))
-                            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane =>```"))        //2
-                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2020-Auriane.pdf/']}))
-                            .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Romain =>```"))                      //3
-                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2020-Romain.pdf/']}))
-                            .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))        //4
-                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2019-Elena.pdf/']}))
-                        //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))
-                        message.channel.stopTyping()
-                    }
-
-
                 })
-
+            }
+            //ELEC
+            if ((String(message.content)).toLowerCase().search(/miniprojet elec|mini projet elec|elec/i) !== -1) {
+                message.channel.startTyping()
+                message.reply("je t envoi ca de suite")
+                message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/']}))
+                    .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Auriane =>```"))        //2
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2020-Auriane.pdf/']}))
+                    .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Romain =>```"))                      //3
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2020-Romain.pdf/']}))
+                    .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>```"))        //4
+                    .then(() => message.channel.send({files: ['./ressources/aero1Sources/elec/MP_ELEC2019-Elena.pdf/']}))
+                //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))
+                message.channel.stopTyping()
             }
         })
     }
@@ -589,7 +586,7 @@ module.exports = (client, message) => {
 
     var mpElec = String(message.content).toLowerCase();
     //ELEC
-    if ((String(message.content)).toLowerCase().search(/miniprojet elec|mini projet elec|elec/i) !== -1) {
+    if (mpElec.search(/miniprojet elec|mini projet elec|elec/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
@@ -633,7 +630,7 @@ module.exports = (client, message) => {
 
     var tp = String(message.content).toLowerCase();
 
-    if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp/i) !== -1) {
+    if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp|!!TP/i) !== -1) {
 
         message.channel.startTyping()
         message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom du module precis etc) ou le nom du tp et je t'envoi une version complete sous format pdf")
@@ -656,7 +653,9 @@ module.exports = (client, message) => {
                     .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
             }
         })
-    } else if (tp.search(/qui a fait le tp d'elec|quelqu'un aurai le tp d elec|quelqu un aurai le tp d'elec|quelqu'un à le tp d'elec|quelqu un a le tp d'elec/i) !== -1) {
+    }
+
+    else if (tp.search(/qui a fait le tp d'elec|quelqu'un aurai le tp d elec|quelqu un aurai le tp d'elec|quelqu'un à le tp d'elec|quelqu un a le tp d'elec/i) !== -1) {
         message.channel.send("J'espère que c'est ce que tu voulais...")
             .then(() => message.channel.send("Annee 2020- (TP pspice 1) partager par par: Auriane"))
             .then(() => message.channel.send({files: ['./ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/']}))
