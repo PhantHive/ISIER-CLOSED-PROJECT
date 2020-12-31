@@ -8,7 +8,7 @@ module.exports =  {
     timeout: 240000,
     usage:"pyCo",
     run: async(client,message) => {
-        const emoji = client.emojis.find(emoji => emoji.name === "smirk_cat");
+        const emoji = client.emojis.cache.find(emoji => emoji.name === "smirk_cat");
         message.channel.send(`Bienvenue dans le programme de revision de ce premier qcm ${emoji}\n\n
           __***I-Les Types***__\n\n
           **type int**: entier par exemple 10,25,38 etc\n
