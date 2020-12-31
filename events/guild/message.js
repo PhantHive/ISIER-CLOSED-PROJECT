@@ -205,19 +205,20 @@ module.exports = (client, message) => {
     }
 
     //=============
-    var sponso = String(message.content);
-    const rand_answer = [
-        "Oe je me presente je m'appel IPSA bot de nice, Sponso par la promo 2024, ta capter, arouf le plus beau des rebeux, bon ok j arrete la.",
-        "Rien ne pourra nous separer!",
-        "Cause all of me loves all of you *music*",
-        "Je m'adore aussi",
-        "Je me fait trop flatter en ce moment",
-        "Oh un fan de plus!",
-        "I feel so lonely without you",
-        "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!",
-        "uWu"
-    ]
-    if (sponso.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
+    const sponsor = String(message.content);
+
+    if (sponsor.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
+        const rand_answer = [
+            "Oe je me presente je m'appel IPSA bot de nice, Sponso par la promo 2024, ta capter, arouf le plus beau des rebeux, bon ok j arrete la.",
+            "Rien ne pourra nous separer!",
+            "Cause all of me loves all of you *music*",
+            "Je m'adore aussi",
+            "Je me fait trop flatter en ce moment",
+            "Oh un fan de plus!",
+            "I feel so lonely without you",
+            "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!",
+            "uWu"
+        ]
         const random = rand_answer[Math.floor(Math.random() * rand_answer.length)]
         message.channel.send(random)
     }
