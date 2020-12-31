@@ -18,7 +18,7 @@ module.exports = (client, message) => {
     //AIDE INFORMATIQUE PING ZAKARIA
 
     var aideInformatique = String(message.content);
-    if (aideInformatique.indexOf("?") !== -1 && ((message.channel.id === "755084205330792547" ) || message.channel.id("772176248193024000"))) {
+    if (aideInformatique.indexOf("?") !== -1 && ((message.channel.id === "755084205330792547" ) || (message.channel.id === "772176248193024000"))) {
         message.channel.send("<@239455598343618580> peux peut-être aider!")
     }
 
@@ -218,7 +218,6 @@ module.exports = (client, message) => {
         "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!",
         "uWu"
     ]
-    rand_answer[Math.floor(Math.random() * rando_imgs.length * 2)]
     if (sponso.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
         message.channel.send(rand_answer[Math.floor(Math.random() * rand_answer.length)])
     }
