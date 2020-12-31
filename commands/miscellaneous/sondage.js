@@ -78,7 +78,7 @@ module.exports =  {
             await sondageMessage.react('👍');
             await sondageMessage.react('👎');
 
-            const filter = (reaction) => reaction.emoji.name === '👍' || reaction.emoji.name === '👎'
+            /*const filter = (reaction) => reaction.emoji.name === '👍' || reaction.emoji.name === '👎'
             const results = await sondageMessage.awaitReactions(filter, {
                 time: 864000
             });
@@ -88,7 +88,7 @@ module.exports =  {
                 .setDescription(`Resultats: ${infoPoll[0].join(" ")}`)
                 .addField("👍: ", ` ${results.get('👍').count-1}`)
                 .addField("👍: ", ` ${results.get('👎').count - 1}`)
-            client.channels.get('613749495716642818').send(resultsEmbed);
+            client.channels.get('613749495716642818').send(resultsEmbed);*/
 
         }
     }
