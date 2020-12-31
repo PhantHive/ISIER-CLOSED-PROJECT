@@ -16,7 +16,6 @@ module.exports = (client, message) => {
     if(message.author.bot) return;
 
     //AIDE INFORMATIQUE PING ZAKARIA
-
     var aideInformatique = String(message.content);
     if (aideInformatique.indexOf("?") !== -1 && ((message.channel.id === "755084205330792547" ) || (message.channel.id === "772176248193024000"))) {
         message.channel.send("<@239455598343618580> peux peut-être aider!")
@@ -219,7 +218,8 @@ module.exports = (client, message) => {
         "uWu"
     ]
     if (sponso.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
-        message.channel.send(rand_answer[Math.floor(Math.random() * rand_answer.length)])
+        const random = rand_answer[Math.floor(Math.random() * rand_answer.length)]
+        message.channel.send(random)
     }
     //fonction special
 
