@@ -7,7 +7,6 @@ module.exports =  {
     run: async (client, message) => {
         let pages = [
             '\n`!!aide`\n=>Voir ce que je te propose \n' +
-            '\n`!!aidemodo `\n=>reservez aux modo \n' +
             '\n`!!sondage "question" ou i!sondage "question" "choixA" "choixB"... `\n => crée un sondage, guillemets obligatoire!\n' +
             '\n`!!rang`\n => Permet de connaitre votre rang (level + xp + progression) \n ' +
             '\n`!!miseXp [@unePersonne] [combien]`\n => Ppour miser de l\'Xp \n' +
