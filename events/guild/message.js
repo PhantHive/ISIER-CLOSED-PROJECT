@@ -217,7 +217,7 @@ module.exports = (client, message) => {
         "I feel so lonely without you",
         "Je t'aime plus que je ne m'aime pas et je m'aime beaucoup!"
     ]
-    //rando_imgs[Math.floor(Math.random() * rando_imgs.length * 2)]
+    rando_imgs[Math.floor(Math.random() * rando_imgs.length * 2)]
     if (sponso.indexOf("j adore ce bot" || "meuilleur bot" || "ce bot est ouf" || "j aime ce bot" || "ce bot fait plaisir" || "merci le bot") !== -1) {
         message.channel.send(rand_answer[Math.floor(Math.random() * rand_answer.length)])
     }
