@@ -384,7 +384,7 @@ module.exports = (client, message) => {
 
     //mini projet en general
 
-    else if (mp.search(/mini projet|mini projet ipsa/i) !== -1) {
+    else if (mp.search(/!!miniprojet|!!projetipsa|!!mp/i) !== -1) {
 
         message.channel.startTyping()
         message.reply("Merci de bien (re)preciser quelle module de matiere (ph111, ph121, elec etc) ou le nom du miniprojet et je t'envoi une version complete sous format pdf")
