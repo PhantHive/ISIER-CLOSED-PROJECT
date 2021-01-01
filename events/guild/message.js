@@ -12,7 +12,7 @@ const Timeout = new Set();
 
 module.exports = (client, message) => {
 
-    //=============
+    /*   //=============
     if(message.author.bot) return;
 
     var spam = String(message.content);
@@ -25,6 +25,8 @@ module.exports = (client, message) => {
         });
 
     }
+    */
+
 
     //AIDE INFORMATIQUE PING ZAKARIA
     var aideInformatique = String(message.content);
