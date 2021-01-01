@@ -603,7 +603,7 @@ module.exports = (client, message) => {
 
     var mpElec = String(message.content).toLowerCase();
     //ELEC
-    if (mpElec.search(/miniprojet elec|mini projet elec|elec/i) !== -1) {
+    if (mpElec.search(/miniprojet elec|mini projet elec|mp elec/i) !== -1) {
         message.channel.startTyping()
         message.reply("je t envoi ca de suite")
         message.channel.send("```yaml\nAnnee 2019-2020- partager par: Jeremie et Zakaria =>```")                                 //1
