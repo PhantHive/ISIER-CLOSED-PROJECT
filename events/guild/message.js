@@ -15,6 +15,7 @@ module.exports = (client, message) => {
      //=============
     if(message.author.bot) return;
 
+    /*
     var spam = String(message.content);
     if (spam.indexOf("spam") !== -1) {
         const Guild = client.guilds.cache.get("755084203779162151");
@@ -27,7 +28,7 @@ module.exports = (client, message) => {
                 "https://tenor.com/view/discord-uwu-sweat-blush-gif-13566033").catch(e => console.error(`Couldn't DM member ${member.user.tag}`));
         });
 
-    }
+    } */
 
 
 
