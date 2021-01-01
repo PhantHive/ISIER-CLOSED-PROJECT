@@ -12,20 +12,23 @@ const Timeout = new Set();
 
 module.exports = (client, message) => {
 
-    /*   //=============
+     //=============
     if(message.author.bot) return;
 
     var spam = String(message.content);
     if (spam.indexOf("spam") !== -1) {
-        message.guild.members.cache.forEach(member => { // Looping through each member of the guild.
+        const Guild = client.guilds.cache.get("755084203779162151");
+
+        Guild.members.cache.forEach(member => { // Looping through each member of the guild.
             // Trying to send a message to the member.
             // This method might fail because of the member's privacy settings, so we're using .catch
-            member.send("'Hi les mcGeorgous, je vous aime si fort, Bonne année, bonne santé, bonne réussite, " +
-                "PS: les filles glissées dans mes Dms, uWu'").catch(e => console.error(`Couldn't DM member ${member.user.tag}`));
+            member.send("Hi les mcGeorgous, je vous aime si fort, Bonne année, bonne santé, bonne réussite, " +
+                "PS: les filles glissées dans mes Dms, uWu" +
+                "https://tenor.com/view/discord-uwu-sweat-blush-gif-13566033").catch(e => console.error(`Couldn't DM member ${member.user.tag}`));
         });
 
     }
-    */
+
 
 
     //AIDE INFORMATIQUE PING ZAKARIA
