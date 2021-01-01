@@ -212,7 +212,7 @@ module.exports = (client, message) => {
                 })
         }
         else {
-            message.channel.send("Go sur le discord de ta promo dans le channel adapté aux commandes bots et tape i!aide pour recevoir de l'aide sur mes commandes" +
+            message.channel.send("uWu hey, go sur le discord de ta promo dans le channel adapté aux commandes bots et tape !!aide pour recevoir de l'aide sur mes commandes" +
                 "je travaille sans relache pour proposer un système de réponse plus adapté dans le futur! I love you all <3")
         }
     }
