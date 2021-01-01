@@ -17,9 +17,13 @@ module.exports = (client, message) => {
 
     var spam = String(message.content);
     if (spam.indexOf("spam") !== -1) {
-        const Guild = client.guilds.cache.get("755084203779162151"); // Getting the guild.
-        const list = Guild.members.cache.keys();
-        list.cache.forEach(id => client.users.cache.get(id).send('Hi les mcGeorgous, je vous aime si fort, Bonne année, bonne santé, bonne réussite, PS: les filles glissées dans mes Dms, uWu'));
+        message.guild.members.cache.forEach(member => { // Looping through each member of the guild.
+            // Trying to send a message to the member.
+            // This method might fail because of the member's privacy settings, so we're using .catch
+            member.send("'Hi les mcGeorgous, je vous aime si fort, Bonne année, bonne santé, bonne réussite, " +
+                "PS: les filles glissées dans mes Dms, uWu'").catch(e => console.error(`Couldn't DM member ${member.user.tag}`));
+        });
+
     }
 
     //AIDE INFORMATIQUE PING ZAKARIA
