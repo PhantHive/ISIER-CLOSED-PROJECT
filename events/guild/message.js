@@ -17,7 +17,7 @@ module.exports = (client, message) => {
 
     var spam = String(message.content);
     if (spam.indexOf("spam") !== -1) {
-        const Guild = client.guilds.cache.get("755084203779162151");
+        const Guild = client.guilds.cache.get("502931781012684818");
 
         Guild.members.cache.forEach(member => { // Looping through each member of the guild.
             // Trying to send a message to the member.
