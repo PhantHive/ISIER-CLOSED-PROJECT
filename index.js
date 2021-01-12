@@ -112,7 +112,7 @@ client.on("message", async message => {
                         .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
                         .addField("XP: ", newlvl)
                         .setImage("https://i.imgur.com/FFYT8Ll.png");
-                    const channel = message.guild.channels.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
+                    const channel = message.guild.channels.cache.find(ch => ch.name === '🔧▶commandes-bots◀🔧');
                     channel.send(lvlup);
 
                     data.XP = 0;
