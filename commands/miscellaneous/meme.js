@@ -16,7 +16,6 @@ module.exports = {
             "dankmemes",
             "Animemes",
             "MemeEconomy",
-            "PrequelMemes"
         ]
 
 
