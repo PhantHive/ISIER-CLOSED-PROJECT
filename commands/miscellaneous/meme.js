@@ -10,7 +10,7 @@ module.exports = {
     timeout: 5000,
     usage: "meme",
     run: async (client, message, args) => {
-        
+
         let reddit = [
             "memes",
             "dankmemes",
