@@ -21,7 +21,7 @@ module.exports = {
 
         let subreddit = reddit[Math.floor(Math.random() * reddit.length - 1)];
 
-        await message.channel.startTyping();
+        message.channel.startTyping();
 
         try {
             const url = await randomPuppy(subreddit);
