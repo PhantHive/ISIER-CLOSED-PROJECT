@@ -24,15 +24,15 @@ module.exports = {
 
         randomPuppy(subreddit).then(url => {
             snekfetch.get(url).then(res => {
-                message.author.react('✌️')
+                message.react('✌️')
                 message.channel.send({
                     files: [{
                         attachment: res.body,
                         name: 'meme.png'
                     }]
                 }).then(() => message.channel.stopTyping());
-            }).catch(err => console.error(err)).then(() => message.author.react('❌'));
-        }).catch(err => console.error(err)).then(() => message.author.react('❌'));
+            }).catch(err => console.error(err)).then(() => message.react('❌'));
+        }).catch(err => console.error(err)).then(() => message.react('❌'));
 
         message.channel.stopTyping()
     }
