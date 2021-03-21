@@ -31,8 +31,14 @@ module.exports = {
                     }]
                 }
                 ).then(() => message.channel.stopTyping()).then(() => message.react('✌️'));
-            }).catch(err => console.error(err)).then(() => message.react('❌'));
-        }).catch(err => console.error(err)).then(() => message.react('❌'));
+            }).catch(err =>  {
+                console.error(err)
+                message.react('❌')
+            })
+        }).catch(err => {
+            console.error(err)
+            message.react('❌')
+        })
 
         message.channel.stopTyping()
     }
