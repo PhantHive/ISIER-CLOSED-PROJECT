@@ -29,9 +29,9 @@ module.exports.run = async(client, message, args) => {
         '```py\n' +
         'def teachers:\n' +
         'if teacher == Riou:\n' +
-        '   return; #===> il s\'agit ici d\'une procedure, la fonction ne renvoi rien(aucune valeure)\n' +
+        '   return; #===> il s\'agit ici d\'une procedure, la fonction ne renvoie rien(aucune valeure)\n' +
         'else:\n' +
-        '   work_hard() #===> ceci renvoi a une autre fonction```\n il semble facile de comprendre la fonction (cette fonction est un exemple debile hun ;)'];
+        '   work_hard() #===> ceci renvoie a une autre fonction```\n il semble facile de comprendre la fonction (cette fonction est un exemple debile hun ;)'];
 
     let page = 1;
 
