@@ -22,7 +22,7 @@ module.exports = {
 
         let subreddit = reddit[Math.floor(Math.random() * reddit.length - 1)];
 
-        await message.channel.startTyping();
+        message.channel.startTyping();
 
         randomPuppy(subreddit).then(url => {
             snekfetch.get(url).then(res => {
