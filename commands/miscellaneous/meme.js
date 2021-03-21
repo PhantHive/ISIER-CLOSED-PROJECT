@@ -23,8 +23,7 @@ module.exports = {
 
         message.channel.startTyping();
 
-        const meme = randomPuppy(subreddit);
-        meme.on('data', url => {
+        randomPuppy(subreddit).then(url => {
             snekfetch.get(url).then(res => {
                 message.channel.send({
                     files: [{
