@@ -14,8 +14,7 @@ module.exports = {
         let reddit = [
             "memes",
             "dankmemes",
-            "Animemes",
-            "MemeEconomy",
+            "Animemes"
         ]
 
 
