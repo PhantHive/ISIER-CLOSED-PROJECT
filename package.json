@@ -17,6 +17,7 @@
     "kayn": "^0.10.2",
     "mongoose": "^5.10.6",
     "mongose": "0.0.2-security",
+    "node-fetch": "^2.6.1",
     "node-translate": "0.0.4",
     "polynomial.js": "^2.0.1",
     "random-puppy": "^1.1.0",

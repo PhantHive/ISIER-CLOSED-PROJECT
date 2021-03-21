@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const randomPuppy = require('random-puppy');
-const snekfetch = require('snekfetch');
+const {extname} = require('path')
+const fetch = require('node-fetch')
 
 module.exports = {
     name: "meme",
@@ -20,26 +21,23 @@ module.exports = {
 
         let subreddit = reddit[Math.floor(Math.random() * reddit.length - 1)];
 
-        message.channel.startTyping();
+        await message.channel.startTyping();
 
-        randomPuppy(subreddit).then(url => {
-            snekfetch.get(url).then(async res => {
-                await message.channel.send({
-                    files: [{
-                        attachment: res.body,
-                        name: 'meme.png'
-                    }]
-                }
-                ).then(() => message.channel.stopTyping()).then(() => message.react('✌️'));
-            }).catch(err =>  {
-                console.error(err)
-                message.react('❌')
-            })
-        }).catch(err => {
+        try {
+            const url = await randomPuppy(subreddit);
+            const res = await fetch(url);
+            await message.channel.send({
+                files: [{
+                    attachment: res.body,
+                    name: `image${extname(url)}`
+                }]
+            }
+            ).then(() => message.channel.stopTyping()).then(() => message.react('✌️'));
+
+        } catch(err) {
             console.error(err)
-            message.react('❌')
-        })
-
+            await message.react('❌')
+        }
         message.channel.stopTyping()
     }
 };
