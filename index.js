@@ -3,7 +3,7 @@
 //const Youtube = require('simple-youtube-api');
 //const youtube = new Youtube(GOOGLE_API_KEY);
 const { Client, Collection, MessageEmbed } = require("discord.js");
-const client = new Client();
+const client = new Client({restRequestTimeout: 60000});
 const fs = require('fs');
 client.mongoose = require('./utils/mongose.js');
 const XLD = require('./models/RankSystem.js');
