@@ -31,8 +31,8 @@ module.exports = {
                         name: 'meme.png'
                     }]
                 }).then(() => message.channel.stopTyping());
-            }).catch(err => console.error(err)).then(msg => msg.author.react('❌'));
-        }).catch(err => console.error(err)).then(msg => msg.author.react('❌'));
+            }).catch(err => console.error(err)).then(() => message.author.react('❌'));
+        }).catch(err => console.error(err)).then(() => message.author.react('❌'));
 
         message.channel.stopTyping()
     }
