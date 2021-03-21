@@ -23,8 +23,8 @@ module.exports = {
         message.channel.startTyping();
 
         randomPuppy(subreddit).then(url => {
-            snekfetch.get(url).then(res => {
-                message.channel.send({
+            snekfetch.get(url).then(async res => {
+                await message.channel.send({
                     files: [{
                         attachment: res.body,
                         name: 'meme.png'
