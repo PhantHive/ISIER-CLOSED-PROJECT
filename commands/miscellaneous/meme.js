@@ -9,7 +9,7 @@ module.exports = {
     description:"generates meme from reddit",
     timeout: 5000,
     usage: "meme",
-    run: async (client, message, args) => {
+    run: async (client, message) => {
 
         let reddit = [
             "memes",
@@ -25,8 +25,8 @@ module.exports = {
         await message.channel.startTyping();
 
         randomPuppy(subreddit).then(url => {
-            snekfetch.get(url).then(async res => {
-                await message.channel.send({
+            snekfetch.get(url).then(res => {
+                message.channel.send({
                     files: [{
                         attachment: res.body,
                         name: 'meme.png'
