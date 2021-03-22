@@ -354,7 +354,7 @@ module.exports = (client, message) => {
             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea => ```"))                    //3
             .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Lea.pdf/']}))
             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Gana => ```"))                    //3
-            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2019-Gana.pdf/']}))
+            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2019-Gana_Atakoui.pdf/']}))
             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Graisth => ```"))                    //4
             .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Graisth.pdf/']}))
             .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```"))                    //5
@@ -529,7 +529,7 @@ module.exports = (client, message) => {
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Lea => ```"))                    //3
                             .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Lea.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Gana => ```"))                    //3
-                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2019-Gana.pdf/']}))
+                            .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2019-Gana_Atakoui.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Graisth => ```"))                    //4
                             .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph12/comete/comete2020-Graisth.pdf/']}))
                             .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Baptiste => ```"))                    //5

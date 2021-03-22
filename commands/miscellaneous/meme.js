@@ -8,7 +8,7 @@ module.exports = {
     aliases: ["mem", "maime", "maim"],
     category:"miscellaneous",
     description:"generates meme from reddit",
-    timeout: 5000,
+    timeout: 1500,
     usage: "meme",
     run: async (client, message) => {
 
@@ -18,9 +18,7 @@ module.exports = {
             "Animemes"
         ]
 
-
         let subreddit = reddit[Math.floor(Math.random() * reddit.length - 1)];
-
         message.channel.startTyping();
 
         try {
