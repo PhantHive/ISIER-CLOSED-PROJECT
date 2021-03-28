@@ -328,12 +328,9 @@ module.exports = (client, message) => {
     function msToTime(duration) {
         var milliseconds = (duration % 1000) / 100,
             seconds = Math.floor((duration / 1000) % 60),
-            minutes = Math.floor((duration / (1000 * 60)) % 60),
+            minutes = Math.floor((duration / (1000 * 60)) % 60)
 
-        minutes = (minutes < 10) ? "0" + minutes : minutes;
-        seconds = (seconds < 10) ? "0" + seconds : seconds;
-
-        return `${minutes}m ${seconds}s ${milliseconds}ms`;
+        return (`${minutes}m ${seconds}s ${milliseconds}ms`);
     }
 
     function addTimerCount() {
@@ -342,6 +339,7 @@ module.exports = (client, message) => {
     }
 
     function getRemainingTime(){
+        console.log(mpTimeout, startTimeMS)
         return  mpTimeout - ( (new Date()).getTime() - startTimeMS );
     }
 
