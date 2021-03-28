@@ -1,5 +1,4 @@
-import * as timestamps from "express/lib/response";
-
+const timestamps = require("express/lib/response");
 const Discord = require('discord.js');
 const prefix = "!!";
 const fs = require("fs");
