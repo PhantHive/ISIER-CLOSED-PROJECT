@@ -1,3 +1,5 @@
+import * as timestamps from "express/lib/response";
+
 const Discord = require('discord.js');
 const prefix = "!!";
 const fs = require("fs");
@@ -10,6 +12,7 @@ const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
 const Timeout = new Set();
 const mpTimeout = 50000;
+const now = Date.now();
 
 module.exports = (client, message) => {
 
@@ -325,9 +328,9 @@ module.exports = (client, message) => {
     var mp = String(message.content).toLowerCase();
 
     if(Timeout.has(`${message.author.id}${mp}`)) {
-        const expirationTime = Timeout.get(`${message.author.id}${mp}`);
-
-        return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${expirationTime}  !`)
+        const expirationTime = timestamps.get(`${message.author.id}${mp}`) + mpTimeout;
+        const timeLeft = (expirationTime - now) / 1000;
+        return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${timeLeft}  !`)
 
     } else{
         //=================MINI-PROJET-PHYSIQUE
@@ -605,6 +608,7 @@ module.exports = (client, message) => {
         }
 
         Timeout.add(`${message.author.id}${mp}`)
+        timestamps.set(`${message.author.id}${mp}`, now);
         setTimeout(() => {
             Timeout.delete(`${message.author.id}${mp}`)
         }, mpTimeout);
