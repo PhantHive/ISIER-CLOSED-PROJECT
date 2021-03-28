@@ -11,9 +11,11 @@ const ms = require('ms');
 const Timeout = new Set();
 const mpTimeout = 300000;
 const { join } = require("path");
+var startTimeMS;
+
 
 module.exports = (client, message) => {
-    var startTimeMS = 0;
+    
      //=============
     if(message.author.bot) return;
 
