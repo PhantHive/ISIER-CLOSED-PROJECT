@@ -1,4 +1,3 @@
-const timestamps = require("express/lib/response");
 const Discord = require('discord.js');
 const prefix = "!!";
 const fs = require("fs");
@@ -327,7 +326,7 @@ module.exports = (client, message) => {
     var mp = String(message.content).toLowerCase();
 
     if(Timeout.has(`${message.author.id}${mp}`)) {
-        const expirationTime = timestamps.get(`${message.author.id}${mp}`) + mpTimeout;
+        const expirationTime = Timeout.get(`${message.author.id}${mp}`);
         const timeLeft = (expirationTime - now) / 1000;
         return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${timeLeft}  !`)
 
@@ -607,7 +606,6 @@ module.exports = (client, message) => {
         }
 
         Timeout.add(`${message.author.id}${mp}`)
-        timestamps.set(`${message.author.id}${mp}`, now);
         setTimeout(() => {
             Timeout.delete(`${message.author.id}${mp}`)
         }, mpTimeout);
