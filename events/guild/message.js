@@ -709,7 +709,7 @@ module.exports = (client, message) => {
         }
     }
     var timer = setTimeout(sendProject, 50000);
-    if timer != 0 {
+    if timer !== 0 {
         message.channel.send("COOLDOWN!!!")
     }
 
