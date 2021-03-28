@@ -13,7 +13,7 @@ const mpTimeout = 300000;
 const { join } = require("path");
 
 module.exports = (client, message) => {
-
+    var startTimeMS = 0;
      //=============
     if(message.author.bot) return;
 
@@ -325,7 +325,7 @@ module.exports = (client, message) => {
     var mp = String(message.content).toLowerCase();
 
     function msToTime(duration) {
-        var milliseconds = parseInt((duration % 1000) / 100),
+        var milliseconds = (duration % 1000) / 100,
             seconds = Math.floor((duration / 1000) % 60),
             minutes = Math.floor((duration / (1000 * 60)) % 60)
 
@@ -334,7 +334,6 @@ module.exports = (client, message) => {
 
     function addTimerCount() {
         startTimeMS = (new Date()).getTime()
-        return startTimeMS
     }
 
     function getRemainingTime(){
@@ -621,7 +620,6 @@ module.exports = (client, message) => {
             })
         }
 
-        var startTimeMS = 0;
         Timeout.add(`${message.author.id}${mp}`)
         setTimeout(() => {
             Timeout.delete(`${message.author.id}${mp}`)
