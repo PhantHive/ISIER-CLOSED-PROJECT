@@ -708,7 +708,10 @@ module.exports = (client, message) => {
             message.channel.stopTyping()
         }
     }
-    setTimeout(sendProject, 5000);
+    var timer = setTimeout(sendProject, 50000);
+    if timer != 0 {
+        message.channel.send("COOLDOWN!!!")
+    }
 
 
     //========================================VERIF MAIL
