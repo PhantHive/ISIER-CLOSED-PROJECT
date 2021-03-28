@@ -608,14 +608,15 @@ module.exports = (client, message) => {
             })
         }
 
-        function addTimeout() {
-            Timeout.add(`${message.author.id}${mp}`)
-            const startTimeMS = (new Date()).getTime();
-            setTimeout(() => {
-                Timeout.delete(`${message.author.id}${mp}`)
-            }, mpTimeout);
+        Timeout.add(`${message.author.id}${mp}`)
 
-            return startTimeMS
+        setTimeout(() => {
+            Timeout.delete(`${message.author.id}${mp}`)
+            addTimerCount()
+        }, mpTimeout);
+
+        function addTimerCount() {
+            return (new Date()).getTime()
         }
     }
 
