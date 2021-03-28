@@ -10,7 +10,6 @@ const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
 const Timeout = new Set();
 const mpTimeout = 300000;
-let startTimeMS = 0;
 const { join } = require("path");
 
 module.exports = (client, message) => {
@@ -622,6 +621,7 @@ module.exports = (client, message) => {
             })
         }
 
+        var startTimeMS = 0;
         Timeout.add(`${message.author.id}${mp}`)
         setTimeout(() => {
             Timeout.delete(`${message.author.id}${mp}`)
