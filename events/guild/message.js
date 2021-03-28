@@ -9,7 +9,7 @@ const EGD = require('../../models/EasterSystem.js');
 const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
 const Timeout = new Set();
-const mpTimeout = 50000;
+const mpTimeout = 300000;
 var startTimeMS = 0;
 
 module.exports = (client, message) => {
@@ -325,6 +325,17 @@ module.exports = (client, message) => {
     var mp = String(message.content).toLowerCase();
 
 
+    function msToTime(duration) {
+        var milliseconds = parseInt((duration % 1000) / 100),
+            seconds = Math.floor((duration / 1000) % 60),
+            minutes = Math.floor((duration / (1000 * 60)) % 60)
+
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+        return `${minutes}m:${seconds}s:${milliseconds}ms`
+    }
+
     function addTimerCount() {
         startTimeMS = (new Date()).getTime()
     }
@@ -336,7 +347,8 @@ module.exports = (client, message) => {
 
     if(Timeout.has(`${message.author.id}${mp}`)) {
         const timeLeft = getRemainingTime()
-        return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${timeLeft}  !`)
+        const showTime = msToTime(timeLeft)
+        return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${showTime}`)
 
     } else{
         //=================MINI-PROJET-PHYSIQUE
