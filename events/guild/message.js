@@ -15,7 +15,7 @@ var startTimeMS;
 
 
 module.exports = (client, message) => {
-    
+
      //=============
     if(message.author.bot) return;
 
@@ -327,7 +327,7 @@ module.exports = (client, message) => {
     var mp = String(message.content).toLowerCase();
 
     function msToTime(duration) {
-        var milliseconds = (duration % 1000) / 100,
+        var milliseconds = (duration % 1000),
             seconds = Math.floor((duration / 1000) % 60),
             minutes = Math.floor((duration / (1000 * 60)) % 60)
 
