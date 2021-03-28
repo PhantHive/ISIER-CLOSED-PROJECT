@@ -14,9 +14,9 @@ module.exports = {
             "   #ecriture de la fonction\n\n" +
             "Deux exemples: \n\n")
 
-            .then(() => message.channel.send({files: ["./ressources/python/Hello.jpg/")]}))
+            .then(() => message.channel.send({files: ["./ressources/python/Hello.jpg/"]}))
             .then(() => message.channel.send("Exemple 2: \n"))
-            .then(() => message.channel.send({files: ["./ressources/python/HW.jpg/")]}))
+            .then(() => message.channel.send({files: ["./ressources/python/HW.jpg/"]}))
     }
 
 };
