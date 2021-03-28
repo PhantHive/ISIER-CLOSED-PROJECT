@@ -370,7 +370,7 @@ module.exports = (client, message) => {
         //ph121 = comete
 
         else if (mp.search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
-            message.channel.send("c'est tout bon pour moi Gotcha!");
+            message.channel.send("Gotcha!");
             message.channel.send("```yaml\n2019-2020- Sharer: Auriane => ```")                                  //1
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Romain => ```"))                    //2
@@ -445,7 +445,7 @@ module.exports = (client, message) => {
             console.log(collector)
             collector.on('collect', message => {
                 if ((String(message.content)).toLowerCase().search(/ph111|ressort|mini projet ressort|projet ressort|ph11]/i) !== -1) {
-                    message.channel.send("c'est tout bon pour moi Gotcha!, cela peu prendre quelques secondes.").then(m => m.delete({timeout: 4000}));
+                    message.channel.send("Gotcha!, cela peu prendre quelques secondes.").then(m => m.delete({timeout: 4000}));
                     message.channel.send("```yaml\n2019-2020- Sharer: Zakaria =>```")                                             //1
                         .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph11/mph11-2019Zak.pdf/')]}))
                         .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana =>``` "))                     //2
@@ -545,7 +545,7 @@ module.exports = (client, message) => {
                     underCollector.on('collect', message => {
                         //COMETE PROJET
                         if ((String(message.content)).toLowerCase().search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
-                            message.channel.send("c'est tout bon pour moi Gotcha!");
+                            message.channel.send("Gotcha!");
                             message.channel.send("```yaml\n2019-2020- Sharer: Auriane => ```")                                  //1
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Romain => ```"))                    //2
@@ -565,7 +565,7 @@ module.exports = (client, message) => {
                         //PENDULE PROJET
                         else if ((String((message.content)).toLowerCase().search((/pendule|"projet pendule|mini projet pendule/i))) !== -1) {
                             message.channel.startTyping()
-                            message.reply("c'est tout bon pour moi Gotcha!")
+                            message.reply("Gotcha!")
                             message.channel.send("```yaml\n2018-2019- Sharer: Elena =>```")                                 //1
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2012-2013 Sharer: Thomas =>``` "))                   //2
@@ -690,7 +690,7 @@ module.exports = (client, message) => {
             console.log(collector2)
             collector2.on('collect', message => {
                 if ((message.content).toLowerCase() === ("genie maths" || "genie mathematique" || "génie mathématiques")) {
-                    message.channel.send("c'est tout bon pour moi Gotcha!")
+                    message.channel.send("Gotcha!")
                         .then(() => message.channel.send("2019- partager par par: "))
                         .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]}))
                         .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
