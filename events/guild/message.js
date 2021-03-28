@@ -338,6 +338,7 @@ module.exports = (client, message) => {
 
     function addTimerCount() {
         startTimeMS = (new Date()).getTime()
+        return startTimeMS
     }
 
     function getRemainingTime(){
