@@ -321,11 +321,13 @@ module.exports = (client, message) => {
         }
     }
 
-    
+
     var mp = String(message.content).toLowerCase();
 
     if(Timeout.has(`${message.author.id}${mp}`)) {
-        return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}!`)
+        var timeLeft = Math.ceil((timeout._idleStart + timeout._idleTimeout - Date.now()) / 1000);
+        return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${timeLeft}  !`)
+
     } else{
         //=================MINI-PROJET-PHYSIQUE
 
@@ -602,7 +604,7 @@ module.exports = (client, message) => {
         }
 
         Timeout.add(`${message.author.id}${mp}`)
-        setTimeout(() => {
+        const timeout = setTimeout(() => {
             Timeout.delete(`${message.author.id}${mp}`)
         }, mpTimeout);
     }
