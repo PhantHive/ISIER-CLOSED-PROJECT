@@ -325,7 +325,7 @@ module.exports = (client, message) => {
     var mp = String(message.content).toLowerCase();
 
     function getRemainingTime(){
-        const startTimeMS = addTimeout()
+        const startTimeMS = addTimerCount()
         return  mpTimeout - ( (new Date()).getTime() - startTimeMS );
     }
 
