@@ -10,7 +10,7 @@ const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
 const Timeout = new Set();
 const mpTimeout = 50000;
-const now = Date.now();
+var startTimeMS = 0;
 
 module.exports = (client, message) => {
 
@@ -324,8 +324,13 @@ module.exports = (client, message) => {
 
     var mp = String(message.content).toLowerCase();
 
+
+    function addTimerCount() {
+        startTimeMS = (new Date()).getTime()
+    }
+
     function getRemainingTime(){
-        const startTimeMS = addTimerCount()
+
         return  mpTimeout - ( (new Date()).getTime() - startTimeMS );
     }
 
@@ -614,10 +619,6 @@ module.exports = (client, message) => {
             Timeout.delete(`${message.author.id}${mp}`)
             addTimerCount()
         }, mpTimeout);
-
-        function addTimerCount() {
-            return (new Date()).getTime()
-        }
     }
 
     //================ELEC = MP/PSPICE
