@@ -11,10 +11,9 @@ const ms = require('ms');
 const Timeout = new Set();
 const mpTimeout = 300000;
 const { join } = require("path");
-var startTimeMS = 0;
 
 module.exports = (client, message) => {
-
+    var startTimeMS = 0;
      //=============
     if(message.author.bot) return;
 
@@ -623,9 +622,9 @@ module.exports = (client, message) => {
         }
 
         Timeout.add(`${message.author.id}${mp}`)
+        addTimerCount()
         setTimeout(() => {
             Timeout.delete(`${message.author.id}${mp}`)
-            addTimerCount()
         }, mpTimeout);
     }
 
