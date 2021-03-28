@@ -343,6 +343,7 @@ module.exports = (client, message) => {
     }
 
     if(Timeout.has(`${message.author.id}${mp}`)) {
+        console.log(startTimeMS)
         const timeLeft = msToTime(getRemainingTime())
         return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${timeLeft}`)
 
