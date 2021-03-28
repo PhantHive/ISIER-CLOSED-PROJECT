@@ -325,18 +325,28 @@ module.exports = (client, message) => {
 
     var mp = String(message.content).toLowerCase();
 
+    function msToTime(duration) {
+        var milliseconds = parseInt((duration % 1000) / 100),
+            seconds = Math.floor((duration / 1000) % 60),
+            minutes = Math.floor((duration / (1000 * 60)) % 60),
+
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+        return `${minutes}m ${seconds}s ${milliseconds}ms`;
+    }
+
     function addTimerCount() {
         startTimeMS = (new Date()).getTime()
     }
 
     function getRemainingTime(){
-
         return  mpTimeout - ( (new Date()).getTime() - startTimeMS );
     }
 
     if(Timeout.has(`${message.author.id}${mp}`)) {
-        const timeLeft = getRemainingTime()
-        return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${ms(timeLeft)}`)
+        const timeLeft = msToTime(getRemainingTime())
+        return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${timeLeft}`)
 
     } else{
         //=================MINI-PROJET-PHYSIQUE
