@@ -361,9 +361,9 @@ module.exports = (client, message) => {
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana =>``` "))                     //2
                 .then(() => message.channel.send({files: [join(__dirname, ".", "ressources/aero1Sources", "ph11", "physique", "mph11-2019Gana.pdf/")]}))
                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena =>``` "))                     //3
-                .then(() => message.channel.send({files: [join(__dirname,'./ressources/aero1Sources/ph11/mph11-2018Elena.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname,'../../ressources/aero1Sources/ph11/mph11-2018Elena.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2017-2018- Sharer: Valentin =>``` "))                   //4
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/')]})))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/')]})))
             message.channel.stopTyping()
 
         }
@@ -373,19 +373,19 @@ module.exports = (client, message) => {
         else if (mp.search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
             message.channel.send("c'est tout bon pour moi je t'envoie ca");
             message.channel.send("```yaml\n2019-2020- Sharer: Auriane => ```")                                  //1
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Romain => ```"))                    //2
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Romain.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Romain.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Lea => ```"))                    //3
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Lea.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Lea.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana => ```"))                    //3
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Gana_Atakoui.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Gana_Atakoui.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Graisth => ```"))                    //4
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Graisth.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Graisth.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Baptiste => ```"))                    //5
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2019-Baptiste.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2019-Baptiste.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena => ```"))                       //6
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2019-Elena.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2019-Elena.pdf/')]}))
         }
 
         //ph121 = pendule
@@ -394,9 +394,9 @@ module.exports = (client, message) => {
             message.channel.startTyping()
             message.reply("je t envoie ca de suite")
             message.channel.send("```yaml\n2018-2019- Sharer: Elena =>```")                                 //1
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2012-2013 Sharer: Thomas =>``` "))                     //2
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/')]}))
             message.channel.stopTyping()
 
         }
@@ -407,11 +407,11 @@ module.exports = (client, message) => {
             message.channel.startTyping()
             message.reply("je t envoie ca de suite")
             message.channel.send("```yaml\n2019-2020- Sharer: Jeremie et Zakaria =>```")                                 //1
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Lea =>```"))                     //2
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana et Atakoui =>```"))                     //3
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/optique/tpOptique2020-Gana_Atakoui.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Gana_Atakoui.pdf/')]}))
             message.channel.stopTyping()
 
         }
@@ -422,13 +422,13 @@ module.exports = (client, message) => {
             message.channel.startTyping()
             message.reply("je t envoie ca de suite")
             message.channel.send("```yaml\n2019-2020- Sharer: Zakaria et Jeremie => =>```")                             //1
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Lea```"))                        //2
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana```"))                        //3
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pptx/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pptx/')]}))
                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena```"))                     //4
-                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/')]}))
 
             message.channel.stopTyping()
 
@@ -448,13 +448,13 @@ module.exports = (client, message) => {
                 if ((String(message.content)).toLowerCase().search(/ph111|ressort|mini projet ressort|projet ressort|ph11]/i) !== -1) {
                     message.channel.send("c'est tout bon pour moi je t'envoie ca, cela peu prendre quelques secondes.").then(m => m.delete({timeout: 4000}));
                     message.channel.send("```yaml\n2019-2020- Sharer: Zakaria =>```")                                             //1
-                        .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph11/mph11-2019Zak.pdf/')]}))
+                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph11/mph11-2019Zak.pdf/')]}))
                         .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana =>``` "))                     //2
-                        .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph11/mph11-2019Gana.pdf/')]}))
+                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph11/mph11-2019Gana.pdf/')]}))
                         .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena =>``` "))                     //3
-                        .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph11/mph11-2018Elena.pdf/')]}))
+                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph11/mph11-2018Elena.pdf/')]}))
                         .then(() => message.channel.send("```yaml\n2017-2018- Sharer: Valentin =>``` "))                   //4
-                        .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/')]}))
+                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/')]}))
 
                     const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 20000});
                     eastercollector.on('collect', message => {
@@ -548,19 +548,19 @@ module.exports = (client, message) => {
                         if ((String(message.content)).toLowerCase().search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
                             message.channel.send("c'est tout bon pour moi je t'envoie ca");
                             message.channel.send("```yaml\n2019-2020- Sharer: Auriane => ```")                                  //1
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Auriane_Zakaria.pdf')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Romain => ```"))                    //2
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Romain.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Romain.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Lea => ```"))                    //3
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Lea.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Lea.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana => ```"))                    //3
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Gana_Atakoui.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Gana_Atakoui.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Graisth => ```"))                    //4
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2020-Graisth.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2020-Graisth.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Baptiste => ```"))                    //5
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2019-Baptiste.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2019-Baptiste.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena => ```"))                       //6
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/comete/comete2019-Elena.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2019-Elena.pdf/')]}))
                         }
 
                         //PENDULE PROJET
@@ -568,9 +568,9 @@ module.exports = (client, message) => {
                             message.channel.startTyping()
                             message.reply("c'est tout bon pour moi je t'envoie ca")
                             message.channel.send("```yaml\n2018-2019- Sharer: Elena =>```")                                 //1
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2012-2013 Sharer: Thomas =>``` "))                   //2
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/')]}))
                             message.channel.stopTyping()
                         }
 
@@ -579,13 +579,13 @@ module.exports = (client, message) => {
                             message.channel.startTyping()
                             message.reply("je t envoie ca de suite")
                             message.channel.send("```yaml\n2019-2020- Sharer: Zakaria et Jeremie => =>```")                             //1
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Jeremie-Zakaria.pptx/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Lea```"))                        //2
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana```"))                        //3
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pptx/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pptx/')]}))
                                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena```"))                     //4
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/')]}))
                             message.channel.stopTyping()
                         }
 
@@ -594,11 +594,11 @@ module.exports = (client, message) => {
                             message.channel.startTyping()
                             message.reply("je t envoie ca de suite")
                             message.channel.send("```yaml\n2019-2020- Sharer: Jeremie et Zakaria =>```")                                 //1
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Jeremie_Zakaria.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Lea =>```"))                     //2
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana et Atakoui =>```"))                     //3
-                                .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/ph12/optique/tpOptique2020-Gana_Atakoui.pdf/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Gana_Atakoui.pdf/')]}))
                             message.channel.stopTyping()
                         }
 
@@ -609,13 +609,13 @@ module.exports = (client, message) => {
                     message.channel.startTyping()
                     message.reply("je t envoie ca de suite")
                     message.channel.send("```yaml\n2019-2020- Sharer: Jeremie et Zakaria =>```")                                 //1
-                        .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/')]}))
+                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/')]}))
                         .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Auriane =>```"))        //2
-                        .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2020-Auriane.pdf/')]}))
+                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2020-Auriane.pdf/')]}))
                         .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Romain =>```"))                      //3
-                        .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2020-Romain.pdf/')]}))
+                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2020-Romain.pdf/')]}))
                         .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena =>```"))        //4
-                        .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2019-Elena.pdf/')]}))
+                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2019-Elena.pdf/')]}))
                     //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))
                     message.channel.stopTyping()
                 }
@@ -637,13 +637,13 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("je t envoie ca de suite")
         message.channel.send("```yaml\n2019-2020- Sharer: Jeremie et Zakaria =>```")                                 //1
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/')]}))
             .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Auriane =>```"))        //2
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2020-Auriane.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2020-Auriane.pdf/')]}))
             .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Romain =>```"))                      //3
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2020-Romain.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2020-Romain.pdf/')]}))
             .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena =>```"))        //4
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2019-Elena.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2019-Elena.pdf/')]}))
         //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))
         message.channel.stopTyping()
     }
@@ -653,13 +653,13 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("je t envoie ca de suite")
         message.channel.send("```yaml\n2019-2020- Sharer: Jeremie et Zakaria =>```")                                 //1
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2020-Zakaria_Jeremie.pdf/')]}))
             .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Auriane =>```"))                    //2
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/Mini_projet_elec_Auriane.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/Mini_projet_elec_Auriane.pdf/')]}))
             .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Bastien =>```"))                    //2
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/Mini_projet_elec_Bastien.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/Mini_projet_elec_Bastien.pdf/')]}))
             .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena =>```"))                    //2
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/Mini_projet_elec_Elena2018.pdf/')]}))
 
         message.channel.stopTyping()
     }
@@ -669,7 +669,7 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("je t envoie ca de suite")
         message.channel.send("```yaml\n2019-2020- Sharer: Zakaria =>```")                                 //1
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
         message.channel.stopTyping()
     }
 
@@ -688,22 +688,22 @@ module.exports = (client, message) => {
             if ((message.content).toLowerCase() === ("genie maths" || "genie mathematique" || "génie mathématiques")) {
                 message.channel.send("c'est tout bon pour moi je t'envoie ca")
                     .then(() => message.channel.send("2019- partager par par: "))
-                    .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]}))
+                    .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]}))
                     .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
 
             } else if ((message.content).toLowerCase() === ("elec" || "electronique")) {
                 message.channel.send("Recu chef")
                     .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Auriane"))
-                    .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/')]}))
+                    .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/')]}))
                     .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Zakaria"))
-                    .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
+                    .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
                     .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
 
             } else if ((message.content).toLowerCase() === ("physique" || "choc entre 2 mobiles" || "choc entre mobiles")) {
                 message.channel.startTyping()
                 message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
                 message.channel.send("2017-2018 Sharer: Karan => ")
-                message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/')]})                                       //1
+                message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/')]})                                       //1
                 message.channel.stopTyping()
             }
         })
@@ -713,9 +713,9 @@ module.exports = (client, message) => {
     else if (tp.search(/qui a fait le tp d'elec|quelqu'un aurai le tp d elec|quelqu un aurai le tp d'elec|quelqu'un à le tp d'elec|quelqu un a le tp d'elec/i) !== -1) {
         message.channel.send("J'espère que c'est ce que tu voulais...")
             .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Auriane"))
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/')]}))
             .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Zakaria"))
-            .then(() => message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
             .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
     }
 
@@ -725,7 +725,7 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("je t envoie ca de suite").then(msg => msg.delete({timeout: 5000}))
         message.channel.send("2018-2019 Sharer: Baptiste Gautier => ")
-        message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]})                                       //1
+        message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]})                                       //1
         message.channel.stopTyping()
     }
 
@@ -735,7 +735,7 @@ module.exports = (client, message) => {
         message.channel.startTyping()
         message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
         message.channel.send("2017-2018 Sharer: Karan => ")
-        message.channel.send({files: [join(__dirname, './ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/')]})                                       //1
+        message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/')]})                                       //1
         message.channel.stopTyping()
     }
 
