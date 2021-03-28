@@ -10,7 +10,7 @@ const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
 const Timeout = new Set();
 const mpTimeout = 300000;
-var startTimeMS = 0;
+let startTimeMS = 0;
 const { join } = require("path");
 
 module.exports = (client, message) => {
