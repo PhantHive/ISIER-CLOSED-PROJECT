@@ -322,12 +322,15 @@ module.exports = (client, message) => {
         }
     }
 
-
     var mp = String(message.content).toLowerCase();
 
+    function getRemainingTime(){
+        const startTimeMS = addTimeout()
+        return  mpTimeout - ( (new Date()).getTime() - startTimeMS );
+    }
+
     if(Timeout.has(`${message.author.id}${mp}`)) {
-        const expirationTime = Timeout.get(`${message.author.id}${mp}`);
-        const timeLeft = (expirationTime - now) / 1000;
+        const timeLeft = getRemainingTime()
         return message.reply(`Tu peux m'invoquer que chaque ${ms(mpTimeout)}, temps restant: ${timeLeft}  !`)
 
     } else{
@@ -605,10 +608,15 @@ module.exports = (client, message) => {
             })
         }
 
-        Timeout.add(`${message.author.id}${mp}`)
-        setTimeout(() => {
-            Timeout.delete(`${message.author.id}${mp}`)
-        }, mpTimeout);
+        function addTimeout() {
+            Timeout.add(`${message.author.id}${mp}`)
+            const startTimeMS = (new Date()).getTime();
+            setTimeout(() => {
+                Timeout.delete(`${message.author.id}${mp}`)
+            }, mpTimeout);
+
+            return startTimeMS
+        }
     }
 
     //================ELEC = MP/PSPICE
