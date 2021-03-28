@@ -11,6 +11,7 @@ const ms = require('ms');
 const Timeout = new Set();
 const mpTimeout = 300000;
 var startTimeMS = 0;
+const { join } = require("path");
 
 module.exports = (client, message) => {
 
@@ -360,13 +361,13 @@ module.exports = (client, message) => {
             message.channel.startTyping()
             message.reply("je t envoie ca de suite")
             message.channel.send("```yaml\nAnnee 2019-2020- partager par: Zakaria =>```")                                 //1
-                .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2019Zak.pdf/']}))
+                .then(() => message.channel.send({files: [join(__dirname, "..", "ressources/aero1Sources", "ph11", "physique", "mph11-2019Zak.pdf")]})
                 .then(() => message.channel.send("```yaml\nAnnee 2019-2020- partager par: Gana =>``` "))                     //2
-                .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2019Gana.pdf/']}))
+                .then(() => message.channel.send({files: [join(__dirname, "..", "ressources/aero1Sources", "ph11", "physique", "mph11-2019Gana.pdf/")]}))
                 .then(() => message.channel.send("```yaml\nAnnee 2018-2019- partager par: Elena =>``` "))                     //3
                 .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2018Elena.pdf/']}))
                 .then(() => message.channel.send("```yaml\nAnnee 2017-2018- partager par: Valentin =>``` "))                   //4
-                .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/']}))
+                .then(() => message.channel.send({files: ['./ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/']})))
             message.channel.stopTyping()
 
         }
