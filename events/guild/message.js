@@ -39,7 +39,7 @@ module.exports = (client, message) => {
 
     //AIDE INFORMATIQUE PING ZAKARIA
     var aideInformatique = String(message.content);
-    if (aideInformatique.indexOf("?") !== -1 && ((message.channel.id === "755084205330792547" ) || (message.channel.id === "772176248193024000"))) {
+    if (aideInformatique.indexOf("svp?") !== -1 && ((message.channel.id === "755084205330792547" ) || (message.channel.id === "772176248193024000"))) {
         message.channel.send("<@239455598343618580> peux peut-être aider!")
     }
 
