@@ -13,6 +13,7 @@ const mpTimeout = 300000;
 const tpTimeout = 150000;
 const { join } = require("path");
 var startTimeMS;
+var time;
 
 
 module.exports = (client, message) => {
@@ -376,7 +377,7 @@ module.exports = (client, message) => {
                 .then(() => {
 
                     const stopTime = (new Date()).getTime();
-                    const time = stopTime - startTime;
+                    time = stopTime - startTime;
 
                     const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
