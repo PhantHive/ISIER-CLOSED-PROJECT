@@ -349,11 +349,11 @@ module.exports = (client, message) => {
     } else{
 
         const timingMsg = [
-            "`I took ${ms(time)}, wow, I'm kind of fast`",
-            "`Only ${ms(time)}, impressive, isn't it? A-Nia`",
-            "`${ms(time)}, well, maybe i could do better next time!`",
-            "`I answered your request in less than ${ms(time)}!`",
-            "`/spoiler ${ms(time)}, that's faster than light! well I mean, well nop!`"
+            `I took ${ms(time)}, wow, I'm kind of fast`,
+            `Only ${ms(time)}, impressive, isn't it? A-Nia`,
+            `${ms(time)}, well, maybe i could do better next time!`,
+            `I answered your request in less than ${ms(time)}!`,
+            `/spoiler ${ms(time)}, that's faster than light! well I mean, well nop!`
         ]
 
         //=================MINI-PROJET-PHYSIQUE
@@ -373,12 +373,14 @@ module.exports = (client, message) => {
                 .then(() => message.channel.send({files: [join(__dirname,'../../ressources/aero1Sources/ph11/mph11-2018Elena.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2017-2018- Sharer: Valentin =>``` "))                   //4
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/')]})))
-            const stopTime = (new Date()).getTime();
-            const time = stopTime - startTime;
+                .then(() => {
 
-            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
-            message.channel.stopTyping()
+                    const stopTime = (new Date()).getTime();
+                    const time = stopTime - startTime;
+
+                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                })
 
         }
 
@@ -402,12 +404,14 @@ module.exports = (client, message) => {
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2019-Baptiste.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena => ```"))                       //6
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2019-Elena.pdf/')]}))
+                .then(() => {
 
-            const stopTime = (new Date()).getTime();
-            const time = stopTime - startTime;
+                    const stopTime = (new Date()).getTime();
+                    const time = stopTime - startTime;
 
-            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                })
         }
 
         //ph121 = pendule
@@ -420,13 +424,15 @@ module.exports = (client, message) => {
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2012-2013 Sharer: Thomas =>``` "))                     //2
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/')]}))
+                .then(() => {
+
+                    const stopTime = (new Date()).getTime();
+                    const time = stopTime - startTime;
+
+                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                })
             message.channel.stopTyping()
-
-            const stopTime = (new Date()).getTime();
-            const time = stopTime - startTime;
-
-            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
 
         }
 
@@ -442,13 +448,15 @@ module.exports = (client, message) => {
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana et Atakoui =>```"))                     //3
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Gana_Atakoui.pdf/')]}))
+                .then(() => {
+
+                    const stopTime = (new Date()).getTime();
+                    const time = stopTime - startTime;
+
+                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                })
             message.channel.stopTyping()
-
-            const stopTime = (new Date()).getTime();
-            const time = stopTime - startTime;
-
-            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
 
         }
 
@@ -466,14 +474,15 @@ module.exports = (client, message) => {
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pptx/')]}))
                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena```"))                     //4
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/')]}))
+                .then(() => {
 
+                    const stopTime = (new Date()).getTime();
+                    const time = stopTime - startTime;
+
+                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                })
             message.channel.stopTyping()
-
-            const stopTime = (new Date()).getTime();
-            const time = stopTime - startTime;
-
-            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
         }
 
         //mini projet en general
@@ -499,11 +508,14 @@ module.exports = (client, message) => {
                         .then(() => message.channel.send("```yaml\n2017-2018- Sharer: Valentin =>``` "))                   //4
                         .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph11/mph11-2017Valentin.pdf/')]}))
 
-                    const stopTime = (new Date()).getTime();
-                    const time = stopTime - startTime;
+                        .then(() => {
 
-                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                            const stopTime = (new Date()).getTime();
+                            const time = stopTime - startTime;
+
+                            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                        })
 
                     const eastercollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 20000});
                     eastercollector.on('collect', message => {
@@ -612,11 +624,14 @@ module.exports = (client, message) => {
                                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena => ```"))                       //6
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/comete/comete2019-Elena.pdf/')]}))
 
-                            const stopTime = (new Date()).getTime();
-                            const time = stopTime - startTime;
+                                .then(() => {
 
-                            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-                            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                                    const stopTime = (new Date()).getTime();
+                                    const time = stopTime - startTime;
+
+                                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                                })
                         }
 
                         //PENDULE PROJET
@@ -628,13 +643,15 @@ module.exports = (client, message) => {
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2018-Elena.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2012-2013 Sharer: Thomas =>``` "))                   //2
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/pendule/pendule2012-Thomas.pdf/')]}))
+                                .then(() => {
+
+                                    const stopTime = (new Date()).getTime();
+                                    const time = stopTime - startTime;
+
+                                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                                })
                             message.channel.stopTyping()
-
-                            const stopTime = (new Date()).getTime();
-                            const time = stopTime - startTime;
-
-                            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-                            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                         }
 
                         //CALORIMETRIE PROJET
@@ -650,13 +667,15 @@ module.exports = (client, message) => {
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pptx/')]}))
                                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena```"))                     //4
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/')]}))
+                                .then(() => {
+
+                                    const stopTime = (new Date()).getTime();
+                                    const time = stopTime - startTime;
+
+                                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                                })
                             message.channel.stopTyping()
-
-                            const stopTime = (new Date()).getTime();
-                            const time = stopTime - startTime;
-
-                            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-                            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                         }
 
                         //OPTIQUE PROJET
@@ -670,13 +689,15 @@ module.exports = (client, message) => {
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Lea.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana et Atakoui =>```"))                     //3
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/optique/tpOptique2020-Gana_Atakoui.pdf/')]}))
+                                .then(() => {
+
+                                    const stopTime = (new Date()).getTime();
+                                    const time = stopTime - startTime;
+
+                                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                                })
                             message.channel.stopTyping()
-
-                            const stopTime = (new Date()).getTime();
-                            const time = stopTime - startTime;
-
-                            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-                            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                         }
 
                     })
@@ -695,13 +716,15 @@ module.exports = (client, message) => {
                         .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena =>```"))        //4
                         .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/elec/MP_ELEC2019-Elena.pdf/')]}))
                     //.then(() => message.channel.send("Pas assez d'archive pour l'optique, si tu souhaites partager ton tp d'optique une fois fini, tape: i!share"))
+                        .then(() => {
+
+                            const stopTime = (new Date()).getTime();
+                            const time = stopTime - startTime;
+
+                            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                            message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
+                        })
                     message.channel.stopTyping()
-
-                    const stopTime = (new Date()).getTime();
-                    const time = stopTime - startTime;
-
-                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
-                    message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                 }
             })
         }
