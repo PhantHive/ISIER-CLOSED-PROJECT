@@ -372,9 +372,9 @@ module.exports = (client, message) => {
             const startTime = (new Date()).getTime()
             message.reply("je t envoie ca de suite")
             message.channel.send("```yaml\n2019-2020- Sharer: Zakaria =>```")                                 //1
-                .then(() => message.channel.send({files: [join(__dirname, ".", "ressources/aero1Sources", "ph11", "physique", "mph11-2019Zak.pdf")]})
+                .then(() => message.channel.send({files: [join(__dirname, "../..", "ressources/aero1Sources", "ph11", "physique", "mph11-2019Zak.pdf")]})
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana =>``` "))                     //2
-                .then(() => message.channel.send({files: [join(__dirname, ".", "ressources/aero1Sources", "ph11", "physique", "mph11-2019Gana.pdf/")]}))
+                .then(() => message.channel.send({files: [join(__dirname, "../..", "ressources/aero1Sources", "ph11", "physique", "mph11-2019Gana.pdf/")]}))
                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena =>``` "))                     //3
                 .then(() => message.channel.send({files: [join(__dirname,'../../ressources/aero1Sources/ph11/mph11-2018Elena.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2017-2018- Sharer: Valentin =>``` "))                   //4
@@ -481,7 +481,7 @@ module.exports = (client, message) => {
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Lea```"))                        //2
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/')]}))
                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana```"))                        //3
-                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pptx/')]}))
+                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pdf/')]}))
                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena```"))                     //4
                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/')]}))
                 .then(() => {
@@ -678,7 +678,7 @@ module.exports = (client, message) => {
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Lea```"))                        //2
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Lea.pptx/')]}))
                                 .then(() => message.channel.send("```yaml\n2019-2020- Sharer: Gana```"))                        //3
-                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pptx/')]}))
+                                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2019-Gana.pdf/')]}))
                                 .then(() => message.channel.send("```yaml\n2018-2019- Sharer: Elena```"))                     //4
                                 .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/ph12/calorimetrie/calorimetrie2018-Elena.pdf/')]}))
                                 .then(() => {
