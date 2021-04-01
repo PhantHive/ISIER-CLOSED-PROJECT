@@ -12,8 +12,8 @@ const Timeout = new Set();
 const mpTimeout = 300000;
 const tpTimeout = 150000;
 const { join } = require("path");
-let startTimeMS;
-let time;
+var startTimeMS;
+var time;
 
 
 module.exports = (client, message) => {
@@ -379,7 +379,7 @@ module.exports = (client, message) => {
                     const stopTime = (new Date()).getTime();
                     time = stopTime - startTime;
 
-                    let msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    var msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                 })
 
@@ -410,7 +410,7 @@ module.exports = (client, message) => {
                     const stopTime = (new Date()).getTime();
                     const time = stopTime - startTime;
 
-                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                 })
         }
@@ -430,7 +430,7 @@ module.exports = (client, message) => {
                     const stopTime = (new Date()).getTime();
                     const time = stopTime - startTime;
 
-                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                 })
             message.channel.stopTyping()
@@ -454,7 +454,7 @@ module.exports = (client, message) => {
                     const stopTime = (new Date()).getTime();
                     const time = stopTime - startTime;
 
-                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                 })
             message.channel.stopTyping()
@@ -480,7 +480,7 @@ module.exports = (client, message) => {
                     const stopTime = (new Date()).getTime();
                     const time = stopTime - startTime;
 
-                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                    var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                 })
             message.channel.stopTyping()
@@ -514,7 +514,7 @@ module.exports = (client, message) => {
                             const stopTime = (new Date()).getTime();
                             const time = stopTime - startTime;
 
-                            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                            var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                             message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                         })
 
@@ -630,7 +630,7 @@ module.exports = (client, message) => {
                                     const stopTime = (new Date()).getTime();
                                     const time = stopTime - startTime;
 
-                                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                                    var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                                 })
                         }
@@ -649,7 +649,7 @@ module.exports = (client, message) => {
                                     const stopTime = (new Date()).getTime();
                                     const time = stopTime - startTime;
 
-                                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                                    var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                                 })
                             message.channel.stopTyping()
@@ -673,7 +673,7 @@ module.exports = (client, message) => {
                                     const stopTime = (new Date()).getTime();
                                     const time = stopTime - startTime;
 
-                                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                                    var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                                 })
                             message.channel.stopTyping()
@@ -695,7 +695,7 @@ module.exports = (client, message) => {
                                     const stopTime = (new Date()).getTime();
                                     const time = stopTime - startTime;
 
-                                    const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                                    var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                                 })
                             message.channel.stopTyping()
@@ -722,7 +722,7 @@ module.exports = (client, message) => {
                             const stopTime = (new Date()).getTime();
                             const time = stopTime - startTime;
 
-                            const msgToSend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
+                            var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                             message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
                         })
                     message.channel.stopTyping()
