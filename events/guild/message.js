@@ -8,12 +8,11 @@ let mailAdded = require("../../jsonFile/mailAdded.json")
 const EGD = require('../../models/EasterSystem.js');
 const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
-const Timeout = new Set();
+timeout = new Set();
 const mpTimeout = 300000;
 const tpTimeout = 150000;
 const { join } = require("path");
 var startTimeMS;
-var time;
 
 
 module.exports = (client, message) => {
@@ -344,11 +343,13 @@ module.exports = (client, message) => {
     }
 
     if(Timeout.has(`${message.author.id}${mp}`)) {
-        const timeLeft = msToTime(getRemainingTime(mpTimeout))
+        timeLeft = msToTime(getRemainingTime(mpTimeout))
         return message.reply(`You can summon me only every ${ms(mpTimeout)}, Remaining time: ${timeLeft}`)
 
     } else{
 
+        var time;
+        
         const timingMsg = [
             `I took ${ms(time)}, wow, I'm kind of fast`,
             `Only ${ms(time)}, impressive, isn't it? A-Nia`,
@@ -408,7 +409,7 @@ module.exports = (client, message) => {
                 .then(() => {
 
                     const stopTime = (new Date()).getTime();
-                    const time = stopTime - startTime;
+                    time = stopTime - startTime;
 
                     var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -428,7 +429,7 @@ module.exports = (client, message) => {
                 .then(() => {
 
                     const stopTime = (new Date()).getTime();
-                    const time = stopTime - startTime;
+                    time = stopTime - startTime;
 
                     var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -452,7 +453,7 @@ module.exports = (client, message) => {
                 .then(() => {
 
                     const stopTime = (new Date()).getTime();
-                    const time = stopTime - startTime;
+                    time = stopTime - startTime;
 
                     var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -478,7 +479,7 @@ module.exports = (client, message) => {
                 .then(() => {
 
                     const stopTime = (new Date()).getTime();
-                    const time = stopTime - startTime;
+                    time = stopTime - startTime;
 
                     var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -512,7 +513,7 @@ module.exports = (client, message) => {
                         .then(() => {
 
                             const stopTime = (new Date()).getTime();
-                            const time = stopTime - startTime;
+                            time = stopTime - startTime;
 
                             var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                             message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -628,7 +629,7 @@ module.exports = (client, message) => {
                                 .then(() => {
 
                                     const stopTime = (new Date()).getTime();
-                                    const time = stopTime - startTime;
+                                    time = stopTime - startTime;
 
                                     var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -647,7 +648,7 @@ module.exports = (client, message) => {
                                 .then(() => {
 
                                     const stopTime = (new Date()).getTime();
-                                    const time = stopTime - startTime;
+                                    time = stopTime - startTime;
 
                                     var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -671,7 +672,7 @@ module.exports = (client, message) => {
                                 .then(() => {
 
                                     const stopTime = (new Date()).getTime();
-                                    const time = stopTime - startTime;
+                                    time = stopTime - startTime;
 
                                     var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -693,7 +694,7 @@ module.exports = (client, message) => {
                                 .then(() => {
 
                                     const stopTime = (new Date()).getTime();
-                                    const time = stopTime - startTime;
+                                    time = stopTime - startTime;
 
                                     var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -720,7 +721,7 @@ module.exports = (client, message) => {
                         .then(() => {
 
                             const stopTime = (new Date()).getTime();
-                            const time = stopTime - startTime;
+                            time = stopTime - startTime;
 
                             var msgTosend = timingMsg[Math.floor(Math.random() * timingMsg.length)];
                             message.channel.send(msgToSend).then(msg => msg.delete({timeout: 2000}))
@@ -784,7 +785,7 @@ module.exports = (client, message) => {
     //=======TP GENERAL
 
     if(Timeout.has(`${message.author.id}${tp}`)) {
-        const timeLeft = msToTime(getRemainingTime(tpTimeout))
+        timeLeft = msToTime(getRemainingTime(tpTimeout))
         return message.reply(`You can summon me only every ${ms(tpTimeout)}, Remaining time: ${timeLeft}`)
 
     } else {
