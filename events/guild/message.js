@@ -8,7 +8,7 @@ let mailAdded = require("../../jsonFile/mailAdded.json")
 const EGD = require('../../models/EasterSystem.js');
 const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
-timeout = new Set();
+const Timeout = new Set();
 const mpTimeout = 300000;
 const tpTimeout = 150000;
 const { join } = require("path");
@@ -343,7 +343,7 @@ module.exports = (client, message) => {
     }
 
     if(Timeout.has(`${message.author.id}${mp}`)) {
-        timeLeft = msToTime(getRemainingTime(mpTimeout))
+        const timeLeft = msToTime(getRemainingTime(mpTimeout))
         return message.reply(`You can summon me only every ${ms(mpTimeout)}, Remaining time: ${timeLeft}`)
 
     } else{
@@ -785,7 +785,7 @@ module.exports = (client, message) => {
     //=======TP GENERAL
 
     if(Timeout.has(`${message.author.id}${tp}`)) {
-        timeLeft = msToTime(getRemainingTime(tpTimeout))
+        const timeLeft = msToTime(getRemainingTime(tpTimeout))
         return message.reply(`You can summon me only every ${ms(tpTimeout)}, Remaining time: ${timeLeft}`)
 
     } else {
