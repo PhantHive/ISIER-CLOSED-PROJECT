@@ -108,10 +108,11 @@ module.exports =  {
                                 ctx.beginPath();
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 5;
-                                ctx.moveTo(70, 0);
-                                ctx.arcTo(400, 0, 400, 200, 10);
-                                ctx.arcTo(400, 200, 70, 200, 10);
-                                ctx.arcTo(70, 200, 70, 0, 10);
+                                ctx.moveTo(75, 0);
+                                ctx.arcTo(400, 0, 400, 200, 7);
+                                ctx.arcTo(400, 200, 70, 200, 7);
+                                ctx.arcTo(70, 200, 70, 0, 7);
+                                ctx.arcTo(70, 0, 400, 0, 7);
                                 ctx.stroke();
                                 ctx.closePath();
 
