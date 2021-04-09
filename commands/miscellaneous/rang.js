@@ -103,10 +103,10 @@ module.exports =  {
                                     colorBar = "#00c4f5"
                                 }
 
-                                const canvas = createCanvas(1300, 570);
+                                const canvas = createCanvas(1500, 570);
                                 const ctx = canvas.getContext('2d');
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
-                                ctx.drawImage(background, 150, 0, canvas.width, canvas.height);
+                                ctx.drawImage(background, 200, 0, canvas.width, canvas.height);
 
                                 ctx.beginPath();
                                 ctx.lineWidth = 4;
