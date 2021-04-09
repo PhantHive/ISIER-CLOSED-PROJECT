@@ -103,10 +103,10 @@ module.exports =  {
                                     colorBar = "#00c4f5"
                                 }
 
-                                const canvas = createCanvas(1000, 363);
+                                const canvas = createCanvas(1000, 370);
                                 const ctx = canvas.getContext('2d');
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
-                                ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
+                                ctx.drawImage(background, 80, 0, canvas.width, canvas.height);
 
                                 ctx.beginPath();
                                 ctx.lineWidth = 4;
@@ -179,10 +179,10 @@ module.exports =  {
                                 //profil circle
 
 
-                                ctx.moveTo(-180 + 150 * Math.cos(0), 180 + 150 * Math.sin(0));
+                                ctx.moveTo(80 + 150 * Math.cos(0), 180 + 150 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                    ctx.lineTo(-180 + 150 * Math.cos(side * 2 * Math.PI / 6), 180 + 150 * Math.sin(side * 2 * Math.PI / 6));
+                                    ctx.lineTo(80 + 150 * Math.cos(side * 2 * Math.PI / 6), 180 + 150 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 6;
