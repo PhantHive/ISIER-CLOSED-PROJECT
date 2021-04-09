@@ -109,10 +109,10 @@ module.exports =  {
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 5;
-                                ctx.stroke();
                                 ctx.moveTo(0, 0);
                                 ctx.arcTo(400, 0, 400, 200, 5);
                                 ctx.arcTo(400, 200, 0, 200, 5);
+                                ctx.stroke();
                                 ctx.closePath();
 
                                 ctx.beginPath();
@@ -198,7 +198,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 30, 40, 120, 120);
+                                ctx.drawImage(avatar, 25, 40, 125, 125);
 
                                 /*
 
