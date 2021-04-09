@@ -90,15 +90,15 @@ module.exports =  {
 
 
                                 if (data.LEVEL < 5) {
-                                    color = "#ffffff";
+                                    color = "#000000";
                                     colorBar = "#60676d"
                                     shadowColor = 'blue'
                                 } else if (data.LEVEL < 10) {
-                                    color = "#ffffff";
+                                    color = "#000000";
                                     shadowColor = "black"
                                     colorBar = "#009bf5"
                                 } else {
-                                    color = "#ffffff";
+                                    color = "#000000";
                                     shadowColor = "black"
                                     colorBar = "#00c4f5"
                                 }
@@ -118,6 +118,7 @@ module.exports =  {
 
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.beginPath();
+                                ctx.clip();
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.closePath();
 
