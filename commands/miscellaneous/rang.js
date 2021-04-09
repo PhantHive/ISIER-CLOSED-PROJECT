@@ -130,6 +130,7 @@ module.exports =  {
                                 ctx.globalAlpha = 1;
                                 ctx.strokeRect(180, 236, 770, 65);
                                 ctx.stroke();
+                                ctx.closePath();
 
                                 var percentage = (curxp / newlvl) * 100;
                                 var gradient = ctx.createLinearGradient(0, 0, 200, 0);
@@ -140,12 +141,12 @@ module.exports =  {
                                 ctx.beginPath();
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
-                                ctx.lineWidth= 2;
-                                ctx.moveTo(170, 100)
-                                ctx.quadraticCurveTo(165, 105, 170, 110) //left arc (pi/2 : - pi/2)
+                                ctx.moveTo(200, 100)
+                                ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(percentage, 110)
-                                ctx.quadraticCurveTo(percentage + 5, 105, percentage, 100) //right arc (-pi/2 : pi/2)
+                                ctx.quadraticCurveTo(percentage + 10, 110, percentage, 100) //right arc (-pi/2 : pi/2)
                                 ctx.lineTo(175, 100)
+                                ctx.lineWidth= 0;
                                 ctx.fill();
                                 ctx.closePath();
 
