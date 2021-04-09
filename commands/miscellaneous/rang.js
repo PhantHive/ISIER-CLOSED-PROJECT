@@ -121,7 +121,7 @@ module.exports =  {
                                 ctx.closePath();
 
                                 ctx.beginPath();
-                                ctx.lineWidth = 4;
+                                ctx.lineWidth = 0;
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
