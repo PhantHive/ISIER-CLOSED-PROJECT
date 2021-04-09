@@ -127,8 +127,7 @@ module.exports =  {
                                 //bar rempli
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
-                                ctx.fillRect(180, 238, percentage, 61);
-                                ctx.border()
+                                ctx.fillRect(180, 238, percentage, 61)
                                 ctx.globalAlpha = 1;
                                 ctx.font = "35px Arial";
                                 ctx.textAlign = "center";
