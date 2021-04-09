@@ -179,10 +179,10 @@ module.exports =  {
                                 //profil circle
 
 
-                                ctx.moveTo(180 + 250 * Math.cos(0), 280 + 250 * Math.sin(0));
+                                ctx.moveTo(220 + 250 * Math.cos(0), 280 + 250 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                    ctx.lineTo(180 + 250 * Math.cos(side * 2 * Math.PI / 6), 280 + 250 * Math.sin(side * 2 * Math.PI / 6));
+                                    ctx.lineTo(220 + 250 * Math.cos(side * 2 * Math.PI / 6), 280 + 250 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 6;
