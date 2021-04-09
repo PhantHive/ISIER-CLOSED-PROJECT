@@ -109,7 +109,7 @@ module.exports =  {
                                 ctx.save();
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 5;
-                                ctx.moveTo(75, 5);
+                                ctx.moveTo(80, 5);
                                 ctx.arcTo(395, 5, 395, 195, 10);
                                 ctx.arcTo(395, 195, 75, 195, 10);
                                 ctx.arcTo(75, 195, 75, 5, 10);
@@ -139,7 +139,7 @@ module.exports =  {
                                 //bar rempli
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
-                                ctx.fillRect(180, 238, percentage, 10)
+                                ctx.fillRect(100, 120, percentage, 10)
                                 ctx.globalAlpha = 1;
                                 ctx.font = "35px Arial";
                                 ctx.textAlign = "center";
@@ -148,12 +148,12 @@ module.exports =  {
                                 ctx.textAlign = "left";
 
 
-                                ctx.font = "bold 15px Comic Sans MS";
+                                ctx.font = "bold 20px Comic Sans MS";
                                 ctx.fillStyle = color;
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(member.user.tag, 250, 40);
+                                ctx.fillText(member.user.tag, 150, 70);
 
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = "blue";
