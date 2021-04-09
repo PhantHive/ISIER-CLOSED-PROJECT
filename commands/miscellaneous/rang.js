@@ -140,11 +140,12 @@ module.exports =  {
                                 ctx.beginPath();
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
-                                ctx.moveTo(170, 90)
-                                ctx.quadraticCurveTo(165, 95, 170, 100) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(percentage, 100)
-                                ctx.quadraticCurveTo(percentage + 5, 95, percentage, 90) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(175, 90)
+                                ctx.lineWidth= 2;
+                                ctx.moveTo(170, 100)
+                                ctx.quadraticCurveTo(165, 105, 170, 110) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(percentage, 110)
+                                ctx.quadraticCurveTo(percentage + 5, 105, percentage, 100) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(175, 100)
                                 ctx.fill();
                                 ctx.closePath();
 
