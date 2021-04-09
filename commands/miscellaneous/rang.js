@@ -179,10 +179,10 @@ module.exports =  {
                                 //profil circle
 
 
-                                ctx.moveTo(80 + 80 * Math.cos(0), 95 + 80 * Math.sin(0));
+                                ctx.moveTo(85 + 80 * Math.cos(0), 95 + 80 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                    ctx.lineTo(80 + 80 * Math.cos(side * 2 * Math.PI / 6), 95 + 80 * Math.sin(side * 2 * Math.PI / 6));
+                                    ctx.lineTo(85 + 80 * Math.cos(side * 2 * Math.PI / 6), 95 + 80 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 6;
@@ -191,7 +191,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 10, 25, 150, 150);
+                                ctx.drawImage(avatar, 5, 25, 150, 150);
 
                                 /*
 
