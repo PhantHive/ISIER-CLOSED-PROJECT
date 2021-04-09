@@ -91,14 +91,14 @@ module.exports =  {
 
                                 if (data.LEVEL < 5) {
                                     color = "#ffffff";
-                                    colorBar = "#0076f5"
+                                    colorBar = "#60676d"
                                     shadowColor = 'blue'
                                 } else if (data.LEVEL < 10) {
-                                    color = "#00ff88";
+                                    color = "#ffffff";
                                     shadowColor = "black"
                                     colorBar = "#009bf5"
                                 } else {
-                                    color = "#f7d403";
+                                    color = "#ffffff";
                                     shadowColor = "black"
                                     colorBar = "#00c4f5"
                                 }
