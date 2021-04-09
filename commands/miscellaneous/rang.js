@@ -182,7 +182,7 @@ module.exports =  {
                                 ctx.moveTo(55 + 100 * Math.cos(0), 75 + 100 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                    ctx.lineTo(55 + 50 * Math.cos(side * 2 * Math.PI / 6), 75 + 50 * Math.sin(side * 2 * Math.PI / 6));
+                                    ctx.lineTo(55 + 100 * Math.cos(side * 2 * Math.PI / 6), 75 + 100 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 6;
