@@ -109,10 +109,10 @@ module.exports =  {
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 5;
                                 ctx.moveTo(75, 0);
-                                ctx.arcTo(400, 0, 400, 200, 10);
-                                ctx.arcTo(400, 200, 70, 200, 10);
-                                ctx.arcTo(70, 200, 70, 0, 10);
-                                ctx.arcTo(70, 0, 400, 0, 10);
+                                ctx.arcTo(395, 5, 395, 195, 10);
+                                ctx.arcTo(395, 195, 70, 195, 10);
+                                ctx.arcTo(70, 195, 70, 5, 10);
+                                ctx.arcTo(70, 5, 395, 5, 10);
                                 ctx.stroke();
                                 ctx.clip();
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
@@ -188,8 +188,6 @@ module.exports =  {
 
                                 ctx.save();
                                 //profil circle
-
-                                ctx.restore();
                                 ctx.moveTo(85 + 65 * Math.cos(0), 100 + 65 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
@@ -203,6 +201,7 @@ module.exports =  {
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
                                 ctx.drawImage(avatar, 20, 40, 125, 125);
+                                ctx.restore();
 
                                 /*
 
