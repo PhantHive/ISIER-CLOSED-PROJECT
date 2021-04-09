@@ -91,16 +91,16 @@ module.exports =  {
 
                                 if (data.LEVEL < 5) {
                                     color = "#000000";
-                                    colorBar = "#60676d"
+                                    colorBar = "#bf01bf"
                                     shadowColor = 'blue'
                                 } else if (data.LEVEL < 10) {
                                     color = "#000000";
                                     shadowColor = "black"
-                                    colorBar = "#009bf5"
+                                    colorBar = "#bf01bf"
                                 } else {
                                     color = "#000000";
                                     shadowColor = "black"
-                                    colorBar = "#00c4f5"
+                                    colorBar = "#bf01bf"
                                 }
 
                                 const canvas = createCanvas(400, 200);
@@ -121,14 +121,14 @@ module.exports =  {
                                 ctx.closePath();
 
                                 ctx.beginPath();
-                                ctx.lineWidth = 0;
-                                ctx.strokeStyle = "#ffffff";
+                                ctx.lineWidth = 1;
+                                ctx.strokeStyle = "#000000";
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
-                                ctx.fillRect(180, 236, 770, 65);
+                                ctx.fillRect(200, 100, 105, 120);
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
-                                ctx.strokeRect(180, 236, 770, 65);
+                                ctx.strokeRect(200, 100, 105, 120);
                                 ctx.stroke();
                                 ctx.closePath();
 
@@ -141,12 +141,13 @@ module.exports =  {
                                 ctx.beginPath();
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
+                                ctx.lineWidth = 1;
+                                ctx.strokeStyle = "#bf01bf";
                                 ctx.moveTo(200, 100)
                                 ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(200 + percentage, 120)
                                 ctx.quadraticCurveTo(210 + percentage, 110, 200 + percentage, 100) //right arc (-pi/2 : pi/2)
                                 ctx.lineTo(200, 100)
-                                ctx.lineWidth = 2;
                                 ctx.fill();
                                 ctx.closePath();
 
@@ -202,7 +203,7 @@ module.exports =  {
                                 ctx.moveTo(85 + 65 * Math.cos(0), 100 + 65 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                    ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 100 + 65 * Math.sin(side * 2 * Math.PI / 6));
+                                    ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 102 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 7;
