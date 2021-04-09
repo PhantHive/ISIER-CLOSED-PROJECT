@@ -140,10 +140,11 @@ module.exports =  {
                                 ctx.beginPath();
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
-                                ctx.moveTo(100, 120)
-                                ctx.quadraticCurveTo(100, 160, 120, 180) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(percentage, 180)
-                                ctx.quadraticCurveTo(100, 160, percentage, 140) //right arc (-pi/2 : pi/2)
+                                ctx.moveTo(170, 90)
+                                ctx.quadraticCurveTo(165, 95, 170, 100) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(percentage, 100)
+                                ctx.quadraticCurveTo(percentage + 5, 95, percentage, 90) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(175, 90)
                                 ctx.fill();
                                 ctx.closePath();
 
@@ -202,13 +203,13 @@ module.exports =  {
                                     ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 100 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
-                                ctx.lineWidth = 6;
+                                ctx.lineWidth = 7;
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 25, 40, 125, 125);
+                                ctx.drawImage(avatar, 20, 40, 130, 130);
 
 
                                 /*
