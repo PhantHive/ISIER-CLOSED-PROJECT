@@ -105,7 +105,7 @@ module.exports =  {
 
                                 const canvas = createCanvas(1000, 363);
                                 const ctx = canvas.getContext('2d');
-                                const background = await loadImage(join(__dirname, "../..", "ressources/image", "mariobackground.jpg"));
+                                const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 0, 0, canvas.width, canvas.height);
 
                                 ctx.beginPath();
@@ -128,6 +128,7 @@ module.exports =  {
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
                                 ctx.fillRect(180, 238, percentage, 61);
+                                ctx.border()
                                 ctx.globalAlpha = 1;
                                 ctx.font = "35px Arial";
                                 ctx.textAlign = "center";
@@ -178,7 +179,13 @@ module.exports =  {
 
                                 //profil circle
 
-                                ctx.arc(170, 180, 120, 0, Math.PI * 2, true);
+                            
+                                ctx.moveTo(170 + 200 * Math.cos(0), 180 + 200 * Math.sin(0));
+
+                                for (200; 200 < 7; 200++) {
+                                    ctx.lineTo(180 + 200 * Math.cos(200 * 2 * Math.PI / 6), 180 + 200 * Math.sin(200 * 2 * Math.PI / 6));
+                                }
+
                                 ctx.lineWidth = 6;
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.stroke();

@@ -356,7 +356,7 @@ module.exports = (client, message) => {
                 `Only ${ms(time)}, impressive, isn't it? A-Nia`,
                 `${ms(time)}, well, maybe i could do better next time!`,
                 `I answered your request in less than ${ms(time)}!`,
-                `/spoiler ${ms(time)}, that's faster than light! well I mean, well nop!`
+                `${ms(time)}, that's faster than light! well I mean, well nop!`
             ];
             
             return timingMsg;
