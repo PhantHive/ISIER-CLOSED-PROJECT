@@ -125,23 +125,22 @@ module.exports =  {
                                 ctx.strokeStyle = "#000000";
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
-                                ctx.fillRect(200, 100, 105, 120);
+                                ctx.fillRect(200, 100, 100, 20);
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
-                                ctx.strokeRect(200, 100, 105, 120);
+                                ctx.strokeRect(200, 100, 100, 20);
                                 ctx.stroke();
                                 ctx.closePath();
 
                                 var percentage = (curxp / newlvl) * 100;
-                                var gradient = ctx.createLinearGradient(0, 0, 200, 0);
-                                gradient.addColorStop(0, "#ffffff");
+                                var gradient = ctx.createLinearGradient(200, 100, 300, 120);
+                                gradient.addColorStop(0, "#ff00dd");
                                 gradient.addColorStop(1, colorBar)
 
                                 //bar rempli
                                 ctx.beginPath();
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
-                                ctx.lineWidth = 1;
                                 ctx.strokeStyle = "#bf01bf";
                                 ctx.moveTo(200, 100)
                                 ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
