@@ -103,7 +103,7 @@ module.exports =  {
                                     colorBar = "#00c4f5"
                                 }
 
-                                const canvas = createCanvas(500, 170);
+                                const canvas = createCanvas(500, 250);
                                 const ctx = canvas.getContext('2d');
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 200, 0, canvas.width, canvas.height);
@@ -191,7 +191,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 100, 80, 150, 150);
+                                ctx.drawImage(avatar, 20, 10, 50, 50);
 
                                 /*
 
