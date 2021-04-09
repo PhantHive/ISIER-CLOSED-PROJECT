@@ -106,7 +106,7 @@ module.exports =  {
                                 const canvas = createCanvas(500, 250);
                                 const ctx = canvas.getContext('2d');
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
-                                ctx.drawImage(background, 200, 0, canvas.width, canvas.height);
+                                ctx.drawImage(background, 50, 0, canvas.width, canvas.height);
 
                                 ctx.beginPath();
                                 ctx.lineWidth = 4;
@@ -179,10 +179,10 @@ module.exports =  {
                                 //profil circle
 
 
-                                ctx.moveTo(300 + 50 * Math.cos(0), 280 + 50 * Math.sin(0));
+                                ctx.moveTo(300 + 150 * Math.cos(0), 280 + 150 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                    ctx.lineTo(300 + 50 * Math.cos(side * 2 * Math.PI / 6), 280 + 50 * Math.sin(side * 2 * Math.PI / 6));
+                                    ctx.lineTo(300 + 150 * Math.cos(side * 2 * Math.PI / 6), 280 + 150 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 6;
@@ -191,7 +191,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 20, 10, 50, 50);
+                                ctx.drawImage(avatar, 20, 10, 150, 150);
 
                                 /*
 
