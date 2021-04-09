@@ -112,13 +112,12 @@ module.exports =  {
                                 ctx.arcTo(400, 0, 400, 200, 10);
                                 ctx.arcTo(400, 200, 70, 200, 10);
                                 ctx.arcTo(70, 200, 70, 0, 10);
-                                ctx.arcTo(70, 0, 400, 0, 10);
                                 ctx.stroke();
                                 ctx.closePath();
 
-                                const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.beginPath();
                                 ctx.clip();
+                                const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.closePath();
 
