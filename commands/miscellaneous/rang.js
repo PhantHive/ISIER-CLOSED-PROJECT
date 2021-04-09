@@ -109,7 +109,7 @@ module.exports =  {
                                 ctx.save();
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 5;
-                                ctx.moveTo(80, 5);
+                                ctx.moveTo(82, 5);
                                 ctx.arcTo(395, 5, 395, 195, 10);
                                 ctx.arcTo(395, 195, 75, 195, 10);
                                 ctx.arcTo(75, 195, 75, 5, 10);
@@ -141,11 +141,9 @@ module.exports =  {
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
                                 ctx.moveTo(100, 120)
-                                ctx.quadraticCurveTo(80, 140, 100, 160) //left arc (pi/2 : - pi/2)
-                                ctx.moveTo(100, 160)
-                                ctx.lineTo(percentage, 160)
-                                ctx.moveTo(percentage, 160)
-                                ctx.quadraticCurveTo(80, 140, percentage, 120) //right arc (-pi/2 : pi/2)
+                                ctx.quadraticCurveTo(100, 160, 120, 180) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(percentage, 180)
+                                ctx.quadraticCurveTo(100, 160, percentage, 140) //right arc (-pi/2 : pi/2)
                                 ctx.fill();
                                 ctx.closePath();
 
@@ -204,13 +202,13 @@ module.exports =  {
                                     ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 100 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
-                                ctx.lineWidth = 5;
+                                ctx.lineWidth = 6;
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 20, 40, 125, 125);
+                                ctx.drawImage(avatar, 25, 40, 125, 125);
 
 
                                 /*
