@@ -106,13 +106,14 @@ module.exports =  {
                                 const canvas = createCanvas(400, 200);
                                 const ctx = canvas.getContext('2d');
                                 ctx.beginPath();
+                                ctx.save();
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 5;
-                                ctx.moveTo(75, 0);
+                                ctx.moveTo(75, 5);
                                 ctx.arcTo(395, 5, 395, 195, 10);
-                                ctx.arcTo(395, 195, 70, 195, 10);
-                                ctx.arcTo(70, 195, 70, 5, 10);
-                                ctx.arcTo(70, 5, 395, 5, 10);
+                                ctx.arcTo(395, 195, 75, 195, 10);
+                                ctx.arcTo(75, 195, 75, 5, 10);
+                                ctx.arcTo(75, 5, 395, 5, 10);
                                 ctx.stroke();
                                 ctx.clip();
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
@@ -186,7 +187,7 @@ module.exports =  {
                                 ctx.fillText("EGG:", 800, 110);
                                 ctx.fillText(curEgg + "/" + 2, 900, 110);
 
-                                ctx.save();
+                                ctx.restore();
                                 //profil circle
                                 ctx.moveTo(85 + 65 * Math.cos(0), 100 + 65 * Math.sin(0));
 
@@ -201,7 +202,7 @@ module.exports =  {
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
                                 ctx.drawImage(avatar, 20, 40, 125, 125);
-                                ctx.restore();
+
 
                                 /*
 
