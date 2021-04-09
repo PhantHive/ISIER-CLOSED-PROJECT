@@ -107,13 +107,12 @@ module.exports =  {
                                 const ctx = canvas.getContext('2d');
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
-                                ctx.moveTo(70 + 5, 0);
-                                ctx.arcTo(70 + 400, 0, 70 + 400, 200, 5);
-                                ctx.arcTo(70 + 400, 200, 70, 200, 5);
-                                ctx.arcTo(70, 200, 400, 0, 5);
-                                ctx.arcTo(70, 0, 70 + 400, 0, 5);
                                 ctx.strokeStyle = "#ffffff";
+                                ctx.lineWidth = 5;
                                 ctx.stroke();
+                                ctx.moveTo(0, 0);
+                                ctx.arcTo(400, 0, 400, 200, 5);
+                                ctx.arcTo(400, 200, 0, 200, 5);
                                 ctx.closePath();
 
                                 ctx.beginPath();
