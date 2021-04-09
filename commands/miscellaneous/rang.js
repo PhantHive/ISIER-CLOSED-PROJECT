@@ -127,7 +127,7 @@ module.exports =  {
                                 //bar rempli
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.8;
-                                ctx.fillRect(180, 238, percentage, 61)
+                                ctx.fillRect(180, 238, percentage, 10)
                                 ctx.globalAlpha = 1;
                                 ctx.font = "35px Arial";
                                 ctx.textAlign = "center";
@@ -191,7 +191,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 15, 35, 200, 200);
+                                ctx.drawImage(avatar, 20, 35, 170, 170);
 
                                 /*
 
