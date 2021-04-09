@@ -111,7 +111,7 @@ module.exports =  {
                                 ctx.arcTo(70 + 400, 0, 70 + 400, 200, 5);
                                 ctx.arcTo(70 + 400, 200, 70, 200, 5);
                                 ctx.arcTo(70, 200, 400, 0, 5);
-                                ctx.arcTo(x, y, 70 + 400, 0, 5);
+                                ctx.arcTo(70, 0, 70 + 400, 0, 5);
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.stroke();
                                 ctx.closePath();
