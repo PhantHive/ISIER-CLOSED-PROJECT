@@ -136,12 +136,12 @@ module.exports =  {
                                 ctx.textAlign = "left";
 
 
-                                ctx.font = "bold 45px Comic Sans MS";
+                                ctx.font = "bold 15px Comic Sans MS";
                                 ctx.fillStyle = color;
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(member.user.tag, 300, 150);
+                                ctx.fillText(member.user.tag, 250, 40);
 
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = "blue";
@@ -191,7 +191,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 5, 25, 150, 150);
+                                ctx.drawImage(avatar, 10, 25, 150, 150);
 
                                 /*
 
