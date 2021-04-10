@@ -128,7 +128,7 @@ module.exports =  {
                                 ctx.moveTo(200, 100)
                                 ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(350, 120)
-                                ctx.quadraticCurveTo(310, 110, 300, 100) //right arc (-pi/2 : pi/2)
+                                ctx.quadraticCurveTo(310, 110, 350, 100) //right arc (-pi/2 : pi/2)
                                 ctx.lineTo(200, 100)
                                 ctx.stroke();
                                 ctx.fill();
@@ -205,10 +205,10 @@ module.exports =  {
                                 ctx.restore();
                                 ctx.beginPath();
                                 //profil circle
-                                ctx.moveTo(85 + 65 * Math.cos(0), 90 + 65 * Math.sin(0));
+                                ctx.moveTo(85 + 65 * Math.cos(0), 85 + 65 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                    ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 92 + 65 * Math.sin(side * 2 * Math.PI / 6));
+                                    ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 87 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 7;
@@ -216,9 +216,8 @@ module.exports =  {
                                 ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
-                                const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 20, 30, avatar.width , avatar.height);
-
+                                const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
+                                ctx.drawImage(avatar, 20, 25, avatar.width , avatar.height);
 
                                 /*
 
