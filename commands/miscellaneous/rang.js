@@ -32,19 +32,20 @@ module.exports =  {
 
         function changeFont(ctx, nickname) {
             // Declare a base size of the font
-            let fontSize = 20;
+            let fontSize = 40;
 
             do {
                 // Assign the font to the context and decrement it so it can be measured again
                 ctx.font = `bold ${fontSize -= 2}px Tahoma`;
                 // Compare pixel width of the text to the canvas minus the approximate avatar size
-            } while (ctx.measureText(nickname).width > 55);
+            } while (ctx.measureText(nickname).width > 70);
 
             // Return the result to use in the actual canvas
             return ctx.font;
         }
         
         function colorHex(tag) {
+            console.log(parseInt(tag, 16))
             return parseInt(tag, 16)
         }
         
@@ -195,7 +196,7 @@ module.exports =  {
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(memberTag, 205, 70);
+                                ctx.fillText(memberTag, 220, 70);
 
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = "blue";
@@ -244,7 +245,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
-                                ctx.drawImage(avatar, 20, 25, avatar.width , avatar.height);
+                                ctx.drawImage(avatar, 25, 25, avatar.width - 5 , avatar.height - 5);
 
                                 /*
 
