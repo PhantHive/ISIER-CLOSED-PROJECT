@@ -45,7 +45,6 @@ module.exports =  {
         }
         
         function colorHex(tag) {
-            console.log(`#${parseInt(tag, 16)}`)
             return `#${parseInt(tag, 16)}`
         }
         
@@ -192,7 +191,7 @@ module.exports =  {
                                 ctx.fillText(memberNick, 150, 70);
 
                                 ctx.beginPath();
-                                ctx.fillStyle = `#${colorHex(memberTag)}`;
+                                ctx.fillStyle = `${colorHex(memberTag)}`;
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
@@ -239,8 +238,8 @@ module.exports =  {
                                 for (let side = 0; side < 7; side++) {
                                    // ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 87 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                     ctx.lineTo(75 + 65 * Math.cos(side * 2 * Math.PI / 6), 75 + 65 * Math.sin(side * 2 * Math.PI / 6));
-                                    ctx.quadraticCurveTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 75 + 65 * Math.sin((side + 1) * 2 * Math.PI / 6),
-                                        75 + 65 * Math.cos((side + 1) * 2 * Math.PI / 6), 75 + 65 * Math.sin(side * 2 * Math.PI / 6))
+                                    ctx.quadraticCurveTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 75 + 65 * Math.sin(side * 2 * Math.PI / 6),
+                                        75 + 65 * Math.cos((side + 1) * 2 * Math.PI / 6), 75 + 65 * Math.sin((side + 1) * 2 * Math.PI / 6))
 
                                 }
 
