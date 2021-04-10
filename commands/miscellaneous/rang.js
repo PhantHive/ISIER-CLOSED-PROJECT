@@ -145,11 +145,11 @@ module.exports =  {
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
                                 ctx.lineWidth = 2;
-                                ctx.moveTo(0, 315)
-                                ctx.quadraticCurveTo(170, 325, 0, 335) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(150, 335)
-                                ctx.quadraticCurveTo(160, 325, 150, 315) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(0, 315)
+                                ctx.moveTo(180, 120)
+                                ctx.quadraticCurveTo(170, 130, 180, 140) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(330, 140)
+                                ctx.quadraticCurveTo(340, 130, 330, 120) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(180, 120)
                                 ctx.stroke();
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
@@ -166,11 +166,11 @@ module.exports =  {
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
 
-                                ctx.moveTo(0, 315)
-                                ctx.quadraticCurveTo(170, 325, 0, 335) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(percentage, 335)
-                                ctx.quadraticCurveTo(percentage, 325, percentage, 315) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(0, 315)
+                                ctx.moveTo(180, 120)
+                                ctx.quadraticCurveTo(170, 130, 180, 140) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(180 + percentage, 140)
+                                ctx.quadraticCurveTo(180 + percentage, 130, 180 + percentage, 120) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(180, 120)
 
                                 ctx.fill();
                                 ctx.closePath();
