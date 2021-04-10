@@ -32,7 +32,7 @@ module.exports =  {
 
         function changeFont(ctx, nickname) {
             // Declare a base size of the font
-            let fontSize = 40;
+            let fontSize = 55;
 
             do {
                 // Assign the font to the context and decrement it so it can be measured again
@@ -184,7 +184,6 @@ module.exports =  {
 
 
                                 changeFont(ctx, memberNick)
-                                const colorTag = colorHex(memberTag)
                                 ctx.fillStyle = color;
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
@@ -192,7 +191,7 @@ module.exports =  {
                                 ctx.fillText(memberNick, 150, 70);
 
                                 ctx.beginPath();
-                                ctx.fillStyle = colorTag;
+                                ctx.fillStyle = colorHex(memberTag);
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
