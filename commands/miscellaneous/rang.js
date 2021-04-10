@@ -105,8 +105,8 @@ module.exports =  {
 
                                 const canvas = createCanvas(400, 200);
                                 const ctx = canvas.getContext('2d');
-                                ctx.beginPath();
                                 ctx.save();
+                                ctx.beginPath();
                                 ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 5;
                                 ctx.moveTo(82, 5);
@@ -138,10 +138,10 @@ module.exports =  {
                                 gradient.addColorStop(1, colorBar)
 
                                 //bar rempli
+                                ctx.restore();
                                 ctx.beginPath();
                                 ctx.fillStyle = gradient;
-                                ctx.globalAlpha = 0.8;
-                                ctx.strokeStyle = "#bf01bf";
+                                ctx.globalAlpha = 0.7;
                                 ctx.moveTo(200, 100)
                                 ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(200 + percentage, 120)
