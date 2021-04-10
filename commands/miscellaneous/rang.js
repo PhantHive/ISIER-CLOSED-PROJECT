@@ -131,7 +131,6 @@ module.exports =  {
                                 ctx.strokeRect(200, 100, 100, 20);
                                 ctx.stroke();
 
-                                ctx.restore();
                                 var percentage = (curxp / newlvl) * 100;
                                 var gradient = ctx.createLinearGradient(200, 100, 300, 120);
                                 gradient.addColorStop(0, "#ff00dd");
@@ -141,9 +140,7 @@ module.exports =  {
 
 
                                 ctx.fillStyle = gradient;
-                                ctx.strokeStyle = gradient
                                 ctx.globalAlpha = 0.7;
-                                ctx.lineWidth = 1;
                                 ctx.moveTo(200, 100)
                                 ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(200 + percentage, 120)
