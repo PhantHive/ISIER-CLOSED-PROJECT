@@ -91,16 +91,16 @@ module.exports =  {
 
                                 if (data.LEVEL < 5) {
                                     color = "#000000";
-                                    colorBar = "#bf01bf"
+                                    colorBar = "#940094"
                                     shadowColor = 'blue'
                                 } else if (data.LEVEL < 10) {
                                     color = "#000000";
                                     shadowColor = "black"
-                                    colorBar = "#bf01bf"
+                                    colorBar = "#940094"
                                 } else {
                                     color = "#000000";
                                     shadowColor = "black"
-                                    colorBar = "#bf01bf"
+                                    colorBar = "#940094"
                                 }
 
                                 const canvas = createCanvas(400, 200);
@@ -137,7 +137,7 @@ module.exports =  {
 
                                 var percentage = (curxp / newlvl) * 100;
                                 var gradient = ctx.createLinearGradient(200, 100, 300, 120);
-                                gradient.addColorStop(0, "#ff00dd");
+                                gradient.addColorStop(0, "#fd12de");
                                 gradient.addColorStop(1, colorBar)
 
                                 //bar rempli
@@ -203,6 +203,7 @@ module.exports =  {
                                 ctx.fillText(curEgg + "/" + 2, 900, 110);
 
                                 ctx.restore();
+                                ctx.beginPath();
                                 //profil circle
                                 ctx.moveTo(85 + 65 * Math.cos(0), 100 + 65 * Math.sin(0));
 
@@ -212,7 +213,7 @@ module.exports =  {
 
                                 ctx.lineWidth = 7;
                                 ctx.strokeStyle = "#ffffff";
-                                //ctx.stroke();
+                                ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
