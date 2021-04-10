@@ -233,14 +233,11 @@ module.exports =  {
                                 ctx.restore();
                                 ctx.beginPath();
                                 //profil circle
+                                ctx.lineJoin = "round"
                                 ctx.moveTo(85 + 65 * Math.cos(0), 85 + 65 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                   // ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 87 + 65 * Math.sin(side * 2 * Math.PI / 6));
-                                    ctx.lineTo(75 + 65 * Math.cos(side * 2 * Math.PI / 6), 75 + 65 * Math.sin(side * 2 * Math.PI / 6));
-                                    ctx.quadraticCurveTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 75 + 65 * Math.sin(side * 2 * Math.PI / 6),
-                                        ((-1)**side) * (75 + 65 * Math.cos((side + 1) * 2 * Math.PI / 6)), 75 + 65 * Math.sin((side + 1) * 2 * Math.PI / 6))
-
+                                   ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 87 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 7;
