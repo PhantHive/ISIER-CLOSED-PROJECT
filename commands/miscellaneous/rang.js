@@ -128,7 +128,7 @@ module.exports =  {
                                 ctx.moveTo(200, 100)
                                 ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(350, 120)
-                                ctx.quadraticCurveTo(310, 110, 350, 100) //right arc (-pi/2 : pi/2)
+                                ctx.quadraticCurveTo(360, 110, 350, 100) //right arc (-pi/2 : pi/2)
                                 ctx.lineTo(200, 100)
                                 ctx.stroke();
                                 ctx.fill();
