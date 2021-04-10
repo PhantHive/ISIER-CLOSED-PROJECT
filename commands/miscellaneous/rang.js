@@ -27,7 +27,27 @@ module.exports =  {
 
         const allR = await XLD.countDocuments({}).exec();
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
+        const memberTag = member.user.tag.split("#")[1]
+        const memberNick = member.user.tag.split("#")[0]
 
+        function changeFont(ctx, nickname) {
+            // Declare a base size of the font
+            let fontSize = 20;
+
+            do {
+                // Assign the font to the context and decrement it so it can be measured again
+                ctx.font = `bold ${fontSize -= 2}px Tahoma`;
+                // Compare pixel width of the text to the canvas minus the approximate avatar size
+            } while (ctx.measureText(nickname).width > 55);
+
+            // Return the result to use in the actual canvas
+            return ctx.font;
+        }
+        
+        function colorHex(tag) {
+            return parseInt(tag, 16)
+        }
+        
 
         //mongoDB
         XLD.findOne({
@@ -163,12 +183,19 @@ module.exports =  {
                                 ctx.textAlign = "left";
 
 
-                                ctx.font = "bold 20px Comic Sans MS";
+                                changeFont(ctx, memberNick)
+                                const colorTag = colorHex(memberTag)
                                 ctx.fillStyle = color;
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(member.user.tag, 150, 70);
+                                ctx.fillText(memberNick, 150, 70);
+
+                                ctx.fillStyle = colorTag;
+                                ctx.shadowOffsetX = 5;
+                                ctx.shadowColor = shadowColor;
+                                ctx.shadowBlur = 3;
+                                ctx.fillText(memberTag, 205, 70);
 
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = "blue";
