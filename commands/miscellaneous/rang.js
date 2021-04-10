@@ -179,7 +179,7 @@ module.exports =  {
                                 ctx.font = "10px Arial";
                                 ctx.textAlign = "center";
                                 ctx.fillStyle = "#ffffff";
-                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 227.5, 135);
+                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 237.5, 132.5);
                                 ctx.textAlign = "left";
 
 
@@ -198,17 +198,11 @@ module.exports =  {
                                 ctx.fillText(`#${memberTag}`, 260, 60);
 
                                 ctx.beginPath();
-                                ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = "blue";
-                                ctx.shadowBlur = 3;
-                                ctx.fillStyle = "#ffffff";
+                                ctx.fillStyle = "#000000";
                                 ctx.font = "15px Comic Sans MS";
-                                ctx.fillText("Level:", 190, 100);
-                                ctx.fillText(curlvl, 200, 100);
+                                ctx.fillText("Level:", 190, 120);
+                                ctx.fillText(curlvl, 230, 120);
 
-                                ctx.font = "bold italic 30px Arial";
-                                ctx.fillStyle = "#ffffff";
-                                ctx.fillText("Formule: 25 * (curlvl ** 2) + 169 * curlvl + 845", 50, 350)
 
                                 const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
                                 ctx.drawImage(rankImg, 550, 15, 50, 50);
@@ -234,7 +228,10 @@ module.exports =  {
                                 ctx.beginPath();
                                 //profil circle
                                 ctx.lineJoin = "round"
-                                ctx.lineWidth = 5;
+                                ctx.lineWidth = 7;
+                                ctx.shadowOffsetX = 3;
+                                ctx.shadowColor = "black";
+                                ctx.shadowBlur = 3;
                                 ctx.moveTo(85 + 65 * Math.cos(0), 85 + 65 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
@@ -246,7 +243,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
-                                ctx.drawImage(avatar, 25, 25, avatar.width, avatar.height);
+                                ctx.drawImage(avatar, 20, 25, avatar.width, avatar.height);
 
                                 /*
 
