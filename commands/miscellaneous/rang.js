@@ -120,7 +120,7 @@ module.exports =  {
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.closePath();
 
-                                ctx.beginPath();
+                                /*ctx.beginPath();
                                 ctx.strokeStyle = "#000000";
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
@@ -132,7 +132,7 @@ module.exports =  {
                                 ctx.lineTo(200, 100)
                                 ctx.stroke();
                                 ctx.fill();
-                                ctx.globalAlpha = 1;
+                                ctx.globalAlpha = 1;*/
 
 
                                 var percentage = (curxp / newlvl) * 100;
