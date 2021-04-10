@@ -205,10 +205,10 @@ module.exports =  {
                                 ctx.restore();
                                 ctx.beginPath();
                                 //profil circle
-                                ctx.moveTo(85 + 65 * Math.cos(0), 100 + 65 * Math.sin(0));
+                                ctx.moveTo(85 + 65 * Math.cos(0), 90 + 65 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
-                                    ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 102 + 65 * Math.sin(side * 2 * Math.PI / 6));
+                                    ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 92 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
                                 ctx.lineWidth = 7;
@@ -217,7 +217,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 20, 40, avatar.width , avatar.height);
+                                ctx.drawImage(avatar, 20, 30, avatar.width , avatar.height);
 
 
                                 /*
