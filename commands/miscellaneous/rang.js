@@ -112,7 +112,7 @@ module.exports =  {
                                 if (data.LEVEL < 5) {
                                     color = "#000000";
                                     colorBar = "#940094"
-                                    shadowColor = 'blue'
+                                    shadowColor = "black"
                                 } else if (data.LEVEL < 10) {
                                     color = "#000000";
                                     shadowColor = "black"
@@ -234,19 +234,19 @@ module.exports =  {
                                 ctx.beginPath();
                                 //profil circle
                                 ctx.lineJoin = "round"
+                                ctx.lineWidth = 15;
                                 ctx.moveTo(85 + 65 * Math.cos(0), 85 + 65 * Math.sin(0));
 
                                 for (let side = 0; side < 7; side++) {
                                    ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 87 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
-                                ctx.lineWidth = 10;
                                 ctx.strokeStyle = "#940094";
                                 ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
-                                ctx.drawImage(avatar, 25, 25, avatar.width - 2 , avatar.height - 2);
+                                ctx.drawImage(avatar, 20, 25, avatar.width - 2 , avatar.height - 2);
 
                                 /*
 
