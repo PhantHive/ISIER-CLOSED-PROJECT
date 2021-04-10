@@ -196,7 +196,7 @@ module.exports =  {
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(`#${memberTag}", 220, 70);
+                                ctx.fillText(`#${memberTag}`, 220, 70);
 
                                 ctx.beginPath();
                                 ctx.shadowOffsetX = 5;
