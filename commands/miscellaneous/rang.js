@@ -124,10 +124,16 @@ module.exports =  {
                                 ctx.strokeStyle = "#000000";
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
-                                ctx.fillRect(200, 100, 100, 20);
+
+                                ctx.moveTo(200, 100)
+                                ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(300, 120)
+                                ctx.quadraticCurveTo(300, 110, 300, 100) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(200, 100)
+                                ctx.stroke();
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
-                                ctx.strokeRect(200, 100, 100, 20);
+
 
                                 var percentage = (curxp / newlvl) * 100;
                                 var gradient = ctx.createLinearGradient(200, 100, 300, 120);
