@@ -179,7 +179,7 @@ module.exports =  {
                                 ctx.font = "10px Arial";
                                 ctx.textAlign = "center";
                                 ctx.fillStyle = "#ffffff";
-                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 217.5, 130);
+                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 227.5, 135);
                                 ctx.textAlign = "left";
 
 
@@ -202,9 +202,9 @@ module.exports =  {
                                 ctx.shadowColor = "blue";
                                 ctx.shadowBlur = 3;
                                 ctx.fillStyle = "#ffffff";
-                                ctx.font = "40px Comic Sans MS";
-                                ctx.fillText("Level:", 300, 215);
-                                ctx.fillText(curlvl, 470, 215);
+                                ctx.font = "15px Comic Sans MS";
+                                ctx.fillText("Level:", 190, 100);
+                                ctx.fillText(curlvl, 200, 100);
 
                                 ctx.font = "bold italic 30px Arial";
                                 ctx.fillStyle = "#ffffff";
