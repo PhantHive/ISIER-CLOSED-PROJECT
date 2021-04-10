@@ -124,7 +124,7 @@ module.exports =  {
                                 ctx.strokeStyle = "#000000";
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
-
+                                ctx.lineWidth = 1;
                                 ctx.moveTo(200, 100)
                                 ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(300, 120)
