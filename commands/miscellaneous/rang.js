@@ -32,13 +32,13 @@ module.exports =  {
 
         function changeFont(ctx, nickname) {
             // Declare a base size of the font
-            let fontSize = 65;
+            let fontSize = 35;
 
             do {
                 // Assign the font to the context and decrement it so it can be measured again
                 ctx.font = `bold ${fontSize -= 2}px Tahoma`;
                 // Compare pixel width of the text to the canvas minus the approximate avatar size
-            } while (ctx.measureText(nickname).width > 100);
+            } while (ctx.measureText(nickname).width > 70);
 
             // Return the result to use in the actual canvas
             return ctx.font;
@@ -195,7 +195,7 @@ module.exports =  {
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(`#${memberTag}`, 240, 70);
+                                ctx.fillText(`#${memberTag}`, 200, 70);
 
                                 ctx.beginPath();
                                 ctx.shadowOffsetX = 5;
