@@ -141,7 +141,7 @@ module.exports =  {
                                 gradient.addColorStop(1, colorBar)
 
                                 //bar rempli
-
+                                ctx.beginPath();
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
                                 ctx.moveTo(200, 100)
