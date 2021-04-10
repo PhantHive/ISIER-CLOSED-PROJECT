@@ -176,10 +176,10 @@ module.exports =  {
                                 ctx.closePath();
 
                                 ctx.globalAlpha = 1;
-                                ctx.font = "35px Arial";
+                                ctx.font = "10px Arial";
                                 ctx.textAlign = "center";
                                 ctx.fillStyle = "#ffffff";
-                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 600, 280);
+                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 217.5, 130);
                                 ctx.textAlign = "left";
 
 
@@ -188,14 +188,14 @@ module.exports =  {
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(memberNick, 160, 70);
+                                ctx.fillText(memberNick, 160, 60);
 
                                 ctx.beginPath();
                                 ctx.fillStyle = `#${colorHex(memberTag)}`;
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(`#${memberTag}`, 260, 70);
+                                ctx.fillText(`#${memberTag}`, 260, 60);
 
                                 ctx.beginPath();
                                 ctx.shadowOffsetX = 5;
@@ -246,7 +246,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
-                                ctx.drawImage(avatar, 20, 25, avatar.width - 2 , avatar.height - 2);
+                                ctx.drawImage(avatar, 25, 25, avatar.width, avatar.height);
 
                                 /*
 
