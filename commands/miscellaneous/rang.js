@@ -107,20 +107,20 @@ module.exports =  {
                                 const ctx = canvas.getContext('2d');
                                 ctx.save();
                                 ctx.beginPath();
-                                //ctx.strokeStyle = "#ffffff";
+                                ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 2;
                                 ctx.moveTo(82, 5);
                                 ctx.arcTo(395, 5, 395, 195, 10);
                                 ctx.arcTo(395, 195, 75, 195, 10);
                                 ctx.arcTo(75, 195, 75, 5, 10);
                                 ctx.arcTo(75, 5, 395, 5, 10);
-                                //ctx.stroke();
+                                ctx.stroke();
                                 ctx.clip();
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.closePath();
 
-                                /*ctx.beginPath();
+                                ctx.beginPath();
                                 ctx.strokeStyle = "#000000";
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
@@ -132,7 +132,7 @@ module.exports =  {
                                 ctx.lineTo(200, 100)
                                 ctx.stroke();
                                 ctx.fill();
-                                ctx.globalAlpha = 1;*/
+                                ctx.globalAlpha = 1;
 
 
                                 var percentage = (curxp / newlvl) * 100;
@@ -142,13 +142,18 @@ module.exports =  {
 
                                 //bar rempli
                                 ctx.beginPath();
+                                ctx.lineWidth = 1;
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
-                                ctx.arc(200, 110, 10, 0.5 * Math.PI, 1.5 * Math.PI, false);
-                                ctx.fillRect(200, 100, percentage, 20);
-                                ctx.arc(200 + percentage, 110, 10, 1.5 * Math.PI, 0.5 * Math.PI, false);
-                                ctx.fill();
 
+                                ctx.moveTo(200, 100)
+                                ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(200 + percentage, 120)
+                                ctx.quadraticCurveTo(210 + percentage, 110, 200 + percentage, 100) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(200, 100)
+
+                                ctx.fill();
+                                ctx.closePath();
 
                                 ctx.globalAlpha = 1;
                                 ctx.font = "35px Arial";
@@ -206,7 +211,7 @@ module.exports =  {
                                 }
 
                                 ctx.lineWidth = 7;
-                                //ctx.strokeStyle = "#ffffff";
+                                ctx.strokeStyle = "#ffffff";
                                 //ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
