@@ -131,7 +131,7 @@ module.exports =  {
                                 ctx.strokeRect(200, 100, 100, 20);
                                 ctx.stroke();
 
-
+                                ctx.restore();
                                 var percentage = (curxp / newlvl) * 100;
                                 var gradient = ctx.createLinearGradient(200, 100, 300, 120);
                                 gradient.addColorStop(0, "#ff00dd");
