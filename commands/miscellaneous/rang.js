@@ -32,13 +32,13 @@ module.exports =  {
 
         function changeFont(ctx, nickname) {
             // Declare a base size of the font
-            let fontSize = 55;
+            let fontSize = 65;
 
             do {
                 // Assign the font to the context and decrement it so it can be measured again
                 ctx.font = `bold ${fontSize -= 2}px Tahoma`;
                 // Compare pixel width of the text to the canvas minus the approximate avatar size
-            } while (ctx.measureText(nickname).width > 85);
+            } while (ctx.measureText(nickname).width > 100);
 
             // Return the result to use in the actual canvas
             return ctx.font;
