@@ -138,9 +138,11 @@ module.exports =  {
                                 gradient.addColorStop(1, colorBar)
 
                                 //bar rempli
-                                ctx.restore();
                                 ctx.beginPath();
+                                ctx.restore();
                                 ctx.fillStyle = gradient;
+                                ctx.lineWidth = 1;
+                                ctx.strokeStyle = gradient
                                 ctx.globalAlpha = 0.7;
                                 ctx.moveTo(200, 100)
                                 ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
