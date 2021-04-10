@@ -240,7 +240,7 @@ module.exports =  {
                                    ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 87 + 65 * Math.sin(side * 2 * Math.PI / 6));
                                 }
 
-                                ctx.lineWidth = 7;
+                                ctx.lineWidth = 10;
                                 ctx.strokeStyle = "#940094";
                                 ctx.stroke();
                                 ctx.closePath();
