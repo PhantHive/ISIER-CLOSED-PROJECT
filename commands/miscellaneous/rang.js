@@ -179,31 +179,29 @@ module.exports =  {
                                 ctx.font = "10px Arial";
                                 ctx.textAlign = "center";
                                 ctx.fillStyle = "#ffffff";
-                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 237.5, 132.5);
+                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 257.5, 135);
                                 ctx.textAlign = "left";
 
 
+                                // Nickname
                                 changeFont(ctx, memberNick)
                                 ctx.fillStyle = color;
-                                ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = shadowColor;
-                                ctx.shadowBlur = 3;
                                 ctx.fillText(memberNick, 160, 60);
 
                                 ctx.beginPath();
                                 ctx.fillStyle = `#${colorHex(memberTag)}`;
-                                ctx.shadowOffsetX = 5;
-                                ctx.shadowColor = shadowColor;
-                                ctx.shadowBlur = 3;
                                 ctx.fillText(`#${memberTag}`, 260, 60);
 
+
+                                // Level
                                 ctx.beginPath();
                                 ctx.fillStyle = "#000000";
                                 ctx.font = "15px Comic Sans MS";
-                                ctx.fillText("Level:", 190, 120);
-                                ctx.fillText(curlvl, 230, 120);
+                                ctx.fillText("Level:", 190, 118);
+                                ctx.fillText(curlvl, 240, 118);
 
 
+                                // Rank
                                 const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
                                 ctx.drawImage(rankImg, 550, 15, 50, 50);
                                 ctx.shadowOffsetY = 4;
@@ -214,6 +212,7 @@ module.exports =  {
                                 ctx.fillText("RANG:", 610, 60);
                                 ctx.fillText(curRank + "/" + allR, 830, 60);
 
+                                // Easter Egg
                                 const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
                                 ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.shadowOffsetY = 4;
@@ -224,9 +223,10 @@ module.exports =  {
                                 ctx.fillText("EGG:", 800, 110);
                                 ctx.fillText(curEgg + "/" + 2, 900, 110);
 
+
                                 ctx.restore();
                                 ctx.beginPath();
-                                //profil circle
+                                //profil hexagone
                                 ctx.lineJoin = "round"
                                 ctx.lineWidth = 7;
                                 ctx.shadowOffsetX = 3;
