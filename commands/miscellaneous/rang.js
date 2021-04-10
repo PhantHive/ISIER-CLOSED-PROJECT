@@ -147,10 +147,7 @@ module.exports =  {
                                 ctx.strokeStyle = gradient;
                                 ctx.globalAlpha = 0.7;
                                 ctx.moveTo(200, 100)
-                                ctx.quadraticCurveTo(190, 110, 200, 120) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(200 + percentage, 120)
-                                ctx.quadraticCurveTo(210 + percentage, 110, 200 + percentage, 100) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(200, 100)
+                                ctx.fillRect(200, 100, percentage, 15)
                                 ctx.stroke();
                                 ctx.fill();
                                 ctx.closePath();
