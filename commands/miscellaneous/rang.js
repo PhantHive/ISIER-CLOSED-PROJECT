@@ -143,17 +143,11 @@ module.exports =  {
                                 //bar rempli
                                 ctx.beginPath();
                                 ctx.fillStyle = gradient;
-                                //ctx.globalAlpha = 0.7;
-                                ctx.moveTo(200, 100)
-
-
+                                ctx.globalAlpha = 0.7;
                                 ctx.arc(200, 100, 5, 1.5 * Math.PI, 0.5 * Math.PI, true);
                                 ctx.fill();
-                                ctx.fillRect(200, 100, 200 + percentage, 20);
+                                ctx.fillRect(200, 100, percentage, 20);
                                 ctx.arc(200 + percentage, 100, 5, 1.5 * Math.PI, 0.5 * Math.PI, false);
-                                ctx.fill();
-
-                                ctx.stroke();
                                 ctx.fill();
                                 ctx.closePath();
 
