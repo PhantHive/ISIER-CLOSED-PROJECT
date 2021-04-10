@@ -45,7 +45,6 @@ module.exports =  {
         }
         
         function colorHex(tag) {
-            console.log(parseInt(tag, 16))
             return parseInt(tag, 16)
         }
         
@@ -192,12 +191,14 @@ module.exports =  {
                                 ctx.shadowBlur = 3;
                                 ctx.fillText(memberNick, 150, 70);
 
+                                ctx.beginPath();
                                 ctx.fillStyle = colorTag;
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(memberTag, 220, 70);
+                                ctx.fillText(`#${memberTag}", 220, 70);
 
+                                ctx.beginPath();
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = "blue";
                                 ctx.shadowBlur = 3;
