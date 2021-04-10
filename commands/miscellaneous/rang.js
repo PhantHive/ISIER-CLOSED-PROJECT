@@ -107,14 +107,14 @@ module.exports =  {
                                 const ctx = canvas.getContext('2d');
                                 ctx.save();
                                 ctx.beginPath();
-                                ctx.strokeStyle = "#ffffff";
+                                //ctx.strokeStyle = "#ffffff";
                                 ctx.lineWidth = 2;
                                 ctx.moveTo(82, 5);
                                 ctx.arcTo(395, 5, 395, 195, 10);
                                 ctx.arcTo(395, 195, 75, 195, 10);
                                 ctx.arcTo(75, 195, 75, 5, 10);
                                 ctx.arcTo(75, 5, 395, 5, 10);
-                                ctx.stroke();
+                                //ctx.stroke();
                                 ctx.clip();
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
@@ -206,8 +206,8 @@ module.exports =  {
                                 }
 
                                 ctx.lineWidth = 7;
-                                ctx.strokeStyle = "#ffffff";
-                                ctx.stroke();
+                                //ctx.strokeStyle = "#ffffff";
+                                //ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
