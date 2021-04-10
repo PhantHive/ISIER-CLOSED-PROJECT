@@ -129,7 +129,6 @@ module.exports =  {
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
                                 ctx.strokeRect(200, 100, 100, 20);
-                                ctx.stroke();
 
                                 var percentage = (curxp / newlvl) * 100;
                                 var gradient = ctx.createLinearGradient(200, 100, 300, 120);
@@ -137,7 +136,6 @@ module.exports =  {
                                 gradient.addColorStop(1, colorBar)
 
                                 //bar rempli
-
 
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
