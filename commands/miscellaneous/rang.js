@@ -146,7 +146,7 @@ module.exports =  {
                                 ctx.globalAlpha = 0.7;
                                 ctx.arc(200, 100, 10, 1.5 * Math.PI, 0.5 * Math.PI, true);
                                 ctx.fill();
-                                ctx.fillRect(200, 80, percentage, 20);
+                                ctx.fillRect(200, 100, percentage, 20);
                                 ctx.arc(200 + percentage, 100, 10, 1.5 * Math.PI, 0.5 * Math.PI, false);
                                 ctx.fill();
 
