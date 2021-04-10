@@ -144,7 +144,7 @@ module.exports =  {
                                 ctx.lineTo(200 + percentage, 120)
                                 ctx.quadraticCurveTo(210 + percentage, 110, 200 + percentage, 100) //right arc (-pi/2 : pi/2)
                                 ctx.lineTo(200, 100)
-                                ctx.fill();
+                             
                                 ctx.closePath();
 
                                 ctx.globalAlpha = 1;
