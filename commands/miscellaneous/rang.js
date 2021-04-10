@@ -145,11 +145,11 @@ module.exports =  {
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
                                 ctx.lineWidth = 2;
-                                ctx.moveTo(180, 120)
-                                ctx.quadraticCurveTo(170, 130, 180, 140) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(330, 140)
-                                ctx.quadraticCurveTo(340, 130, 330, 120) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(180, 120)
+                                ctx.moveTo(0, 315)
+                                ctx.quadraticCurveTo(170, 325, 0, 335) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(150, 335)
+                                ctx.quadraticCurveTo(160, 325, 150, 315) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(0, 315)
                                 ctx.stroke();
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
@@ -166,11 +166,11 @@ module.exports =  {
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
 
-                                ctx.moveTo(180, 120)
-                                ctx.quadraticCurveTo(170, 130, 180, 140) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(180 + percentage, 140)
-                                ctx.quadraticCurveTo(180 + percentage, 130, 180 + percentage, 120) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(180, 120)
+                                ctx.moveTo(0, 315)
+                                ctx.quadraticCurveTo(170, 325, 0, 335) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(percentage, 335)
+                                ctx.quadraticCurveTo(percentage, 325, percentage, 315) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(0, 315)
 
                                 ctx.fill();
                                 ctx.closePath();
@@ -179,7 +179,7 @@ module.exports =  {
                                 ctx.font = "10px Arial";
                                 ctx.textAlign = "center";
                                 ctx.fillStyle = "#ffffff";
-                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 257.5, 135);
+                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 257.5, 132.5);
                                 ctx.textAlign = "left";
 
 
@@ -196,9 +196,9 @@ module.exports =  {
                                 // Level
                                 ctx.beginPath();
                                 ctx.fillStyle = "#000000";
-                                ctx.font = "15px Comic Sans MS";
-                                ctx.fillText("Level:", 190, 118);
-                                ctx.fillText(curlvl, 240, 118);
+                                ctx.font = "15px Tahoma";
+                                ctx.fillText("Level:", 190, 115);
+                                ctx.fillText(curlvl, 240, 115);
 
 
                                 // Rank
@@ -243,7 +243,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
-                                ctx.drawImage(avatar, 20, 25, avatar.width, avatar.height);
+                                ctx.drawImage(avatar, 22, 25, avatar.width, avatar.height);
 
                                 /*
 
