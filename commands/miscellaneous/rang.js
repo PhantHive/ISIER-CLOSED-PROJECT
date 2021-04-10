@@ -38,7 +38,7 @@ module.exports =  {
                 // Assign the font to the context and decrement it so it can be measured again
                 ctx.font = `bold ${fontSize -= 2}px Tahoma`;
                 // Compare pixel width of the text to the canvas minus the approximate avatar size
-            } while (ctx.measureText(nickname).width > 70);
+            } while (ctx.measureText(nickname).width > 60);
 
             // Return the result to use in the actual canvas
             return ctx.font;
@@ -191,11 +191,11 @@ module.exports =  {
                                 ctx.fillText(memberNick, 150, 70);
 
                                 ctx.beginPath();
-                                ctx.fillStyle = colorHex(memberTag);
+                                ctx.fillStyle = `#${colorHex(memberTag)}`;
                                 ctx.shadowOffsetX = 5;
                                 ctx.shadowColor = shadowColor;
                                 ctx.shadowBlur = 3;
-                                ctx.fillText(`#${memberTag}`, 220, 70);
+                                ctx.fillText(`#${memberTag}`, 210, 70);
 
                                 ctx.beginPath();
                                 ctx.shadowOffsetX = 5;
@@ -237,6 +237,7 @@ module.exports =  {
 
                                 for (let side = 0; side < 7; side++) {
                                     ctx.lineTo(85 + 65 * Math.cos(side * 2 * Math.PI / 6), 87 + 65 * Math.sin(side * 2 * Math.PI / 6));
+
                                 }
 
                                 ctx.lineWidth = 7;
@@ -245,7 +246,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
-                                ctx.drawImage(avatar, 25, 25, avatar.width - 5 , avatar.height - 5);
+                                ctx.drawImage(avatar, 25, 25, avatar.width - 2 , avatar.height - 2);
 
                                 /*
 
