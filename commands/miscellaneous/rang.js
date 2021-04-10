@@ -108,7 +108,7 @@ module.exports =  {
                                 ctx.save();
                                 ctx.beginPath();
                                 ctx.strokeStyle = "#ffffff";
-                                ctx.lineWidth = 5;
+                                ctx.lineWidth = 2;
                                 ctx.moveTo(82, 5);
                                 ctx.arcTo(395, 5, 395, 195, 10);
                                 ctx.arcTo(395, 195, 75, 195, 10);
@@ -121,7 +121,6 @@ module.exports =  {
                                 ctx.closePath();
 
                                 ctx.beginPath();
-                                ctx.lineWidth = 1;
                                 ctx.strokeStyle = "#000000";
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
@@ -144,7 +143,7 @@ module.exports =  {
                                 ctx.lineTo(200 + percentage, 120)
                                 ctx.quadraticCurveTo(210 + percentage, 110, 200 + percentage, 100) //right arc (-pi/2 : pi/2)
                                 ctx.lineTo(200, 100)
-                             
+                                ctx.fill();
                                 ctx.closePath();
 
                                 ctx.globalAlpha = 1;
