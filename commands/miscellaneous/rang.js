@@ -144,10 +144,10 @@ module.exports =  {
                                 ctx.beginPath();
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
-                                ctx.arc(200, 100, 10, 1.5 * Math.PI, 0.5 * Math.PI, true);
+                                ctx.arc(200, 100, 10, 0.5 * Math.PI, 1.5 * Math.PI, false);
                                 ctx.fill();
-                                ctx.fillRect(200, 80, percentage, 20);
-                                ctx.arc(200 + percentage, 100, 10, 1.5 * Math.PI, 0.5 * Math.PI, false);
+                                ctx.fillRect(200, 100, percentage, 20);
+                                ctx.arc(200 + percentage, 120, 10, 1.5 * Math.PI, 0.5 * Math.PI, true);
                                 ctx.fill();
 
 
