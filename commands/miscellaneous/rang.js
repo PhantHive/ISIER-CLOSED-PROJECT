@@ -107,8 +107,8 @@ module.exports =  {
                                 const ctx = canvas.getContext('2d');
                                 ctx.save();
                                 ctx.beginPath();
-                                ctx.strokeStyle = "#ffffff";
-                                ctx.lineWidth = 2;
+                                ctx.strokeStyle = "#940094";
+                                ctx.lineWidth = 3;
                                 ctx.moveTo(82, 5);
                                 ctx.arcTo(395, 5, 395, 195, 10);
                                 ctx.arcTo(395, 195, 75, 195, 10);
@@ -212,12 +212,12 @@ module.exports =  {
                                 }
 
                                 ctx.lineWidth = 7;
-                                ctx.strokeStyle = "#ffffff";
+                                ctx.strokeStyle = "#940094";
                                 ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({ format: 'jpg' }));
-                                ctx.drawImage(avatar, 20, 40, 130, 130);
+                                ctx.drawImage(avatar, 20, 40, avatar.width , avatar.height);
 
 
                                 /*
