@@ -193,7 +193,7 @@ module.exports =  {
 
                                 ctx.beginPath();
                                 ctx.fillStyle = `#${colorHex(memberTag)}`;
-                                ctx.fillText(`#${memberTag}`, 300, 60);
+                                ctx.fillText(`#${memberTag}`, memberNick.width + 20, 60);
 
 
                                 // Level
@@ -209,7 +209,7 @@ module.exports =  {
 
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
                                 ctx.font = "bold 15px Comic Sans MS";
-                                ctx.fillStyle = "#000000";
+                                ctx.fillStyle = "#2b2828";
                                 ctx.fillText("RANG:", 235, 85);
                                 ctx.fillText(curRank + "/" + allR, 295, 85);
 
@@ -217,7 +217,7 @@ module.exports =  {
                                 //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.font = "bold 15px Comic Sans MS";
-                                ctx.fillStyle = "#000000";
+                                ctx.fillStyle = "#2b2828";
                                 ctx.fillText("EGG:", 235, 105);
                                 ctx.fillText(curEgg + "/ ?", 285, 105);
 
