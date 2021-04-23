@@ -3,11 +3,11 @@ const fetch = require("node-fetch");
 
 module.exports = {
 
-    name: "slap",
-    aliases: ["slap"],
+    name: "hug",
+    aliases: ["hug"],
     timeout: 20000,
     category: "miscellaneous",
-    description: "slap someone",
+    description: "hug someone",
     usage: "slap",
     run: async (client, message, args) => {
 
@@ -22,7 +22,7 @@ module.exports = {
             .setColor('ORANGE')
             .setTitle(`| I SLAP U |`)
             .setImage(jsonResults.results[index].media[0].mediumgif.url)
-            .setDescription(`<@${message.author.id}> **slap** ${args[0]}`);
+            .setDescription(`<@${message.author.id}> **hug** ${args[0]}`);
         await message.channel.send(embed);
 
 
