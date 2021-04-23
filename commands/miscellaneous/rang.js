@@ -210,28 +210,38 @@ module.exports =  {
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
                                 ctx.font = "bold 13px Comic Sans MS";
                                 ctx.fillStyle = "#000000";
-                                ctx.fillText("RANG:", 285, 85);
-                                ctx.fillText(curRank + "/" + allR, 345, 75);
+                                ctx.fillText("RANG:", 285, 105);
+                                ctx.fillText(curRank + "/" + allR, 345, 105);
 
+                                // first rect with curved effect
                                 ctx.beginPath()
                                 ctx.globalAlpha = 0.4;
                                 ctx.fillStyle = "#000000";
-                                ctx.moveTo(400, 70)
-                                ctx.lineTo(280, 70)
-                                ctx.quadraticCurveTo(270, 80, 280, 90) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(400, 90)
-                                ctx.fill()
-                                ctx.closePath()
+                                ctx.strokeStyle = "#FD12DE";
+                                ctx.moveTo(400, 90);
+                                ctx.lineTo(280, 90);
+                                ctx.quadraticCurveTo(270, 100, 280, 110); //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(400, 110);
+                                ctx.fill();
+                                ctx.stroke()
+                                ctx.closePath();
 
+                                // ===========
+
+                                // second rect with curved effect
                                 ctx.beginPath()
                                 ctx.globalAlpha = 0.4;
                                 ctx.fillStyle = "#000000";
-                                ctx.moveTo(400, 110)
-                                ctx.lineTo(280, 110)
-                                ctx.quadraticCurveTo(270, 120, 280, 130) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(400, 130)
-                                ctx.fill()
-                                ctx.closePath()
+                                ctx.strokeStyle = "#FD12DE";
+                                ctx.moveTo(400, 130);
+                                ctx.lineTo(280, 130);
+                                ctx.quadraticCurveTo(270, 140, 280, 150); //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(400, 150);
+                                ctx.fill();
+                                ctx.stroke()
+                                ctx.closePath();
+
+                                // ===========
 
                                 ctx.globalAlpha = 1;
                                 // Easter Egg
@@ -239,8 +249,8 @@ module.exports =  {
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.font = "bold 13px Comic Sans MS";
                                 ctx.fillStyle = "#000000";
-                                ctx.fillText("EGG:", 285, 135);
-                                ctx.fillText(curEgg + "/ ?", 335, 135);
+                                ctx.fillText("EGG:", 285, 145);
+                                ctx.fillText(curEgg + "/ ?", 335, 145);
 
 
                                 ctx.restore();
