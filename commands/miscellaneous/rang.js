@@ -145,11 +145,11 @@ module.exports =  {
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
                                 ctx.lineWidth = 2;
-                                ctx.moveTo(80, 120)
-                                ctx.quadraticCurveTo(70, 130, 80, 140) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(230, 140)
-                                ctx.quadraticCurveTo(240, 130, 230, 120) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(80, 120)
+                                ctx.moveTo(80, 220)
+                                ctx.quadraticCurveTo(70, 230, 80, 240) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(230, 240)
+                                ctx.quadraticCurveTo(240, 230, 230, 220) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(80, 220)
                                 ctx.stroke();
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
@@ -166,11 +166,11 @@ module.exports =  {
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
 
-                                ctx.moveTo(80, 120)
-                                ctx.quadraticCurveTo(70, 130, 80, 140) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(80 + percentage, 140)
-                                ctx.quadraticCurveTo(80 + percentage, 130, 80 + percentage, 120) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(80, 120)
+                                ctx.moveTo(80, 220)
+                                ctx.quadraticCurveTo(70, 230, 80, 240) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(80 + percentage, 240)
+                                ctx.quadraticCurveTo(80 + percentage, 230, 80 + percentage, 220) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(80, 220)
 
                                 ctx.fill();
                                 ctx.closePath();
@@ -242,7 +242,7 @@ module.exports =  {
                                 ctx.stroke();
                                 ctx.closePath();
                                 ctx.clip();
-                                const avatar = await loadImage(member.user.displayAvatarURL({ format: 'png' }));
+                                const avatar = await loadImage(member.user.displayAvatarURL({ format: 'gif' }));
                                 ctx.drawImage(avatar, 22, 25, avatar.width, avatar.height);
 
                                 /*
@@ -260,7 +260,7 @@ module.exports =  {
                                 ctx.clip();
                                 */
 
-                                const attachment = new MessageAttachment(canvas.toBuffer(), "rang.png")
+                                const attachment = new MessageAttachment(canvas.toBuffer(), "rang.gif")
                                 await message.channel.send(attachment);
                             }
 
