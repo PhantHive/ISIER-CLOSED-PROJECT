@@ -14,6 +14,7 @@
     "fs": "^0.0.1-security",
     "gif-canvas": "^1.0.0",
     "gif-encoder-2": "^1.0.5",
+    "gifencoder": "^2.0.1",
     "http": "0.0.0",
     "join": "^3.0.0",
     "kayn": "^0.10.2",

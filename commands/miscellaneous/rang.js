@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.mongoose = require('../../utils/mongose.js');
 const XLD = require('../../models/RankSystem.js');
 const EGD = require('../../models/EasterSystem.js');
-const GIFEncoder = require('gif-encoder-2')
+const GIFEncoder = require('gifencoder')
 const { createCanvas, loadImage } = require("canvas");
 const { MessageAttachment} = require("discord.js");
 const { join } = require("path");
@@ -127,7 +127,7 @@ module.exports =  {
 
                                 const canvas = createCanvas(400, 200);
                                 const ctx = canvas.getContext('2d');
-                                const encoder = new GIFEncoder()
+                                const encoder = new GIFEncoder(400, 200)
                                 encoder.setDelay(0)
                                 encoder.start()
 
