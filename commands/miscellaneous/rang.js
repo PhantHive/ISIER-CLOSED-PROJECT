@@ -216,8 +216,8 @@ module.exports =  {
                                 // first rect with curved effect
                                 ctx.beginPath()
                                 ctx.lineWidth = 2;
-                                ctx.globalAlpha = 0.4;
-                                ctx.fillStyle = "#ffffff";
+                                ctx.globalAlpha = 0.2;
+                                ctx.fillStyle = "#000000";
                                 ctx.strokeStyle = "#FD12DE";
                                 ctx.moveTo(400, 90);
                                 ctx.lineTo(280, 90);
@@ -231,7 +231,7 @@ module.exports =  {
 
                                 // second rect with curved effect
                                 ctx.beginPath()
-                                ctx.globalAlpha = 0.4;
+                                ctx.globalAlpha = 0.2;
                                 ctx.lineWidth = 2;
                                 ctx.fillStyle = "#000000";
                                 ctx.strokeStyle = "#FD12DE";
