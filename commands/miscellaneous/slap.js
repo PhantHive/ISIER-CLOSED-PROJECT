@@ -1,15 +1,15 @@
 const { MessageEmbed } = require('discord.js');
-const { Tenor } = require("tenorjs").client({
+const { Tenor } = require("tenorjs@1.0.7").client({
     "Key": "NT23U13IZ0AH", // https://tenor.com/developer/keyregistration
     "Filter": "off", // "off", "low", "medium", "high", not case sensitive
-    "Locale": "fr_FR",
+    "Locale": "fr_FR"
 });
 
 module.exports = {
 
     name: "slap",
     aliases: ["claque"],
-    timeout: 60000,
+    timeout: 20000,
     category: "miscellaneous",
     description: "slap someone",
     usage: "slap",
