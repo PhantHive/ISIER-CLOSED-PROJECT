@@ -209,16 +209,27 @@ module.exports =  {
 
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
                                 ctx.font = "bold 13px Comic Sans MS";
-                                ctx.fillStyle = "#000000";
-                                ctx.fillText("RANG:", 215, 95);
-                                ctx.fillText(curRank + "/" + allR, 275, 95);
+                                ctx.fillStyle = "#ffffff";
+                                ctx.fillText("RANG:", 265, 75);
+                                ctx.fillText(curRank + "/" + allR, 325, 75);
 
                                 ctx.beginPath()
+                                ctx.globalAlpha = 0.4;
                                 ctx.fillStyle = "#000000";
                                 ctx.moveTo(400, 70)
-                                ctx.lineTo(210, 70)
-                                ctx.quadraticCurveTo(200, 80, 210, 90) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(310, 70)
+                                ctx.quadraticCurveTo(300, 80, 310, 90) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(400, 90)
+                                ctx.fill()
+                                ctx.closePath()
+
+                                ctx.beginPath()
+                                ctx.globalAlpha = 0.4;
+                                ctx.fillStyle = "#000000";
+                                ctx.moveTo(400, 90)
+                                ctx.lineTo(310, 90)
+                                ctx.quadraticCurveTo(300, 100, 310, 110) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(400, 110)
                                 ctx.fill()
                                 ctx.closePath()
 
@@ -228,8 +239,8 @@ module.exports =  {
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.font = "bold 13px Comic Sans MS";
                                 ctx.fillStyle = "#000000";
-                                ctx.fillText("EGG:", 215, 110);
-                                ctx.fillText(curEgg + "/ ?", 265, 110);
+                                ctx.fillText("EGG:", 265, 95);
+                                ctx.fillText(curEgg + "/ ?", 315, 95);
 
 
                                 ctx.restore();
