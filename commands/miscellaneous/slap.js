@@ -1,9 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const { Tenor } = require("tenorjs@1.0.7").client({
-    "Key": "NT23U13IZ0AH", // https://tenor.com/developer/keyregistration
-    "Filter": "off", // "off", "low", "medium", "high", not case sensitive
-    "Locale": "fr_FR"
-});
+const fetch = require("node-fetch");
 
 module.exports = {
 
@@ -15,16 +11,18 @@ module.exports = {
     usage: "slap",
     run: async (client, message, args) => {
 
+        const url = `https://api.tenor.com/v1/search?q=${args[0]}&key=NT23U13IZ0AH&limit=25`
+        const response = await fetch(url);
+        const result = await JSON.stringify(response);
+        const index = Math.floor(Math.random() * result.results.length)
 
-        Tenor.Search.Random("slap", "1").then(Result => {
-            const result = Result.url;
-            const embed = new MessageEmbed()
-                .setColor('ORANGE')
-                .setTitle(`I SLAP U |`)
-                .setThumbnail(result)
-                .setDescription(message.author.username + " slap " + args[0]);
-            message.channel.send(embed)
-        }).catch(console.error);
+        const embed = new MessageEmbed()
+            .setColor('ORANGE')
+            .setTitle(`I SLAP U |`)
+            .setThumbnail(result.results[index].url)
+            .setDescription(message.author.username + " slap " + args[0]);
+        await message.channel.send(embed)
+
 
 
     }
