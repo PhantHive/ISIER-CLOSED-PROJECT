@@ -21,7 +21,7 @@ module.exports = {
         const embed = new MessageEmbed()
             .setColor('ORANGE')
             .setTitle(`I SLAP U |`)
-            .setImage(jsonResults.results[index].media[0].gif.url)
+            .setImage(jsonResults.results[index].media[0].nanowebm.url)
             .setDescription(`<@${message.author.id}> slap ${args[0]}`);
         await message.channel.send(embed);
 
