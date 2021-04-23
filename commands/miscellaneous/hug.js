@@ -13,7 +13,7 @@ module.exports = {
 
 
 
-        let tenorUrl = `https://api.tenor.com/v1/search?q=animehug&key=NT23U13IZ0AH&limit=10&MediaFilter=tinygif`
+        let tenorUrl = `https://api.tenor.com/v1/search?q=animehug&key=NT23U13IZ0AH&limit=30`
         let response = await fetch(tenorUrl);
         let jsonResults = await response.json()
         let index = Math.floor(Math.random() * jsonResults.results.length);
