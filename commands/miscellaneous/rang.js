@@ -207,7 +207,7 @@ module.exports =  {
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";
                                 ctx.shadowBlur = 6;
-                                ctx.font = "bold 45px Comic Sans MS";
+                                ctx.font = "bold 15px Comic Sans MS";
                                 ctx.fillStyle = "#FEE700";
                                 ctx.fillText("RANG:", 225, 100);
                                 ctx.fillText(curRank + "/" + allR, 255, 100);
