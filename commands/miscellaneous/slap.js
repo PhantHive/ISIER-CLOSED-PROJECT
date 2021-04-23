@@ -11,7 +11,7 @@ module.exports = {
     usage: "slap",
     run: async (client, message, args) => {
 
-        const url = `https://api.tenor.com/v1/search?q=${args[0]}&key=NT23U13IZ0AH&limit=25`
+        const url = `https://api.tenor.com/v1/search?q=slap&key=NT23U13IZ0AH&limit=25`
         const response = await fetch(url);
         const result = await JSON.stringify(response);
         const index = Math.floor(Math.random() * result.results.length)
