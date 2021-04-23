@@ -38,7 +38,7 @@ module.exports =  {
                 // Assign the font to the context and decrement it so it can be measured again
                 ctx.font = `bold ${fontSize -= 2}px Tahoma`;
                 // Compare pixel width of the text to the canvas minus the approximate avatar size
-            } while (ctx.measureText(nickname).width > 150);
+            } while (ctx.measureText(nickname).width > 170);
 
             // Return the result to use in the actual canvas
             return ctx.font;
@@ -195,7 +195,7 @@ module.exports =  {
                                 ctx.fillStyle = `#${colorHex(memberTag)}`;
                                 ctx.fillText(`#${memberTag}`, 310, 60);
 
-            
+
                                 // Level
                                 ctx.beginPath();
                                 ctx.fillStyle = "#000000";
@@ -210,16 +210,18 @@ module.exports =  {
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
                                 ctx.font = "bold 13px Comic Sans MS";
                                 ctx.fillStyle = "#000000";
-                                ctx.fillText("RANG:", 235, 75);
-                                ctx.fillText(curRank + "/" + allR, 295, 75);
+                                ctx.fillText("RANG:", 215, 95);
+                                ctx.fillText(curRank + "/" + allR, 275, 95);
 
+                                ctx.fillStyle = "#000000";
+                                ctx.fillRect(210, 90, 65, 25)
                                 // Easter Egg
                                 //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.font = "bold 13px Comic Sans MS";
                                 ctx.fillStyle = "#000000";
-                                ctx.fillText("EGG:", 235, 90);
-                                ctx.fillText(curEgg + "/ ?", 285, 90);
+                                ctx.fillText("EGG:", 215, 110);
+                                ctx.fillText(curEgg + "/ ?", 265, 110);
 
 
                                 ctx.restore();

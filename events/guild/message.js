@@ -393,6 +393,8 @@ module.exports = (client, message) => {
                     message.channel.send(msgToSend).then(msg => msg.delete({timeout: 5000}))
                 })
 
+            message.channel.stopTyping()
+
         }
 
         //ph121 = comete
