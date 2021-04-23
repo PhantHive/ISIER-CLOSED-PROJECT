@@ -206,16 +206,16 @@ module.exports =  {
                                 //const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
 
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
-                                ctx.font = "bold 10px Comic Sans MS";
-                                ctx.fillStyle = "#ffffff";
+                                ctx.font = "bold 15px Comic Sans MS";
+                                ctx.fillStyle = "#000000";
                                 ctx.fillText("RANG:", 235, 85);
                                 ctx.fillText(curRank + "/" + allR, 295, 85);
 
                                 // Easter Egg
                                 //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
-                                ctx.font = "bold 10px Comic Sans MS";
-                                ctx.fillStyle = "#ffffff";
+                                ctx.font = "bold 15px Comic Sans MS";
+                                ctx.fillStyle = "#000000";
                                 ctx.fillText("EGG:", 235, 105);
                                 ctx.fillText(curEgg + "/ ?", 285, 105);
 
