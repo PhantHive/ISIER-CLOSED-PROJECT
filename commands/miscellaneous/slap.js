@@ -17,12 +17,20 @@ module.exports = {
         let response = await fetch(tenorUrl);
         let jsonResults = await response.json()
         let index = Math.floor(Math.random() * jsonResults.results.length);
+        let taggedUser;
+        if (args[0] === "") {
+            taggedUser = "himelf/herself"
+        }
+        else {
+            taggedUser = args[0]
+        }
+
 
         const embed = new MessageEmbed()
             .setColor('RED')
             .setTitle(`| I SLAP U |`)
             .setImage(jsonResults.results[index].media[0].mediumgif.url)
-            .setDescription(`<@${message.author.id}> **slap** ${args[0]}`);
+            .setDescription(`<@${message.author.id}> **slap** ${taggedUser}`);
         await message.channel.send(embed);
 
 
