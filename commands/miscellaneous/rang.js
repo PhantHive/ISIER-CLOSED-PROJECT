@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.mongoose = require('../../utils/mongose.js');
 const XLD = require('../../models/RankSystem.js');
 const EGD = require('../../models/EasterSystem.js');
-const { GIF } = require("gif.js@0.2");
+const { GifCanvas } = require("gif-canvas");
 const { createCanvas, loadImage } = require("canvas");
 const { MessageAttachment} = require("discord.js");
 const { join } = require("path");
@@ -245,7 +245,10 @@ module.exports =  {
                                 ctx.clip();
 
                                 const avatar = await loadImage(member.user.displayAvatarURL({dynamic : true, format: 'png'}));
-                                ctx.drawImage(avatar, 22, 25, avatar.width, avatar.height);
+                                const gif = GifCanvas(avatar, {
+                                    fps: 60
+                                })
+                                ctx.drawImage(gif, 22, 25, avatar.width, avatar.height);
 
                                 /*
 
@@ -262,13 +265,9 @@ module.exports =  {
                                 ctx.clip();
                                 */
 
-                                const gif = new GIF({
-                                    workers: 2,
-                                    quality: 10
-                                });
-                                gif.addFrame(canvas.toBuffer(), {copy: true});
 
-                                const attachment = new MessageAttachment(gif, "rang.gif")
+
+                                const attachment = new MessageAttachment(canvas.toBuffer(), "rang.gif")
                                 await message.channel.send(attachment);
                             }
 
