@@ -32,7 +32,7 @@ module.exports =  {
 
         function changeFont(ctx, nickname) {
             // Declare a base size of the font
-            let fontSize = 35;
+            let fontSize = 30;
 
             do {
                 // Assign the font to the context and decrement it so it can be measured again
@@ -145,11 +145,11 @@ module.exports =  {
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
                                 ctx.lineWidth = 2;
-                                ctx.moveTo(75, 160)
-                                ctx.quadraticCurveTo(65, 170, 75, 180) //left arc (pi/2 : - pi/2)
+                                ctx.moveTo(77, 160)
+                                ctx.quadraticCurveTo(67, 170, 77, 180) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(330, 180)
                                 ctx.quadraticCurveTo(340, 170, 330, 160) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(75, 160)
+                                ctx.lineTo(77, 160)
                                 ctx.stroke();
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
@@ -166,11 +166,11 @@ module.exports =  {
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
 
-                                ctx.moveTo(75, 160)
-                                ctx.quadraticCurveTo(65, 170, 75, 180) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(75 + percentage, 180)
-                                ctx.quadraticCurveTo(75 + percentage, 170, 75 + percentage, 160) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(75, 160)
+                                ctx.moveTo(77, 160)
+                                ctx.quadraticCurveTo(67, 170, 77, 180) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(77 + percentage, 180)
+                                ctx.quadraticCurveTo(75 + percentage, 170, 77 + percentage, 160) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(77, 160)
 
                                 ctx.fill();
                                 ctx.closePath();
@@ -197,7 +197,7 @@ module.exports =  {
                                 ctx.beginPath();
                                 ctx.fillStyle = "#000000";
                                 ctx.font = "15px Tahoma";
-                                ctx.fillText("Level:", 190, 115);
+                                ctx.fillText("Level:", 90, 175);
                                 ctx.fillText(curlvl, 240, 115);
 
 
