@@ -370,7 +370,7 @@ module.exports = (client, message) => {
 
         //ph111 = PROJET RESSORT
 
-        if (mp.search(/{}/.format(mpAeroOne["ressort"].join("|"))) !== -1) {
+        if (mp.search(regex("ressort")) !== -1) {
 
             message.channel.startTyping()
             const startTime = (new Date()).getTime()
