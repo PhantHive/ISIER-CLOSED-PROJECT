@@ -745,9 +745,10 @@ module.exports = (client, message) => {
             })
         }
 
-        for (let i = 0; i <= Object.keys(mpAeroOne).length - 1; i++) {
-            for (let j = 0; j <= mpAeroOne[i].length - 1; j++) {
-                if (mp === mpAeroOne[i][j]) {
+        const listMP = Object.keys(mpAeroOne)
+        for (let i = 0; i <= listMP.length - 1; i++) {
+            for (let j = 0; j <= mpAeroOne[listMP[i]].length - 1; j++) {
+                if (mp === mpAeroOne[listMP[i]][j]) {
                     Timeout.add(`${message.author.id}${mp}`)
                     addTimerCount()
                     setTimeout(() => {
