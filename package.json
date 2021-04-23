@@ -18,7 +18,7 @@
     "http": "0.0.0",
     "join": "^3.0.0",
     "kayn": "^0.10.2",
-    "mongoose": "^5.10.6",
+    "mongoose": "^5.12.5",
     "mongose": "0.0.2-security",
     "node-fetch": "^2.6.1",
     "node-translate": "0.0.4",
