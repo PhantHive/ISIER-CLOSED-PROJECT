@@ -179,7 +179,7 @@ module.exports =  {
                                 ctx.font = "10px Arial";
                                 ctx.textAlign = "center";
                                 ctx.fillStyle = "#ffffff";
-                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 190, 175);
+                                ctx.fillText(`${curxp}  /  ${newlvl} XP`, 210, 174);
                                 ctx.textAlign = "left";
 
 
@@ -196,9 +196,9 @@ module.exports =  {
                                 // Level
                                 ctx.beginPath();
                                 ctx.fillStyle = "#000000";
-                                ctx.font = "15px italic Tahoma";
+                                ctx.font = "italic 15px Tahoma";
                                 ctx.fillText("Level:", 125, 155);
-                                ctx.fillText(curlvl, 140, 155);
+                                ctx.fillText(curlvl, 160, 155);
 
 
                                 // Rank
