@@ -193,7 +193,7 @@ module.exports =  {
 
                                 ctx.beginPath();
                                 ctx.fillStyle = `#${colorHex(memberTag)}`;
-                                ctx.fillText(`#${memberTag}`, 300, 60);
+                                ctx.fillText(`#${memberTag}`, 310, 60);
 
 
                                 // Level
