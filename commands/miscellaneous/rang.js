@@ -136,6 +136,7 @@ module.exports =  {
                                 ctx.arcTo(75, 5, 395, 5, 10);
                                 ctx.stroke();
                                 ctx.clip();
+                                ctx.globalAlpha = 0.4
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.closePath();
@@ -199,11 +200,18 @@ module.exports =  {
                                 ctx.font = "italic bold 15px Tahoma";
                                 ctx.fillText("Level:", 125, 155);
                                 ctx.fillText(curlvl, 180, 155);
+                                ctx.closePath();
 
+                                ctx.beginPath();
+                                ctx.fillStyle = "#ffffff";
+                                ctx.globalAlpha = 0.6
+                                ctx.fillRect(185, 65, 100, 200)
+                                ctx.closePath();
 
                                 // Rank
                                 const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
-                                ctx.drawImage(rankImg, 210, 65, 10, 10);
+
+                                ctx.drawImage(rankImg, 210, 65, 15, 15);
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";
                                 ctx.shadowBlur = 6;
