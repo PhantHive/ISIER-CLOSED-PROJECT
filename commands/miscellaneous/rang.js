@@ -198,19 +198,19 @@ module.exports =  {
                                 ctx.fillStyle = "#000000";
                                 ctx.font = "italic bold 15px Tahoma";
                                 ctx.fillText("Level:", 125, 155);
-                                ctx.fillText(curlvl, 170, 155);
+                                ctx.fillText(curlvl, 180, 155);
 
 
                                 // Rank
                                 const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
-                                ctx.drawImage(rankImg, 550, 15, 50, 50);
+                                ctx.drawImage(rankImg, 210, 75, 50, 50);
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";
                                 ctx.shadowBlur = 6;
                                 ctx.font = "bold 15px Comic Sans MS";
                                 ctx.fillStyle = "#FEE700";
-                                ctx.fillText("RANG:", 225, 100);
-                                ctx.fillText(curRank + "/" + allR, 255, 100);
+                                ctx.fillText("RANG:", 225, 80);
+                                ctx.fillText(curRank + "/" + allR, 275, 80);
 
                                 // Easter Egg
                                 const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
