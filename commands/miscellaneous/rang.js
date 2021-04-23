@@ -138,7 +138,7 @@ module.exports =  {
                                 ctx.arcTo(75, 5, 395, 5, 10);
                                 ctx.stroke();
                                 ctx.clip();
-                                ctx.globalAlpha = 0.8
+                                ctx.globalAlpha = 0.7
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.closePath();
@@ -224,7 +224,8 @@ module.exports =  {
                                 ctx.quadraticCurveTo(270, 100, 280, 110); //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(400, 110);
                                 ctx.fill();
-                                ctx.stroke()
+                                ctx.globalAlpha = 1;
+                                ctx.stroke();
                                 ctx.closePath();
 
                                 // ===========
@@ -240,7 +241,8 @@ module.exports =  {
                                 ctx.quadraticCurveTo(270, 140, 280, 150); //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(400, 150);
                                 ctx.fill();
-                                ctx.stroke()
+                                ctx.globalAlpha = 1;
+                                ctx.stroke();
                                 ctx.closePath();
 
                                 // ===========
