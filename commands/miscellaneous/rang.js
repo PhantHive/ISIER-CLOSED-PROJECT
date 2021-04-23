@@ -203,14 +203,14 @@ module.exports =  {
 
                                 // Rank
                                 const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
-                                ctx.drawImage(rankImg, 210, 75, 50, 50);
+                                ctx.drawImage(rankImg, 210, 65, 10, 10);
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";
                                 ctx.shadowBlur = 6;
                                 ctx.font = "bold 15px Comic Sans MS";
-                                ctx.fillStyle = "#FEE700";
+                                ctx.fillStyle = "#242323";
                                 ctx.fillText("RANG:", 225, 80);
-                                ctx.fillText(curRank + "/" + allR, 275, 80);
+                                ctx.fillText(curRank + "/" + allR, 285, 80);
 
                                 // Easter Egg
                                 const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
