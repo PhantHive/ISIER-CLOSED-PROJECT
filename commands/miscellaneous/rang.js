@@ -279,7 +279,7 @@ module.exports =  {
                                 ctx.clip();
 
                                 const avatar = await loadImage(member.user.displayAvatarURL({format: 'png', dynamic : true}));
-                                ctx.drawImage(avatar, 22, 25, avatar.width, avatar.height);
+                                ctx.drawImage(avatar, 20, 25, avatar.width, avatar.height);
 
                                 /*
 
