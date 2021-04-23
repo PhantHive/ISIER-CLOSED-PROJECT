@@ -4,7 +4,6 @@ const client = new Discord.Client();
 client.mongoose = require('../../utils/mongose.js');
 const XLD = require('../../models/RankSystem.js');
 const EGD = require('../../models/EasterSystem.js');
-const GIFEncoder = require('gifencoder')
 const { createCanvas, loadImage } = require("canvas");
 const { MessageAttachment} = require("discord.js");
 const { join } = require("path");
@@ -39,7 +38,7 @@ module.exports =  {
                 // Assign the font to the context and decrement it so it can be measured again
                 ctx.font = `bold ${fontSize -= 2}px Tahoma`;
                 // Compare pixel width of the text to the canvas minus the approximate avatar size
-            } while (ctx.measureText(nickname).width > 100);
+            } while (ctx.measureText(nickname).width > 200);
 
             // Return the result to use in the actual canvas
             return ctx.font;
@@ -127,9 +126,6 @@ module.exports =  {
 
                                 const canvas = createCanvas(400, 200);
                                 const ctx = canvas.getContext('2d');
-                                const encoder = new GIFEncoder(400, 200)
-                                encoder.setDelay(0)
-                                encoder.start()
 
                                 ctx.save();
                                 ctx.beginPath();
@@ -263,10 +259,8 @@ module.exports =  {
                                 ctx.clip();
                                 */
 
-                                encoder.addFrame(ctx)
-                                encoder.finish()
-                                const buffer = encoder.out.getData()
-                                const attachment = new MessageAttachment(buffer, "rang.gif")
+
+                                const attachment = new MessageAttachment(canvas.toBuffer(), "rang.gif")
                                 await message.channel.send(attachment);
                             }
 
