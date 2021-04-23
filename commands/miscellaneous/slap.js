@@ -13,7 +13,7 @@ module.exports = {
 
         const url = `https://api.tenor.com/v1/search?q=slap&key=NT23U13IZ0AH&limit=25`
         const response = await fetch(url);
-        const result = await JSON.stringify(response);
+        const result = await response.json();
         const index = Math.floor(Math.random() * result.results.length)
 
         const embed = new MessageEmbed()
