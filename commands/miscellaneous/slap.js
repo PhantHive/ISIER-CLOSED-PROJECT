@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 const Tenor = require("tenorjs").client({
-    "Key": "NT23U13IZ0AH", // https://tenor.com/developer/keyregistration
+    "Key": "NT23U13IZ0AH" // https://tenor.com/developer/keyregistration
 });
 
 module.exports = {
