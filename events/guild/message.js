@@ -5,6 +5,7 @@ const fs = require("fs");
 let mailVerif = require("../../jsonFile/mailsVerif.json")
 //mailAdd
 let mailAdded = require("../../jsonFile/mailAdded.json")
+let mpAeroOne = require("../../jsonFile/mp_AeroOne.json")
 const EGD = require('../../models/EasterSystem.js');
 const XLD = require('../../models/RankSystem.js');
 const ms = require('ms');
@@ -348,18 +349,16 @@ module.exports = (client, message) => {
 
     } else{
 
-        var time;
+        let time;
         
         function processTime(time) {
-            const timingMsg = [
+            return [
                 `I took ${ms(time)}, wow, I'm kind of fast`,
                 `Only ${ms(time)}, impressive, isn't it? A-Nia`,
                 `${ms(time)}, well, maybe i could do better next time!`,
                 `I answered your request in less than ${ms(time)}!`,
                 `${ms(time)}, that's faster than light! well I mean, well nop!`
             ];
-            
-            return timingMsg;
         }
 
         //=================MINI-PROJET-PHYSIQUE
@@ -746,11 +745,17 @@ module.exports = (client, message) => {
             })
         }
 
-        Timeout.add(`${message.author.id}${mp}`)
-        addTimerCount()
-        setTimeout(() => {
-            Timeout.delete(`${message.author.id}${mp}`)
-        }, mpTimeout);
+        for (let i = 0; i <= Object.keys(mpAeroOne).length - 1; i++) {
+            for (let j = 0; j <= mpAeroOne[i].length - 1; j++) {
+                if (mp === mpAeroOne[i][j]) {
+                    Timeout.add(`${message.author.id}${mp}`)
+                    addTimerCount()
+                    setTimeout(() => {
+                        Timeout.delete(`${message.author.id}${mp}`)
+                    }, mpTimeout);
+                }
+            }
+        }
     }
 
     //================ELEC = MP/PSPICE
@@ -799,81 +804,75 @@ module.exports = (client, message) => {
 
     //=======TP GENERAL
 
-    if(Timeout.has(`${message.author.id}${tp}`)) {
-        const timeLeft = msToTime(getRemainingTime(tpTimeout))
-        return message.reply(`You can summon me only every ${ms(tpTimeout)}, Remaining time: ${timeLeft}`)
 
-    } else {
-        var tp = String(message.content).toLowerCase();
-        if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp|!tp/i) !== -1) {
 
-            message.channel.startTyping()
-            message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom de la matière) ou le nom du tp et je t'envoie une version complete sous format pdf")
-            message.channel.stopTyping()
 
-            const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 10000});
-            console.log(collector2)
-            collector2.on('collect', message => {
-                if ((message.content).toLowerCase() === ("genie maths" || "genie mathematique" || "génie mathématiques")) {
-                    message.channel.send("Gotcha!")
-                        .then(() => message.channel.send("2019- partager par par: "))
-                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]}))
-                        .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
+    let tp = String(message.content).toLowerCase();
+    if (tp.search(/qui a fait le tp|quelqu'un aurai le tp|quelqu un aurai le tp|quelqu'un à le tp|quelqu un a le tp|!tp/i) !== -1) {
 
-                } else if ((message.content).toLowerCase() === ("elec" || "electronique")) {
-                    message.channel.send("Recu chef")
-                        .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Auriane"))
-                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/')]}))
-                        .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Zakaria"))
-                        .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
-                        .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
+        message.channel.startTyping()
+        message.reply("Merci de bien preciser quelle matiere (physique, genie maths ou nom de la matière) ou le nom du tp et je t'envoie une version complete sous format pdf")
+        message.channel.stopTyping()
 
-                } else if ((message.content).toLowerCase() === ("physique" || "choc entre 2 mobiles" || "choc entre mobiles")) {
-                    message.channel.startTyping()
-                    message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
-                    message.channel.send("2017-2018 Sharer: Karan => ")
-                    message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/')]})                                       //1
-                    message.channel.stopTyping()
-                }
-            })
-        }
+        const collector2 = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 10000});
+        console.log(collector2)
+        collector2.on('collect', message => {
+            if ((message.content).toLowerCase() === ("genie maths" || "genie mathematique" || "génie mathématiques")) {
+                message.channel.send("Gotcha!")
+                    .then(() => message.channel.send("2019- partager par par: "))
+                    .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]}))
+                    .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
 
-        //ELEC
-        else if (tp.search(/qui a fait le tp d'elec|quelqu'un aurai le tp d elec|quelqu un aurai le tp d'elec|quelqu'un à le tp d'elec|quelqu un a le tp d'elec/i) !== -1) {
-            message.channel.send("J'espère que c'est ce que tu voulais...")
-                .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Auriane"))
-                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/')]}))
-                .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Zakaria"))
-                .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
-                .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
-        }
+            } else if ((message.content).toLowerCase() === ("elec" || "electronique")) {
+                message.channel.send("Recu chef")
+                    .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Auriane"))
+                    .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/')]}))
+                    .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Zakaria"))
+                    .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
+                    .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
 
-        //================TP GENIE MATHS
-
-        else if (tp.search(/genie maths tp3|genie math tp3|tp3 newton|methode de newton|tp3 methode de newton/i) !== -1) {
-            message.channel.startTyping()
-            message.reply("je t envoie ca de suite").then(msg => msg.delete({timeout: 5000}))
-            message.channel.send("2018-2019 Sharer: Baptiste Gautier => ")
-            message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]})                                       //1
-            message.channel.stopTyping()
-        }
-
-        //===============TP PHYSIQUE CHOC DE 2 MOBILES
-
-        else if ((tp.search(/choc entre 2 mobiles|qui a fait le tp de physique|le tp sur les mobiles en physique| tp physique/i) !== -1)) {
-            message.channel.startTyping()
-            message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
-            message.channel.send("2017-2018 Sharer: Karan => ")
-            message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/')]})                                       //1
-            message.channel.stopTyping()
-        }
-
-        Timeout.add(`${message.author.id}${tp}`)
-        addTimerCount()
-        setTimeout(() => {
-            Timeout.delete(`${message.author.id}${tp}`)
-        }, tpTimeout);
+            } else if ((message.content).toLowerCase() === ("physique" || "choc entre 2 mobiles" || "choc entre mobiles")) {
+                message.channel.startTyping()
+                message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
+                message.channel.send("2017-2018 Sharer: Karan => ")
+                message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/')]})                                       //1
+                message.channel.stopTyping()
+            }
+        })
     }
+
+    //ELEC
+    else if (tp.search(/qui a fait le tp d'elec|quelqu'un aurai le tp d elec|quelqu un aurai le tp d'elec|quelqu'un à le tp d'elec|quelqu un a le tp d'elec/i) !== -1) {
+        message.channel.send("J'espère que c'est ce que tu voulais...")
+            .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Auriane"))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_1-Auriane.pdf/')]}))
+            .then(() => message.channel.send("2020- (TP pspice 1) partager par par: Zakaria"))
+            .then(() => message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/elec/TP2020_PSPICE_2-Zak.pdf/')]}))
+            .then(() => message.channel.send("Le projet Ipsa Share du bot I.P.S.A est encore en developpement!"))
+    }
+
+    //================TP GENIE MATHS
+
+    else if (tp.search(/genie maths tp3|genie math tp3|tp3 newton|methode de newton|tp3 methode de newton/i) !== -1) {
+        message.channel.startTyping()
+        message.reply("je t envoie ca de suite").then(msg => msg.delete({timeout: 5000}))
+        message.channel.send("2018-2019 Sharer: Baptiste Gautier => ")
+        message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/GenieMaths/tp3.pdf/')]})                                       //1
+        message.channel.stopTyping()
+    }
+
+    //===============TP PHYSIQUE CHOC DE 2 MOBILES
+
+    else if ((tp.search(/choc entre 2 mobiles|qui a fait le tp de physique|le tp sur les mobiles en physique| tp physique/i) !== -1)) {
+        message.channel.startTyping()
+        message.reply("Je pense que tu parles de ce TP:").then(msg => msg.delete({timeout: 5000}))
+        message.channel.send("2017-2018 Sharer: Karan => ")
+        message.channel.send({files: [join(__dirname, '../../ressources/aero1Sources/tp/physique/TP_CHOC_MOBILES_DYNAMIQUE-2017-Karan.pdf/')]})                                       //1
+        message.channel.stopTyping()
+    }
+
+
+
 
 
 
