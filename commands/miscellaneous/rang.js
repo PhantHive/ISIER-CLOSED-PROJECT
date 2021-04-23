@@ -208,6 +208,7 @@ module.exports =  {
                                 //const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
 
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
+                                ctx.globalAlpha = 1;
                                 ctx.font = "bold 13px Comic Sans MS";
                                 ctx.fillStyle = "#000000";
                                 ctx.fillText("RANG:", 285, 105);
