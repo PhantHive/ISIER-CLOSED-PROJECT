@@ -210,7 +210,7 @@ module.exports =  {
                                 ctx.lineWidth = 2;
                                 ctx.globalAlpha = 0.3;
                                 ctx.fillStyle = "#ffffff";
-                                ctx.strokeStyle = "#FD12DE";
+                                ctx.strokeStyle = "#940094";
                                 ctx.moveTo(400, 90);
                                 ctx.lineTo(280, 90);
                                 ctx.quadraticCurveTo(270, 100, 280, 110); //left arc (pi/2 : - pi/2)
@@ -227,7 +227,7 @@ module.exports =  {
                                 ctx.globalAlpha = 0.3;
                                 ctx.lineWidth = 2;
                                 ctx.fillStyle = "#ffffff";
-                                ctx.strokeStyle = "#FD12DE";
+                                ctx.strokeStyle = "#940094";
                                 ctx.moveTo(400, 130);
                                 ctx.lineTo(280, 130);
                                 ctx.quadraticCurveTo(270, 140, 280, 150); //left arc (pi/2 : - pi/2)
@@ -252,7 +252,7 @@ module.exports =  {
                                 //const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
 
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
-                                
+
                                 ctx.font = "bold 13px Comic Sans MS";
                                 ctx.fillStyle = "#000000";
                                 ctx.fillText("RANG:", 285, 105);
