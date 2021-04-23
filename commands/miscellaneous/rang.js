@@ -136,7 +136,7 @@ module.exports =  {
                                 ctx.arcTo(75, 5, 395, 5, 10);
                                 ctx.stroke();
                                 ctx.clip();
-                                ctx.globalAlpha = 0.4
+                                ctx.globalAlpha = 0.7
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.closePath();
@@ -202,23 +202,17 @@ module.exports =  {
                                 ctx.fillText(curlvl, 180, 155);
                                 ctx.closePath();
 
-                                ctx.beginPath();
-                                ctx.fillStyle = "#ffffff";
-                                ctx.globalAlpha = 0.6
-                                ctx.fillRect(185, 65, 100, 200)
-                                ctx.closePath();
-
                                 // Rank
                                 const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
 
-                                ctx.drawImage(rankImg, 210, 65, 15, 15);
+                                ctx.drawImage(rankImg, 210, 70, 20, 20);
                                 ctx.shadowOffsetY = 4;
                                 ctx.shadowColor = "black";
                                 ctx.shadowBlur = 6;
                                 ctx.font = "bold 15px Comic Sans MS";
                                 ctx.fillStyle = "#242323";
-                                ctx.fillText("RANG:", 225, 80);
-                                ctx.fillText(curRank + "/" + allR, 285, 80);
+                                ctx.fillText("RANG:", 235, 85);
+                                ctx.fillText(curRank + "/" + allR, 295, 85);
 
                                 // Easter Egg
                                 const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
