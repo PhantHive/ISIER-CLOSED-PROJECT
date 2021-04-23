@@ -14,14 +14,14 @@ module.exports = {
         const url = `https://api.tenor.com/v1/search?q=slap&key=NT23U13IZ0AH&limit=25`
         const response = await fetch(url);
         const result = await response.json();
-        const index = Math.floor(Math.random() * result.results.length)
+        const index = Math.floor(Math.random() * result.results.length);
 
         const embed = new MessageEmbed()
             .setColor('ORANGE')
             .setTitle(`I SLAP U |`)
             .setThumbnail(result.results[index].url)
             .setDescription(message.author.username + " slap " + args[0]);
-        await message.channel.send(embed)
+        await message.channel.send(embed);
 
 
 
