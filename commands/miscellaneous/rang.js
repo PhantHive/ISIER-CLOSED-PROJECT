@@ -196,7 +196,7 @@ module.exports =  {
                                 // Level
                                 ctx.beginPath();
                                 ctx.fillStyle = "#000000";
-                                ctx.font = "italic 15px Tahoma";
+                                ctx.font = "italic bold 15px Tahoma";
                                 ctx.fillText("Level:", 125, 155);
                                 ctx.fillText(curlvl, 170, 155);
 
@@ -209,8 +209,8 @@ module.exports =  {
                                 ctx.shadowBlur = 6;
                                 ctx.font = "bold 45px Comic Sans MS";
                                 ctx.fillStyle = "#FEE700";
-                                ctx.fillText("RANG:", 610, 60);
-                                ctx.fillText(curRank + "/" + allR, 830, 60);
+                                ctx.fillText("RANG:", 225, 100);
+                                ctx.fillText(curRank + "/" + allR, 255, 100);
 
                                 // Easter Egg
                                 const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
@@ -221,7 +221,7 @@ module.exports =  {
                                 ctx.font = "bold 35px Comic Sans MS";
                                 ctx.fillStyle = "#00f1fe";
                                 ctx.fillText("EGG:", 800, 110);
-                                ctx.fillText(curEgg + "/" + 2, 900, 110);
+                                ctx.fillText(curEgg + "/ ?", 900, 110);
 
 
                                 ctx.restore();
