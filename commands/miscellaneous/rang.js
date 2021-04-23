@@ -7,6 +7,7 @@ const EGD = require('../../models/EasterSystem.js');
 const { createCanvas, loadImage } = require("canvas");
 const { MessageAttachment} = require("discord.js");
 const { join } = require("path");
+const { GIF } = require("gif.js")
 
 module.exports =  {
     name:"rang",
@@ -243,7 +244,16 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({dynamic : true}));
-                                ctx.drawImage(avatar, 22, 25, avatar.width, avatar.height);
+                                let myGif;
+                                setTimeout(()=>{
+                                    myGif = GIF();                  // creates a new gif
+                                    myGif.onerror = function(e){
+                                        console.log("Gif loading error " + e.type);
+                                    }
+                                    myGif.load(avatar);
+
+                                },0);
+                                ctx.drawImage(myGif.image, 22, 25, avatar.width, avatar.height);
 
                                 /*
 
