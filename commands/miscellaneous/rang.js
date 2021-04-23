@@ -214,7 +214,9 @@ module.exports =  {
                                 ctx.fillText(curRank + "/" + allR, 275, 95);
 
                                 ctx.fillStyle = "#000000";
-                                ctx.fillRect(210, 90, 65, 25)
+                                ctx.globalAlpha = 0.4;
+                                ctx.fillRect(210, 90, 155, 35)
+                                ctx.globalAlpha = 1;
                                 // Easter Egg
                                 //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
