@@ -7,7 +7,6 @@ const EGD = require('../../models/EasterSystem.js');
 const { createCanvas, loadImage } = require("canvas");
 const { MessageAttachment} = require("discord.js");
 const { join } = require("path");
-const { GIF } = require("gif.js")
 
 module.exports =  {
     name:"rang",
@@ -146,11 +145,11 @@ module.exports =  {
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
                                 ctx.lineWidth = 2;
-                                ctx.moveTo(80, 170)
-                                ctx.quadraticCurveTo(70, 180, 80, 190) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(230, 240)
-                                ctx.quadraticCurveTo(240, 180, 230, 170) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(80, 170)
+                                ctx.moveTo(80, 150)
+                                ctx.quadraticCurveTo(70, 160, 80, 170) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(230, 170)
+                                ctx.quadraticCurveTo(240, 160, 230, 150) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(80, 150)
                                 ctx.stroke();
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
@@ -167,11 +166,11 @@ module.exports =  {
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
 
-                                ctx.moveTo(80, 170)
-                                ctx.quadraticCurveTo(70, 180, 80, 190) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(80 + percentage, 190)
-                                ctx.quadraticCurveTo(80 + percentage, 180, 80 + percentage, 170) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(80, 170)
+                                ctx.moveTo(80, 150)
+                                ctx.quadraticCurveTo(70, 160, 80, 170) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(80 + percentage, 170)
+                                ctx.quadraticCurveTo(80 + percentage, 160, 80 + percentage, 150) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(80, 150)
 
                                 ctx.fill();
                                 ctx.closePath();
@@ -244,16 +243,7 @@ module.exports =  {
                                 ctx.closePath();
                                 ctx.clip();
                                 const avatar = await loadImage(member.user.displayAvatarURL({dynamic : true}));
-                                let myGif;
-                                setTimeout(()=>{
-                                    myGif = GIF();                  // creates a new gif
-                                    myGif.onerror = function(e){
-                                        console.log("Gif loading error " + e.type);
-                                    }
-                                    myGif.load(avatar);
-
-                                },0);
-                                ctx.drawImage(myGif.image, 22, 25, avatar.width, avatar.height);
+                                ctx.drawImage(avatar, 22, 25, avatar.width, avatar.height);
 
                                 /*
 
