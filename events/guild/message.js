@@ -365,7 +365,7 @@ module.exports = (client, message) => {
 
         //ph111 = PROJET RESSORT
 
-        if (mp.search(/mp ph111|miniprojet ph111|projet ressort|miniprojet ressort|mp ressort|mini projet resort|mini projet ph111/i) !== -1) {
+        if (mp.search(/{}/.format(mpAeroOne["ressort"].join("|"))) !== -1) {
 
             message.channel.startTyping()
             const startTime = (new Date()).getTime()
@@ -392,7 +392,7 @@ module.exports = (client, message) => {
 
         //ph121 = comete
 
-        else if (mp.search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
+        else if (mp.search(/{}/.format(mpAeroOne["comete"].join("|"))) !== -1) {
 
             const startTime = (new Date()).getTime()
             message.channel.send("Gotcha!");
@@ -423,7 +423,7 @@ module.exports = (client, message) => {
 
         //ph121 = pendule
 
-        else if (mp.search(/projet pendule|miniprojet pendule|mp pendule/i) !== -1) {
+        else if (mp.search(mp.search(/{}/.format(mpAeroOne["pendule"].join("|")))) !== -1) {
             const startTime = (new Date()).getTime()
             message.channel.startTyping()
             message.reply("je t envoie ca de suite")
@@ -446,7 +446,7 @@ module.exports = (client, message) => {
 
         //ph121 = optique
 
-        else if (mp.search(/projet optique|miniprojet optique|mp optique|tp optique|mp diffraction|tp diffraction|projet diffraction/i) !== -1) {
+        else if (mp.search(/{}/.format(mpAeroOne["optique"].join("|"))) !== -1) {
             const startTime = (new Date()).getTime()
             message.channel.startTyping()
             message.reply("je t envoie ca de suite")
@@ -471,7 +471,7 @@ module.exports = (client, message) => {
 
         //ph121 = calorimetrie
 
-        else if (mp.search(/projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie/i) !== -1) {
+        else if (mp.search(/{}/.format(mpAeroOne["calorimetrie"].join("|"))) !== -1) {
             const startTime = (new Date()).getTime()
             message.channel.startTyping()
             message.reply("je t envoie ca de suite")
@@ -506,7 +506,7 @@ module.exports = (client, message) => {
             const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
             console.log(collector)
             collector.on('collect', message => {
-                if ((String(message.content)).toLowerCase().search(/ph111|ressort|mini projet ressort|projet ressort|ph11]/i) !== -1) {
+                if ((String(message.content)).search(/{}/.format(mpAeroOne["ressort"].join("|"))) !== -1) {
                     message.channel.send("Gotcha!, cela peu prendre quelques secondes.").then(m => m.delete({timeout: 4000}));
                     const startTime = (new Date()).getTime()
                     message.channel.send("```yaml\n2019-2020- Sharer: Zakaria =>```")                                             //1
@@ -611,13 +611,13 @@ module.exports = (client, message) => {
                     })
                 }
 
-                if ((String(message.content)).toLowerCase().search((/ph121|mp ph121|miniprojet ph121|mini projet ph121/i)) !== -1) {
+                if ((String(message.content)).search((/ph121|mp ph121|miniprojet ph121|mini projet ph121/i)) !== -1) {
                     message.channel.send("Il semblerait qu'il y ai beaucoup de mini projet dans le deuxieme module de physique, merci de me preciser le nom du mini projet: comete, diffraction, pendule ou calorimetrie?")
                     const underCollector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 15000});
                     console.log(underCollector)
                     underCollector.on('collect', message => {
                         //COMETE PROJET
-                        if ((String(message.content)).toLowerCase().search((/comete|halley|comete halley|mini projet comète de Halley|comète de Halley|comète/i)) !== -1) {
+                        if ((String(message.content)).search(/{}/.format(mpAeroOne["comete"].join("|"))) !== -1) {
                             const startTime = (new Date()).getTime()
                             message.channel.send("Gotcha!");
                             message.channel.send("```yaml\n2019-2020- Sharer: Auriane => ```")                                  //1
@@ -647,7 +647,7 @@ module.exports = (client, message) => {
                         }
 
                         //PENDULE PROJET
-                        else if ((String((message.content)).toLowerCase().search((/pendule|"projet pendule|mini projet pendule/i))) !== -1) {
+                        else if ((String(message.content)).search(/{}/.format(mpAeroOne["pendule"].join("|"))) !== -1) {
                             const startTime = (new Date()).getTime()
                             message.channel.startTyping()
                             message.reply("Gotcha!")
@@ -668,7 +668,7 @@ module.exports = (client, message) => {
                         }
 
                         //CALORIMETRIE PROJET
-                        else if ((String((message.content)).toLowerCase().search((/projet calorimetrie|miniprojet calorimetrie|mp calorimetrie|tp calorimetrie|calorimetrie/i))) !== -1) {
+                        else if ((String(message.content)).search(/{}/.format(mpAeroOne["calorimetrie"].join("|"))) !== -1) {
                             const startTime = (new Date()).getTime()
                             message.channel.startTyping()
                             message.reply("je t envoie ca de suite")
@@ -693,7 +693,7 @@ module.exports = (client, message) => {
                         }
 
                         //OPTIQUE PROJET
-                        else if ((String(message.content)).toLowerCase().search(/projet optique|miniprojet optique|mp optique|tp optique|diffraction|optique/i) !== -1) {
+                        else if ((String(message.content)).toLowerCase().search(/{}/.format(mpAeroOne["optique"].join("|"))) !== -1) {
                             const startTime = (new Date()).getTime()
                             message.channel.startTyping()
                             message.reply("je t envoie ca de suite")
@@ -748,7 +748,7 @@ module.exports = (client, message) => {
         const listMP = Object.keys(mpAeroOne)
         for (let i = 0; i <= listMP.length - 1; i++) {
             for (let j = 0; j <= mpAeroOne[listMP[i]].length - 1; j++) {
-                if (mp === mpAeroOne[listMP[i]][j]) {
+                if (mp.search(mpAeroOne[listMP[i]][j]) !== -1) {
                     Timeout.add(`${message.author.id}${mp}`)
                     addTimerCount()
                     setTimeout(() => {
