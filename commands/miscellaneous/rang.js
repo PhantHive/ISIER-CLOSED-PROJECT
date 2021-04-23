@@ -193,7 +193,7 @@ module.exports =  {
 
                                 ctx.beginPath();
                                 ctx.fillStyle = `#${colorHex(memberTag)}`;
-                                const metrics = ctx.measureText(memberNick)
+                                const metrics = ctx.measureText(memberNick);
                                 ctx.fillText(`#${memberTag}`, metrics.width + 20, 60);
 
 
