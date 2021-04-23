@@ -138,7 +138,7 @@ module.exports =  {
                                 ctx.arcTo(75, 5, 395, 5, 10);
                                 ctx.stroke();
                                 ctx.clip();
-                                ctx.globalAlpha = 0.85
+                                ctx.globalAlpha = 0.8
                                 const background = await loadImage(join(__dirname, "../..", "ressources/image", "background.jpg"));
                                 ctx.drawImage(background, 70, 0, canvas.width, canvas.height);
                                 ctx.closePath();
@@ -215,7 +215,7 @@ module.exports =  {
 
                                 // first rect with curved effect
                                 ctx.beginPath()
-                                ctx.lineWidth = 2;
+                                ctx.lineWidth = 3;
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
                                 ctx.strokeStyle = "#FD12DE";
@@ -232,7 +232,7 @@ module.exports =  {
                                 // second rect with curved effect
                                 ctx.beginPath()
                                 ctx.globalAlpha = 0.2;
-                                ctx.lineWidth = 2;
+                                ctx.lineWidth = 3;
                                 ctx.fillStyle = "#000000";
                                 ctx.strokeStyle = "#FD12DE";
                                 ctx.moveTo(400, 130);
@@ -250,7 +250,7 @@ module.exports =  {
                                 //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.font = "bold 13px Comic Sans MS";
-                                ctx.fillStyle = "#ffffff";
+                                ctx.fillStyle = "#000000";
                                 ctx.fillText("EGG:", 285, 145);
                                 ctx.fillText(curEgg + "/ ?", 335, 145);
 
