@@ -19,7 +19,7 @@ module.exports = {
         let index = Math.floor(Math.random() * jsonResults.results.length);
         let taggedUser;
         if (args[0] === undefined) {
-            taggedUser = "himelf/herself"
+            taggedUser = "**himelf/herself**"
         }
         else {
             taggedUser = args[0]
