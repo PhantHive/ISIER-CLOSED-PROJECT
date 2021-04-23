@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.mongoose = require('../../utils/mongose.js');
 const XLD = require('../../models/RankSystem.js');
 const EGD = require('../../models/EasterSystem.js');
-const GIFEncoder = require("gif.js/src/GIFEncoder");
+const GIFEncoder = require('gif-encoder-2')
 const { createCanvas, loadImage } = require("canvas");
 const { MessageAttachment} = require("discord.js");
 const { join } = require("path");
@@ -124,11 +124,13 @@ module.exports =  {
                                     colorBar = "#940094"
                                 }
 
-                                let encoder = new GIFEncoder();
-                                encoder.setRepeat(0);
-                                encoder.start();
+
                                 const canvas = createCanvas(400, 200);
                                 const ctx = canvas.getContext('2d');
+                                const encoder = new GIFEncoder()
+                                encoder.setDelay(0)
+                                encoder.start()
+
                                 ctx.save();
                                 ctx.beginPath();
                                 ctx.strokeStyle = "#940094";
@@ -261,11 +263,10 @@ module.exports =  {
                                 ctx.clip();
                                 */
 
-                                encoder.addFrame(ctx);
-                                encoder.finish();
-                                let binary_gif = encoder.stream().getData() //notice this is different from the as3gif package!
-
-                                const attachment = new MessageAttachment(binary_gif, "rang.gif")
+                                encoder.addFrame(ctx)
+                                encoder.finish()
+                                const buffer = encoder.out.getData()
+                                const attachment = new MessageAttachment(buffer, "rang.gif")
                                 await message.channel.send(attachment);
                             }
 
