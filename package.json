@@ -34,7 +34,7 @@
   "devDependencies": {
     "gif.js": "^0.2.0",
     "ms": "^2.1.3",
-    "tenorjs": "^1.0.8"
+    "tenorjs": "git+https://github.com/Jinzulen/TenorJS.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
