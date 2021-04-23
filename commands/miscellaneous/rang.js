@@ -213,14 +213,15 @@ module.exports =  {
                                 ctx.fillText("RANG:", 215, 95);
                                 ctx.fillText(curRank + "/" + allR, 275, 95);
 
+                                ctx.beginPath()
                                 ctx.fillStyle = "#000000";
-                                ctx.globalAlpha = 0.4;
-
                                 ctx.moveTo(400, 70)
                                 ctx.lineTo(210, 70)
                                 ctx.quadraticCurveTo(200, 80, 210, 90) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(400, 90)
-                                
+                                ctx.fill()
+                                ctx.closePath()
+
                                 ctx.globalAlpha = 1;
                                 // Easter Egg
                                 //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
