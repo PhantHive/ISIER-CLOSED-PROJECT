@@ -18,7 +18,7 @@ module.exports = {
         let jsonResults = await response.json()
         let index = Math.floor(Math.random() * jsonResults.results.length);
         let taggedUser;
-        if (args[0] === "") {
+        if (args[0] === undefined) {
             taggedUser = "himelf/herself"
         }
         else {
