@@ -145,17 +145,17 @@ module.exports =  {
                                 ctx.globalAlpha = 0.2;
                                 ctx.fillStyle = "#000000";
                                 ctx.lineWidth = 2;
-                                ctx.moveTo(80, 150)
-                                ctx.quadraticCurveTo(70, 160, 80, 170) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(230, 170)
-                                ctx.quadraticCurveTo(240, 160, 230, 150) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(80, 150)
+                                ctx.moveTo(80, 160)
+                                ctx.quadraticCurveTo(70, 170, 80, 180) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(330, 180)
+                                ctx.quadraticCurveTo(340, 170, 330, 160) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(80, 160)
                                 ctx.stroke();
                                 ctx.fill();
                                 ctx.globalAlpha = 1;
 
 
-                                var percentage = (curxp / newlvl) * 150;
+                                var percentage = (curxp / newlvl) * 250;
                                 var gradient = ctx.createLinearGradient(200, 100, 300, 120);
                                 gradient.addColorStop(0, "#fd12de");
                                 gradient.addColorStop(1, colorBar)
@@ -166,11 +166,11 @@ module.exports =  {
                                 ctx.fillStyle = gradient;
                                 ctx.globalAlpha = 0.7;
 
-                                ctx.moveTo(80, 150)
-                                ctx.quadraticCurveTo(70, 160, 80, 170) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(80 + percentage, 170)
-                                ctx.quadraticCurveTo(80 + percentage, 160, 80 + percentage, 150) //right arc (-pi/2 : pi/2)
-                                ctx.lineTo(80, 150)
+                                ctx.moveTo(80, 160)
+                                ctx.quadraticCurveTo(70, 170, 80, 160) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(80 + percentage, 180)
+                                ctx.quadraticCurveTo(80 + percentage, 170, 80 + percentage, 160) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(80, 160)
 
                                 ctx.fill();
                                 ctx.closePath();
