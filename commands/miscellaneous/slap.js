@@ -14,7 +14,7 @@ module.exports = {
     run: async (client, message, args) => {
 
 
-        Tenor.Search.Query("slap", "1").then(Result => {
+        Tenor.Search.Random("slap", "1").then(Result => {
             const result = Result.url;
             const embed = new MessageEmbed()
                 .setColor('ORANGE')
