@@ -19,8 +19,8 @@ module.exports = {
         const embed = new MessageEmbed()
             .setColor('ORANGE')
             .setTitle(`I SLAP U |`)
-            .setThumbnail(result.results[index].url)
-            .setDescription(message.author.username + " slap " + args[0]);
+            .setImage(result.results[index].url)
+            .setDescription(`<@${message.author.id} slap ${args[0]}`);
         await message.channel.send(embed);
 
 
