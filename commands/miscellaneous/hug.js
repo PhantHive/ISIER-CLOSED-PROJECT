@@ -19,7 +19,7 @@ module.exports = {
         let index = Math.floor(Math.random() * jsonResults.results.length);
 
         const embed = new MessageEmbed()
-            .setColor('ORANGE')
+            .setColor('GREEN')
             .setTitle(`| I HUG U |`)
             .setImage(jsonResults.results[index].media[0].mediumgif.url)
             .setDescription(`<@${message.author.id}> **hug** ${args[0]}`);

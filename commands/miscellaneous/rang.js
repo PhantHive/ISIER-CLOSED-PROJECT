@@ -209,16 +209,16 @@ module.exports =  {
 
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
                                 ctx.font = "bold 13px Comic Sans MS";
-                                ctx.fillStyle = "#ffffff";
-                                ctx.fillText("RANG:", 265, 75);
-                                ctx.fillText(curRank + "/" + allR, 325, 75);
+                                ctx.fillStyle = "#000000";
+                                ctx.fillText("RANG:", 285, 85);
+                                ctx.fillText(curRank + "/" + allR, 345, 75);
 
                                 ctx.beginPath()
                                 ctx.globalAlpha = 0.4;
                                 ctx.fillStyle = "#000000";
                                 ctx.moveTo(400, 70)
-                                ctx.lineTo(310, 70)
-                                ctx.quadraticCurveTo(300, 80, 310, 90) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(280, 70)
+                                ctx.quadraticCurveTo(270, 80, 280, 90) //left arc (pi/2 : - pi/2)
                                 ctx.lineTo(400, 90)
                                 ctx.fill()
                                 ctx.closePath()
@@ -226,10 +226,10 @@ module.exports =  {
                                 ctx.beginPath()
                                 ctx.globalAlpha = 0.4;
                                 ctx.fillStyle = "#000000";
-                                ctx.moveTo(400, 90)
-                                ctx.lineTo(310, 90)
-                                ctx.quadraticCurveTo(300, 100, 310, 110) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(400, 110)
+                                ctx.moveTo(400, 110)
+                                ctx.lineTo(280, 110)
+                                ctx.quadraticCurveTo(270, 120, 280, 130) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(400, 130)
                                 ctx.fill()
                                 ctx.closePath()
 
@@ -239,8 +239,8 @@ module.exports =  {
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
                                 ctx.font = "bold 13px Comic Sans MS";
                                 ctx.fillStyle = "#000000";
-                                ctx.fillText("EGG:", 265, 95);
-                                ctx.fillText(curEgg + "/ ?", 315, 95);
+                                ctx.fillText("EGG:", 285, 135);
+                                ctx.fillText(curEgg + "/ ?", 335, 135);
 
 
                                 ctx.restore();

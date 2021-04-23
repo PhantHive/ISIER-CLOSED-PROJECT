@@ -19,7 +19,7 @@ module.exports = {
         let index = Math.floor(Math.random() * jsonResults.results.length);
 
         const embed = new MessageEmbed()
-            .setColor('ORANGE')
+            .setColor('RED')
             .setTitle(`| I SLAP U |`)
             .setImage(jsonResults.results[index].media[0].mediumgif.url)
             .setDescription(`<@${message.author.id}> **slap** ${args[0]}`);
