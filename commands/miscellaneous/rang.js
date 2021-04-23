@@ -215,7 +215,12 @@ module.exports =  {
 
                                 ctx.fillStyle = "#000000";
                                 ctx.globalAlpha = 0.4;
-                                ctx.fillRect(210, 90, 155, 35)
+
+                                ctx.moveTo(400, 70)
+                                ctx.lineTo(210, 70)
+                                ctx.quadraticCurveTo(200, 80, 210, 90) //left arc (pi/2 : - pi/2)
+                                ctx.lineTo(400, 90)
+                                
                                 ctx.globalAlpha = 1;
                                 // Easter Egg
                                 //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
