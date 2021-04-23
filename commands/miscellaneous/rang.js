@@ -198,7 +198,7 @@ module.exports =  {
                                 ctx.fillStyle = "#000000";
                                 ctx.font = "italic 15px Tahoma";
                                 ctx.fillText("Level:", 125, 155);
-                                ctx.fillText(curlvl, 160, 155);
+                                ctx.fillText(curlvl, 165, 155);
 
 
                                 // Rank
