@@ -203,24 +203,21 @@ module.exports =  {
                                 ctx.closePath();
 
                                 // Rank
-                                const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
+                                //const rankImg = await loadImage(join(__dirname, "../..", "ressources/image", "rank.png"));
 
-                                ctx.drawImage(rankImg, 210, 70, 20, 20);
-                                ctx.font = "bold 15px Comic Sans MS";
-                                ctx.fillStyle = "#242323";
+                                //ctx.drawImage(rankImg, 210, 70, 20, 20);
+                                ctx.font = "bold 10px Comic Sans MS";
+                                ctx.fillStyle = "#ffffff";
                                 ctx.fillText("RANG:", 235, 85);
                                 ctx.fillText(curRank + "/" + allR, 295, 85);
 
                                 // Easter Egg
-                                const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
-                                ctx.drawImage(eggImg, 760, 80, 40, 40);
-                                ctx.shadowOffsetY = 4;
-                                ctx.shadowColor = "black";
-                                ctx.shadowBlur = 6;
-                                ctx.font = "bold 35px Comic Sans MS";
-                                ctx.fillStyle = "#00f1fe";
-                                ctx.fillText("EGG:", 800, 110);
-                                ctx.fillText(curEgg + "/ ?", 900, 110);
+                                //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
+                                //ctx.drawImage(eggImg, 760, 80, 40, 40);
+                                ctx.font = "bold 10px Comic Sans MS";
+                                ctx.fillStyle = "#ffffff";
+                                ctx.fillText("EGG:", 235, 105);
+                                ctx.fillText(curEgg + "/ ?", 285, 105);
 
 
                                 ctx.restore();
