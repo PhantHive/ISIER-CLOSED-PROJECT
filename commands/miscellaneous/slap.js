@@ -11,10 +11,11 @@ module.exports = {
     usage: "slap",
     run: async (client, message, args) => {
 
-        const url = `https://api.tenor.com/v1/search?q=slap&key=NT23U13IZ0AH&limit=10`
-        const response = await fetch(url);
-        const result = await response.json();
-        const index = Math.floor(Math.random() * result.results.length);
+        let url = `https://api.tenor.com/v1/search?q=slap&key=NT23U13IZ0AH&limit=10&MediaFilter=tinygif `
+        let response = await fetch(url);
+        let result = await response.json();
+        console.log(result)
+        let index = Math.floor(Math.random() * result.results.length);
 
         const embed = new MessageEmbed()
             .setColor('ORANGE')
