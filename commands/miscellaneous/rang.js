@@ -171,8 +171,8 @@ module.exports =  {
 
                                 ctx.moveTo(75, 160)
                                 ctx.quadraticCurveTo(65, 170, 75, 180) //left arc (pi/2 : - pi/2)
-                                ctx.lineTo(75 + percentage, 180)
-                                ctx.quadraticCurveTo(85 + percentage, 170, 75 + percentage, 160) //right arc (-pi/2 : pi/2)
+                                ctx.lineTo(80 + percentage, 180)
+                                ctx.quadraticCurveTo(90 + percentage, 170, 80 + percentage, 160) //right arc (-pi/2 : pi/2)
                                 ctx.lineTo(75, 160)
 
                                 ctx.fill();

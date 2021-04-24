@@ -11,8 +11,6 @@ module.exports = {
     usage: "owo",
     run: async (client, message, args) => {
 
-
-
         let tenorUrl = `https://api.tenor.com/v1/search?q=owo&key=NT23U13IZ0AH&limit=20`
         let response = await fetch(tenorUrl);
         let jsonResults = await response.json()
