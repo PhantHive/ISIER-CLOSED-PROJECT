@@ -63,7 +63,7 @@ module.exports =  {
             }
 
             else {
-                message.reply("tu ne peux pas faire un sondage avec une seul option LoL XD ptdrr.").then(m => m.delete(4000));
+                message.reply("tu ne peux pas faire un sondage avec une seul option LoL XD ptdrr.").then(m => m.delete({timeout: 4000}));
             }
 
         }
