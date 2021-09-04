@@ -33,6 +33,7 @@
     "urban": "^0.3.2"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "gif.js": "^0.2.0",
     "tenorjs": "git+https://github.com/Jinzulen/TenorJS.git"
   },
