@@ -892,8 +892,8 @@ module.exports = (client, message) => {
     //========================================VERIF MAIL
 
     if (message.channel.type === 'dm') {
-        console.log("tetete")
-        if (message.content.indexOf("@ipsa.fr") !== -1) {
+
+        if (message.content.indexOf("@ipsa.fr")) {
 
 
             if (!mailAdded[message.author.id]) {
