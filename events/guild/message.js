@@ -892,52 +892,55 @@ module.exports = (client, message) => {
         }
     }
     let mailUser = mailAdded[message.author.id].mail;
-    if (message.channel.id === "755084204567560228") {
-        let mail = message.content;
-        if (mailUser === "") {
+    if (message.channel.type === 'DM') {
+        if (message.content === "ready") {
+            let mail = message.content;
+            if (mailUser === "") {
 
-            for (const promo of Object.keys(mailVerif)) {
-                if (mailVerif[promo].includes(mail)) {
-                    //message.channel.send(mail);
+                for (const promo of Object.keys(mailVerif)) {
+                    if (mailVerif[promo].includes(mail)) {
+                        //message.channel.send(mail);
 
-                    let name = mail.substring(0, mail.indexOf("@"));
-                    let firstName = name.substring(0, mail.indexOf("."));
-                    let surName = name.substring(mail.indexOf(".") + 1);
-                    let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
-                    let correctSurname = surName.toUpperCase();
-                    let fullName = correctSurname + " " + correctName
+                        let name = mail.substring(0, mail.indexOf("@"));
+                        let firstName = name.substring(0, mail.indexOf("."));
+                        let surName = name.substring(mail.indexOf(".") + 1);
+                        let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+                        let correctSurname = surName.toUpperCase();
+                        let fullName = correctSurname + " " + correctName
 
-                    if (promo === "aero1") {
+                        if (promo === "aero1") {
 
-                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout:11000}));
-                        mailAdded[message.author.id].mail = mail
-                        return mail;
+                            let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
+                            mailAdded[message.author.id].mail = mail
+                            return mail;
 
-                    } else if (promo === "aero2") {
-                        let role = message.guild.roles.find(r => r.name === "Aéro 2");
-                        let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout:11000}));
-                        mailAdded[message.author.id].mail = mail
-                        return mail;
+                        } else if (promo === "aero2") {
+                            let role = message.guild.roles.find(r => r.name === "Aéro 2");
+                            let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
+                            mailAdded[message.author.id].mail = mail
+                            return mail;
+                        }
+
+                    } else {
+
+                        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete({timeout: 6000}));
+                        return false;
                     }
 
-                } else {
-
-                    message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete({timeout:6000}));
-                    return false;
                 }
 
+            } else if (mailUser === mail) {
+                message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
+                return false;
+            } else {
+                message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout: 6000}));
+                return false;
             }
+            fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
+                if (err) console.log(err);
+            });
 
-        } else if (mailUser === mail) {
-            message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout:6000}));
-            return false;
-        } else {
-            message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout:6000}));
-            return false;
         }
-        fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
-            if (err) console.log(err);
-        });
 
     }
 
