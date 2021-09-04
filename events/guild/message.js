@@ -912,7 +912,8 @@ module.exports = (client, message) => {
                         new MV({
                             userId: message.author.id,
                             ipsaMail: "",
-                        }).save()
+                        })
+                        data.save()
                     }
 
                     let mailUser = data.ipsaMail;
@@ -983,7 +984,7 @@ module.exports = (client, message) => {
                                             data.ipsaMail = mail
                                             return mail;
                                         }
-
+                                        data.save();
                                         guild.members.cache.get(user).roles.add(role);
                                     }
 
