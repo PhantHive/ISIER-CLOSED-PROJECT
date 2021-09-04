@@ -895,7 +895,7 @@ module.exports = (client, message) => {
 
         if (message.content.indexOf("@ipsa.fr")) {
 
-
+            console.log("testeee")
             if (!mailAdded[message.author.id]) {
                 mailAdded[message.author.id] = {
                     mail: ""
@@ -906,7 +906,7 @@ module.exports = (client, message) => {
             let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
 
             if (mailUser === "") {
-
+                    
                 for (const promo of Object.keys(mailVerif)) {
                     if (mailVerif[promo].includes(mail)) {
                         //message.channel.send(mail);
