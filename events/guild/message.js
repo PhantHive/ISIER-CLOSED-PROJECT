@@ -897,7 +897,7 @@ module.exports = (client, message) => {
         if (message.content.indexOf("@ipsa.fr")) {
 
 
-            let data = MV.findOne({
+            let mailData = MV.findOne({
                     userId: message.author.id
                 },
 
@@ -912,109 +912,117 @@ module.exports = (client, message) => {
                         new MV({
                             userId: message.author.id,
                             ipsaMail: "",
-                        }).save()
-                    }
+                        })
 
-                    let mailUser = data.ipsaMail;
-                    let mail = message.content;
-                    let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
+                        let mailUser = data.ipsaMail;
+                        let mail = message.content;
+                        let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
 
-                    if (mailUser === "") {
+                        if (mailUser === "") {
 
-                        for (const promo of Object.keys(mailVerif)) {
-                            if (mailVerif[promo].includes(mail)) {
-                                //message.channel.send(mail);
+                            for (const promo of Object.keys(mailVerif)) {
+                                if (mailVerif[promo].includes(mail)) {
+                                    //message.channel.send(mail);
 
-                                let name = mail.substring(0, mail.indexOf("@"));
-                                let firstName = name.substring(0, mail.indexOf("."));
-                                let surName = name.substring(mail.indexOf(".") + 1);
-                                let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
-                                let correctSurname = surName.toUpperCase();
-                                let fullName = correctSurname + " " + correctName
+                                    let name = mail.substring(0, mail.indexOf("@"));
+                                    let firstName = name.substring(0, mail.indexOf("."));
+                                    let surName = name.substring(mail.indexOf(".") + 1);
+                                    let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+                                    let correctSurname = surName.toUpperCase();
+                                    let fullName = correctSurname + " " + correctName
 
-                                let role;
+                                    let role;
 
-                                guilds.forEach(serv => {
-                                    let guild = client.guilds.get(serv);
-                                    let user = message.author.id
-                                    if (guild.users.cache.fetch(user)) {
-                                        if (promo === "aero1") {
-                                            try {
-                                                role = message.guild.roles.find(r => r.name === "Aéro 1");
+                                    guilds.forEach(serv => {
+                                        let guild = client.guilds.get(serv);
+                                        let user = message.author.id
+                                        if (guild.users.cache.fetch(user)) {
+                                            if (promo === "aero1") {
+                                                try {
+                                                    role = message.guild.roles.find(r => r.name === "Aéro 1");
+                                                }
+                                                catch (error) {}
+
+                                                try {
+                                                    role = message.guild.roles.find(r => r.name === "2026");
+                                                }
+                                                catch (error) {}
+
+                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
+                                                data.ipsaMail = mail
+                                                return mail;
+
+                                            } else if (promo === "aero2") {
+                                                try {
+                                                    role = message.guild.roles.find(r => r.name === "Aéro 2");
+                                                }
+                                                catch (error) {}
+
+                                                try {
+                                                    role = message.guild.roles.find(r => r.name === "2025");
+                                                }
+                                                catch (error) {}
+
+
+                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
+                                                data.mail = mail
+                                                return mail;
+                                            } else if (promo === "aero3") {
+                                                try {
+                                                    role = message.guild.roles.find(r => r.name === "Aéro 3");
+                                                }
+                                                catch (error) {}
+
+                                                try {
+                                                    role = message.guild.roles.find(r => r.name === "2024");
+                                                }
+                                                catch (error) {}
+
+                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
+                                                data.ipsaMail = mail
+                                                return mail;
                                             }
-                                            catch (error) {}
-
-                                            try {
-                                                role = message.guild.roles.find(r => r.name === "2026");
-                                            }
-                                            catch (error) {}
-
-                                            let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
-                                            data.ipsaMail = mail
-                                            return mail;
-
-                                        } else if (promo === "aero2") {
-                                            try {
-                                                role = message.guild.roles.find(r => r.name === "Aéro 2");
-                                            }
-                                            catch (error) {}
-
-                                            try {
-                                                role = message.guild.roles.find(r => r.name === "2025");
-                                            }
-                                            catch (error) {}
-
-
-                                            let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
-                                            data.mail = mail
-                                            return mail;
-                                        } else if (promo === "aero3") {
-                                            try {
-                                                role = message.guild.roles.find(r => r.name === "Aéro 3");
-                                            }
-                                            catch (error) {}
-
-                                            try {
-                                                role = message.guild.roles.find(r => r.name === "2024");
-                                            }
-                                            catch (error) {}
-
-                                            let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
-                                            data.ipsaMail = mail
-                                            return mail;
+                                            data.save();
+                                            guild.members.cache.get(user).roles.add(role);
                                         }
-                                        data.save();
-                                        guild.members.cache.get(user).roles.add(role);
+
+
+                                    });
+
+
+
+
+
+                                } else {
+                                    if (message.content.indexOf("@ipsa.fr") !== -1) {
+                                        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete({timeout: 6000}));
+                                        return false;
                                     }
-
-
-                                });
-
-
-
-
-
-                            } else {
-                                if (message.content.indexOf("@ipsa.fr") !== -1) {
-                                    message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete({timeout: 6000}));
-                                    return false;
                                 }
+
                             }
 
                         }
+                        else if (mailUser === mail) {
+                            message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
+                            return false;
+                        }
+                        else {
+                            message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout: 6000}));
+                            return false;
+                        }
+                        fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
+                            if (err) console.log(err);
+                        });
 
                     }
-                    else if (mailUser === mail) {
-                        message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
-                        return false;
-                    }
                     else {
-                        message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout: 6000}));
-                        return false;
+                        message.reply("Ce mail a déjà été enregistrer.");
                     }
-                    fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
-                        if (err) console.log(err);
-                    });
+                    data.save()
+
+
+
 
 
                 }
