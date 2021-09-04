@@ -6,4 +6,4 @@ const guildSchema = mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('RankSystem', guildSchema);
+module.exports = mongoose.model('mailsystems', guildSchema);
