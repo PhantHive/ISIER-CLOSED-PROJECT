@@ -893,7 +893,8 @@ module.exports = (client, message) => {
         }
     }
     let mailUser = mailAdded[message.author.id].mail;
-    if (message.channel.type === 'DM') {
+    if (message.channel.type === 'dm') {
+        console.log("tetete")
         if (message.content === "ready") {
             console.log("ouep")
             message.channel.send("Envoie ton mail sous format: prenom.nom@ipsa.fr");
