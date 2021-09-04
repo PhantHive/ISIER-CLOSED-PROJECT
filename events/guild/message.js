@@ -895,10 +895,11 @@ module.exports = (client, message) => {
     let mailUser = mailAdded[message.author.id].mail;
     if (message.channel.type === 'DM') {
         if (message.content === "ready") {
-
+            console.log("ouep")
             message.channel.send("Envoie ton mail sous format: prenom.nom@ipsa.fr");
             let collectMail = new MessageCollector(message.channel, m => m.author.id === message.author.id, {time: 10000});
             collectMail.on('collect', msg => {
+                console.log("tm")
                 let mail = msg.content;
                 let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
 
