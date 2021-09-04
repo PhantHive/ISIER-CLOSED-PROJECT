@@ -912,8 +912,7 @@ module.exports = (client, message) => {
                         new MV({
                             userId: message.author.id,
                             ipsaMail: "",
-                        })
-                        data.save()
+                        }).save()
                     }
 
                     let mailUser = data.ipsaMail;
