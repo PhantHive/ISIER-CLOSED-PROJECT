@@ -896,10 +896,11 @@ module.exports = (client, message) => {
 
         if (message.content.indexOf("@ipsa.fr")) {
 
-        }
+
             let data = MV.findOne({
                     userId: message.author.id
                 },
+
                 (err, data) => {
                     if (err) console.log(err);
 
@@ -1002,10 +1003,12 @@ module.exports = (client, message) => {
 
                         }
 
-                    } else if (mailUser === mail) {
+                    }
+                    else if (mailUser === mail) {
                         message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
                         return false;
-                    } else {
+                    }
+                    else {
                         message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout: 6000}));
                         return false;
                     }
@@ -1014,18 +1017,11 @@ module.exports = (client, message) => {
                     });
 
 
-
-
                 }
             );
 
-
-
-
-
-
-
         }
+
 
     }
 
