@@ -943,29 +943,32 @@ module.exports = (client, message) => {
                                                     let oldrole;
 
                                                     guilds.forEach(serv => {
-                                                        let guild = client.guilds.cache.get(serv);
-                                                        let user = message.author.id;
-                                                        if (guild.members.fetch(user)) {
 
-                                                            try {
-                                                                role = message.guild.roles.find(r => r.name === "IPSAlien");
+                                                        try {
+                                                            let guild = client.guilds.cache.get(serv);
+                                                            let user = message.author.id;
+                                                            if (guild.members.fetch(user)) {
+
+                                                                try {
+                                                                    role = message.guild.roles.find(r => r.name === "IPSAlien");
+                                                                } catch (error) {
+                                                                }
+
+                                                                try {
+                                                                    oldrole = message.guild.roles.find(r => r.name === "Invité");
+                                                                } catch (error) {
+                                                                }
+
+                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
+                                                                mdata.ipsaMail = mail
+                                                                mdata.save();
+                                                                guild.members.cache.get(user).roles.add(role);
+                                                                guild.members.cache.get(user).roles.remove(oldrole);
+                                                                return mail;
+
                                                             }
-                                                            catch (error) {}
-
-                                                            try {
-                                                                oldrole = message.guild.roles.find(r => r.name === "Invité");
-                                                            }
-                                                            catch (error) {}
-
-                                                            let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
-                                                            mdata.ipsaMail = mail
-                                                            mdata.save();
-                                                            guild.members.cache.get(user).roles.add(role);
-                                                            guild.members.cache.get(user).roles.remove(oldrole);
-                                                            return mail;
-
                                                         }
-
+                                                        catch (error) {}
 
                                                     });
 
