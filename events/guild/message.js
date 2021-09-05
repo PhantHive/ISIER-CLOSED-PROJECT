@@ -915,7 +915,7 @@ module.exports = (client, message) => {
                         }).save()
 
                         const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-                        await delay(1000);
+                        await delay(4000);
 
                         let mail = message.content;
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
