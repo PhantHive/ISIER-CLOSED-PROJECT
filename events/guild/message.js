@@ -944,7 +944,7 @@ module.exports = (client, message) => {
                                                     guilds.forEach(serv => {
                                                         let guild = client.guilds.cache.get(serv);
                                                         let user = message.author.id;
-                                                        if (guild.members.cache.fetch(user)) {
+                                                        if (guild.members.fetch(user)) {
                                                             if (promo === "aero1") {
                                                                 try {
                                                                     role = message.guild.roles.find(r => r.name === "Aéro 1");
