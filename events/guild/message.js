@@ -950,21 +950,21 @@ module.exports = (client, message) => {
                                                             if (guild.member(user)) {
 
                                                                 try {
-                                                                    role = message.guild.roles.cache.find(r => r.name === "IPSAlien");
+                                                                    role = guild.roles.cache.find(r => r.name === "IPSAlien");
                                                                 } catch (error) {
                                                                 }
 
                                                                 try {
-                                                                    oldrole = message.guild.roles.cache.find(r => r.name === "Invité");
+                                                                    oldrole = guild.roles.cache.find(r => r.name === "Invité");
                                                                 } catch (error) {
                                                                 }
 
                                                                 console.log(role)
-                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
+                                                                message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
                                                                 mdata.ipsaMail = mail
                                                                 mdata.save();
-                                                                guild.members.cache.get(user).roles.add(role.id);
-                                                                guild.members.cache.get(user).roles.remove(oldrole.id);
+                                                                guild.members.cache.get(user).roles.add(role);
+                                                                guild.members.cache.get(user).roles.remove(oldrole);
                                                                 return mail;
 
                                                             }
@@ -1002,7 +1002,7 @@ module.exports = (client, message) => {
                                             //if (err) console.log(err);
                                         //});
 
-                                        mdata.save()
+
 
                                     }
                                 )
