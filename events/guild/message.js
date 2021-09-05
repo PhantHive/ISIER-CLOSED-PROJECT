@@ -225,7 +225,7 @@ module.exports = (client, message) => {
         }
         else {
 
-            if ((message.content.indexOf('@ipsa.fr') !== -1)) {
+            if (!message.content.lastIndexOf('@ipsa.fr')) {
                 message.channel.send("uWu hey, go sur le discord de ta promo dans le channel adapté aux commandes bots et tape !!aide pour recevoir de l'aide sur mes commandes" +
                     "je travaille sans relache pour proposer un système de réponse plus adapté dans le futur! I love you all <3")
             }
@@ -914,15 +914,14 @@ module.exports = (client, message) => {
                             ipsaMail: "",
                         }).save()
 
-                        const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
-                        await delay(4000);
+                        await new Promise(resolve => setTimeout(resolve, 5000));
 
                         let mail = message.content;
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
 
-
+                        console.log(mail)
                         if (mdata.ipsaMail === "") {
-
+                            console.log("yep")
                             for (const promo of Object.keys(mailVerif)) {
                                 if (mailVerif[promo].includes(mail)) {
                                     //message.channel.send(mail);
@@ -1006,7 +1005,7 @@ module.exports = (client, message) => {
                             }
 
                         }
-                        else if (data.ipsaMail === mail) {
+                        else if (mdata.ipsaMail === mail) {
                             message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
                             return false;
                         }
