@@ -27,7 +27,7 @@ module.exports = (client, member, message) => {
                         let user = member.id;
                         let role;
                         let oldrole;
-                        if (guild.members.fetch(user)) {
+                        if (guild.member(user)) {
 
                             try {
                                 role = member.guild.roles.find(r => r.name === "IPSAlien");
