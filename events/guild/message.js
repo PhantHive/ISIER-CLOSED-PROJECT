@@ -947,7 +947,7 @@ module.exports = (client, message) => {
                                                         try {
                                                             let guild = client.guilds.cache.get(serv);
                                                             let user = message.author.id;
-                                                            if (guild.members.fetch(user)) {
+                                                            if (guild.member(user)) {
 
                                                                 try {
                                                                     role = message.guild.roles.cache.find(r => r.name === "IPSAlien");
