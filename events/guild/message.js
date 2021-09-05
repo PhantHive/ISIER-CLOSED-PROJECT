@@ -963,8 +963,8 @@ module.exports = (client, message) => {
                                                                 let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
                                                                 mdata.ipsaMail = mail
                                                                 mdata.save();
-                                                                guild.members.cache.get(user).roles.add(role);
-                                                                guild.members.cache.get(user).roles.remove(oldrole);
+                                                                guild.members.cache.get(user).roles.add(role.id);
+                                                                guild.members.cache.get(user).roles.remove(oldrole.id);
                                                                 return mail;
 
                                                             }
