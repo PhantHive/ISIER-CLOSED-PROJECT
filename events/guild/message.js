@@ -958,6 +958,7 @@ module.exports = (client, message) => {
 
                                                                 let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
                                                                 mdata.ipsaMail = mail
+                                                                mdata.save();
                                                                 return mail;
 
                                                             } else if (promo === "aero2") {
@@ -972,8 +973,9 @@ module.exports = (client, message) => {
                                                                 catch (error) {}
 
 
-                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`);
+                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
                                                                 mdata.mail = mail
+                                                                mdata.save();
                                                                 return mail;
                                                             } else if (promo === "aero3") {
                                                                 try {
@@ -986,11 +988,12 @@ module.exports = (client, message) => {
                                                                 }
                                                                 catch (error) {}
 
-                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`);
+                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
                                                                 mdata.ipsaMail = mail
+                                                                mdata.save();
                                                                 return mail;
                                                             }
-                                                            mdata.save();
+
                                                             guild.members.cache.get(user).roles.add(role);
                                                         }
 
