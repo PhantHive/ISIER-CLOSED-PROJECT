@@ -24,7 +24,7 @@ module.exports = (client, member, message) => {
                     let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
                     guilds.forEach(serv => {
                         let guild = client.guilds.cache.get(serv);
-                        let user = message.author.id;
+                        let user = member.id;
                         let role;
                         let oldrole;
                         if (guild.members.fetch(user)) {
