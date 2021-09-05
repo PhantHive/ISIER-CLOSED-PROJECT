@@ -27,19 +27,20 @@ module.exports = (client, member, message) => {
                         let user = member.id;
                         let role;
                         let oldrole;
+                        console.log(serv)
                         if (guild.member(user)) {
 
                             try {
-                                role = member.guild.roles.find(r => r.name === "IPSAlien");
+                                role = member.guild.roles.cache.find(r => r.name === "IPSAlien");
                             }
                             catch (error) {}
 
                             try {
-                                oldrole = member.guild.roles.find(r => r.name === "Invité");
+                                oldrole = member.guild.roles.cache.find(r => r.name === "Invité");
                             }
                             catch (error) {
                                 try {
-                                    oldrole = member.guild.roles.find(r => r.name === "Incruste");
+                                    oldrole = member.guild.roles.cache.find(r => r.name === "Incruste");
                                 }
                                 catch (error) {}
                             }
