@@ -942,9 +942,9 @@ module.exports = (client, message) => {
                                                     let role;
 
                                                     guilds.forEach(serv => {
-                                                        let guild = client.guilds.get(serv);
-                                                        let user = message.author.id
-                                                        if (guild.users.cache.fetch(user)) {
+                                                        let guild = client.guilds.cache.get(serv);
+                                                        let user = message.author.id;
+                                                        if (guild.members.cache.fetch(user)) {
                                                             if (promo === "aero1") {
                                                                 try {
                                                                     role = message.guild.roles.find(r => r.name === "Aéro 1");
@@ -956,7 +956,7 @@ module.exports = (client, message) => {
                                                                 }
                                                                 catch (error) {}
 
-                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
+                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`);
                                                                 mdata.ipsaMail = mail
                                                                 return mail;
 
@@ -972,7 +972,7 @@ module.exports = (client, message) => {
                                                                 catch (error) {}
 
 
-                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
+                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`);
                                                                 mdata.mail = mail
                                                                 return mail;
                                                             } else if (promo === "aero3") {
@@ -986,7 +986,7 @@ module.exports = (client, message) => {
                                                                 }
                                                                 catch (error) {}
 
-                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
+                                                                let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`);
                                                                 mdata.ipsaMail = mail
                                                                 return mail;
                                                             }
@@ -1004,7 +1004,7 @@ module.exports = (client, message) => {
                                                 }
                                                 else {
                                                     if (!message.content.lastIndexOf("@ipsa.fr")) {
-                                                        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs. Je m'efface tout seul, pas touche les modos :P").then(m => m.delete({timeout: 6000}));
+                                                        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs.");
                                                         return false;
                                                     }
                                                 }
