@@ -914,11 +914,10 @@ module.exports = (client, message) => {
                             ipsaMail: "",
                         })
 
-                        let mailUser = data.ipsaMail;
                         let mail = message.content;
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
 
-                        if (mailUser === "") {
+                        if (data.ipsaMail === "") {
 
                             for (const promo of Object.keys(mailVerif)) {
                                 if (mailVerif[promo].includes(mail)) {
@@ -1003,7 +1002,7 @@ module.exports = (client, message) => {
                             }
 
                         }
-                        else if (mailUser === mail) {
+                        else if (data.ipsaMail === mail) {
                             message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
                             return false;
                         }
