@@ -901,7 +901,7 @@ module.exports = (client, message) => {
                     userId: message.author.id
                 },
 
-                (err, mdata) => {
+                async(err, mdata) => {
                     if (err) console.log(err);
 
                     if (message.author.bot) {
@@ -913,6 +913,9 @@ module.exports = (client, message) => {
                             userId: message.author.id,
                             ipsaMail: "",
                         }).save()
+
+                        const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+                        await delay(1000);
 
                         let mail = message.content;
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
