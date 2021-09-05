@@ -901,14 +901,14 @@ module.exports = (client, message) => {
                     userId: message.author.id
                 },
 
-                (err, data) => {
+                (err, mdata) => {
                     if (err) console.log(err);
 
                     if (message.author.bot) {
                         return;
                     }
 
-                    if (!data) {
+                    if (!mdata) {
                         new MV({
                             userId: message.author.id,
                             ipsaMail: "",
@@ -918,7 +918,7 @@ module.exports = (client, message) => {
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
 
 
-                        if (data.ipsaMail === "") {
+                        if (mdata.ipsaMail === "") {
 
                             for (const promo of Object.keys(mailVerif)) {
                                 if (mailVerif[promo].includes(mail)) {
@@ -949,7 +949,7 @@ module.exports = (client, message) => {
                                                 catch (error) {}
 
                                                 let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo *${promo}*, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
-                                                data.ipsaMail = mail
+                                                mdata.ipsaMail = mail
                                                 return mail;
 
                                             } else if (promo === "aero2") {
@@ -965,7 +965,7 @@ module.exports = (client, message) => {
 
 
                                                 let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
-                                                data.mail = mail
+                                                mdata.mail = mail
                                                 return mail;
                                             } else if (promo === "aero3") {
                                                 try {
@@ -979,10 +979,10 @@ module.exports = (client, message) => {
                                                 catch (error) {}
 
                                                 let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens a la promo **${promo}**, tu es **verifie**, ton **role** permettant d'accedes aux channels reserver a ta promo a ete **ajouter**! (mon messsage se delete tout seul merci de ne pas toucher modos!)`).then(m => m.delete({timeout: 11000}));
-                                                data.ipsaMail = mail
+                                                mdata.ipsaMail = mail
                                                 return mail;
                                             }
-                                            data.save();
+                                            mdata.save();
                                             guild.members.cache.get(user).roles.add(role);
                                         }
 
