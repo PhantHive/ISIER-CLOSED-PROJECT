@@ -912,10 +912,11 @@ module.exports = (client, message) => {
                         new MV({
                             userId: message.author.id,
                             ipsaMail: "",
-                        })
+                        }).save()
 
                         let mail = message.content;
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
+
 
                         if (data.ipsaMail === "") {
 
