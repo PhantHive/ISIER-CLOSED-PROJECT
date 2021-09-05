@@ -225,7 +225,7 @@ module.exports = (client, message) => {
         }
         else {
 
-            if ((message.content !== "ready") || (message.content.indexOf('@ipsa.fr') !== -1)) {
+            if ((message.content.indexOf('@ipsa.fr') !== -1)) {
                 message.channel.send("uWu hey, go sur le discord de ta promo dans le channel adapté aux commandes bots et tape !!aide pour recevoir de l'aide sur mes commandes" +
                     "je travaille sans relache pour proposer un système de réponse plus adapté dans le futur! I love you all <3")
             }
@@ -1022,7 +1022,7 @@ module.exports = (client, message) => {
                     else {
                         message.reply("Ce mail a déjà été enregistrer.");
                     }
-                    data.save()
+                    mdata.save()
 
 
 
