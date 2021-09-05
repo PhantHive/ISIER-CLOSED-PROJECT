@@ -30,19 +30,19 @@ module.exports = (client, member, message) => {
                         if (guild.members.fetch(user)) {
 
                             try {
-                                role = message.guild.roles.find(r => r.name === "IPSAlien");
+                                role = member.guild.roles.find(r => r.name === "IPSAlien");
                             }
                             catch (error) {}
 
                             try {
-                                oldrole = message.guild.roles.find(r => r.name === "Invité");
+                                oldrole = member.guild.roles.find(r => r.name === "Invité");
                             }
-                            catch (error) {}
-
-                            try {
-                                oldrole = message.guild.roles.find(r => r.name === "Incruste");
+                            catch (error) {
+                                try {
+                                    oldrole = member.guild.roles.find(r => r.name === "Incruste");
+                                }
+                                catch (error) {}
                             }
-                            catch (error) {}
 
                             guild.members.cache.get(user).roles.add(role);
                             guild.members.cache.get(user).roles.remove(oldrole);
