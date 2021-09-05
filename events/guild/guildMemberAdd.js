@@ -27,7 +27,6 @@ module.exports = (client, member, message) => {
                         let user = member.id;
                         let role;
                         let oldrole;
-                        console.log(serv)
                         if (guild.member(user)) {
 
                             try {
