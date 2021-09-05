@@ -950,15 +950,16 @@ module.exports = (client, message) => {
                                                             if (guild.members.fetch(user)) {
 
                                                                 try {
-                                                                    role = message.member.guild.roles.cache.find(r => r.name === "IPSAlien");
+                                                                    role = message.guild.roles.cache.find(r => r.name === "IPSAlien");
                                                                 } catch (error) {
                                                                 }
 
                                                                 try {
-                                                                    oldrole = message.member.guild.roles.cache.find(r => r.name === "Invité");
+                                                                    oldrole = message.guild.roles.cache.find(r => r.name === "Invité");
                                                                 } catch (error) {
                                                                 }
 
+                                                                console.log(role)
                                                                 let welcomeMessage = message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
                                                                 mdata.ipsaMail = mail
                                                                 mdata.save();
@@ -967,6 +968,7 @@ module.exports = (client, message) => {
                                                                 return mail;
 
                                                             }
+
                                                         }
                                                         catch (error) {}
 
