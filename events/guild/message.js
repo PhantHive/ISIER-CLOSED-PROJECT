@@ -956,11 +956,13 @@ module.exports = (client, message) => {
 
                                                                 try {
                                                                     oldrole = guild.roles.cache.find(r => r.name === "Invité");
-                                                                } catch (error) {
-                                                                }
+                                                                } catch (error) {}
 
-                                                                console.log(role)
-                                                                message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo *${promo}*, tu es **verifié** en accord avec notre base de donnée.`);
+                                                                try {
+                                                                    oldrole = guild.roles.cache.find(r => r.name === "Incruste");
+                                                                } catch (error) {}
+
+                                                                message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** en accord avec notre base de donnée.`);
                                                                 mdata.ipsaMail = mail
                                                                 mdata.save();
                                                                 guild.members.cache.get(user).roles.add(role);
