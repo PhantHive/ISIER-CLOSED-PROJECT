@@ -925,7 +925,6 @@ module.exports = (client, message) => {
                                         let mail = message.content;
                                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
 
-                                        console.log(mail)
                                         if (mdata.ipsaMail === "") {
                                             for (const promo of Object.keys(mailVerif)) {
                                                 if (mailVerif[promo].includes(mail)) {
@@ -980,7 +979,7 @@ module.exports = (client, message) => {
                                                                 return mail;
 
                                                             }
-                                                            
+
                                                         catch (error) {}
 
                                                     });
@@ -994,6 +993,9 @@ module.exports = (client, message) => {
                                                     if (!message.content.lastIndexOf("@ipsa.fr")) {
                                                         message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs.");
                                                         return false;
+                                                    }
+                                                    else {
+                                                        message.reply(`La base de donnée ne contient pas ton mail ${mail}, MP un admin pour plus d'infos.`);
                                                     }
                                                 }
 
