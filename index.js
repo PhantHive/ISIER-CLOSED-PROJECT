@@ -150,7 +150,7 @@ client.on("message", async message => {
                         .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
                         .addField("XP: ", newlvl)
                         .setImage("https://i.imgur.com/7LVMSKN.png");
-                    const channel = message.guild.channels.find(ch => ch.name.includes('commandes-bots'));
+                    const channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bots'));
                     channel.send(lvlup2);
 
                     data.XP = 0;
@@ -164,7 +164,7 @@ client.on("message", async message => {
                         .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
                         .addField("XP: ", newlvl)
                         .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-                    const channel = message.guild.channels.find(ch => ch.name.includes('commandes-bots'));
+                    const channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bots'));
                     channel.send(lvlup3);
 
                     data.XP = 0;
