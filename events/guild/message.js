@@ -953,7 +953,7 @@ module.exports = (client, message) => {
                                                             if (guild.member(user)) {
 
                                                                 try {
-                                                                    role = guild.roles.cache.find(r => r.name === "IPSAlien");
+                                                                    role = guild.roles.cache.find(r => r.name.includes("IPSAlien"));
                                                                 } catch (error) {
                                                                 }
 
