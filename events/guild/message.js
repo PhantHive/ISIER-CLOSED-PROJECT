@@ -968,7 +968,14 @@ module.exports = (client, message) => {
                                                                 guild.members.cache.get(user).roles.add(role);
 
                                                                 console.log(oldrole, guild)
-                                                                guild.members.cache.get(user).roles.remove(oldrole);
+                                                                try {
+                                                                    guild.members.cache.get(user).roles.remove(oldrole);
+                                                                }
+                                                                catch (err) {
+                                                                    if (err instanceof TypeError) {
+                                                                        // do nothing
+                                                                    }
+                                                                }
 
 
                                                                 }
