@@ -1007,7 +1007,7 @@ module.exports = (client, message) => {
             async (err, data) => {
                 if (data) {
                     if (data.userId !== message.author.id) {
-                        message.reply("Tu ne peux pas prendre l'identité de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur MP un admin.").then(m => m.delete({timeout: 6000}));
+                        message.reply("Tu ne peux pas prendre l'identité de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur MP un admin.");
                         return false;
                     }
                 }
