@@ -905,6 +905,14 @@ module.exports = (client, message) => {
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
                         let mailFound = false;
 
+                        MV.findOne({mailIpsa: mail.toLowerCase()},
+                            async (err, data) => {
+                                if (data && (data.userId !== message.author.id)) {
+                                    message.reply("Tu ne peux pas prendre l'identité de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur MP un admin.").then(m => m.delete({timeout: 6000}));
+                                    return false;
+                                }
+                            });
+
                         if (mdata.ipsaMail === "") {
                             for (const promo of Object.keys(mailVerif)) {
                                 if (mailVerif[promo].includes(mail.toLowerCase())) {
@@ -991,13 +999,10 @@ module.exports = (client, message) => {
                             }
                         }
                         else if (mdata.ipsaMail === mail) {
-                            message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
+                            message.reply(`Ton compte a déjà été verifié! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
                             return false;
                         }
-                        else {
-                            message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout: 6000}));
-                            return false;
-                        }
+
 
                         //fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
                         //if (err) console.log(err);
@@ -1075,7 +1080,7 @@ module.exports = (client, message) => {
 
     let command = client.commands.get(cmd);
 
-    if(!cmd) return message.reply("il semblerai que tu ai besoin de m'appeler, si tu ne connais pas les commandes je t'invite a faire i!aide");
+    if(!cmd) return message.reply("il semblerait que tu ais besoin de m'appeler, si tu ne connais pas les commandes je t'invite a faire !!aide");
     //mais les commandes ont des noms mais aussi des alias, si la personne utilise pas le nom on check si ce qu il a mis est un alias du nom
 
     if (!command) command = client.commands.get(client.aliases.get(cmd));
