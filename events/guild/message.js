@@ -907,10 +907,15 @@ module.exports = (client, message) => {
 
                         MV.findOne({mailIpsa: mail.toLowerCase()},
                             async (err, data) => {
-                                if (data && (data.userId !== message.author.id)) {
-                                    message.reply("Tu ne peux pas prendre l'identité de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur MP un admin.").then(m => m.delete({timeout: 6000}));
-                                    return false;
+                            console.log("yep")
+                                if (data) {
+                                    console.log("yep")
+                                    if (data.userId !== message.author.id) {
+                                        message.reply("Tu ne peux pas prendre l'identité de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur MP un admin.").then(m => m.delete({timeout: 6000}));
+                                        return false;
+                                    }
                                 }
+
                             });
 
                         if (mdata.ipsaMail === "") {
