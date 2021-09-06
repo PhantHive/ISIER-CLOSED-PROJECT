@@ -966,12 +966,10 @@ module.exports = (client, message) => {
                                                                 message.channel.send(`***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** sur ***${guild}*** en accord avec notre base de donnée.`);
                                                                 mdata.ipsaMail = mail
                                                                 guild.members.cache.get(user).roles.add(role);
-                                                                try {
-                                                                    guild.members.cache.get(user).roles.remove(oldrole);
-                                                                }
-                                                                catch {
-                                                                    console.log(oldrole)
-                                                                }
+                                                                
+                                                                console.log(oldrole, guild)
+                                                                guild.members.cache.get(user).roles.remove(oldrole);
+
 
                                                                 }
                                                                 mdata.save();
@@ -994,12 +992,11 @@ module.exports = (client, message) => {
                                                         message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs.");
                                                         return false;
                                                     }
-                                                    else {
-                                                        message.reply(`La base de donnée ne contient pas ton mail ${mail}, MP un admin pour plus d'infos.`);
-                                                    }
+
                                                 }
 
                                             }
+                                            message.reply(`La base de donnée ne contient pas ton mail ***${mail}***, MP un admin pour plus d'infos.`);
 
                                         }
                                         else if (mdata.ipsaMail === mail) {
