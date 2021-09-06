@@ -4,7 +4,6 @@ const fs = require("fs");
 //mailVerif
 let mailVerif = require("../../jsonFile/mailsVerif.json")
 //mailAdd
-let mailAdded = require("../../jsonFile/mailAdded.json")
 let mpAeroOne = require("../../jsonFile/mp_AeroOne.json")
 const EGD = require('../../models/EasterSystem.js');
 const XLD = require('../../models/RankSystem.js');
@@ -894,7 +893,7 @@ module.exports = (client, message) => {
 
     if (message.channel.type === 'dm') {
 
-        if (message.content.indexOf("@ipsa.fr")) {
+        if (message.content.lastIndexOf("@ipsa.fr")) {
 
 
             let mailData = MV.findOne({
@@ -1030,7 +1029,9 @@ module.exports = (client, message) => {
             );
 
         }
-
+        else {
+            message.reply("Utilise !!aide dans un serveur pour savoir ce que je peux faire!");
+        }
 
     }
 
