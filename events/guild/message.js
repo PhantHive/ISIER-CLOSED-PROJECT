@@ -909,7 +909,7 @@ module.exports = (client, message) => {
                     }
 
                     if (!mdata) {
-                        new MV({
+                        await new MV({
                             userId: message.author.id,
                             ipsaMail: "",
                         }).save()
@@ -944,6 +944,8 @@ module.exports = (client, message) => {
 
                                                     guilds.forEach(serv => {
 
+                                                        new Promise(resolve => setTimeout(resolve, 1500))
+
                                                         try {
                                                             let guild = client.guilds.cache.get(serv);
                                                             let user = message.author.id;
@@ -963,11 +965,12 @@ module.exports = (client, message) => {
                                                                 }
 
 
-                                                                message.channel.send(`Bonjour 🙂  ***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** en accord avec notre base de donnée.`);
+                                                                message.channel.send(`***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** sur ***${guild}*** en accord avec notre base de donnée.`);
                                                                 mdata.ipsaMail = mail
-                                                                mdata.save();
                                                                 guild.members.cache.get(user).roles.add(role);
                                                                 guild.members.cache.get(user).roles.remove(oldrole);
+                                                                mdata.save();
+
                                                                 return mail;
 
                                                             }
