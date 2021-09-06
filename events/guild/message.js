@@ -996,7 +996,6 @@ module.exports = (client, message) => {
                                                 }
 
                                             }
-                                            message.reply(`La base de donnée ne contient pas ton mail ***${mail}***, MP un admin pour plus d'infos.`);
 
                                         }
                                         else if (mdata.ipsaMail === mail) {
