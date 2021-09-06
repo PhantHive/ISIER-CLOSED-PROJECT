@@ -905,18 +905,6 @@ module.exports = (client, message) => {
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
                         let mailFound = false;
 
-                        const query = MV.findOne({ipsaMail: mail.toLowerCase()},
-                            async (err, data) => {
-                                if (data) {
-                                    if (data.userId !== message.author.id) {
-                                        message.reply("Tu ne peux pas prendre l'identité de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur MP un admin.").then(m => m.delete({timeout: 6000}));
-                                        return false;
-                                    }
-                                }
-
-                            });
-
-                        if (!query) {
 
                             if (mdata.ipsaMail === "") {
                                 for (const promo of Object.keys(mailVerif)) {
@@ -1001,7 +989,6 @@ module.exports = (client, message) => {
                                 return false;
                             }
 
-                        }
 
 
                         //fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
@@ -1013,6 +1000,22 @@ module.exports = (client, message) => {
                     }
                 )
             })
+    }
+
+    async function checkImpostor(mail) {
+        MV.findOne({ipsaMail: mail.toLowerCase()},
+            async (err, data) => {
+                if (data) {
+                    if (data.userId !== message.author.id) {
+                        message.reply("Tu ne peux pas prendre l'identité de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur MP un admin.").then(m => m.delete({timeout: 6000}));
+                        return false;
+                    }
+                }
+                else {
+                    await verification(mail);
+                }
+
+            });
     }
 
     if (message.channel.type === 'dm') {
@@ -1041,7 +1044,8 @@ module.exports = (client, message) => {
                             ipsaMail: "",
                         }).save()
 
-                        await verification(mail);
+                        await checkImpostor(mail);
+
 
                     }
                     else if (mdata.ipsaMail !== "") {
@@ -1049,7 +1053,7 @@ module.exports = (client, message) => {
                     }
                     else {
                         // data is empty
-                        await verification(mail);
+                        await checkImpostor(mail);
 
                     }
 
