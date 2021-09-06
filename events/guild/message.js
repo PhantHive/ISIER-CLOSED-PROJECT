@@ -927,6 +927,7 @@ module.exports = (client, message) => {
 
                                         let mail = message.content;
                                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
+                                        let mailFound = false;
 
                                         if (mdata.ipsaMail === "") {
                                             for (const promo of Object.keys(mailVerif)) {
@@ -942,6 +943,7 @@ module.exports = (client, message) => {
 
                                                     let role;
                                                     let oldrole;
+                                                    mailFound = true
 
                                                     guilds.forEach(serv => {
 
@@ -1000,7 +1002,7 @@ module.exports = (client, message) => {
                                                 }
                                                 else {
                                                     if (!message.content.lastIndexOf("@ipsa.fr")) {
-                                                        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs.");
+                                                        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. (l'email doit contenir prénom.nom@ipsa.fr)");
                                                         return false;
                                                     }
 
@@ -1008,6 +1010,9 @@ module.exports = (client, message) => {
 
                                             }
 
+                                            if (!mailFound) {
+                                                message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs.");
+                                            }
                                         }
                                         else if (mdata.ipsaMail === mail) {
                                             message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
