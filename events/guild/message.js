@@ -893,6 +893,9 @@ module.exports = (client, message) => {
 
     if (message.channel.type === 'dm') {
 
+        if (message.content.toLowerCase().indexOf("iris") !== -1) {
+            message.reply("Iris est la meilleure association !")
+        }
         if (message.content.lastIndexOf("@ipsa.fr") !== -1) {
 
 
@@ -1028,7 +1031,7 @@ module.exports = (client, message) => {
 
                     }
                     else {
-                        message.reply("Ce mail a déjà été enregistrer.");
+                        message.reply("Ce mail a déjà été enregistré.");
                     }
 
 
