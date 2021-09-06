@@ -905,11 +905,9 @@ module.exports = (client, message) => {
                         let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
                         let mailFound = false;
 
-                        MV.findOne({mailIpsa: mail.toLowerCase()},
+                        MV.findOne({ipsaMail: mail.toLowerCase()},
                             async (err, data) => {
-                            console.log("yep")
                                 if (data) {
-                                    console.log("yep")
                                     if (data.userId !== message.author.id) {
                                         message.reply("Tu ne peux pas prendre l'identité de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur MP un admin.").then(m => m.delete({timeout: 6000}));
                                         return false;
