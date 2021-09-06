@@ -98,6 +98,20 @@ client.on("message", async message => {
                 let curxp = data.XP;
                 let curlvl = data.LEVEL;
                 let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
+                let channel;
+
+                try {
+                    channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bot'));
+                }
+                catch (TypeError) {
+                    try {
+                        channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bots'));
+                    }
+                    catch (TypeError) {
+                        //continue
+                    }
+                }
+
 
                 //auto accumulate xp
 
@@ -112,7 +126,6 @@ client.on("message", async message => {
                         .addField(message.author.username + " niveau atteint: ", curlvl + 1, true)
                         .addField("XP: ", newlvl)
                         .setImage("https://i.imgur.com/FFYT8Ll.png");
-                    const channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bots'));
                     channel.send(lvlup);
 
                     data.XP = 0;
@@ -150,7 +163,6 @@ client.on("message", async message => {
                         .addField(message.author.username + " TU ES BON, niveau atteint: ", curlvl + 1, true)
                         .addField("XP: ", newlvl)
                         .setImage("https://i.imgur.com/7LVMSKN.png");
-                    const channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bots'));
                     channel.send(lvlup2);
 
                     data.XP = 0;
@@ -164,7 +176,6 @@ client.on("message", async message => {
                         .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
                         .addField("XP: ", newlvl)
                         .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
-                    const channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bots'));
                     channel.send(lvlup3);
 
                     data.XP = 0;
