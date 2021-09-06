@@ -943,7 +943,7 @@ module.exports = (client, message) => {
 
 
                                                 message.channel.send(`***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** sur ***${guild}*** en accord avec notre base de donnée.`);
-                                                mdata.ipsaMail = mail
+                                                mdata.ipsaMail = mail.toLowerCase();
                                                 guild.members.cache.get(user).roles.add(role);
 
 
@@ -1045,7 +1045,7 @@ module.exports = (client, message) => {
                     else {
                         // data is empty
                         await verification(mail);
-                        
+
                     }
 
 
