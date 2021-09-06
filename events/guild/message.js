@@ -893,7 +893,7 @@ module.exports = (client, message) => {
 
     if (message.channel.type === 'dm') {
 
-        if (message.content.lastIndexOf("@ipsa.fr")) {
+        if (message.content.lastIndexOf("@ipsa.fr") !== -1) {
 
 
             let mailData = MV.findOne({
