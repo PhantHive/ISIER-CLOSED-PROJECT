@@ -18,7 +18,7 @@ module.exports = (client, member, message) => {
             }
             else {
                 member.createDM().then(channel => {
-                    channel.send("Bonjour tu as déjà été vérifer en accord avec notre base de donnée!\n" +
+                    channel.send("Bonjour tu as déjà été vérifé en accord avec notre base de données!\n" +
                         "Je procède aux vérifications serveur.");
 
                     let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
