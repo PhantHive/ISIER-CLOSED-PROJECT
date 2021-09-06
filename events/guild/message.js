@@ -960,9 +960,7 @@ module.exports = (client, message) => {
                                                                 try {
                                                                     oldrole = guild.roles.cache.find(r => r.name === "Invité");
                                                                 } catch (error) {
-                                                                    try {
-                                                                        oldrole = guild.roles.cache.find(r => r.name === "Incruste");
-                                                                    } catch (error) {}
+
                                                                 }
 
 
@@ -970,9 +968,12 @@ module.exports = (client, message) => {
                                                                 mdata.ipsaMail = mail
                                                                 guild.members.cache.get(user).roles.add(role);
 
-                                                                console.log(oldrole, guild)
+
                                                                 try {
-                                                                    guild.members.cache.get(user).roles.remove(oldrole);
+                                                                    guild.members.cache.get(user).roles.remove(oldrole).catch(err => {
+                                                                        oldrole = guild.roles.cache.find(r => r.name === "Incruste");
+                                                                        guild.members.cache.get(user).roles.remove(oldrole)
+                                                                    });
                                                                 }
                                                                 catch (err) {
                                                                     if (err instanceof TypeError) {
@@ -1052,7 +1053,7 @@ module.exports = (client, message) => {
     if (!message.content.toLowerCase().startsWith(prefix)) return; //verifie que la personne utilise le prefix pour appeler le bot
     if (!message.content.startsWith(prefix)) return;
 
-    if (!message.member) message.member = message.guild.fetchMember(message); // on verifie bien d'ou vient le message
+    if (!message.member) message.member = message.guild.members.fetch(message); // on verifie bien d'ou vient le message
 
     //dans une commande !!commandeNom on doit recuperer l'argument correspondant au nom commandeNom, pour cela on doit slice le message de la personne
     let args = message.content.slice(prefix.length).trim().split(/ +/g);
