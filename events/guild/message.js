@@ -891,6 +891,125 @@ module.exports = (client, message) => {
 
     //========================================VERIF MAIL
 
+    async function verification(mail) {
+        await new Promise(resolve => setTimeout(resolve, 2000))
+            .then(() => {
+                MV.findOne({
+                        userId: message.author.id
+                    },
+                    async(err, mdata) => {
+
+                        if (!mdata) {message.reply("Un problème beaucoup trop important est survenu, contactez un admin.")}
+
+
+                        let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
+                        let mailFound = false;
+
+                        if (mdata.ipsaMail === "") {
+                            for (const promo of Object.keys(mailVerif)) {
+                                if (mailVerif[promo].includes(mail.toLowerCase())) {
+                                    //message.channel.send(mail);
+
+                                    let name = mail.substring(0, mail.indexOf("@"));
+                                    let firstName = name.substring(0, mail.indexOf("."));
+                                    let surName = name.substring(mail.indexOf(".") + 1);
+                                    let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
+                                    let correctSurname = surName.toUpperCase();
+                                    let fullName = correctSurname + " " + correctName
+
+                                    let role;
+                                    let oldrole;
+                                    mailFound = true
+
+                                    guilds.forEach(serv => {
+
+                                        new Promise(resolve => setTimeout(resolve, 1500))
+
+                                        try {
+                                            let guild = client.guilds.cache.get(serv);
+                                            let user = message.author.id;
+                                            if (guild.member(user)) {
+
+                                                try {
+                                                    role = guild.roles.cache.find(r => r.name.includes("IPSAlien"));
+                                                } catch (error) {
+                                                }
+
+                                                try {
+                                                    oldrole = guild.roles.cache.find(r => r.name === "Invité");
+                                                } catch (error) {
+
+                                                }
+
+
+                                                message.channel.send(`***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** sur ***${guild}*** en accord avec notre base de donnée.`);
+                                                mdata.ipsaMail = mail
+                                                guild.members.cache.get(user).roles.add(role);
+
+
+                                                try {
+                                                    guild.members.cache.get(user).roles.remove(oldrole).catch(err => {
+                                                        oldrole = guild.roles.cache.find(r => r.name === "Incruste");
+                                                        guild.members.cache.get(user).roles.remove(oldrole)
+                                                    });
+                                                }
+                                                catch (err) {
+                                                    if (err instanceof TypeError) {
+                                                        // do nothing
+                                                    }
+                                                }
+
+
+                                            }
+                                            mdata.save();
+
+                                            return mail;
+
+                                        }
+
+                                        catch (error) {}
+
+                                    });
+
+
+
+
+
+                                }
+                                else {
+                                    if (!message.content.lastIndexOf("@ipsa.fr")) {
+                                        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. (l'email doit contenir prénom.nom@ipsa.fr)");
+                                        return false;
+                                    }
+
+                                }
+
+                            }
+
+                            if (!mailFound) {
+                                message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs.");
+                            }
+                        }
+                        else if (mdata.ipsaMail === mail) {
+                            message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
+                            return false;
+                        }
+                        else {
+                            message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout: 6000}));
+                            return false;
+                        }
+
+                        //fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
+                        //if (err) console.log(err);
+                        //});
+
+
+
+                    }
+                )
+            })
+    }
+
     if (message.channel.type === 'dm') {
 
         if (message.content.toLowerCase().indexOf("iris") !== -1) {
@@ -898,6 +1017,7 @@ module.exports = (client, message) => {
         }
         if (message.content.lastIndexOf("@ipsa.fr") !== -1) {
 
+            let mail = message.content;
 
             let mailData = MV.findOne({
                     userId: message.author.id
@@ -916,128 +1036,16 @@ module.exports = (client, message) => {
                             ipsaMail: "",
                         }).save()
 
-                        await new Promise(resolve => setTimeout(resolve, 2000))
-                            .then(() => {
-                                MV.findOne({
-                                    userId: message.author.id
-                                },
-                                    async(err, mdata) => {
-
-                                        if (!mdata) {message.reply("Un problème beaucoup trop important est survenu, contactez un admin.")}
-
-                                        let mail = message.content;
-                                        let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
-                                        let mailFound = false;
-
-                                        if (mdata.ipsaMail === "") {
-                                            for (const promo of Object.keys(mailVerif)) {
-                                                if (mailVerif[promo].includes(mail)) {
-                                                    //message.channel.send(mail);
-
-                                                    let name = mail.substring(0, mail.indexOf("@"));
-                                                    let firstName = name.substring(0, mail.indexOf("."));
-                                                    let surName = name.substring(mail.indexOf(".") + 1);
-                                                    let correctName = firstName.charAt(0).toUpperCase() + firstName.slice(1);
-                                                    let correctSurname = surName.toUpperCase();
-                                                    let fullName = correctSurname + " " + correctName
-
-                                                    let role;
-                                                    let oldrole;
-                                                    mailFound = true
-
-                                                    guilds.forEach(serv => {
-
-                                                        new Promise(resolve => setTimeout(resolve, 1500))
-
-                                                        try {
-                                                            let guild = client.guilds.cache.get(serv);
-                                                            let user = message.author.id;
-                                                            if (guild.member(user)) {
-
-                                                                try {
-                                                                    role = guild.roles.cache.find(r => r.name.includes("IPSAlien"));
-                                                                } catch (error) {
-                                                                }
-
-                                                                try {
-                                                                    oldrole = guild.roles.cache.find(r => r.name === "Invité");
-                                                                } catch (error) {
-
-                                                                }
-
-
-                                                                message.channel.send(`***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** sur ***${guild}*** en accord avec notre base de donnée.`);
-                                                                mdata.ipsaMail = mail
-                                                                guild.members.cache.get(user).roles.add(role);
-
-
-                                                                try {
-                                                                    guild.members.cache.get(user).roles.remove(oldrole).catch(err => {
-                                                                        oldrole = guild.roles.cache.find(r => r.name === "Incruste");
-                                                                        guild.members.cache.get(user).roles.remove(oldrole)
-                                                                    });
-                                                                }
-                                                                catch (err) {
-                                                                    if (err instanceof TypeError) {
-                                                                        // do nothing
-                                                                    }
-                                                                }
-
-
-                                                                }
-                                                                mdata.save();
-
-                                                                return mail;
-
-                                                            }
-
-                                                        catch (error) {}
-
-                                                    });
-
-
-
-
-
-                                                }
-                                                else {
-                                                    if (!message.content.lastIndexOf("@ipsa.fr")) {
-                                                        message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. (l'email doit contenir prénom.nom@ipsa.fr)");
-                                                        return false;
-                                                    }
-
-                                                }
-
-                                            }
-
-                                            if (!mailFound) {
-                                                message.reply("Il semblerait que tu te sois tromper dans l'ecriture de ton mail. Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp un responsable discord ou a nous ecrire dans le channel #general ou #idee-bugs.");
-                                            }
-                                        }
-                                        else if (mdata.ipsaMail === mail) {
-                                            message.reply(`Ton compte a deja ete verifier! <:drakeno:630099103220760576> `).then(m => m.delete({timeout: 6000}));
-                                            return false;
-                                        }
-                                        else {
-                                            message.reply("Tu ne peux pas prendre l'identite de quelqu'un d'autre Mr Who! Si tu penses qu'il s'agit d'une erreur provenant du bot je t'invite a mp le bot en ecrivant \"erreur\"").then(m => m.delete({timeout: 6000}));
-                                            return false;
-                                        }
-
-                                        //fs.writefiles("./jsonfiles/mailAdded.json", JSON.stringify(mailAdded, null, 2), (err) => {
-                                            //if (err) console.log(err);
-                                        //});
-
-
-
-                                    }
-                                )
-                            })
-
-
+                        await verification(mail);
 
                     }
-                    else {
+                    else if (mdata.ipsaMail !== "") {
                         message.reply("Ce mail a déjà été enregistré.");
+                    }
+                    else {
+                        // data is empty
+                        await verification(mail);
+                        
                     }
 
 
