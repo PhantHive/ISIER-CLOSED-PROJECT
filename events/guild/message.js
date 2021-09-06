@@ -1041,7 +1041,7 @@ module.exports = (client, message) => {
 
         }
         else {
-            message.reply("Utilise !!aide dans un serveur pour savoir ce que je peux faire!");
+            message.reply("Utilise ***!!aide*** dans un serveur pour savoir ce que je peux faire!");
         }
 
     }
