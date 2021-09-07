@@ -370,7 +370,7 @@
         "yasmine.si-chaib@ipsa.fr"
     ],
 
-    "aero1prims2": [
+    "aero1primS2": [
 
         "abdel-ghani.lahrech@ipsa.fr",
         "alexis.mabilon@ipsa.fr",
@@ -602,7 +602,37 @@
         "younes.kerazi@ipsa.fr"
     ],
 
-    "aero2prims2": [
+    "aero2anglo": [
+
+        "alexandre.lam@ipsa.fr",
+        "alexis.klimczak@ipsa.fr",
+        "allan.akibode@ipsa.fr",
+        "andre.beauverger@ipsa.fr",
+        "anouk.vitis@ipsa.fr",
+        "arthur.de-ketelaere@ipsa.fr",
+        "axel.osika@ipsa.fr",
+        "celian.cardon@ipsa.fr",
+        "charles-marta.descamps-gallego@ipsa.fr",
+        "chloe.gaillard@ipsa.fr",
+        "claire.de-dinechin@ipsa.fr",
+        "estelle.monthieux@ipsa.fr",
+        "gabriel.gipson@ipsa.fr",
+        "gregoire.douillard-jacq@ipsa.fr",
+        "hugo.leray@ipsa.fr",
+        "irvin.petit@ipsa.fr",
+        "liam.brenot@ipsa.fr",
+        "mathilde.giglio@ipsa.fr",
+        "mohamed.nahet@ipsa.fr",
+        "paul-louis.cremadeills@ipsa.fr",
+        "perrine.bellec@ipsa.fr",
+        "sasha.zylberberg@ipsa.fr",
+        "thomas.balzan@ipsa.fr",
+        "yasmine.maafa@ipsa.fr",
+        "theau.deroy@ipsa.fr"
+
+    ],
+
+    "aero2primS2": [
 
         "alban.guillon@ipsa.fr",
         "ange.franchi@ipsa.fr",
@@ -899,6 +929,70 @@
         "yannick.dherbometz@ipsa.fr",
         "yoann.simonneau@ipsa.fr"
 
+    ],
+
+    "aero4_S7_France": [
+
+        "adrien.rivero@ipsa.fr",
+        "alexandra.toussaint@ipsa.fr",
+        "alexandre.crouch@ipsa.fr",
+        "ali.m-sahi@ipsa.fr",
+        "amaury.garriot@ipsa.fr",
+        "ambre.anchisi@ipsa.fr",
+        "amirmahermoustafam.zayed@ipsa.fr",
+        "amogh-suryaprakash.ajjampur@ipsa.fr",
+        "anthony.wernert-collet@ipsa.fr",
+        "antoine.hureau@ipsa.fr",
+        "arpita.dhanjal@ipsa.fr",
+        "augustin.lebel@ipsa.fr",
+        "axel.tissinier@ipsa.fr",
+        "benjamin.boyer@ipsa.fr",
+        "boris.faure@ipsa.fr",
+        "brice.carin@ipsa.fr",
+        "cedric.moulin@ipsa.fr",
+        "celine.charles@ipsa.fr",
+        "deo-gratias.houenou@ipsa.fr",
+        "eloise.cineas@ipsa.fr",
+        "elwin.silvestri@ipsa.fr",
+        "emeline.d-escrivan@ipsa.fr",
+        "erwan.hascoet@ipsa.fr",
+        "eva.follet@ipsa.fr",
+        "felix.deprez@ipsa.fr",
+        "gabriel.cherni@ipsa.fr",
+        "gaelle.janot@ipsa.fr",
+        "hippolyte.mallevays@ipsa.fr",
+        "hugo.levillayer@ipsa.fr",
+        "hugo.verjus@ipsa.fr",
+        "ilyas.arbouhi@ipsa.fr",
+        "ines.amestoy@ipsa.fr",
+        "jules.martinez@ipsa.fr",
+        "julien.senon@ipsa.fr",
+        "kim-anh.ngo@ipsa.fr",
+        "lisa.rochier@ipsa.fr",
+        "loic.martinez@ipsa.fr",
+        "lucas.lagedamont@ipsa.fr",
+        "margaux.pellerin@ipsa.fr",
+        "margot.fredet@ipsa.fr",
+        "marius.mas@ipsa.fr",
+        "marnie.fournier-boutault@ipsa.fr",
+        "mathis.gino@ipsa.fr",
+        "nicolas.chevalier-magnet@ipsa.fr",
+        "nicolas.de-buck@ipsa.fr",
+        "paul.ginet@ipsa.fr",
+        "paul.meunier@ipsa.fr",
+        "pierre.petit@ipsa.fr",
+        "priyanka.senthil-murugan@ipsa.fr",
+        "quentin.benot@ipsa.fr",
+        "raphael.cardete@ipsa.fr",
+        "rocio.chiappero@ipsa.fr",
+        "rohithkumar.meluru-rajegowda@ipsa.fr",
+        "sophie.faure@ipsa.fr",
+        "steeven.duriot@ipsa.fr",
+        "steven.angelique@ipsa.fr",
+        "thibault.wuipliez-bouriand@ipsa.fr",
+        "valerian.lepelletier@ipsa.fr",
+        "victor.leroux@ipsa.fr",
+        "yoann.ben-hamou@ipsa.fr"
     ],
 
     "aero5": [
