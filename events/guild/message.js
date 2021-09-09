@@ -931,9 +931,11 @@ module.exports = (client, message) => {
                                                 let user = message.author.id;
                                                 if (guild.member(user)) {
 
-                                                    try {
+                                                    if (promo === "Communication") {
+                                                        role = guild.roles.cache.find(r => r.name.includes("ADMIN COM"));
+                                                    }
+                                                    else {
                                                         role = guild.roles.cache.find(r => r.name.includes("IPSAlien"));
-                                                    } catch (error) {
                                                     }
 
                                                     try {
