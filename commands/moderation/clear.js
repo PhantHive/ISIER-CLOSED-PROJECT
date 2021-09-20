@@ -8,7 +8,7 @@ module.exports =  {
     timeout: 5500,
     usage:"clear",
     run: async(client,message, args) => {
-        //if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("tu n'as pas la permission").catch(console.log);
+        if (!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("tu n'as pas la permission").catch(console.log);
         if (!args[0]) return message.channel.send("indiquer un nombre de messages");
 
         if (isNaN(args[0])) return message.channel.send("indiquer un nombre");
