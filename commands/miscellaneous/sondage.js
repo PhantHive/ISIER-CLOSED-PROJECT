@@ -17,6 +17,8 @@ module.exports =  {
             if (infoPoll.length === 3) {
                 let sondageEmbed = new MessageEmbed()
                     .setTitle("SONDAGE- CHOIX MULTIPLES")
+                    .setAuthor(message.author.tag, message.author.avatarURL())
+                    .setColor("#09CEFF")
                     .setDescription(infoPoll[0])
                     .addField('choix A' , infoPoll[1])
                     .addField('choix B' , infoPoll[2])
@@ -32,8 +34,8 @@ module.exports =  {
                 let sondageEmbed = new MessageEmbed()
                     .setTitle("SONDAGE- CHOIX MULTIPLES")
                     .setAuthor(message.author.tag, message.author.avatarURL())
-                    .setDescription(infoPoll[0])
                     .setColor("#09CEFF")
+                    .setDescription(infoPoll[0])
                     .addField('choix A' , infoPoll[1])
                     .addField('choix B' , infoPoll[2])
                     .addField('choix C' , infoPoll[3])
