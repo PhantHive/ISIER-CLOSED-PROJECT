@@ -89,6 +89,20 @@ client.on("message", async message => {
             if (message.channel.type === "dm") {
                 return;
             }
+            let channel;
+
+            try {
+                channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bot'));
+            }
+            catch (TypeError) {
+                try {
+                    channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bots'));
+                }
+                catch (TypeError) {
+                    //continue
+                }
+            }
+
             
             if (data.LEVEL < 5) {
 
@@ -98,20 +112,6 @@ client.on("message", async message => {
                 let curxp = data.XP;
                 let curlvl = data.LEVEL;
                 let newlvl = 25 * (curlvl** 2) + 169 * curlvl + 845;
-                let channel;
-
-                try {
-                    channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bot'));
-                }
-                catch (TypeError) {
-                    try {
-                        channel = message.guild.channels.cache.find(ch => ch.name.includes('commandes-bots'));
-                    }
-                    catch (TypeError) {
-                        //continue
-                    }
-                }
-
 
                 //auto accumulate xp
 
