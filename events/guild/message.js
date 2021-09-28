@@ -329,7 +329,7 @@ module.exports = (client, message) => {
                 .catch(() => console.error("erreur dans la reaction en chaine"));
         }
     }
-    if (message.guild.id !== "880491243807846450") {
+    if (message.guild && message.guild.id !== "880491243807846450") {
 
 
         var mp = String(message.content).toLowerCase();
