@@ -243,7 +243,7 @@ module.exports =  {
                                 // Easter Egg
                                 //const eggImg = await loadImage(join(__dirname, "../..", "ressources/image", "egg.png"));
                                 //ctx.drawImage(eggImg, 760, 80, 40, 40);
-                                ctx.font = "bold 13px cursive";
+                                ctx.font = "bold 13px Times New Roman";
                                 ctx.fillStyle = "#000000";
                                 ctx.fillText("EGG:", 285, 145);
                                 ctx.fillText(curEgg + "/ ?", 335, 145);
@@ -253,7 +253,7 @@ module.exports =  {
 
                                 //ctx.drawImage(rankImg, 210, 70, 20, 20);
 
-                                ctx.font = "bold 13px cursive";
+                                ctx.font = "bold 13px Times New Roman";
                                 ctx.fillStyle = "#000000";
                                 ctx.fillText("RANG:", 285, 105);
                                 ctx.fillText(curRank + "/" + allR, 345, 105);
