@@ -192,7 +192,7 @@ module.exports = (client, message) => {
                             }
 
                             else if (ipsaServer.members.cache.find((message.author.id))) {
-                             g   let data3 = XLD.findOne({
+                                let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
                                     (err, data2) => {
