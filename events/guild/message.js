@@ -53,7 +53,7 @@ module.exports = (client, message) => {
             //MONGODB
             let server = client.guilds.cache.get("755084203779162151")
             let secServer = client.guilds.cache.get("608155753748103170")
-            let testServer = client.guilds.cache.get("502931781012684818")
+            let ipsaServer = client.guilds.cache.get("880491243807846450")
 
             let data = EGD.findOne({
 
@@ -98,7 +98,7 @@ module.exports = (client, message) => {
                                 })
                         }
 
-                        if (secServer.members.cache.find(message.author.id)) {
+                        else if (secServer.members.cache.find(message.author.id)) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -119,7 +119,7 @@ module.exports = (client, message) => {
                                 })
                         }
 
-                        if (testServer.members.cache.find((message.author.id))) {
+                        else if (ipsaServer.members.cache.find((message.author.id))) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -170,7 +170,7 @@ module.exports = (client, message) => {
                                     })
                             }
 
-                            if (secServer.members.cache.find((message.author.id))) {
+                            else if (secServer.members.cache.find((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
@@ -191,8 +191,8 @@ module.exports = (client, message) => {
                                     })
                             }
 
-                            if (testServer.members.cache.find((message.author.id))) {
-                                let data3 = XLD.findOne({
+                            else if (ipsaServer.members.cache.find((message.author.id))) {
+                             g   let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
                                     (err, data2) => {
