@@ -91,7 +91,7 @@ module.exports = (client, message) => {
                                             RANK: 0
                                         })
                                     } else {
-                                        data2.LEVEL += 2;
+                                        data2.LEVEL = data.LEVEL + 2;
                                         data2.XP = 0;
                                     }
                                     data2.save()
@@ -205,7 +205,7 @@ module.exports = (client, message) => {
                                                 RANK: 0
                                             })
                                         } else {
-                                            data2.LEVEL += 2;
+                                            data2.LEVEL = data.LEVEL + 2
                                             data2.XP = 0;
                                         }
                                         data2.save()
