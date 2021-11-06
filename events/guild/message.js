@@ -51,9 +51,9 @@ module.exports = (client, message) => {
         if (message.author.bot) return;
         if (message.content === "je t'aime") {
             //MONGODB
-            let server = client.guilds.cache.get("755084203779162151")
-            let secServer = client.guilds.cache.get("608155753748103170")
-            let ipsaServer = client.guilds.cache.get("880491243807846450")
+            let server = client.guilds.cache.get("755084203779162151");
+            let secServer = client.guilds.cache.get("608155753748103170");
+            let ipsaServer = client.guilds.cache.get("880491243807846450");
 
             let data = EGD.findOne({
 
@@ -77,7 +77,7 @@ module.exports = (client, message) => {
                             channel.send("Je t'aime beaucoup aussi +1 easterEgg, +2 levels")
                         })
 
-                        if (server.members.cache.find(message.author.id)) {
+                        if (server.members.cache.has(message.author.id)) {
                             let data2 = XLD.findOne({
                                     ID: message.author.id + "-" + "755084203779162151"
                                 },
@@ -98,7 +98,7 @@ module.exports = (client, message) => {
                                 })
                         }
 
-                        else if (secServer.members.cache.find(message.author.id)) {
+                        else if (secServer.members.cache.has(message.author.id)) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -119,7 +119,7 @@ module.exports = (client, message) => {
                                 })
                         }
 
-                        else if (ipsaServer.members.cache.find((message.author.id))) {
+                        else if (ipsaServer.members.cache.has((message.author.id))) {
                             let data3 = XLD.findOne({
                                     ID: message.author.id + "-" + "608155753748103170"
                                 },
@@ -149,7 +149,7 @@ module.exports = (client, message) => {
                                 channel.send("Je t'aime beaucoup aussi +1 easterEgg, +2 levels")
                             })
 
-                            if (server.members.cache.find(message.author.id)) {
+                            if (server.members.cache.has(message.author.id)) {
                                 let data2 = XLD.findOne({
                                         ID: message.author.id + "-" + "755084203779162151"
                                     },
@@ -170,7 +170,7 @@ module.exports = (client, message) => {
                                     })
                             }
 
-                            else if (secServer.members.cache.find((message.author.id))) {
+                            else if (secServer.members.cache.has((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
@@ -191,7 +191,7 @@ module.exports = (client, message) => {
                                     })
                             }
 
-                            else if (ipsaServer.members.cache.find((message.author.id))) {
+                            else if (ipsaServer.members.cache.has((message.author.id))) {
                                 let data3 = XLD.findOne({
                                         ID: message.author.id + "-" + "608155753748103170"
                                     },
