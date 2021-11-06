@@ -105,8 +105,26 @@ client.on("message", async message => {
 
 
             if (data.LEVEL < 5) {
+                let xpRand;
 
-                var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                if (message.channel.id === "880491243807846458") {
+                    xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                }
+                else if (message.channel.id === "902678837261893653") {
+                    //debat channel
+                    xpRand = [0, 0, 0, 0, 0, 0, 5, 5, 10, 10, 15, 20, 1, 1, 1, 1, 15, 1, 100, 0];
+                }
+                else if (message.channel.id === "884489030501294160") {
+                    // bug channel
+                    xpRand = [0, 0, 0, 0, 5, 5, 10, 10, 15, 20, 1, 1, 1, 100];
+                }
+                else if (message.channel.id === "885098863562747934") {
+                    xpRand = [10, 20, 10, 20, 10, 20, 10, 20, 10, 20, 10, 20, 10, 20];
+                }
+                else {
+                    xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 5];
+                }
+
                 let gainXP = xpRand[Math.floor(Math.random() * xpRand.length)] ; //add some xp by message
                 //data
                 let curxp = data.XP;
@@ -141,8 +159,26 @@ client.on("message", async message => {
 
             }
             else {
+                let xpRand;
 
-                var xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                if (message.channel.id === "880491243807846458") {
+                    xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                }
+                else if (message.channel.id === "902678837261893653") {
+                    //debat channel
+                    xpRand = [0, 0, 0, 0, 0, 0, 5, 5, 10, 10, 15, 20, 1, 1, 100, 1, 100, 1, 100, 0];
+                }
+                else if (message.channel.id === "884489030501294160") {
+                    // bug channel
+                    xpRand = [0, 0, 0, 0, 5, 5, 10, 10, 15, 20, 1, 1, 1, 300];
+                }
+                else if (message.channel.id === "885098863562747934") {
+                    xpRand = [10, 20, 10, 20, 10, 20, 10, 20, 10, 20, 10, 20, 10, 20];
+                }
+                else {
+                    xpRand = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                }
+
                 let gainXP = xpRand[Math.floor(Math.random() * xpRand.length)] ; //add some xp by message
 
                 //data
@@ -167,7 +203,7 @@ client.on("message", async message => {
 
                     data.XP = 0;
                 }
-                else if (newlvl <= data.XP && curlvl < 15) {
+                else if (newlvl <= data.XP && curlvl <= 20) {
 
                     data.LEVEL = curlvl + 1;
                     let lvlup3 = new MessageEmbed()
@@ -175,7 +211,7 @@ client.on("message", async message => {
                         .setColor("ORANGE")
                         .addField(message.author.username + " is GOD LIKE, niveau atteint: ", curlvl + 1, true)
                         .addField("XP: ", newlvl)
-                        .setImage("https://i.imgur.com/Mnx9Vu0.jpg");
+                        .setImage("https://i.imgur.com/UWcmBBS.jpg");
                     channel.send(lvlup3);
 
                     data.XP = 0;
