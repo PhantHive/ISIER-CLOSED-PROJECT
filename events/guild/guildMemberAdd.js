@@ -27,7 +27,7 @@ module.exports = (client, member, message) => {
                     channel.send("Bonjour tu as déjà été vérifé en accord avec notre base de données!\n" +
                         "Je procède aux vérifications serveur.");
 
-                    let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
+                    let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170', '809190693196529704', '932332814433673227', '932333114326405140'];
                     guilds.forEach(serv => {
                         let guild = client.guilds.cache.get(serv);
                         let user = member.id;

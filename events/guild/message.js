@@ -900,7 +900,7 @@ module.exports = (client, message) => {
                         if (!mdata) {message.reply("Un problème beaucoup trop important est survenu, contactez un admin.")}
 
 
-                        let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170'];
+                        let guilds = ['880491243807846450', '880499115878932571', '755084203779162151', '608155753748103170', '809190693196529704', '932332814433673227', '932333114326405140'];
                         let mailFound = false;
 
 
@@ -932,7 +932,7 @@ module.exports = (client, message) => {
                                                     if (promo === "Communication") {
                                                         role = guild.roles.cache.find(r => r.name.includes("ADMIN COM"));
                                                     }
-                                                    else if (promo === "aero3_systeme") {
+                                                    else if ((promo === "aero3_systeme") && (serv === '809190693196529704')) {
                                                         role = guild.roles.cache.find(r => r.id === "932997263079399434");
                                                     }
                                                     else {
