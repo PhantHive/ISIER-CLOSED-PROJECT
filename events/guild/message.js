@@ -932,6 +932,9 @@ module.exports = (client, message) => {
                                                     if (promo === "Communication") {
                                                         role = guild.roles.cache.find(r => r.name.includes("ADMIN COM"));
                                                     }
+                                                    else if (promo === "aero3_systeme") {
+                                                        role = guild.roles.cache.find(r => r.name.includes("l'elite"));
+                                                    }
                                                     else {
                                                         role = guild.roles.cache.find(r => r.name.includes("IPSAlien"));
                                                     }
@@ -939,7 +942,7 @@ module.exports = (client, message) => {
                                                     try {
                                                         oldrole = guild.roles.cache.find(r => r.name === "Invité");
                                                     } catch (error) {
-
+                                                        // do nothing
                                                     }
 
 
@@ -953,6 +956,7 @@ module.exports = (client, message) => {
                                                             oldrole = guild.roles.cache.find(r => r.name === "Incruste");
                                                             guild.members.cache.get(user).roles.remove(oldrole)
                                                         });
+
                                                     } catch (err) {
                                                         if (err instanceof TypeError) {
                                                             // do nothing

@@ -2,6 +2,7 @@ const MV = require('../../models/MailSystem.js');
 
 module.exports = (client, member, message) => {
 
+
     console.log("test")
     let mailData = MV.findOne({
             userId: member.id
@@ -15,6 +16,11 @@ module.exports = (client, member, message) => {
                         "(environs 5 secondes pour traiter la demande)")
 
                 }).catch(err => console.log(err))
+
+                if (message.guild.id === "809190693196529704") {
+                    const incrusteRole = member.guild.roles.cache.find(role => role.name === "Incruste");
+                    member.roles.add(incrusteRole);
+                }
             }
             else {
                 member.createDM().then(channel => {
@@ -28,6 +34,10 @@ module.exports = (client, member, message) => {
                         let role;
                         let oldrole;
                         if (guild.member(user)) {
+
+                            if (message.guild.id === "809190693196529704") {
+                                message.reply({ content: "Bienvenue l'élite! ;)" })
+                            }
 
                             try {
                                 role = member.guild.roles.cache.find(r => r.name === "IPSAlien");
