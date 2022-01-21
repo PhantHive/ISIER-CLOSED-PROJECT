@@ -17,7 +17,7 @@ module.exports = (client, member, message) => {
 
                 }).catch(err => console.log(err))
 
-                if (message.guild.id === "809190693196529704") {
+                if (member.guild.id === "809190693196529704") {
                     const incrusteRole = member.guild.roles.cache.find(role => role.name === "Incruste");
                     member.roles.add(incrusteRole);
                 }
@@ -37,22 +37,28 @@ module.exports = (client, member, message) => {
 
                             if (member.guild.id === "809190693196529704") {
                                 channel.send({ content: "Bienvenue l'élite! (je t'ai add les rôles sur le serveur Système ;)" })
-                            }
 
-                            try {
-                                role = member.guild.roles.cache.find(r => r.name === "IPSAlien");
+                                role = member.guild.roles.cache.find(r => r.name === "l'elite");
+                                oldrole = member.guild.roles.cache.find(r => r.name === "Incruste");
                             }
-                            catch (error) {}
-
-                            try {
-                                oldrole = member.guild.roles.cache.find(r => r.name === "Invité");
-                            }
-                            catch (error) {
+                            else {
                                 try {
-                                    oldrole = member.guild.roles.cache.find(r => r.name === "Incruste");
+                                    role = member.guild.roles.cache.find(r => r.name === "IPSAlien");
                                 }
                                 catch (error) {}
+
+                                try {
+                                    oldrole = member.guild.roles.cache.find(r => r.name === "Invité");
+                                }
+                                catch (error) {
+                                    try {
+                                        oldrole = member.guild.roles.cache.find(r => r.name === "Incruste");
+                                    }
+                                    catch (error) {}
+                                }
                             }
+
+
 
                             guild.members.cache.get(user).roles.add(role);
                             guild.members.cache.get(user).roles.remove(oldrole);
