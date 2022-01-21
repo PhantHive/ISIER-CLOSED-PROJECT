@@ -35,8 +35,8 @@ module.exports = (client, member, message) => {
                         let oldrole;
                         if (guild.member(user)) {
 
-                            if (message.guild.id === "809190693196529704") {
-                                message.reply({ content: "Bienvenue l'élite! ;)" })
+                            if (member.guild.id === "809190693196529704") {
+                                channel.send({ content: "Bienvenue l'élite! (je t'ai add les rôles sur le serveur Système ;)" })
                             }
 
                             try {
