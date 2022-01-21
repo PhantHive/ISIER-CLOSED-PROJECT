@@ -933,7 +933,7 @@ module.exports = (client, message) => {
                                                         role = guild.roles.cache.find(r => r.name.includes("ADMIN COM"));
                                                     }
                                                     else if (promo === "aero3_systeme") {
-                                                        role = guild.roles.cache.find(r => r.name.includes("elite"));
+                                                        role = guild.roles.cache.find(r => r.id === "932997263079399434");
                                                     }
                                                     else {
                                                         role = guild.roles.cache.find(r => r.name.includes("IPSAlien"));
