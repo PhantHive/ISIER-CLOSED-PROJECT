@@ -36,8 +36,6 @@ module.exports = (client, member, message) => {
                         if (guild.member(user)) {
 
                             if (member.guild.id === "809190693196529704") {
-                                channel.send({ content: "Bienvenue! (je t'ai add les rôles sur le serveur Système ;)" })
-
                                 role = member.guild.roles.cache.find(r => r.id === "932997263079399434");
                                 oldrole = member.guild.roles.cache.find(r => r.name.includes("Incruste"));
                             }
