@@ -43,10 +43,9 @@ module.exports = (client, member, message) => {
                                     oldrole = member.guild.roles.cache.find(r => r.name.includes("Incruste"));
                                 }
                                 else {
-                                    member.createDM().then(channel => {
-                                        channel.send("Il se trouve que tu es en Véhicule, je ne peux pas te fournir l'accès au serveur mon ami!")
+                                    const incrusteRole = member.guild.roles.cache.find(role => role.name.includes("Incruste"));
+                                    member.roles.add(incrusteRole);
 
-                                    }).catch(err => console.log(err))
                                 }
 
                             }
