@@ -20,17 +20,8 @@ module.exports = (client, member, message) => {
                 }).catch(err => console.log(err))
 
                 if (member.guild.id === "809190693196529704") {
-                    if (mailVerif["aero3_systeme"].includes(data.ipsaMail.toLowerCase())) {
-                        const incrusteRole = member.guild.roles.cache.find(role => role.name === "Incruste");
-                        member.roles.add(incrusteRole);
-                    }
-                    else {
-                        member.createDM().then(channel => {
-                            channel.send("Il se trouve que tu es en Véhicule, je ne peux pas te fournir l'accès au serveur mon ami!")
-
-                        }).catch(err => console.log(err))
-                    }
-
+                    const incrusteRole = member.guild.roles.cache.find(role => role.name === "Incruste");
+                    member.roles.add(incrusteRole);
                 }
             }
             else {
@@ -47,8 +38,17 @@ module.exports = (client, member, message) => {
                         if (guild.member(user)) {
 
                             if (member.guild.id === "809190693196529704") {
-                                role = member.guild.roles.cache.find(r => r.id === "932997263079399434");
-                                oldrole = member.guild.roles.cache.find(r => r.name.includes("Incruste"));
+                                if (mailVerif["aero3_systeme"].includes(data.ipsaMail.toLowerCase())) {
+                                    role = member.guild.roles.cache.find(r => r.id === "932997263079399434");
+                                    oldrole = member.guild.roles.cache.find(r => r.name.includes("Incruste"));
+                                }
+                                else {
+                                    member.createDM().then(channel => {
+                                        channel.send("Il se trouve que tu es en Véhicule, je ne peux pas te fournir l'accès au serveur mon ami!")
+
+                                    }).catch(err => console.log(err))
+                                }
+
                             }
                             else {
                                 try {
