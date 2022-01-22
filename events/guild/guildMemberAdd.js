@@ -1,4 +1,6 @@
 const MV = require('../../models/MailSystem.js');
+//mailVerif
+let mailVerif = require("../../jsonFile/mailsVerif.json")
 
 module.exports = (client, member, message) => {
 
@@ -18,8 +20,17 @@ module.exports = (client, member, message) => {
                 }).catch(err => console.log(err))
 
                 if (member.guild.id === "809190693196529704") {
-                    const incrusteRole = member.guild.roles.cache.find(role => role.name === "Incruste");
-                    member.roles.add(incrusteRole);
+                    if (mailVerif["aero3_systeme"].includes(data.ipsaMail.toLowerCase())) {
+                        const incrusteRole = member.guild.roles.cache.find(role => role.name === "Incruste");
+                        member.roles.add(incrusteRole);
+                    }
+                    else {
+                        member.createDM().then(channel => {
+                            channel.send("Il se trouve que tu es en Véhicule, je ne peux pas te fournir l'accès au serveur mon ami!")
+
+                        }).catch(err => console.log(err))
+                    }
+
                 }
             }
             else {
