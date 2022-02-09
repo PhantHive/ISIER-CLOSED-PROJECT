@@ -38,13 +38,6 @@ module.exports = (client, message) => {
     } */
 
 
-
-    //AIDE INFORMATIQUE PING ZAKARIA
-    var aideInformatique = String(message.content);
-    if (aideInformatique.indexOf("svp?") !== -1 && ((message.channel.id === "755084205330792547" ) || (message.channel.id === "772176248193024000"))) {
-        message.channel.send("<@239455598343618580> peux peut-être aider!")
-    }
-
     //=============================
 
     if (message.channel.type === "dm") {
@@ -251,22 +244,6 @@ module.exports = (client, message) => {
     }
     //fonction special
 
-    //dropbox
-    var chaine = String(message.content);
-
-    if (chaine.indexOf("dropbox") !== -1) {
-        const dropboxChannel = message.guild.channels.cache.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
-        message.reply(`Go ici amigo=> ${dropboxChannel}`);
-    }
-
-    //catia
-    var catia = String(message.content);
-
-    if (catia.indexOf("comment installer catia" || "installe catia") !== -1) {
-        const dropboxChannel = message.guild.channels.cache.find(channel => channel.name === "🎓▶liens-et-ressources-utiles◀🎓");
-        message.reply(`Check ce channel, ca pourrai repondre a ta question padawan =>  => ${dropboxChannel}`);
-    }
-
 
     var chaine2 = String(message.content);
 
@@ -291,7 +268,7 @@ module.exports = (client, message) => {
     var chaine4 = String(message.content);
 
     if (chaine4.indexOf("t'as fait") !== -1) {
-        var b = Math.floor((Math.random() * 15) + 1);
+        var b = Math.floor((Math.random() * 20) + 1);
         if (b == 5) {
             message.channel.send('nop pas encore deso');
         }
@@ -300,7 +277,7 @@ module.exports = (client, message) => {
     var chaine5 = String(message.content);
 
     if (chaine5.indexOf("???") !== -1) {
-        var b = Math.floor((Math.random() * 15) + 1);
+        var b = Math.floor((Math.random() * 25) + 1);
         if (b === 5) {
             message.channel.send('ceci etait une question que qql y reponde please (*ouai tu peux m\'appeler Dieu gamin*)');
         }
@@ -312,7 +289,7 @@ module.exports = (client, message) => {
     if (chaine6.indexOf("il est gentil") !== -1) {
         var a = Math.floor((Math.random() * 15) + 1);
         if (a === 2) {
-            message.reply('je te promet c est vrai tavu');
+            message.reply('je te promet c est vrai');
         }
     }
 

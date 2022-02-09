@@ -16,11 +16,8 @@ module.exports =  {
             //========================================================================
             '\n`!!chut`\n=> vous en avez marre?\n ' +
             '\n`!!objection`\n => vous n\'etes pas d\'accord? \n ' +
-            '\n`!!frToen <\mot\>\n` => Vous traduit un mot francais vers l\'anglais\n' +
-            '\n`!!msTokh nombre\n` => vous permet de convertir des m/s en km/h (i!khToms fais l inverse) \n ' +
-            '\n`!!khTond nombre\n` => convertit des km/h en noeud (i!ndTokh fais l\'inverse)\n ' +
-            '\n`!!paTobar nombre`\n => convertit des pascal en bar (i!barTopa fais l\'inverse)\n' +
-            '\n`!!kmTomiles nombre`\n => convertit des kilometre en miles (i!milesTokm fais l\'inverse) \n'
+            '\n`!!frToen <\mot\>\n` => Vous traduit un mot francais vers l\'anglais\n'
+
         ]; //array of pages
 
         let page = 1;
