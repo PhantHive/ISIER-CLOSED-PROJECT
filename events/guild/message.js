@@ -913,7 +913,7 @@ module.exports = (client, message) => {
                                         let oldrole;
                                         mailFound = true
 
-                                        guilds.forEach(serv => {
+                                        await guilds.forEach(serv => {
 
                                             new Promise(resolve => setTimeout(resolve, 1500))
 
@@ -968,6 +968,7 @@ module.exports = (client, message) => {
                                                 return mail;
 
                                             } catch (error) {
+                                                mdata.save();
                                             }
 
                                         });
