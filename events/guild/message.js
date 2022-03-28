@@ -943,6 +943,11 @@ module.exports = (client, message) => {
                                                     mdata.ipsaMail = mail.toLowerCase();
                                                     guild.members.cache.get(user).roles.add(role);
 
+                                                    if (promo === "aero4InterStudents") {
+                                                        const interRole = guild.roles.cache.find(r => r.id === "958098854908157992");
+                                                        guild.members.cache.get(user).roles.add(interRole);
+                                                    }
+
 
                                                     try {
                                                         guild.members.cache.get(user).roles.remove(oldrole).catch(err => {
