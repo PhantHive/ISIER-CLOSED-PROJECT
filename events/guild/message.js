@@ -944,7 +944,7 @@ module.exports = (client, message) => {
                                                     guild.members.cache.get(user).roles.add(role);
 
                                                     if (promo === "aero4InterStudents") {
-                                                        const interRole = guild.roles.cache.find(r => r.id === "958098854908157992");
+                                                        const interRole = guild.roles.cache.find(r => r.id === "958086269496348783");
                                                         guild.members.cache.get(user).roles.add(interRole);
                                                     }
 
