@@ -938,15 +938,22 @@ module.exports = (client, message) => {
                                                         // do nothing
                                                     }
 
-
-                                                    message.channel.send(`***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** sur ***${guild}*** en accord avec notre base de donnée.`);
-                                                    mdata.ipsaMail = mail.toLowerCase();
-                                                    guild.members.cache.get(user).roles.add(role);
-
                                                     if ((promo === "aero4InterStudents") && (serv === '880491243807846450')) {
                                                         let interRole = guild.roles.cache.find(r => r.name.includes("International"));
                                                         guild.members.cache.get(user).roles.add(interRole);
                                                     }
+
+                                                    message.channel.send(`***${fullName}*** Tu appartiens à la promo ***${promo}***, tu es **verifié** sur ***${guild}*** en accord avec notre base de donnée.`);
+                                                    mdata.ipsaMail = mail.toLowerCase();
+
+                                                    try {
+                                                        guild.members.cache.get(user).roles.add(role);
+                                                    }
+                                                    catch (error) {
+
+                                                    }
+
+
 
 
                                                     try {
