@@ -963,7 +963,6 @@ module.exports = (client, message) => {
 
 
                                                 }
-                                                mdata.save();
 
                                                 return mail;
 
@@ -972,6 +971,7 @@ module.exports = (client, message) => {
 
                                         });
 
+                                        mdata.save();
 
                                     } else {
                                         if (!message.content.lastIndexOf("@ipsa.fr")) {
