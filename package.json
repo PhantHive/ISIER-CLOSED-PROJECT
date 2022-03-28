@@ -17,7 +17,7 @@
     "gifencoder": "^2.0.1",
     "http": "0.0.0",
     "join": "^3.0.0",
-    "kayn": "^0.10.2",
+    "kayn": "^0.0.1",
     "mongoose": "^5.12.5",
     "mongose": "0.0.2-security",
     "ms": "^2.1.3",

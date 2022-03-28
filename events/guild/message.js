@@ -915,7 +915,7 @@ module.exports = (client, message) => {
 
                                         await guilds.forEach(serv => {
 
-                                            new Promise(resolve => setTimeout(resolve, 10000))
+                                            new Promise(resolve => setTimeout(resolve, 5000))
 
                                             try {
                                                 let guild = client.guilds.cache.get(serv);
