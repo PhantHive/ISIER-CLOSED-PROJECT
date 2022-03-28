@@ -915,7 +915,7 @@ module.exports = (client, message) => {
 
                                         await guilds.forEach(serv => {
 
-                                            new Promise(resolve => setTimeout(resolve, 1500))
+                                            new Promise(resolve => setTimeout(resolve, 10000))
 
                                             try {
                                                 let guild = client.guilds.cache.get(serv);
@@ -968,7 +968,6 @@ module.exports = (client, message) => {
                                                 return mail;
 
                                             } catch (error) {
-                                                mdata.save();
                                             }
 
                                         });
