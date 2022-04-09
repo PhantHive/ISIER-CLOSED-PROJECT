@@ -4,7 +4,7 @@ let mailVerif = require("../../jsonFile/mailsVerif.json")
 
 module.exports = (client, member, message) => {
 
-
+    /*
     console.log("test")
     let mailData = MV.findOne({
             userId: member.id
@@ -82,7 +82,7 @@ module.exports = (client, member, message) => {
         }
     )
 
-
+    */
 
 
 
