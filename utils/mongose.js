@@ -11,7 +11,7 @@ module.exports = {
             family: 4
         };
 
-        mongoose.connect('mongodb+srv://PhantHive:oywyits5omlasjafilfo@cluster0.vrloe.mongodb.net/<dbname>?retryWrites=true&w=majority', dbOptions);
+        mongoose.connect('key', dbOptions);
         mongoose.set('useFindAndModify', false);
         mongoose.Promise = global.Promise;
 
